@@ -37,7 +37,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat6')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>2. การผ่าตัดซ่อมแซมริมฝีปาก จมูก และพื้ันจมูก  </td>
+                  <!--  <td>2. การผ่าตัดซ่อมแซมริมฝีปาก จมูก และพื้ันจมูก  </td> -->
+                    <td>2. Cleft lip, nasal and nasal floor repair </td>
                 </tr>
                 
                   <tr>
@@ -45,7 +46,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>3. การผ่าตัดแก้ไขเพดานอ่อน  </td>
+                    <!-- <td>3. การผ่าตัดแก้ไขเพดานอ่อน  </td> -->
+                    <td>3. Palate repair  </td>
                 </tr>
                 
                  <tr>
@@ -53,7 +55,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat4B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>4. การผ่าตัดแก้ไขเพดานแข็ง  </td>
+                    <!-- <td>4. การผ่าตัดแก้ไขเพดานแข็ง  </td> -->
+                    <td>4. Interceptive orthodontic treatment  </td>
                 </tr>
                 
                  <tr>
@@ -61,7 +64,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat1')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>5. ทันตกรรมจัดฟัน เตรียมการสำหรับการปลูกถ่ายกระดูกที่สันเหงือก  </td>
+                   <!--  <td>5. ทันตกรรมจัดฟัน เตรียมการสำหรับการปลูกถ่ายกระดูกที่สันเหงือก  </td> -->
+                    <td>5. Orthodonic preparation for bone graft surgery </td>
                 </tr>
                 
                             <tr>
@@ -69,7 +73,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat15')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  </td>
+                   <!-- <td>6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  </td> -->
+                    <td>6. Bone graft surgery  </td>
                 </tr>
                 
                 
@@ -78,7 +83,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>7. การรักษาทางทันตกรรมจัดฟัน  </td>
+                   <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
+                    <td>7. Corrective orthodontic surgery  </td>
                 </tr>
                 
                 
@@ -87,7 +93,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat1')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td>
+                   <!--  <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td> -->
+                     <td>8. Orthognathic surgery  </td>
                 </tr>
                 
                 
@@ -96,7 +103,8 @@
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat9B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                    <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td>
+                   <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
+                    <td>9. Prosthodontic treatment  </td>
                 </tr>
                 
                 
