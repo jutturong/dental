@@ -101,7 +101,7 @@
                  <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat1')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia9')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!--  <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td> -->
                      <td>9. Orthognathic surgery  </td>
@@ -111,7 +111,7 @@
                  <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat9B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia10')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
                     <td>10. Prosthodontic treatment  </td>

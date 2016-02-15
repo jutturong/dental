@@ -1,10 +1,89 @@
-
-
-<div id="dia_treat1" class="easyui-window" title=" Diagnose of neural abnormalities " data-options="modal:true,closed:true" style="width:400px;height:200px;padding:5px;">
-
-    <div style="margin:0px 0 0px 0;"></div>
-        
+<div id="dia10"  title="10. Prosthodontic treatment " style="width:400px;height: 250px;padding: 10px;" class="easyui-dialog"     data-options="
+     
+     closed:true,
+     buttons:[
+     {  text:'Save', iconCls:'icon-save'   },
+     {  text:'Close', iconCls:'icon-cancel',handler:function(){  $('#dia10').dialog('close');  } }
+     ]
+     ">
+    <div style="padding: 10px 5px"  >
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
     
+     <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+</div>
+
+
+<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:500px;height: 550px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
+     closed:true,
+     
+     ">
+    <div style="padding: 10px 5px;">
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
+        </label>
+    </div>
+    <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่ทำ : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+        </label>
+    </div>
+    <div style="padding: 10px 5px;">
+        <label>
+            Angle 's classicfication : <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            Skeleton  classicfication : <input class="easyui-combobox" data-options=" prompt:' Skeleton  classicfication '   "  style="width:200px;height: 40px;"   />
+        </label>
+    </div>
+    
+      <div style="padding: 10px 5px;">
+        <label>
+            เทคนิคการผ่าตัด : <input class="easyui-combobox" data-options=" prompt:'  เลือกเทคนิคการผ่าตัด '   "  style="width:200px;height: 40px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 120px;">
+        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton">Save</a>
+          <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
+    </div>
+    
+</div>
+
+
+
+<div id="dia_treat1" class="easyui-window" title=" 5. Orthodonic preparation for bone graft surgery  " data-options="modal:true,closed:true" style="width:500px;height:450px;padding:5px;">
+
+    <!--
+    <div style="margin:0px 0 0px 0;"></div>
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
@@ -35,6 +114,41 @@
       
             </table>
         </form>
+    -->
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            แพทย์ผู้ทำการรักษา :  <input class="easyui-combobox"  style="width: 200px;height: 40px;"   />
+        </label>
+    </div>
+    <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่ทำ :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
+        </label>
+    </div>
+    <div style="padding: 10px 5px;">
+        <label>
+             เทคนิคการผ่าตัด : <input class="easyui-textbox"  style="width: 200px;height: 40px;"    />
+        </label>
+       
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่าย (Before) :   <input class="easyui-filebox"  data-options=" prompt:' เลือกไฟล์ภาพ ' "    style="width: 250px;height: 40px;"    />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่าย (After) :   <input class="easyui-filebox"  data-options=" prompt:' เลือกไฟล์ภาพ ' "    style="width: 250px;height: 40px;"    />
+        </label>
+    </div>
+    
+    <div  style="padding: 10px 100px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' "  >Save</a>
+           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_treat1').window('close');  "  >Close</a>
+    </div>
     
     
 </div> 
@@ -818,7 +932,7 @@
 
 
 
-<div id="dia_treat12" class="easyui-window" title=" 7. การรักษาทางทันตกรรมจัดฟัน " data-options="modal:true,closed:true" style="width:500px;height:300px;padding:5px;">
+<div id="dia_treat12" class="easyui-window" title=" 8. Treatment  " data-options="modal:true,closed:true" style="width:500px;height:300px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -903,7 +1017,7 @@
                 <tr>
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
                     </td>
                   
                 </tr>
@@ -1103,7 +1217,7 @@
 
 
 
-<div id="dia_treat15" class="easyui-window" title=" 6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  " data-options="modal:true,closed:true" style="width:500px;height:200px;padding:5px;">
+<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:500px;height:200px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -1176,7 +1290,7 @@
                 <tr>
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
                     </td>
                   
                 </tr>
@@ -1667,7 +1781,7 @@
 </div>
 
 
-<div id="dia_treat9B" class="easyui-window" title=" 9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร " data-options="modal:true,closed:true" style="width:700px;height:250px;padding:5px;">
+<div id="dia_treat9B" class="easyui-window" title=" 9. Orthognathic surgery " data-options="modal:true,closed:true" style="width:700px;height:250px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
