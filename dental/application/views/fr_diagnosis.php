@@ -20,7 +20,7 @@
     <div class="easyui-tabs" >
         
         
-          <div title="แบบฟอร์มบันทึกข้อมูล Diagnosis" style="padding:10px" data-options="iconCls:'icon-save'">
+          <div title=" Diagnosis " style="padding:10px" data-options="iconCls:'icon-save'">
             
           
             

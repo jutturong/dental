@@ -54,7 +54,7 @@
                       
                         handler:function(){
                              //alert('t');
-                               openpt('เพิ่มประวัติผุ้ป่วย');
+                               openpt('เรียกดูประวัติผู้ป่วย');
                         }
                         
                     }
@@ -132,7 +132,7 @@
                           height:700,
                           closed:false,
                           cache:false,
-                          href: '',
+                         
                           modal:true,
                           
                       });
@@ -334,10 +334,10 @@
     </div>
       -->                       
 
-    <div id="dia1" class="easyui-window" title="" data-options="modal:true,closed:true,iconCls:'icon-help'" style="width:500px;height:200px;padding:10px;">             
+    <div id="dia1" class="easyui-window" title="" data-options="modal:true,closed:true,iconCls:'icon-man'" style="width:500px;height:200px;padding:10px;">             
     <div style="margin:10px 0 10px 0;"></div>
     <div class="easyui-tabs" style="width:600px;height:600px">
-        <div title="ประวัติผู้ป่วยเบื้องต้น" style="padding:10px">
+        <div title="เพิ่มประวัติผู้ป่วย" style="padding:10px">
          
             
             <form id="ff" method="post">
