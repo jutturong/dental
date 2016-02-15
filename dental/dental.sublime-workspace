@@ -1,0 +1,289 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"err",
+				"err_query"
+			],
+			[
+				"con",
+				"connection"
+			],
+			[
+				"file",
+				"fieles"
+			],
+			[
+				"us",
+				"use"
+			],
+			[
+				"re",
+				"respond"
+			],
+			[
+				"res",
+				"respond"
+			],
+			[
+				"requ",
+				"resquest"
+			],
+			[
+				"g",
+				"guestbook"
+			],
+			[
+				"br",
+				"brand"
+			],
+			[
+				"mo",
+				"model"
+			],
+			[
+				"sma",
+				"smartphone_list"
+			],
+			[
+				"send",
+				"sendfile"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"ru",
+				"require"
+			],
+			[
+				"pro",
+				"product"
+			],
+			[
+				"mysql_fetch_a",
+				"mysql_fetch_assoc"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/views/home.php",
+			"settings":
+			{
+				"buffer_size": 26619,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"selected_items":
+		[
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/linux/Desktop/jnode/mysql/repository/user.js",
+		"/C/Users/linux/Desktop/jnode/mysql/routes/users.js",
+		"/C/vagrant/Vagrantfile",
+		"/C/Users/linux/Desktop/vagrant/Vagrantfile",
+		"/C/Users/linux/Desktop/jnode/jade/views/user.jade",
+		"/C/Users/linux/Desktop/jnode/jade/routes/users.js",
+		"/C/Users/linux/Desktop/jnode/jade/views/index.jade",
+		"/C/Users/linux/Desktop/jnode/jade/routes/index.js",
+		"/C/Users/linux/Desktop/jnode/jade/views/layout.jade",
+		"/C/Users/linux/Desktop/jnode/moduljs/app.js",
+		"/C/Users/linux/Desktop/jnode/moduljs/package.json",
+		"/C/Users/linux/Desktop/jnode/moduljs/routes/users.js",
+		"/C/Users/linux/Desktop/jnode/moduljs/library/demo.js",
+		"/C/Users/linux/Desktop/jnode/lab04/public/html/uploadhtml.html",
+		"/C/Users/linux/Desktop/jnode/lab04/app.js",
+		"/C/Users/linux/Desktop/jnode/lab04/routes/upload.js",
+		"/C/Users/linux/Desktop/jnode/lab03/routes/guestbook.js",
+		"/C/Users/linux/Desktop/jnode/lab03/app.js",
+		"/C/Users/linux/Desktop/jnode/lab03/package.json",
+		"/C/Users/linux/Desktop/jnode/lab03/public/html/guestbook.html",
+		"/C/Users/linux/Desktop/jnode/lab02/public/html/smartphone_list.html",
+		"/C/Users/linux/Desktop/jnode/lab02/routes/smartphone.js",
+		"/C/Users/linux/Desktop/jnode/lab02/package.json",
+		"/C/Users/linux/Desktop/jnode/lab02/app.js",
+		"/C/Users/linux/Desktop/jnode/lab02/bin/www",
+		"/C/Users/linux/AppData/Local/Temp/Rar$DRa0.832/tree2_getdata.php",
+		"/C/Users/linux/Desktop/jnode/lab02/routes/product.js",
+		"/C/Users/linux/Desktop/jnode/lab02/routes/index.js",
+		"/C/Users/linux/Desktop/jnode/lab02/views/index.jade",
+		"/C/Users/linux/Desktop/jnode/lab02/routes/users.js",
+		"/C/xampp/htdocs/donate/easy/demo/accordion/ajax.html",
+		"/C/xampp/htdocs/j/demo/menu/inline.html",
+		"/C/Users/linux/Desktop/easyui-datagrid2-demo/datagrid2_getdata.php",
+		"/E/vagrant/Vagrantfile",
+		"/E/vargrant_getting_started/Vagrantfile",
+		"/C/Users/linux/Desktop/sakon/serviceSakon/ServerSide.php",
+		"/C/Users/linux/Desktop/sakon/serviceSakon/ClientSide.php",
+		"/C/Users/linux/Desktop/esn_server_DB_backup/esn2/application/config/database.php",
+		"/C/Users/linux/Desktop/esn_server_DB_backup/esn2/application/config/config.php",
+		"/C/Users/linux/Desktop/สสจ/serviceSakon/ServerSide.php",
+		"/C/xampp/htdocs/mobile/page1.php",
+		"/C/xampp/htdocs/json2/getJSON2_.php",
+		"/C/xampp/htdocs/json2/autocomp_patient.php",
+		"/C/xampp/htdocs/mobile/configDB.php",
+		"/C/xampp/htdocs/json2/configMYSQL.php",
+		"/C/xampp/htdocs/json2/insertWeight.php",
+		"/C/Users/linux/Desktop/tb_patient2.sql",
+		"/C/xampp/htdocs/json2/configDB.php",
+		"/C/xampp/htdocs/json2/checkLogin_.php",
+		"/C/xampp/htdocs/dental/application/config/database.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"820",
+			"url"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/views/home.php",
+					"settings":
+					{
+						"buffer_size": 26619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

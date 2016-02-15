@@ -35,7 +35,7 @@
                 <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat6')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat2_mo')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                   <!--  <td>2. การผ่าตัดซ่อมแซมริมฝีปาก จมูก และพื้ันจมูก  </td> -->
                     <td>2. Cleft lip, nasal and nasal floor repair </td>
@@ -84,7 +84,17 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
-                    <td>7. Corrective orthodontic surgery  </td>
+                    <td>7. Growth modification  </td>
+                </tr>
+                
+                
+                      <tr>
+                    <td> 
+                        <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                    </td>
+                   <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
+                    <td>8. Treatment  </td>
                 </tr>
                 
                 
@@ -94,7 +104,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat1')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!--  <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td> -->
-                     <td>8. Orthognathic surgery  </td>
+                     <td>9. Orthognathic surgery  </td>
                 </tr>
                 
                 
@@ -104,7 +114,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat9B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
-                    <td>9. Prosthodontic treatment  </td>
+                    <td>10. Prosthodontic treatment  </td>
                 </tr>
                 
                 

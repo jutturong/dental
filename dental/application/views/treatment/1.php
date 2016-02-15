@@ -39,6 +39,55 @@
     
 </div> 
 
+<div id="dia_treat2_mo"  class="easyui-window"  title="2. Cleft lip, nasal and nasal floor repair "   style="width:400px;height: 400px;left:10px;top: 10px"
+     data-options="
+     iconCls:'icon-add' ,
+     closed:true, 
+    
+      "
+     >
+    
+    <div style="padding: 10px 5px;" >
+        <label>
+            แพทย์ผู้ทำการรักษา :
+            <input class="easyui-textbox"  style="width:200px;height: 40px;"   data-options=" iconCls:'icon-man',  "   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;" >
+        <label>
+           วัน/เดือน/ปี ที่ทำ :
+            <input class="easyui-datebox"  style="width:150px;height: 40px;"    />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            เทคนิคการผ่าตัด :
+            <input class="easyui-textbox"   style="width:200px;height: 40px;"  />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่าย (Before) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่าย (After) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
+    <div style="padding:10px  100px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="height: 40px;width:80px;"  >Save</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' ,onClick:function(){  $('#dia_treat2_mo').window('close');  }  "    style="height: 40px;width:80px;"  >Close</a>
+    </div>
+    
+</div>
 
 
 <div id="dia_treat2" class="easyui-window" title=" Diagnose of congenital abnormalities " data-options="modal:true,closed:true" style="width:400px;height:200px;padding:5px;">
@@ -81,7 +130,7 @@
 </div>   
 
 
-<div id="dia_treat3" class="easyui-window" title="1. บำบัดทางทันตกรรมจัดฟันก่อนการศัลยกรรมสำหรับทารก (PSOT)" data-options="modal:true,closed:true" style="width:600px;height:350px;padding:5px;">
+<div id="dia_treat3" class="easyui-window" title="1. Pre-surgical orthopedics therapy (PSOT)" data-options="modal:true,closed:true" style="width:600px;height:350px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -89,13 +138,15 @@
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
-                    <td>ผู้ทำการรักษา :</td>
+                    <td>ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
                 </tr>
                 <tr>
                     <td>วัน/เดือน/ปี ที่ทำ :</td>
                     <td><input name="name1" id="name1" class="easyui-datebox"></input></td>
                 </tr>
+                
+               <!-- 
                      <tr>
                     <td>เครื่องมือที่ใช้ :</td>
                     <td>
@@ -127,7 +178,7 @@
                     <td>วันที่ถอดเครื่องมือ :</td>
                     <td><input name="name1" id="name1" class="easyui-datebox"></input></td>
                 </tr>
-                
+                -->
                 
                 <tr>
                     <td colspan="2">
@@ -401,7 +452,7 @@
 
 
 
-<div id="dia_treat7" class="easyui-window" title=" 3. การผ่าตัดแก้ไขเพดานอ่อน " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
+<div id="dia_treat7" class="easyui-window" title=" 3. Palate repair  " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -453,7 +504,7 @@
                 <tr>
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove' , onClick:function(){ $('#dia_treat7').window('close');    }   ">Close</a>
                     </td>
                   
                 </tr>
@@ -1537,11 +1588,10 @@
 
 
 
-<div id="dia_treat4B" class="easyui-window" title=" 4. การผ่าตัดแก้ไขเพดานแข็ง " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
+<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
 
+    <!--
     <div style="margin:0px 0 0px 0;"></div>
-        
-    
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
@@ -1596,7 +1646,23 @@
       
             </table>
         </form>
+    -->
+        
+          <div style="padding:10px 5px;" > 
+              <label>
+                  ทันตแพทย์ผู้ทำการรักษา :  <input class="easyui-combobox"   style="width:200px;height: 40px;"    />
+              </label>
+          </div>
+    <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่ทำ :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+        </label>
+    </div>
     
+    <div style="padding: 5px 120px;">
+        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:90px;height: 40px;"     >Save</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' , onClick:function(){  $('#dia_treat4B').window('close');  } "     style="width:90px;height: 40px;"     >Close</a>
+    </div>
     
 </div>
 

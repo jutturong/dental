@@ -267,7 +267,7 @@
                    
                     <?=$this->load->view('popup3')?>
                    
-                   <?=$this->load->view("treatment/1")?>  
+                   <?=$this->load->view("treatment/1")?>  <!-- popup ท้งหมด -->
                     <?=$this->load->view("fr_diagnosis")?>
                    
                    <!--   Diagnose of neural abnormalities   -->
