@@ -1,4 +1,4 @@
-<div id="dia10"  title="10. Prosthodontic treatment " style="width:400px;height: 250px;padding: 10px;" class="easyui-dialog"     data-options="
+<div id="dia10"  title="10. Other surgery " style="width:800px;height: 800px;padding: 10px;" class="easyui-dialog"     data-options="
      
      closed:true,
      buttons:[
@@ -6,7 +6,71 @@
      {  text:'Close', iconCls:'icon-cancel',handler:function(){  $('#dia10').dialog('close');  } }
      ]
      ">
+    
+    
+      <div class="easyui-tabs" style="width:700px;height:800px">
+                <div title="Vestibuloplasty" style="padding:10px">
+       
+     <!-------------------- begin ---------------------->               
     <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            
+               <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+
+            
+            
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>       
+
+  <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+
+     
+      <!-------------------- begin ---------------------->                   
+                       
+                       
+                </div>
+               <div title="Frenectomy" style="padding:10px">
+                         <!-------------------- begin ---------------------->               
+    <div style="padding: 10px 5px"  >
+
         <label>
             ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
@@ -16,58 +80,531 @@
             วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
         </label>
     </div> 
-    
-     <div style="padding: 10px 5px"  >
+       
+        <div style="padding: 10px 5px"  >
         <label>
             เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
     
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>    
+                         
+                           <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+                         
+      <!-------------------- begin ---------------------->   
+                </div>
+                 <div title="Gingivectomy" style="padding:10px">
+       <!-------------------- begin ---------------------->               
+    <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>   
+       
+         <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+       
+       
+      <!-------------------- begin ---------------------->                     
+                </div>
+          
+              <div title="Torectomy" style="padding:10px">
+      <!-------------------- begin ---------------------->               
+    <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>   
+      
+        <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+      <!-------------------- begin ---------------------->                      
+                </div>
+                
+                <div title="Oronasal fistula closure" style="padding:10px">
+     <!-------------------- begin ---------------------->               
+    <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>     
+     
+       <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+      <!-------------------- begin ---------------------->                       
+                </div>
+          
+                <div title="อื่นๆ " style="padding:10px">
+       <!-------------------- begin ----------------------> 
+       <div style="padding: 10px 5px"  >
+           อื่นๆ : <input class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+           
+       </div>
+       
+       
+    <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>           
+       
+       
+         <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+      <!-------------------- begin ---------------------->                     
+                </div>
+          
+            </div>  
+    
+    
+    
+    
+    
+     
+    
 </div>
 
 
-<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:500px;height: 550px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
+<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:800px;height: 550px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
      closed:true,
      
      ">
+    
+    <div class="easyui-tabs" style="width:700px;" >
+        <div title=" Orthognathic surgery ( Main ) " style="padding:10px">
+            <!---------------------- begin ------------------------------------------>
     <div style="padding: 10px 5px;">
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
+            แพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
         </label>
     </div>
     <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่ทำ : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            
+             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            
         </label>
     </div>
+   
+
+    <!--
+           <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+        </label>
+    </div> 
+    -->
+    
+    
+
+  
+    
+    <div style="padding: 10px 5px;">
+              Classification of GOSLON  : 
+                </td>
+                <td>
+              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">Group 1</option>
+                        <option value="2">Group 2</option>
+                        <option value="3">Group 3</option>
+                        <option value="4">Group 4</option>
+                        <option value="5">Group 5</option>
+                </select>
+    </div>
+    
     <div style="padding: 10px 5px;">
         <label>
-            Angle 's classicfication : <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
+            Incisor classification of malocclusion : 
+            
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
+             -->
+             
+               <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">I</option>
+               <option value="2">II div 1</option>
+                       <option value="3">II div 2</option>
+               <option value="4">III</option>
+               
+                </select>
+             
         </label>
     </div>
     
     <div style="padding: 10px 5px;">
         <label>
-            Skeleton  classicfication : <input class="easyui-combobox" data-options=" prompt:' Skeleton  classicfication '   "  style="width:200px;height: 40px;"   />
-        </label>
+            Skeletal  classicfication : 
+            
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:' Skeleton  classicfication '   "  style="width:200px;height: 40px;"   />
+            -->
+            
+            
+            
+                    <input type="radio" name="inc1"   />  I
+                    
+                       <input type="radio"   name="inc1"  />  II 
+              
+      
+                    
+                    <input type="radio"  name="inc1"   />  III
+                 
+                    
+            </label>
     </div>
     
       <div style="padding: 10px 5px;">
         <label>
-            เทคนิคการผ่าตัด : <input class="easyui-combobox" data-options=" prompt:'  เลือกเทคนิคการผ่าตัด '   "  style="width:200px;height: 40px;"   />
+            เทคนิคการผ่าตัด : 
+            
+            <input type="radio"  > Maxilla    ระบุ  : <input  class="easyui-textbox"   style="width: 100px;height: 30px;"   />   
+            
+            <input type="radio"  > Mandible  ระบุ  : <input  class="easyui-textbox"  style="width: 100px;height: 30px;"   />  
+            
+          
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:'  เลือกเทคนิคการผ่าตัด '   "  style="width:200px;height: 40px;"   />
+            -->
+            
+         
+            
         </label>
     </div>
     
     <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+               ชนิดเครื่องมือ : <input class="easyui-textbox"   style="width: 200px;height: 30px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+    
+    
+    
+    
+    <div style="padding: 10px 120px;">
+        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton">Save</a>
+          <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
+    </div>
+    
+      <!---------------------- end ------------------------------------------>
+        </div>
+        
+        <div title="Distraction" style="padding:10px">
+          
+            
+            <!---------------------- begin ------------------------------------------>
+    <div style="padding: 10px 5px;">
+        <label>
+            แพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
+        </label>
+    </div>
+    <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            
+             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            
+        </label>
+    </div>
+   
+             <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            
+             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            
+        </label>
+    </div>
+            
+
+    <!--
+           <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+        </label>
+    </div> 
+    -->
+    
+    <div style="padding: 10px 5px;">
+              Classification of GOSLON  : 
+                </td>
+                <td>
+              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">Group 1</option>
+                        <option value="2">Group 2</option>
+                        <option value="3">Group 3</option>
+                        <option value="4">Group 4</option>
+                        <option value="5">Group 5</option>
+                </select>
+    </div>
+    
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            Incisor classification of malocclusion : 
+            
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
+           -->
+           
+                          <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">I</option>
+               <option value="2">II div 1</option>
+                       <option value="3">II div 2</option>
+               <option value="4">III</option>
+               
+                </select>
+        
+        
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            Skeletal  classicfication : 
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:' Skeleton  classicfication '   "  style="width:200px;height: 40px;"   />
+            -->
+            
+                       <input type="radio" name="inc1"   />  I
+                    
+                       <input type="radio"   name="inc1"  />  II 
+              
+      
+                    
+                    <input type="radio"  name="inc1"   />  III
+        
+        </label>
+    </div>
+    
+      <div style="padding: 10px 5px;">
+        <label>
+            เทคนิคการผ่าตัด : 
+            
+            <input type="radio"  > Maxilla    ระบุ  : <input  class="easyui-textbox"   style="width: 100px;height: 30px;"   />   
+            
+            <input type="radio"  > Mandible  ระบุ  : <input  class="easyui-textbox"  style="width: 100px;height: 30px;"   />  
+            
+          
+            <!--
+            <input class="easyui-combobox" data-options=" prompt:'  เลือกเทคนิคการผ่าตัด '   "  style="width:200px;height: 40px;"   />
+            -->
+            
+         
+            
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+               ชนิดเครื่องมือ : <input class="easyui-textbox"   style="width: 200px;height: 30px;"   />
+        </label>
+    </div>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
@@ -76,74 +613,102 @@
           <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
     </div>
     
+      <!---------------------- end ------------------------------------------>
+            
+        </div>
+        
+    </div>
+    
+    
+    
 </div>
 
 
 
-<div id="dia_treat1" class="easyui-window" title=" 5. Orthodonic preparation for bone graft surgery  " data-options="modal:true,closed:true" style="width:500px;height:450px;padding:5px;">
+<div id="dia_treat1" class="easyui-window" title=" 5. Orthodonic preparation for bone graft surgery  " data-options="modal:true,closed:true" style="width:600px;height:600px;padding:5px;">
 
-    <!--
-    <div style="margin:0px 0 0px 0;"></div>
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td>ผู้ตรวจ :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
-                </tr>
-                <tr>
-                    <td>วัน/เดือน/ปี ที่ทำ :</td>
-                    <td><input name="name1" id="name1" class="easyui-datebox"></input></td>
-                </tr>
-                     <tr>
-                    <td>Diagnosis :</td>
-                    <td><input name="name1" id="name1"  class="easyui-textbox" ></input></td>
-                </tr>
-                
-                <tr>
-                    <td>รูปถ่าย :</td>
-                    <td><input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%"></td>
-                </tr>
-                
-                <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                             <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
-                    </td>
-                  
-                </tr>
-      
-            </table>
-        </form>
-    -->
+    
     
     <div style="padding: 10px 5px;">
         <label>
             แพทย์ผู้ทำการรักษา :  <input class="easyui-combobox"  style="width: 200px;height: 40px;"   />
         </label>
     </div>
-    <div style="padding: 10px 5px;">
-        <label>
-            วัน/เดือน/ปี ที่ทำ :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
-        </label>
-    </div>
-    <div style="padding: 10px 5px;">
-        <label>
-             เทคนิคการผ่าตัด : <input class="easyui-textbox"  style="width: 200px;height: 40px;"    />
-        </label>
-       
-    </div>
+  
     
-    <div style="padding: 10px 5px;">
-        <label>
-            รูปถ่าย (Before) :   <input class="easyui-filebox"  data-options=" prompt:' เลือกไฟล์ภาพ ' "    style="width: 250px;height: 40px;"    />
-        </label>
-    </div>
     
         <div style="padding: 10px 5px;">
         <label>
-            รูปถ่าย (After) :   <input class="easyui-filebox"  data-options=" prompt:' เลือกไฟล์ภาพ ' "    style="width: 250px;height: 40px;"    />
+            
+            วัน/เดือน/ปี ที่เริ่มทำการรักษา  :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
+            
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 30px;"    />
+            
+            
         </label>
     </div>
+    
+            <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา  :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
+            
+          
+            
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 30px;"    />
+            
+            
+        </label>
+    </div>
+    
+      
+    
+
+    
+    <!--
+    <div style="padding: 10px 5px;">
+        <label>
+            <?=nbs(30)?>
+            Diagnosis :   
+      
+            <input class="easyui-textbox"   style="width:300px;height: 30px;"  />
+         
+  
+        </label>
+    </div>
+    -->
+    
+    
+ 
+    
+ <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+       <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+    
+       <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+     
+    
+      <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+    
+    
     
     <div  style="padding: 10px 100px;">
         <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' "  >Save</a>
@@ -153,7 +718,7 @@
     
 </div> 
 
-<div id="dia_treat2_mo"  class="easyui-window"  title="2. Cleft lip, nasal and nasal floor repair "   style="width:400px;height: 400px;left:10px;top: 10px"
+<div id="dia_treat2_mo"  class="easyui-window"  title="2. Lip nasal and nasal floor repair "   style="width:700px;height: 550px;left:10px;top: 10px"
      data-options="
      iconCls:'icon-add' ,
      closed:true, 
@@ -161,6 +726,8 @@
       "
      >
     
+    
+    <!--
     <div style="padding: 10px 5px;" >
         <label>
             แพทย์ผู้ทำการรักษา :
@@ -170,7 +737,14 @@
     
         <div style="padding: 10px 5px;" >
         <label>
-           วัน/เดือน/ปี ที่ทำ :
+           วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+            <input class="easyui-datebox"  style="width:150px;height: 40px;"    />
+        </label>
+    </div>
+    
+            <div style="padding: 10px 5px;" >
+        <label>
+           วัน/เดือน/ปี ที่สิ้นสุดการรักษา :
             <input class="easyui-datebox"  style="width:150px;height: 40px;"    />
         </label>
     </div>
@@ -181,24 +755,62 @@
             <input class="easyui-textbox"   style="width:200px;height: 40px;"  />
         </label>
     </div>
+    -->
+
     
+    <!--
     <div style="padding: 10px 5px;">
         <label>
-            รูปถ่าย (Before) :
+            Procedure : 
+            <input type="checkbox"  />  1.Strapping  
+                        <input type="checkbox"  />  2.Nasal Molding 
+                        <input type="checkbox"  />  3.Alveolar  Molding  
+                        <input type="checkbox"  /> 4. Simple Obturator 
+                        <br>
+                        <input type="checkbox"  />  อื่นๆ 
+                        <input class="easyui-textbox"   data-options=" mutilne:true, "  style="width:300px;height: 50px"    /> 
+                        
+                        
+                       
+        </label>
+        
+    </div>
+    -->
+    
+    <!--
+    <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่ายก่อนการรักษา (Before) :
             <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
+    
+            <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่ายระหว่างการรักษา (During) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
     
         <div style="padding: 10px 5px;">
         <label>
-            รูปถ่าย (After) :
+            รูปถ่ายหลังการรักษา (After) :
             <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
+    -->
     
     <div style="padding:10px  100px;">
+        
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-reload'  "  onclick="  window.open('http://www.sanook.com');  "  style="height: 40px;width:80px;"  >เชื่อมโยง</a>
+        
+        <!--
         <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="height: 40px;width:80px;"  >Save</a>
         <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' ,onClick:function(){  $('#dia_treat2_mo').window('close');  }  "    style="height: 40px;width:80px;"  >Close</a>
+        -->
+        
+    
     </div>
     
 </div>
@@ -244,7 +856,8 @@
 </div>   
 
 
-<div id="dia_treat3" class="easyui-window" title="1. Pre-surgical orthopedics therapy (PSOT)" data-options="modal:true,closed:true" style="width:600px;height:350px;padding:5px;">
+<div id="dia_treat3" class="easyui-window" title="1. Pre-surgical orthopedics therapy (PSOT)" data-options="modal:true,closed:true" 
+     style="width:700px;height:350px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -255,9 +868,95 @@
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
                 </tr>
+                
+                 <tr>
+                    <td>ทันตแพทย์ผู้ร่วมทำการรักษา :</td>
+                    <td>
+                        <input class="easyui-textbox"  style="width:200px;height: 30px"   />
+                    
+                    </td>
+                </tr>
+                
+                
                 <tr>
-                    <td>วัน/เดือน/ปี ที่ทำ :</td>
-                    <td><input name="name1" id="name1" class="easyui-datebox"></input></td>
+                    <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
+                    <td>
+                        <input name="name1" id="name1" class="easyui-datebox"></input>
+                        
+                        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"     />คำนวณอายุ</a>
+                        <input class="easyui-textbox"   style="width: 50px;height: 30px;"   />
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>วัน/เดือน/ปี ที่สิ้นสุดการรักษา :</td>
+                    <td>
+                        <input name="name1" id="name1" class="easyui-datebox"></input>
+                        
+                     <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"     />คำนวณอายุ</a>
+                        <input class="easyui-textbox"   style="width: 50px;height: 30px;"   />
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                         Procedure : 
+                    </td>
+                    <td>
+                        <input type="checkbox"  />  1.Strapping  
+                        <input type="checkbox"  />  2.Nasal Molding 
+                        <input type="checkbox"  />  3.Alveolar  Molding  
+                        <input type="checkbox"  /> 4. Simple Obturator 
+                        <br>
+                        <input type="checkbox"  />  5.อื่นๆ 
+                        <input class="easyui-textbox"   data-options=" mutilne:true, "  style="width:300px;height: 20px"    /> 
+                    </td>
+                </tr>
+                
+           
+                <tr>
+                    <td>
+                       รูปถ่ายก่อนการรักษา (Before) :   
+                    </td>
+                    <td>
+                        <input class="easyui-filebox"   />
+                    </td>
+                </tr>
+                
+                                <tr>
+                    <td>
+                       รูปถ่ายระหว่างการรักษา (During) :   
+                    </td>
+                    <td>
+                        <input class="easyui-filebox"   />
+                    </td>
+                </tr>
+                
+                                <tr>
+                    <td>
+                       รูปถ่ายหลังการรักษา (After) :   
+                    </td>
+                    <td>
+                        <input class="easyui-filebox"   />
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        
+                    </td>
+                    
                 </tr>
                 
                <!-- 
@@ -298,6 +997,7 @@
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'"  onclick=" $('#dia_sub_dia_treat3').dialog('open');  " >Preview</a>
                     </td>
                   
                 </tr>
@@ -307,6 +1007,12 @@
     
     
 </div>   
+
+<div class="easyui-dialog"  id="dia_sub_dia_treat3"  title=" จำนวนวันที่ทำการรักษา "   style="width:300px;height: 400px;top: 10px;left: 10px;" 
+     data-options="  modal:false,closed:true   "
+     >
+       
+</div>
 
 
 <div id="dia_treat4" class="easyui-window" title=" Feeding and neonatal care in children with cleft lip-palate " data-options="modal:true,closed:true" style="width:500px;height:200px;padding:5px;">
@@ -531,7 +1237,15 @@
                 </tr> 
 
                 <tr>
-                    <td>รุปถ่าย (Before) :</td>
+                    <td>รุปถ่ายก่อนการรักษา (Before) :</td>
+                    <td>
+                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+                        
+                    </td>
+                </tr>
+                
+                       <tr>
+                    <td>รุปถ่ายระหว่างการรักษา (During) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
@@ -539,7 +1253,7 @@
                 </tr>
                 
                      <tr>
-                    <td>รุปถ่าย (After) :</td>
+                    <td>รุปถ่ายการรักษา (After) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
@@ -566,25 +1280,40 @@
 
 
 
-<div id="dia_treat7" class="easyui-window" title=" 3. Palate repair  " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
+<div id="dia_treat7" class="easyui-window" title=" 3. Palate repair  " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
     
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
             <table>
+                
+                <!--
                 <tr>
                     <td>แพทย์ผู้ทำการรักษา :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
                 </tr>
                 <tr>
-                    <td>วัน/เดือน/ปี ที่ทำ :</td>
+                    <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา  :</td>
                     <td>
                     
                         <input class="easyui-datebox"></input>
                     </td>
                 </tr>
-                 
+                
+                <tr>
+                    <td>
+                        วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
+                      
+                        
+                    </td>
+                    <td>
+                            <input class="easyui-datebox"></input>
+                    </td>
+                        
+                </tr>
+                    
+                                
                 <tr>
                     <td>เทคนิคการผ่าตัด :</td>
                     
@@ -597,7 +1326,15 @@
                 </tr> 
 
                 <tr>
-                    <td>รุปถ่าย (Before) :</td>
+                    <td>รุปถ่ายก่อนการรักษา (Before) :</td>
+                    <td>
+                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+                        
+                    </td>
+                </tr>
+                
+                       <tr>
+                    <td>รุปถ่ายระหว่างการรักษา (During) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
@@ -605,20 +1342,23 @@
                 </tr>
                 
                      <tr>
-                    <td>รุปถ่าย (After) :</td>
+                    <td>รุปถ่ายหลังการรักษา (After) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
                     </td>
                 </tr>
-                
+                -->
             
                 
                 
                 <tr>
                     <td colspan="2">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'"   onclick=" window.open('http://www.sanook.com'); " >เชื่อมโยง</a>
+                        <!--
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove' , onClick:function(){ $('#dia_treat7').window('close');    }   ">Close</a>
+                           -->
                     </td>
                   
                 </tr>
@@ -930,15 +1670,10 @@
 </div>
 
 
+<div id="dia_treat12_7" class="easyui-window" title=" 7. Growth modification  " data-options="modal:true,closed:true" style="width:800px;height:500px;">
 
-
-<div id="dia_treat12" class="easyui-window" title=" 8. Treatment  " data-options="modal:true,closed:true" style="width:500px;height:300px;padding:5px;">
-
-    <div style="margin:0px 0 0px 0;"></div>
-        
-    
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
-            <table>
+                <table >
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
@@ -950,31 +1685,104 @@
                     <td>
                     
                         <input class="easyui-datebox"></input>
+                        
+                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+            
+            
                     </td>
                 </tr>
                 
+                 
+                
+                    <tr>
+                    <td>วัน/เดือน/ปี ที่สิ้นสุดการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datebox"></input>
+                        
+                        
+           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+            
+            
+                    </td>
+                </tr>
+                
+                <tr> 
+                    <td>
+                <div style="padding: 10px 5px;">
+              Classification of GOSLON  : 
+                </td>
+                <td>
+              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">Group 1</option>
+                        <option value="2">Group 2</option>
+                        <option value="3">Group 3</option>
+                        <option value="4">Group 4</option>
+                        <option value="5">Group 5</option>
+                </select>
+    </div>
+                    </td>
+            </tr>
+                
+                
                    <tr>
-                    <td>Angle's classification :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td>Incisor classification of malocclusion:</td>
+                    <td>
+                        
+                        <!--
+                        <input name="name1" id="name1" class="easyui-combobox"></input>
+                      -->
+                      
+                                             <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">I</option>
+               <option value="2">II div 1</option>
+                       <option value="3">II div 2</option>
+               <option value="4">III</option>
+               
+                </select>
+                      
+                    
+                    </td>
                 </tr>
                 
                   <tr>
-                    <td>Skeleton classification :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td>Skeletal  classification :</td>
+                    <td>
+                        
+                        <!--
+                        <input name="name1" id="name1" class="easyui-combobox"></input>
+                        -->
+                        
+                         <input type="radio" name="inc1"   />  I
+                    
+                       <input type="radio"   name="inc1"  />  II 
+              
+      
+                    
+                    <input type="radio"  name="inc1"   />  III
+                    
+                    
+                    </td>
                 </tr>
                 
                  <tr>
                     <td>ชนิดของเครื่องมือ :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
-                </tr>
-          
-                     <tr>
-                    <td>วัน/เดือน/ปี ที่เสร็จสิ้นการรักษา :</td>
                     <td>
+                        
+                        <!--
+                        <input name="name1" id="name1" class="easyui-combobox"></input>
+                    -->
                     
-                        <input class="easyui-textbox"></input>
+                    <input type="radio"  > Facial mask  <?=nbs(3)?> ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 30px"  />
+                    <input type="radio"  > Functional appliance  <?=nbs(3)?>   ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 30px"  />
+                    
+                    
                     </td>
                 </tr>
+          
+                     
                 
                 
 <!--
@@ -995,23 +1803,232 @@
                 </tr>
  -->               
 
- <tr>
+ 
+ 
+  <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+         รูปถ่ายก่อนการรักษา (Before) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+     </td>
+ </tr> 
+ 
+   <tr>
+     <td>
+         รูปถ่ายระหว่างรักษา (During) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+     </td>
+ </tr> 
+ 
+    <tr>
+     <td>
+         รูปถ่ายหลังรักษา (After) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+     </td>
+ </tr> 
+ 
+ 
+           <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        
+                    </td>
+                    
+                </tr>
+ 
+                
+                <tr>
+                    <td colspan="2">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                    </td>
+                  
+                </tr>
+      
+            </table>
+        </form>
+    
+    
+</div>
+
+<div id="dia_treat12" class="easyui-window" title=" 8. Corrective Orthodontic Treatment  " data-options="modal:true,closed:true" style="width:700px;height:300px;padding:5px;">
+
+    <div style="margin:0px 0 0px 0;"></div>
+        
+    
+            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>ทันตแพทย์ผู้ทำการรักษา :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datebox"></input>
+                        
+                        
+                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        
+                        
+                    </td>
+                </tr>
+                
+                 
+                
+                    <tr>
+                    <td>วัน/เดือน/ปี ที่สิ้นสุดการรักษา :</td>
+                    <td>
+                        
+                        
+                        
+                        
+                    
+                        <input class="easyui-datebox"></input>
+                        
+                        
+                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                    
+            
+            
+                    </td>
+                </tr>
+                
+                <tr> 
+                    <td>
+                <div style="padding: 10px 5px;">
+              Classification of GOSLON  : 
+                </td>
+                <td>
+              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">Group 1</option>
+                        <option value="2">Group 2</option>
+                        <option value="3">Group 3</option>
+                        <option value="4">Group 4</option>
+                        <option value="5">Group 5</option>
+                </select>
+    </div>
+                    </td>
+            </tr>
+            
+                <tr>
+                    <td>
+      <div style="padding: 10px 5px;">
+                    Incisor classification of malocclusion : 
+      </td>
+      <td>
+                    <input type="radio" name="inc1"   />  I
+                    
+                    <input type="radio"   name="inc1"  />  II div 1 
+                    
+                       <input type="radio"   name="inc1"  />  II div 2
+                    
+                    <input type="radio"  name="inc1"   />  III
+    </div>
+                    </td>
+            </tr>
+                
+                <tr>
+                    <td>
+          <div style="padding: 10px 5px;">
+                    Skeletal  classification of malocclusion : 
+          </td>
+          <td>
+                    <input type="radio" name="inc1"   />  I
+                    <input type="radio"   name="inc1"  />  II
+                    <input type="radio"  name="inc1"   />  III
+    </div>
+                    </td>
+               </tr> 
+                   
+                
+                 <tr>
+                    <td>ชนิดของเครื่องมือ :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+          
+                     
+                
+                
+<!--
+                <tr>
+                    <td>รุปถ่าย (Before) :</td>
+                    <td>
+                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+                        
+                    </td>
+                </tr>
+                
+                     <tr>
+                    <td>รุปถ่าย (After) :</td>
+                    <td>
+                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+                        
+                    </td>
+                </tr>
+ -->               
+
+ 
+ 
+  <tr>
+     <td>
+         รูปถ่ายก่อนการรักษา (Before) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
  
-  <tr>
+   <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+         รูปถ่ายระหว่างรักษา (During) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
+ 
+    <tr>
+     <td>
+         รูปถ่ายหลังรักษา (After) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+     </td>
+ </tr> 
+ 
+ 
+          <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        
+                    </td>
+                    
+                </tr>
  
                 
                 <tr>
@@ -1217,7 +2234,7 @@
 
 
 
-<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:500px;height:200px;padding:5px;">
+<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:900px;height:600px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -1225,12 +2242,38 @@
             <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
-                    <td> ทันตแพทย์ผู้ทำการรักษา :</td>
+                    <td> แพทย์ผู้ทำการรักษา :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
                 </tr>
                 
                 
+              
+                
+                
                 <tr>
+                    <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datebox"></input>
+                        
+                         <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        
+                    </td>
+                </tr>
+                
+                
+                <!--
+                 <tr>
+                    <td>วัน/เดือน/ปี ที่่สิ้นสุดการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datebox"></input>
+                    </td>
+                </tr>
+                -->
+                
+                  <tr>
                     <td>เทคนิคที่ใช้ :</td>
                     <td>
                     
@@ -1238,16 +2281,60 @@
                     </td>
                 </tr>
                 
+                    <tr>
+                    <td>
+        <label>
+           รูปถ่ายก่อนการรักษา (ฺBefore) : 
+            </label>
+                    </td>
+                    <td>
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+                    </td>
+            </tr>               
+
                 
                 <tr>
-                    <td>วัน/เดือน/ปี ที่่ทำ :</td>
                     <td>
-                    
-                        <input class="easyui-datebox"></input>
+        <label>
+           รูปถ่ายระหว่างการรักษา (ฺDuring) : 
+            </label>
                     </td>
+                    <td>
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+                    </td>
+            </tr>               
+                  
+            
+            
+            <tr>
+                <td>
+               <label>
+           รูปถ่ายหลังการรักษา (ฺAfter) : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+                </td>
+            </tr>
+ 
+            
+            
+                     <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        
+                    </td>
+                    
                 </tr>
-                
-                
+        
+              
                 
                 <!--
                    <tr>
@@ -1702,7 +2789,7 @@
 
 
 
-<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:500px;height:250px;padding:5px;">
+<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:700px;height:500px;padding:5px;">
 
     <!--
     <div style="margin:0px 0 0px 0;"></div>
@@ -1768,12 +2855,105 @@
               </label>
           </div>
     <div style="padding: 10px 5px;">
+        
         <label>
-            วัน/เดือน/ปี ที่ทำ :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+            วัน/เดือน/ปี ที่เริ่มทำการรักษา :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;"    />
+            
+        </label>
+        
+        
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+            
+               <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;"    />
+            
         </label>
     </div>
     
+    
+       <div style="padding: 10px 5px;">
+              Classification of GOSLON  : 
+          
+              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                       <option value="1">Group 1</option>
+                        <option value="2">Group 2</option>
+                        <option value="3">Group 3</option>
+                        <option value="4">Group 4</option>
+                        <option value="5">Group 5</option>
+                </select>
+    </div>
+    
+      <div style="padding: 10px 5px;">
+                    Incisor classification of malocclusion : 
+                    <input type="radio" name="inc1"   />  I
+                    <input type="radio"   name="inc1"  />  II div 1
+                     <input type="radio"   name="inc1"  />  II div 2
+                    <input type="radio"  name="inc1"   />  III
+    </div>
+    
+          <div style="padding: 10px 5px;">
+                    Skeletal  classification of malocclusion : 
+                    <input type="radio" name="inc1"   />  I
+                    <input type="radio"   name="inc1"  />  II
+                    <input type="radio"  name="inc1"   />  III
+    </div>
+    
+    <!--
+   <div style="padding: 10px 5px;">
+       <label>
+                         Procedure : 
+     
+                        <input type="checkbox"  />  1.Strapping  
+                        <input type="checkbox"  />  2.Nasal Molding 
+                        <input type="checkbox"  />  3.Alveolar  Molding  
+                        <input type="checkbox"  /> 4. Simple Obturator 
+                        <br>
+                        <input type="checkbox"  />  อื่นๆ 
+                        <input class="easyui-textbox"   data-options=" mutilne:true, "  style="width:300px;height: 50px"    /> 
+       </label>
+   </div>
+    -->
+    
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่าย (Before) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
+
+       <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่ายระหว่างการรักษา (During) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
+        <div style="padding: 10px 5px;">
+        <label>
+            รูปถ่ายหลังการรักษา (After) :
+            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+        </label>
+    </div>
+    
+    
+    <div style="padding: 10px 5px;">
+         <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+    
+    
     <div style="padding: 5px 120px;">
+       
         <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:90px;height: 40px;"     >Save</a>
         <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' , onClick:function(){  $('#dia_treat4B').window('close');  } "     style="width:90px;height: 40px;"     >Close</a>
     </div>
@@ -1783,64 +2963,245 @@
 
 <div id="dia_treat9B" class="easyui-window" title=" 9. Orthognathic surgery " data-options="modal:true,closed:true" style="width:700px;height:250px;padding:5px;">
 
-    <div style="margin:0px 0 0px 0;"></div>
-        
+    <div style="padding: 10px 5px;">
+        <label>
+            แพทย์ผู้ทำการรักษา :  <input class="easyui-combobox"  style="width: 200px;height: 40px;"   />
+        </label>
+    </div>
+  
     
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td>แพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
-                </tr>
-                <tr>
-                    <td>วัน/เดือน/ปี ที่ทำ :</td>
-                    <td>
-                    
-                        <input class="easyui-datebox"></input>
-                    </td>
-                </tr>
-                 
-                <tr>
-                    <td>เทคนิคการผ่าตัด :</td>
-                    
-                    <td>
-                        
+    
+        <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่เริ่มทำการรักษา  :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
+        </label>
+    </div>
+    
+            <div style="padding: 10px 5px;">
+        <label>
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา  :  <input class="easyui-datebox"   style="width: 200px;height: 40px;"  />
+        </label>
+    </div>
+    
+       <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+       <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+    
+       <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
 
-                        <input class="easyui-textbox" style="width:100%;height:32px">
-                    
-                    </td>
-                </tr> 
-
-                <tr>
-                    <td>รุปถ่าย (Before) :</td>
-                    <td>
-                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
-                        
-                    </td>
-                </tr>
-                
-                     <tr>
-                    <td>รุปถ่าย (After) :</td>
-                    <td>
-                        <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
-                        
-                    </td>
-                </tr>
-                
-            
-                
-                
-                <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
-                    </td>
-                  
-                </tr>
+    
+    <div style="padding: 10px 5px;">
+        <label>
+            <?=nbs(30)?>
+            Diagnosis :   
       
-            </table>
-        </form>
+            <input class="easyui-textbox"   style="width:300px;height: 30px;"  />
+         
+  
+        </label>
+    </div>
     
+    <div style="padding: 10px 5px;">
+              Classification of Goslom  : <input class="easyui-textbox"   style="width:200px;height: 40px;"  />
+    </div>
+    
+      <div style="padding: 10px 5px;">
+                    Incisor classification : <input class="easyui-textbox"   style="width:200px;height: 40px;"  />
+    </div>
+    
+
+     
+    
+    
+    
+    <div  style="padding: 10px 100px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' "  >Save</a>
+           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_treat1').window('close');  "  >Close</a>
+    </div>
+    
+    
+</div>
+
+
+
+<div id="dia11"  title="11. Other dental procedure  " style="width:800px;height: 400px;padding: 10px;" class="easyui-dialog"     data-options="
+     
+     closed:true,
+     buttons:[
+     {  text:'Save', iconCls:'icon-save'   },
+     {  text:'Close', iconCls:'icon-cancel',handler:function(){  $('#dia11').dialog('close');  } }
+     ]
+     ">
+    
+   
+    <div class="easyui-tabs" style="width:700px;height:250px">
+        
+     <div title="Endontic treament" style="padding:10px">
+<!-------------------- begin ---------------------->     
+
+  <div style="padding: 10px 5px"  >
+
+        
+        <label>
+            Tooth : <input class="easyui-textbox"  data-options=" prompt:'   Tooth  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+
+
+    <div style="padding: 10px 5px"  >
+
+        
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            
+            
+            
+                          <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+            
+            
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา ( During ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา ( After ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>            
+      <!-------------------- begin ---------------------->    
+    </div>
+        
+     <div title="Prosthodontic treament" style="padding:10px">
+<!-------------------- begin ---------------------->               
+    <div style="padding: 10px 5px"  >
+
+        <label>
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+        </label>
+    </div> 
+     <div style="padding: 10px 5px"  >
+        <label>
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            
+                                      <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+
+            
+        </label>
+    </div> 
+       
+        <div style="padding: 10px 5px"  >
+        <label>
+            Type of Appliance  : 
+            
+                     <!--
+                     <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+                     -->
+                     
+                     <select  class="easyui-combobox"  >
+                           <option>1.TP</option>
+                           <option>2.Crown</option>
+                            <option>3.Bridge</option>
+                              <option>4.Partial denture</option>
+                                <option>5.Implant</option>
+                                   <option>6.Speech Appliance</option>
+                                     <option>7.Other</option>
+                     </select>
+                     
+                     
+                     <input class="easyui-textbox"   style="width:300px;height: 40px;"  />
+                     
+        </label>
+    </div> 
+    
+    
+     <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+         <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายระหว่างการรักษา (During ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>
+    
+             <div style="padding: 10px 5px;">
+        <label>
+           รูปถ่ายหลังการรักษา (After ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+        </label>
+    </div>  
+
+  <div style="padding: 10px 5px;">
+        <label>
+            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+        </label>
+    </div>
+
+
+      <!-------------------- begin ---------------------->    
+    </div>
+        
+        
+        <!--
+     <div title="Gingivectomy" style="padding:10px">
+       2 test
+    </div>
+        
+            <div title="Torectomy" style="padding:10px">
+       2 test
+    </div>
+        
+              <div title="Oronasal fistula closure" style="padding:10px">
+       2 test
+    </div>
+        
+            <div title="อื่นๆ " style="padding:10px">
+       2 test
+    </div>
+        -->
+        
+        
+        </div>
     
 </div>
 

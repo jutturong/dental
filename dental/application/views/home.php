@@ -11,6 +11,33 @@
         
         <script type="text/javascript">
               var toolbar= [ 
+                    
+                    
+                       {
+                        text: ' เรียกดูประวัติผู้ป่วย  ',
+                        iconCls: ' icon-large-chart   ',
+                      
+                        handler:function(){
+                             //alert('t');
+                               openpt('เรียกดูประวัติผู้ป่วย');
+                        }
+                        
+                    }
+                    ,
+                    {
+                        text:' Diagnosis ',
+                        iconCls:' icon-print  ',
+                        handler:function(data)
+                        {
+                            //alert('t');    
+                               var  row=   $('#dg1').datagrid('getSelected');    //productid
+                                if( row )
+                                {
+                                      showpopup1();
+                                 }
+                        }
+                    },
+                    
                     { 
                         text:' Treatment ',
                        iconCls:'icon-add',
@@ -27,19 +54,8 @@
                         }
                     
                     },
-                    {
-                        text:' Diagnosis ',
-                        iconCls:' icon-print  ',
-                        handler:function(data)
-                        {
-                            //alert('t');    
-                               var  row=   $('#dg1').datagrid('getSelected');    //productid
-                                if( row )
-                                {
-                                      showpopup1();
-                                 }
-                        }
-                    },
+                    
+                    /*
                     {
                            text:' เพิ่มประวัติผู้ป่วย ',
                            iconCls:' icon-man ',
@@ -48,15 +64,20 @@
                                  openpt('เพิ่มประวัติผุ้ป่วย');
                            }
                     },
+                    */
+                    
+ 
                     {
-                        text: ' เรียกดูประวัติผู้ป่วย  ',
-                        iconCls: ' icon-large-chart   ',
-                      
-                        handler:function(){
-                             //alert('t');
-                               openpt('เรียกดูประวัติผู้ป่วย');
+                        text:' แก้ไขประวัติผู้ป่วย ',
+                        iconCls:'icon-edit',
+                        handler:function()
+                        {
+                            var  row =  $('#dg1').datagrid('getSelected');
+                            if( row )
+                            {
+                                  //alert('t');
+                            }
                         }
-                        
                     }
                                  ]
         </script>
@@ -115,9 +136,7 @@
         <!--  js for search HN -->
         
  
-        <script type="text/javascript">
-            
-        </script>
+       
         
         <script type="text/javascript">
             function openpt(title) //ฟอร์มบันทึก ประวัติผู้ป่วย
@@ -205,6 +224,7 @@
                    
                    <a href="#"  onclick="$('#dia_search').window('open');"  class="easyui-linkbutton" data-options="iconCls:'icon-large-picture',size:'large' " style="width:100px"> ค้นหา </a>
                    
+                   <a href="javascript:void(0)" class="easyui-linkbutton"  data-options="  iconCls:'icon-man' , onClick:function(){   openpt('เพิ่มประวัติผุ้ป่วย');    }  "   style="width:140px;height: 45px; "  >เพิ่มประวัติผู้ป่วย</a>
                    
                    <!--
                    ค้นหาจากโดย : <?php echo nbs(2); ?> 
@@ -337,7 +357,7 @@
     <div id="dia1" class="easyui-window" title="" data-options="modal:true,closed:true,iconCls:'icon-man'" style="width:500px;height:200px;padding:10px;">             
     <div style="margin:10px 0 10px 0;"></div>
     <div class="easyui-tabs" style="width:600px;height:600px">
-        <div title="เพิ่มประวัติผู้ป่วย" style="padding:10px">
+        <div title="ประวัติทั่วไป" style="padding:10px">
          
             
             <form id="ff" method="post">
@@ -345,11 +365,53 @@
                
                  <tr>
                     <td>HN   :</td>
-                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 100px  "></input></td>
-                </tr>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                    
+                    DN   :
+                      <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                   
+                    Ortho No :
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                        
+               
+                     
+                        
+                    </td>
+                    
+                    
+                    
+                 </tr>
+                 
+                 <tr>
+                     <td>
+                              CN No :    
+                     </td>
+                     <td>
+                             <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                     </td>
+                 </tr>
+                 
+                 
+                 
+                 <tr>
+                     <td>
+                         เลขบัตรประชาชน :
+                     </td>
+                     <td>
+                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+                     </td>
+                
+                 </tr>
+                 
+                 
                 <tr>
-                    <td>ชื่อ :</td>
-                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input></td>
+                    <td>ชื่อ - นามสกุล :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="width:100px;height: 30px;"></input>
+                        
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="width:200px;height: 30px;"></input>
+                    </td>
                 </tr>
                 
                 <tr>
@@ -397,16 +459,14 @@
                 
                 
                <tr>
-                    <td>บิดา :</td>
+                    <td>ชื่อบิดา - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
-                    
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:150px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:200px;height: 30px;"></input>
          
                     </td>
                     
-                    <td>
-                            <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
-                    </td>
+                   
                    
                 </tr>
                 
@@ -419,7 +479,16 @@
                 
                 <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
-                    <td><input class="easyui-datetimebox" required style="width:200px"></td>
+                    <td>
+                        <input class="easyui-datetimebox" required style="width:200px">
+                        
+                      <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
+                      <input class="easyui-textbox"  style="width:50px; height: 30px;"  >
+                      
+                    </td>
+                    
+              
+                    
                 </tr> 
                 
                 
@@ -431,30 +500,35 @@
                 
                 
                 <tr>
-                    <td>มารดา :</td>
+                    <td>ชื่อมารดา - นามสกุล </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
-                    
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width: 150px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width: 200px;height: 30px;"></input>
          
                     </td>
                     
-                    <td>
-                            <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
-                    </td>
+                   
                    
                 </tr>
                 
+               
 
                 <tr>
                     <td>อาชีพ :</td>
                     <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
                 </tr>
                 
-                
-                <tr>
+                 <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
-                    <td><input class="easyui-datetimebox" required style="width:200px"></td>
-                </tr> 
+                    <td>
+                        <input class="easyui-datetimebox" required style="width:200px">
+                        
+                      <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
+                      <input class="easyui-textbox"  style="width:50px; height: 30px;"  >
+                      
+                    </td>
+                </tr>
+                
                 
                 
                  <tr>
@@ -462,6 +536,29 @@
                     <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
                 </tr>
                 
+                
+                <tr>
+                    <td>
+                        ชื่อ สามี/ภรรยา  - นามสกุล : 
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
+                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
+                    </td>
+                </tr>
+                
+                
+                <!--
+                  <tr>
+                    <td>
+                        ชื่อ ภรรยา - นามสกุล : 
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
+                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
+                    </td>
+                </tr>
+                -->
                 
             
                 
@@ -469,13 +566,28 @@
                     <td>สวัสดิการการรักษา :</td>
                     <td>
                         <select class="easyui-combobox" name="language">                        
-                            <option value="1">ประกันสังคม</option>
-                            <option value="2">บัตรทอง</option>  
                            
-                        </select>    
+                            
+                            <option value="1">ประกันสังคม</option>
+                            
+                            
+                            <option value="2">บัตรทอง</option>  
+                            <option value="3">จ่ายตรงข้าราชการ</option>
+                            <option value="4">เงินสด</option>
+                            <option value="5">อื่นๆ </option>
+                           
+                        </select>  
+                        
+                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+                        
                     </td>
                 </tr>
                 
+             
+                <tr>
+                      <td>หมายเลข :</td>
+                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;" />  </td>
+                </tr>
                 
                 
              <tr>        
@@ -483,12 +595,24 @@
                เคยได้รับการรักษามาก่อน : 
             </td>
             <td>
+              <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่ทราบ
               <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่เคย 
               <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true" /> เคย    
-               ระบุ <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:100px" /></input> 
+               ระบุ <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:200px;height: 30px;" /></input> 
               
             </td>          
            </tr>
+           
+           
+           <tr>
+               <td>
+                   สถานที่ที่ได้รับการรักษามาก่อน :  
+               </td>
+               <td>
+                   <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:200px;height: 30px;" /></input>
+               </td>
+           </tr>
+           
         
            <tr>
                <td>
@@ -499,6 +623,13 @@
                </td>
            </tr>
                 
+           
+               <tr>
+                   <td>ระดับพัฒนาการผู้ป่วย :  </td>
+                   <td>   
+                       <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  style="width: 150px;height: 30px;" /> 
+                   </td> 
+               </tr>
                 
             </table>
        
@@ -518,6 +649,12 @@
         <tr>        
             <td>
                 ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+            <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+              
             </td>
         </tr>
        
@@ -525,13 +662,33 @@
             <td>
                 สูบบุหรี่ในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่  
                <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> มวลต่อวัน
+               
+               
+                  <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+              
+              
+              
             </td>
         </tr>
         
                   <tr>        
             <td>
                 ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่  
-               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> ขวดต่อวัน
+               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> ซีซีต่อวัน
+               
+               
+                  <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+              
+              
+              
             </td>
         </tr>
        
@@ -550,6 +707,9 @@
                     </td>
                     <td>
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                        
+                        
+                      
                     </td>
                 </tr>
                 
@@ -558,7 +718,16 @@
                         วิธีคลอด :
                     </td>
                     <td>
+                        
+                        <!--
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                          -->
+                          
+                          <input type="radio"> ธรรมชาติ
+                          <input type="radio"> ผ่าตัด
+                          <input type="radio"> อื่นๆ
+                          <input class="easyui-textbox"  style="width:200px;height: 30px;"   />
+                            
                     </td>
                 </tr>
                 
@@ -585,10 +754,12 @@
                         ปัญหาแรกคลอด :
                     </td>
                     <td>
+                        <input type="radio" /> ไม่มี  <input type="radio" /> มี 
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
                     </td>
                 </tr>
                 
+                <!--
                  <tr>
                     <td>
                         อื่นๆ :
@@ -597,6 +768,7 @@
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
                     </td>
                 </tr>
+                -->
                 
             </table>
         </div>
@@ -606,17 +778,29 @@
                 <table cellpadding="5">
                
                 <tr>
-                    <td>บิดามารดาเกี่ยวพันทางสายเลือดเป็นปากแหว่งเพดานโหว่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>                   
+                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>                   
                                     
                 </tr>  
                 
                 <tr>
-                    <td>ญาติที่เกี่ยวพันทางสายเลือดเป็นปากแหว่งเพดานโหว่ : </td>
-                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่มี</td>  </td>
+                    <td>ญาติที่เกี่ยวพันทางสายเลือดมีภาวะปากแหว่งเพดานโหว่หรือไม่ : </td>
+                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
                 </tr>
                 
+                <!--
                 <tr>
-                     <td>ระดับพัฒนาการบิดา : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ</td>  
+                     <td>ระดับพัฒนาการผู้ป่วย : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ</td>  
+                </tr>
+                -->
+                
+                <tr>
+                    <td>อายุบิดาในขณะที่มีบุตร :</td>
+                    <td><input class="easyui-textbox" style="width:70px;height: 30px;"></td>
+                </tr>
+                
+                            <tr>
+                    <td>อายุมารดาในขณะที่มีบุตร :</td>
+                    <td><input class="easyui-textbox" style="width:70px;height: 30px;"></td>
                 </tr>
                 
                 <tr>

@@ -29,63 +29,105 @@
                 
                 
                 <tr>
-                    <td>Lip :</td>
+                    <td align="right" valign="top">Lip :</td>
                     <td>
                         <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>
+                        <input type="checkbox" name="lang" value=""><span>Complete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>   <input type="checkbox" /> Both
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  
-                    </td>
-                </tr>
-                
-                     <tr>
-                    <td>Hard palate :</td>
-                    <td>
-                        <div style="margin:20px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
-                        <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>
-                        <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  
-                        <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Submucous : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  
+                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  <input type="checkbox" /> Both
                     </td>
                 </tr>
                 
                 <tr>
-                    <td>Alveolus :</td>
+                    <td colspan="2"><hr/></td>
+           
+                </tr>
+                
+                
+                 <tr>
+                    <td align="right" valign="top">Alveolus :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        
+                        
+                         <div style="margin:10px 0;"></div>
+                         <input type="checkbox" name="lang" value=""><span>Cleft : </span>   <input type="checkbox" name="lang" value=""> Left    <input type="checkbox" name="lang" value=""> Right  <input type="checkbox" name="lang" value=""> Both    
+                        
+                        <!--
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>
+                        <input type="checkbox" name="lang" value=""><span>Complete : </span>
+                        
+                        
+                        
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  
+                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  
+                        -->
+                        
                         
                     </td>
                 </tr>
+              
+                 <tr>
+                    <td colspan="2"><hr/></td>
+           
+                </tr>
                 
+                     <tr>
+                    <td align="right" valign="top">Hard palate :</td>
+                    <td>
+                        <div style="margin:20px 0;"></div>
+                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <div style="margin:10px 0;"></div>
+                        <input type="checkbox" name="lang" value=""><span>Complete : </span> 
+                        <!-- <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span> -->
+                        <div style="margin:10px 0;"></div>
+                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  
+                        <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
+                        <div style="margin:10px 0;"></div>
+                        <input type="checkbox" name="lang" value=""><span>Submucous : </span>  
+                        <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
+                    </td>
+                </tr>
+                
+             <tr>
+                    <td colspan="2"><hr/></td>
+           
+                </tr>
+                
+               
+                
+                    
                 
                 <tr>
-                    <td>Soft palate :</td>
+                    <td align="right" valign="top">Soft palate :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Complete  </span> 
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete </span>  
+                        <input type="checkbox" name="lang" value=""><span>Bifid uvula </span>  
                         <div style="margin:10px 0;"></div>
+                        <!--
                         <input type="checkbox" name="lang" value=""><span>Submucous  </span>  
+                        -->
                     </td>
                 </tr>
                 
+                           <tr>
+                    <td colspan="2"><hr/></td>
+           
+                </tr>
                     <tr>
-                    <td>Facial cleft :</td>
+                    <td align="right" valign="top">Facial cleft :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <input type="checkbox" /> Cleft  
+                        ระบุ <input class="easyui-textbox"  style="width: 200px;height: 30px;"   />
+                        <!--
                         <div style="margin:10px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Midline cleft</span> 
                         <div style="margin:10px 0;"></div>
@@ -94,15 +136,26 @@
                         <input type="checkbox" name="lang" value=""><span>Orbital cleft</span>  
                         <div style="margin:10px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Lateral cleft</span>  
+                        -->
+                        
                     </td>
                 </tr>
                 
+                     <tr>
+                    <td colspan="2"><hr/></td>
+           
+                </tr> 
                 
                 <tr>
                     <td></td>
                     <td><input type="submit" value="บันทึกข้อมูล"></input></td>
                 </tr>
                 
+                
+                        <tr>
+                    <td colspan="2"><hr/></td>
+           
+                </tr>
                 
                 
             </table>
@@ -112,16 +165,35 @@
         </div>
         
         <div title="แบบฟอร์มบันทึกข้อมูล ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่" style="padding:10px" data-options="iconCls:'icon-save'">
+            
             <div style="margin:10px 0;"></div>
             
             <tr>                 
                     <td>
+                        
+                        
                         <div style="margin:10px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>none</span>
                 
+                        <div style="margin:10px 0;"></div>
+                        <input type="checkbox" name="lang" value=""><span>Syndrome</span>
+                        
+                        <?=nbs(5)?>
+                        
+                        <input  type="radio"  />
+                        ไม่สามารถระบุ 
+                        <input  type="radio"  />
+                        สามารถระบุ 
+                        
+                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"  />
+                        
                     </td>
            </tr>
            
+           
+           
+           
+           <!--
              <tr>                 
                     <td>
                         <div style="margin:10px 0;"></div>
@@ -129,7 +201,7 @@
                 
                     </td>
            </tr>
-           
+      
              <tr>                 
                     <td>
                         <div style="margin:10px 0;"></div>
@@ -267,7 +339,7 @@
                     <td></td>
                     <td><input type="submit" value="บันทึกข้อมูล"></input></td>
                 </tr>
-                
+                -->
            
         </div>
         

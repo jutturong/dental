@@ -80,7 +80,7 @@
                    <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                     <td>7. Palatoplasty  </td>
                 </tr>

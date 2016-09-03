@@ -38,7 +38,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat2_mo')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                   <!--  <td>2. การผ่าตัดซ่อมแซมริมฝีปาก จมูก และพื้ันจมูก  </td> -->
-                    <td>2. Cleft lip, nasal and nasal floor repair </td>
+                    <td>2. Lip nasal and nasal floor repair </td>
                 </tr>
                 
                   <tr>
@@ -81,7 +81,7 @@
                  <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12_7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
                     <td>7. Growth modification  </td>
@@ -94,7 +94,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
-                    <td>8. Treatment  </td>
+                    <td>8.  Corrective Orthodontic Treatment  </td>
                 </tr>
                 
                 
@@ -114,7 +114,18 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia10')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
-                    <td>10. Prosthodontic treatment  </td>
+                    <td>10. Other surgery  </td>
+                </tr>
+                
+                
+                
+                  <tr>
+                    <td> 
+                        <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia11')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
+                    </td>
+                   <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
+                    <td>11. Other dental procedure  </td>
                 </tr>
                 
                 

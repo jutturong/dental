@@ -34,40 +34,44 @@
                                               value:'1.รายชื่อ'                                 
                                            },
                                            {
-                                              label:'2',
-                                              value:'2.เลขบัตรประชาชน'   
+                                                label:'2',
+                                                value:'2.นามสกุล'      
                                            },
                                            {
                                               label:'3',
-                                              value:'3.จังหวัด' 
+                                              value:'3.เลขบัตรประชาชน'   
                                            },
                                            {
-                                               label:'4',
-                                               value:'4.DN' 
+                                              label:'4',
+                                              value:'4.จังหวัด' 
                                            },
                                            {
                                                label:'5',
-                                               value:'5.Ortho No.' 
+                                               value:'5.DN' 
                                            },
                                            {
                                                label:'6',
-                                               value:'6.HN' 
+                                               value:'6.Ortho No.' 
                                            },
                                            {
-                                                label:'7',
-                                                value:'7.CN Series' 
+                                               label:'7',
+                                               value:'7.HN' 
                                            },
                                            {
                                                 label:'8',
-                                                value:'8.Diagnosis' 
+                                                value:'8.CN Series' 
                                            },
                                            {
                                                 label:'9',
-                                                value:'9.แพทย์เจ้าของไข้' 
+                                                value:'9.Diagnosis' 
                                            },
                                            {
                                                 label:'10',
-                                                value:'10.Treatment' 
+                                                value:'10.แพทย์เจ้าของไข้' 
+                                           },
+                                           {
+                                                label:'11',
+                                                value:'11.Treatment' 
                                            }
                                          ],
                                 onSelect:function()
@@ -75,6 +79,12 @@
                                      //$.messager.alert('Info','test','info');
                                      //$('#diag1').window('open');
                                       //$('#dia_search').window('open');
+                                      var  cmb_search=$('#cmb_search').combobox('getValue');
+                                     if(  cmb_search == 11  )
+                                     {
+                                            //  $.messager.alert('Info',  cmb_search  ,'info');
+                                            $('#sr_treatment').dialog('open');
+                                     }     
                                 }         
                                          
                           
@@ -92,7 +102,7 @@
                         
                             </td>
                             <td>
-                                <input class="easyui-combobox" data-options="
+                                <input class="easyui-combobox" style="width:200px;height: 30px;" data-options="
                                                     iconCls:'icon-man',  
                                            
                                                   
@@ -133,3 +143,26 @@
         </div>
     </div>
 -->
+
+<!-- เพิ่มเติมการค้นหา teatemtn -->
+<div id="sr_treatment"  class="easyui-dialog"  title=" Search Treatment "  style="width:400px;height: 400px;"  data-options="
+     closed:true,
+     buttons:[ {  text:'Search', iconCls:'icon-search',handler:function(){ alert('t'); } }, { text:'Close',iconCls:'icon-cancel',handler:function(){  $('#sr_treatment').dialog('close');  }  } ]
+     " >
+    <div style="padding: 20px 10px"  >
+            <ul class="easyui-datalist" title="รายละเอียดแผนการรักษา" data-options=" url:'',  lines:true ,checkbox:true  "  >
+                            <li value="1">1. Pre-surgical orthopedics therapy (PSOT) </li>
+                            <li value="2">2. Lip nasal and nasal floor repair </li>
+                            <li value="3">3. Palate repair </li>
+                            <li value="4">4. Interceptive orthodontic treatment </li>
+                            <li value="5">5. Orthodonic preparation for bone graft surgery </li>
+                            <li value="6">6. Bone graft surgery</li>
+                            <li value="7">7. Growth modification </li>
+                            <li value="8">8. Corrective Orthodontic Treatment </li>
+                             <li value="9">9. Orthognathic surgery </li>
+                              <li value="10">10. Other surgery  </li>
+                              <li value="11">11. Other dental procedure  </li>
+            </ul>
+    </div>
+</div>
+<!-- เพิ่มเติมการค้นหา teatemtn -->

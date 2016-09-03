@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"req",
+				"require"
+			],
+			[
 				"err",
 				"err_query"
 			],
@@ -52,10 +56,6 @@
 				"sendfile"
 			],
 			[
-				"req",
-				"request"
-			],
-			[
 				"ru",
 				"require"
 			],
@@ -72,20 +72,24 @@
 	"buffers":
 	[
 		{
-			"file": "application/views/home.php",
+			"file": "/C/Users/linux/Desktop/esn/esn_20-1-59/esn2/application/models/date.php",
 			"settings":
 			{
-				"buffer_size": 26619,
-				"line_ending": "Unix"
+				"buffer_size": 3175,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 196.0,
 		"selected_items":
 		[
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"install ",
 				"Package Control: Install Package"
@@ -108,8 +112,49 @@
 	},
 	"file_history":
 	[
+		"/C/Users/linux/Desktop/esn/esn_20-1-59/esn2/application/controllers/adr.php",
+		"/C/Users/linux/Desktop/jnode/mysql3/repository/users.js",
+		"/C/Users/linux/Desktop/jnode/mysql3/app.js",
+		"/C/Users/linux/Desktop/jnode/mysql3/routes/users.js",
+		"/C/Users/linux/Desktop/jnode/mysql3/package.json",
+		"/C/Users/linux/Desktop/jnode/mysql2/app.js",
+		"/C/Users/linux/Desktop/jnode/mysql2/repository/users.js",
+		"/C/Users/linux/Desktop/jnode/mysql2/routes/mysql.js",
+		"/C/Users/linux/Desktop/jnode/mysql2/package.json",
+		"/C/Users/linux/Desktop/jnode/test1/lib/mysql.js",
 		"/C/Users/linux/Desktop/jnode/mysql/repository/user.js",
+		"/C/Users/linux/Desktop/jnode/mysql/app.js",
+		"/C/Users/linux/Desktop/jnode/test1/app.js",
 		"/C/Users/linux/Desktop/jnode/mysql/routes/users.js",
+		"/C/Users/linux/Desktop/jnode/test1/routes/mysql.js",
+		"/C/Users/linux/Desktop/jnode/socket1/package.json",
+		"/C/Users/linux/Desktop/jnode/mysql/package.json",
+		"/C/Users/linux/Desktop/jnode/test1/package.json",
+		"/C/Users/linux/Desktop/jnode/test1/routes/users.js",
+		"/C/xampp/htdocs/testyii/protected/controllers/SiteController.php",
+		"/C/xampp/htdocs/testyii/protected/views/site/say.php",
+		"/C/xampp/htdocs/testyii/protected/views/site/index.php",
+		"/C/xampp/htdocs/testyii/protected/views/site/contact.php",
+		"/C/xampp/php/composer.json",
+		"/C/laravel1/lob01/public/web.config",
+		"/C/xampp/htdocs/testyii/protected/config/test.php",
+		"/C/xampp/htdocs/testyii/protected/config/main.php",
+		"/C/xampp/htdocs/testyii/protected/config/database.php",
+		"/C/Users/linux/Desktop/yii-1.1.17.467ff50/README",
+		"/C/Users/linux/AppData/Roaming/Composer/composer.json",
+		"/C/xampp/php/php.ini",
+		"/C/xampp/php/composer.phar",
+		"/C/laravel1/lob01/app/Http/routes.php",
+		"/C/laravel1/lob01/config/database.php",
+		"/C/laravel1/lob01/resources/views/b1.php",
+		"/C/laravel1/lob01/resources/views/test1.php",
+		"/C/laravel1/lob01/resources/views/tasks.blade.php",
+		"/C/laravel1/lob01/resources/views/home.php",
+		"/C/YII/basic/config/web.php",
+		"/C/YII/basic/yii",
+		"/C/xampp/htdocs/dental/application/controllers/welcome.php",
+		"/C/xampp/htdocs/dental/dental.sublime-project",
+		"/C/xampp/htdocs/dental/application/views/home.php",
 		"/C/vagrant/Vagrantfile",
 		"/C/Users/linux/Desktop/vagrant/Vagrantfile",
 		"/C/Users/linux/Desktop/jnode/jade/views/user.jade",
@@ -175,6 +220,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"firstName",
 			"820",
 			"url"
 		],
@@ -199,24 +245,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "application/views/home.php",
+					"file": "/C/Users/linux/Desktop/esn/esn_20-1-59/esn2/application/models/date.php",
 					"settings":
 					{
-						"buffer_size": 26619,
+						"buffer_size": 3175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								244,
+								229
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -226,6 +272,16 @@
 					"type": "text"
 				}
 			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
 		}
 	],
 	"incremental_find":
@@ -234,7 +290,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -243,22 +299,40 @@
 			[
 				0,
 				0,
-				1,
+				2,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.880530973451,
 			1.0
 		]
 	},
 	"menu_visible": true,
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
 	"replace":
 	{
 		"height": 0.0
@@ -274,11 +348,11 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
