@@ -42,11 +42,11 @@
                 <tr>
                     <td align="right" valign="top">Lip :</td>
                     <td>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="lip"  id="noncleft" value="0"  ><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>   <input type="checkbox" /> Both
+                     <!--   <input type="radio" name="lip" id="Complete"  value="">  -->  <span>Complete : </span>  <input type="radio" name="lip" value="1.1"  id="left"><span>Left</span>  <input type="radio" name="lip"  value="1.2"><span>Right</span>   <input type="radio"  name="lip" value="1.3" /> Both
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>  <input type="checkbox" /> Both
+                       <!-- <input type="radio" name="lip"  value="">--><span>Incomplete : </span>  <input type="radio" name="lip"  value=""><span>Left</span>  <input type="radio" name="lip"  value=""><span>Right</span>  <input type="radio"  name="lip"  /> Both
                     </td>
                 </tr>
                 
@@ -60,11 +60,11 @@
                     <td align="right" valign="top">Alveolus :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="alveolus"  id="alveolus"  value=""><span>Non-cleft</span>
                         
                         
                          <div style="margin:10px 0;"></div>
-                         <input type="checkbox" name="lang" value=""><span>Cleft : </span>   <input type="checkbox" name="lang" value=""> Left    <input type="checkbox" name="lang" value=""> Right  <input type="checkbox" name="lang" value=""> Both    
+                         <input type="radio" name="lang" value=""><span>Cleft : </span>   <input type="radio" name="lang" value=""> Left    <input type="radio" name="lang" value=""> Right  <input type="radio" name="lang" value=""> Both    
                         
                         <!--
                         <div style="margin:10px 0;"></div>
@@ -89,15 +89,15 @@
                     <td align="right" valign="top">Hard palate :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete : </span> 
+                        <input type="radio" name="lang" value=""><span>Complete : </span> 
                         <!-- <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span> -->
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Incomplete : </span>  
+                        <input type="radio" name="lang" value=""><span>Incomplete : </span>  
                         <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Submucous : </span>  
+                        <input type="radio" name="lang" value=""><span>Submucous : </span>  
                         <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
                     </td>
                 </tr>
@@ -115,11 +115,11 @@
                     <td align="right" valign="top">Soft palate :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Complete  </span> 
+                        <input type="radio" name="lang" value=""><span>Complete  </span> 
                         <div style="margin:10px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Bifid uvula </span>  
+                        <input type="radio" name="lang" value=""><span>Bifid uvula </span>  
                         <div style="margin:10px 0;"></div>
                         <!--
                         <input type="checkbox" name="lang" value=""><span>Submucous  </span>  
@@ -135,8 +135,8 @@
                     <td align="right" valign="top">Facial cleft :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="checkbox" name="lang" value=""><span>Non-cleft</span>
-                        <input type="checkbox" /> Cleft  
+                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" /> Cleft  
                         ระบุ <input class="easyui-textbox"  style="width: 200px;height: 30px;"   />
                         <!--
                         <div style="margin:10px 0;"></div>
