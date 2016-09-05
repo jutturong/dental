@@ -12,6 +12,17 @@
         
 </script>
 
+<script type="text/javascript"  >
+   $(function(){
+          $('#analy1').bind('click',function(){
+                // alert('t');
+                $('#dia_analy1').dialog('open');
+              
+          });
+       
+   });
+</script>
+
 
 
 <div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:700px;height:750px;padding:5px;">
@@ -145,6 +156,17 @@
                     <td colspan="2"><hr/></td>
            
                 </tr> 
+                
+                <tr>
+                    <td>
+                        <a  id="analy1"   href="#"   class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "   data-options="  iconCls:'icon-man' 
+                      
+                           
+                           
+                           " > วิเคราะห์ผล </a>
+                       
+                    </td>
+                </tr>
                 
                 <tr>
                     <td></td>
@@ -354,4 +376,24 @@
     </div>
     
  </div>
+
+
+
+<!-- dialog analy การวิเคราะห์จากการเลือกผู้ป่วย -->
+<div id="dia_analy1"  class="easyui-dialog"  title="  วิเคราะห์  "  
+     style=" width:400px;height: 200px;  "
+     data-options="  iconCls:'icon-man' 
+     ,resizable:true,
+     modal:true,
+     closed:true,
+     buttons:[
+        {  text:'Close',  iconCls:'icon-cancel'   , handler:function(){  $('#dia_analy1').dialog('close');  }  }
+     ]
+     
+     "
+     >
+    
+</div>
+
+<!-- dialog analy การวิเคราะห์จากการเลือกผู้ป่วย -->
 
