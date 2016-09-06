@@ -6,6 +6,7 @@
           $(function(){
                 // alert('t');
                  $("#diag1").window('open');
+                 
           });
           
       }
@@ -15,9 +16,160 @@
 <script type="text/javascript"  >
    $(function(){
           $('#analy1').bind('click',function(){
-                // alert('t');
-                $('#dia_analy1').dialog('open');
+                
+               
+                
+                //-----------Lip ------------
+                        //id="lip_noncleft"   0
+                        // id="comp_left"  1.1
+                          var    comp_left=$('#comp_left');
+                     
+                     /*
+                        if(   comp_left.attr('checked',true)    )
+                        {
+                          
+                        }
+                        */
+                       
+                        // id="comp_right"   1.2
+                          var    comp_right=$('#comp_right');
+                          /*
+                        if(   comp_right.attr('checked',true)    )
+                        {
+                           // alert( $('#comp_right').val() );
+                        } 
+                         */
+                        
+                        
+                        // id="comp_both"  1.3
+                         var    comp_both=$('#comp_both');
+                         /*
+                        if(   comp_both.attr('checked',true)    )
+                        {
+                              alert( $('#comp_both').val() );
+                        } 
+                        */
+                       
+                        
+                      //name="lip"  value="1.4"   id="incomplete_left"
+                                  var    incomplete_left=$('#incomplete_left');
+                                  /*
+                        if(   incomplete_left.attr('checked',true)    )
+                        {
+                              alert( $('#incomplete_left').val() );
+                        } 
+                   */
+                  
+                 
+                 
+                      //name="lip"  value="1.5"    id="incomplete_right"
+                          var    incomplete_right=$('#incomplete_right');
+                          /*
+                                if(   incomplete_right.attr('checked',true)    )
+                        {
+                              alert( $('#incomplete_right').val() );
+                        } 
+                        */
+                       
+                        
+               // id="incomplete_both"   value="1.6"
+               
+                var    incomplete_both=$('#incomplete_both');
+                /*
+                      if(   incomplete_both.attr('checked',true)    )
+                        {
+                              alert( $('#incomplete_both').val() );
+                        } 
+                */
+               
+               
+                
+                //-------------Alveolus------------	
+                        // id="noncleft_al"
+                        // id="completed_left"    value="2.1"
+                     var    completed_left=$('#completed_left');  
+                     /*
+                                           if(   completed_left.attr('checked',true)    )
+                        {
+                              alert( $('#completed_left').val() );
+                        } 
+                        */
+                       
+                     
+                        // id="completed_right"  value="2.2"
+                         var    completed_right=$('#completed_right'); 
+                         /*
+                        if(   completed_right.attr('checked',true)    )
+                        {
+                              alert( $('#completed_right').val() );
+                        } 
+                         */
+                         
+                         
+                       // id="completed_both"  value="2.3"
+                      var    completed_both=$('#completed_both'); 
+                      /*
+                if(   completed_both.attr('checked',true)    )
+                        {
+                            //  alert( $('#completed_both').val() );
+                        }
+                      */
+                    
+                    //---------------Hard palate ----------
+                    //  id="hardpalate_complete"  value="3.1"
+                       var    hardpalate_complete=$('#hardpalate_complete'); 
+                       /*
+                                  if(   hardpalate_complete.attr('checked',true)    )
+                        {
+                            // alert( $('#hardpalate_complete').val() );
+                        }
+                       */
+                       
+                       
+                   //  id="hardpalate_incomplete"   value="3.2"
+               var    hardpalate_incomplete=$('#hardpalate_incomplete'); 
+               /*
+                         if(   hardpalate_incomplete.attr('checked',true)    )
+                        {
+                                 //alert( $('#hardpalate_incomplete').val() );
+                        }
+              */
               
+              
+              
+                       //  id="hardpalate_submucous"    value="3.3"
+                      var    hardpalate_submucous=$('#hardpalate_submucous');  
+                      /*
+                                       if(   hardpalate_submucous.attr('checked',true)    )
+                        {
+                                 alert( $('#hardpalate_submucous').val() );
+                        }
+                      */ 
+                       
+                       
+                       //------------Soft palate :-------------
+                   // id="softpalate_cleft"  value="4.1"
+                     var    softpalate_cleft=$('#softpalate_cleft');  
+                     /*
+                  if(   softpalate_cleft.attr('checked',true)    )
+                        {
+                                // alert( $('#softpalate_cleft').val() );
+                        }
+                        */
+                        
+                   
+                   //id="softpalate_bifid_uvula"  value="4.2"
+                    var    softpalate_bifid_uvula=$('#softpalate_bifid_uvula');  
+                    /*
+                            if(   softpalate_bifid_uvula.attr('checked',true)    )
+                        {
+                                 alert( $('#softpalate_bifid_uvula').val() );
+                        }
+                   */
+                  
+                   
+                   // $('#dia_analy1').dialog('open');
+                       
           });
        
    });
@@ -42,11 +194,11 @@
                 <tr>
                     <td align="right" valign="top">Lip :</td>
                     <td>
-                        <input type="radio" name="lip"  id="noncleft" value="0"  ><span>Non-cleft</span>
+                        <input type="radio" name="lip"  id="lip_noncleft" value="0"  ><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                     <!--   <input type="radio" name="lip" id="Complete"  value="">  -->  <span>Complete : </span>  <input type="radio" name="lip" value="1.1"  id="left"><span>Left</span>  <input type="radio" name="lip"  value="1.2"><span>Right</span>   <input type="radio"  name="lip" value="1.3" /> Both
+                     <!--   <input type="radio" name="lip" id="Complete"  value="">  -->  <span>Complete : </span>  <input type="radio" name="lip" value="1.1"  id="comp_left"><span>Left</span>  <input type="radio" name="lip"  id="comp_right"   value="1.2"><span>Right</span>   <input type="radio"  name="lip" value="1.3"   id="comp_both" /> Both
                         <div style="margin:10px 0;"></div>
-                       <!-- <input type="radio" name="lip"  value="">--><span>Incomplete : </span>  <input type="radio" name="lip"  value=""><span>Left</span>  <input type="radio" name="lip"  value=""><span>Right</span>  <input type="radio"  name="lip"  /> Both
+                       <!-- <input type="radio" name="lip"  value="">--><span>Incomplete : </span>  <input type="radio" name="lip"  value="1.4"    id="incomplete_left"><span>Left</span>  <input type="radio" name="lip"  value="1.5"    id="incomplete_right" ><span>Right</span>  <input type="radio"  name="lip"     id="incomplete_both"   value="1.6" /> Both
                     </td>
                 </tr>
                 
@@ -60,11 +212,11 @@
                     <td align="right" valign="top">Alveolus :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="alveolus"  id="alveolus"  value=""><span>Non-cleft</span>
+                        <input type="radio" name="alveolus"  id="noncleft_al"  ><span>Non-cleft</span>
                         
                         
                          <div style="margin:10px 0;"></div>
-                         <input type="radio" name="lang" value=""><span>Cleft : </span>   <input type="radio" name="lang" value=""> Left    <input type="radio" name="lang" value=""> Right  <input type="radio" name="lang" value=""> Both    
+                        <!-- <input type="radio" name="alveolus"   id="completed_al" >--> <span>Completed : </span>   <input type="radio"   name="alveolus"    id="completed_left"    value="2.1"> Left    <input type="radio"  name="alveolus"    id="completed_right"  value="2.2"> Right  <input type="radio" name="alveolus"   id="completed_both"  value="2.3"> Both    
                         
                         <!--
                         <div style="margin:10px 0;"></div>
@@ -89,15 +241,15 @@
                     <td align="right" valign="top">Hard palate :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="hardpalate"  id="hardpalate_non"   ><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Complete : </span> 
+                        <input type="radio"  name="hardpalate"   id="hardpalate_complete"  value="3.1"><span>Complete : </span> 
                         <!-- <input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span> -->
                         <div style="margin:10px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Incomplete : </span>  
+                        <input type="radio"  name="hardpalate"  id="hardpalate_incomplete"   value="3.2"><span>Incomplete : </span>  
                         <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
                         <div style="margin:10px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Submucous : </span>  
+                        <input type="radio"  name="hardpalate"   id="hardpalate_submucous"    value="3.3"><span>Submucous : </span>  
                         <!--<input type="checkbox" name="lang" value=""><span>Left</span>  <input type="checkbox" name="lang" value=""><span>Right</span>-->  
                     </td>
                 </tr>
@@ -115,11 +267,11 @@
                     <td align="right" valign="top">Soft palate :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
+                        <input type="radio" name="softpalate"  id="softpalate_non"><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Complete  </span> 
+                        <input type="radio" name="softpalate"   id="softpalate_cleft"  value="4.1"><span>Cleft  </span> 
                         <div style="margin:10px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Bifid uvula </span>  
+                        <input type="radio" name="softpalate"   id="softpalate_bifid_uvula"  value="4.2"><span>Bifid uvula </span>  
                         <div style="margin:10px 0;"></div>
                         <!--
                         <input type="checkbox" name="lang" value=""><span>Submucous  </span>  
