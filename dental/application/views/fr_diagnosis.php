@@ -19,68 +19,37 @@
                 
                
                 
-                //-----------Lip ------------
-                        //id="lip_noncleft"   0
+    /*
                         // id="comp_left"  1.1
                           var    comp_left=$('#comp_left');
                      
-                     /*
-                        if(   comp_left.attr('checked',true)    )
-                        {
-                          
-                        }
-                        */
+
                        
                         // id="comp_right"   1.2
                           var    comp_right=$('#comp_right');
-                          /*
-                        if(   comp_right.attr('checked',true)    )
-                        {
-                           // alert( $('#comp_right').val() );
-                        } 
-                         */
+
                         
                         
                         // id="comp_both"  1.3
                          var    comp_both=$('#comp_both');
-                         /*
-                        if(   comp_both.attr('checked',true)    )
-                        {
-                              alert( $('#comp_both').val() );
-                        } 
-                        */
+
                        
                         
                       //name="lip"  value="1.4"   id="incomplete_left"
                                   var    incomplete_left=$('#incomplete_left');
-                                  /*
-                        if(   incomplete_left.attr('checked',true)    )
-                        {
-                              alert( $('#incomplete_left').val() );
-                        } 
-                   */
+
                   
                  
                  
                       //name="lip"  value="1.5"    id="incomplete_right"
                           var    incomplete_right=$('#incomplete_right');
-                          /*
-                                if(   incomplete_right.attr('checked',true)    )
-                        {
-                              alert( $('#incomplete_right').val() );
-                        } 
-                        */
+
                        
                         
                // id="incomplete_both"   value="1.6"
                
                 var    incomplete_both=$('#incomplete_both');
-                /*
-                      if(   incomplete_both.attr('checked',true)    )
-                        {
-                              alert( $('#incomplete_both').val() );
-                        } 
-                */
+
                
                
                 
@@ -88,91 +57,122 @@
                         // id="noncleft_al"
                         // id="completed_left"    value="2.1"
                      var    completed_left=$('#completed_left');  
-                     /*
-                                           if(   completed_left.attr('checked',true)    )
-                        {
-                              alert( $('#completed_left').val() );
-                        } 
-                        */
+
                        
                      
                         // id="completed_right"  value="2.2"
                          var    completed_right=$('#completed_right'); 
-                         /*
-                        if(   completed_right.attr('checked',true)    )
-                        {
-                              alert( $('#completed_right').val() );
-                        } 
-                         */
+
                          
                          
                        // id="completed_both"  value="2.3"
                       var    completed_both=$('#completed_both'); 
-                      /*
-                if(   completed_both.attr('checked',true)    )
-                        {
-                            //  alert( $('#completed_both').val() );
-                        }
-                      */
+
                     
                     //---------------Hard palate ----------
                     //  id="hardpalate_complete"  value="3.1"
                        var    hardpalate_complete=$('#hardpalate_complete'); 
-                       /*
-                                  if(   hardpalate_complete.attr('checked',true)    )
-                        {
-                            // alert( $('#hardpalate_complete').val() );
-                        }
-                       */
+
                        
                        
                    //  id="hardpalate_incomplete"   value="3.2"
                var    hardpalate_incomplete=$('#hardpalate_incomplete'); 
-               /*
-                         if(   hardpalate_incomplete.attr('checked',true)    )
-                        {
-                                 //alert( $('#hardpalate_incomplete').val() );
-                        }
-              */
+
               
               
               
                        //  id="hardpalate_submucous"    value="3.3"
                       var    hardpalate_submucous=$('#hardpalate_submucous');  
-                      /*
-                                       if(   hardpalate_submucous.attr('checked',true)    )
-                        {
-                                 alert( $('#hardpalate_submucous').val() );
-                        }
-                      */ 
+
                        
                        
                        //------------Soft palate :-------------
                    // id="softpalate_cleft"  value="4.1"
                      var    softpalate_cleft=$('#softpalate_cleft');  
-                     /*
-                  if(   softpalate_cleft.attr('checked',true)    )
-                        {
-                                // alert( $('#softpalate_cleft').val() );
-                        }
-                        */
+
                         
                    
                    //id="softpalate_bifid_uvula"  value="4.2"
                     var    softpalate_bifid_uvula=$('#softpalate_bifid_uvula');  
-                    /*
-                            if(   softpalate_bifid_uvula.attr('checked',true)    )
-                        {
-                                 alert( $('#softpalate_bifid_uvula').val() );
-                        }
-                   */
-                  
-                   
-                   // $('#dia_analy1').dialog('open');
+
+      */
+     
+     
+
+   
+   
+                    
                        
           });
        
    });
+</script>
+
+<script type="text/javascript">
+      $(function(){
+          
+      
+          //-------1.3------
+           $('#comp_both').click(function(){
+                  //alert('t');
+                  var  ans1=" Cleft Complete";
+                  alert(  ans1   );
+           });
+           
+          
+           
+           
+      });
+</script>
+
+
+<script type="text/javascript">
+       function  btnclr()
+       {
+           
+           //lip_noncleft
+            $('#lip_noncleft').attr('checked',false); //1.1
+            
+             $('#comp_left').attr('checked',false); //1.1
+             $('#comp_right').attr('checked',false);  //1.2
+             $('#comp_both').attr('checked',false); //1.3
+             //value="1.4"    id="incomplete_left"
+              $('#incomplete_left').attr('checked',false); //1.4
+              //  id="incomplete_right"  1.5
+                $('#incomplete_right').attr('checked',false); //1.5
+                //  id="incomplete_both"   value="1.6"
+               $('#incomplete_both').attr('checked',false); //1.6
+               //
+               
+               // id="lip_noncleft" value="0" 
+                $('#alveolus_noncleft').attr('checked',false); 
+               //  id="completed_left"    value="2.1"
+                $('#completed_left').attr('checked',false); //2.1
+                // id="completed_right"  value="2.2"
+                $('#completed_right').attr('checked',false); //2.2
+                //completed_both
+                $('#completed_both').attr('checked',false); //2.2
+                // id="completed_both"  value="2.3"
+                $('#completed_both').attr('checked',false); //2.3
+                
+                
+                //hardpalate_non
+                $('#hardpalate_non').attr('checked',false); 
+                //  id="hardpalate_complete"  value="3.1"
+                $('#hardpalate_complete').attr('checked',false);
+                // id="hardpalate_incomplete"   value="3.2"
+                $('#hardpalate_incomplete').attr('checked',false);
+                // id="hardpalate_submucous"    value="3.3"
+                $('#hardpalate_submucous').attr('checked',false);
+                
+                //id="softpalate_non"
+                $('#softpalate_non').attr('checked',false);
+                // id="softpalate_cleft"  value="4.1"
+                 $('#softpalate_cleft').attr('checked',false);
+                 // id="softpalate_bifid_uvula"  value="4.2"
+                  $('#softpalate_bifid_uvula').attr('checked',false);
+                
+       }
 </script>
 
 
@@ -212,7 +212,7 @@
                     <td align="right" valign="top">Alveolus :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="alveolus"  id="noncleft_al"  ><span>Non-cleft</span>
+                        <input type="radio" name="alveolus"  id="alveolus_noncleft"  ><span>Non-cleft</span>
                         
                         
                          <div style="margin:10px 0;"></div>
@@ -311,12 +311,9 @@
                 
                 <tr>
                     <td>
-                        <a  id="analy1"   href="#"   class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "   data-options="  iconCls:'icon-man' 
+                        <a href="#" class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "  id="btn_clear"  data-options=" iconCls:'icon-cancel'   "      onclick=" btnclr()"   > Clear </a>
+                        <a  id="analy1"   href="#"   class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "   data-options="  iconCls:'icon-man'     " > วิเคราะห์ผล </a>
                       
-                           
-                           
-                           " > วิเคราะห์ผล </a>
-                       
                     </td>
                 </tr>
                 
