@@ -367,13 +367,13 @@
                  <tr>
                     <td>HN   :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:false" style="max-width: 90px  "></input>
+                        <input class="easyui-textbox" type="text" name="HN"  id="HN" data-options="required:false" style="max-width: 90px  " value="ER2315"></input>
 
                     DN   :
-                      <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
+                    <input class="easyui-textbox" type="text" name="DN" id="DN"  style="max-width: 90px  " value="RT2136"></input>
 
                     Ortho No :
-                        <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
+                    <input class="easyui-textbox" type="text" name="othnumber"  id="othnumber"  style="max-width: 90px  " value="TY2316"></input>
 
 
 
@@ -389,7 +389,7 @@
                               CN No :
                      </td>
                      <td>
-                             <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
+                         <input class="easyui-textbox" type="text" name="CN" id="CN"  style="max-width: 90px  " value="RY2135"></input>
                      </td>
                  </tr>
 
@@ -400,7 +400,7 @@
                          เลขบัตรประชาชน :
                      </td>
                      <td>
-                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"  id="seriesnumber" name="seriesnumber"  value="1111111111111"  />
                      </td>
 
                  </tr>
@@ -409,20 +409,20 @@
                 <tr>
                     <td>ชื่อ - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name"   style="width:100px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="firstname" id="firstname"    style="width:100px;height: 30px;"  value="สมเกียรติ"></input>
 
-                        <input class="easyui-textbox" type="text" name="name"   style="width:200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="lastname" id="lastname"   style="width:200px;height: 30px;" value="สุขเจริญ"></input>
                     </td>
                 </tr>
 
                 <tr>
                     <td>รูปถ่าย :</td>
-                    <td><input name="file" class="f1 easyui-filebox"></input></td>
+                    <td><input name="file1" id="file1"   class="f1 easyui-filebox"></input></td>
                 </tr>
 
                  <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
-                    <td><input class="easyui-datetimebox" required style="width:200px"></td>
+                    <td><input class="easyui-datetimebox"  style="width:200px"></td>
                 </tr>
 
                 <tr>
@@ -481,7 +481,7 @@
                 <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
-                        <input class="easyui-datetimebox" required style="width:200px">
+                        <input class="easyui-datetimebox"  style="width:200px">
 
                       <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
                       <input class="easyui-textbox"  style="width:50px; height: 30px;"  >
@@ -522,7 +522,7 @@
                  <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
-                        <input class="easyui-datetimebox" required style="width:200px">
+                        <input class="easyui-datetimebox"  style="width:200px">
 
                       <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
                       <input class="easyui-textbox"  style="width:50px; height: 30px;"  >

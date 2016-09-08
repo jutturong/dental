@@ -63,8 +63,30 @@ class Welcome extends CI_Controller {
         }
         public function insert_patient() //บันทึกประวัติผู้ป่วย
         {
-                 echo "test ";
-
+                 //echo "test ";
+                 echo $HN=trim($this->input->get_post("HN"));
+                 echo "<br>";
+                 echo $DN=trim($this->input->get_post("DN"));
+                 echo "<br>";
+                 echo $othnumber=trim($this->input->get_post("othnumber"));
+                 echo "<br>";
+                 echo $CN=trim($this->input->get_post("CN"));
+                echo "<br>";
+                echo $seriesnumber=trim($this->input->get_post("seriesnumber"));  //บัตรประชนชน
+                echo "<br>";
+               echo  $firstname=trim($this->input->get_post("firstname"));  //ชื่อ
+               echo  "<br>";
+               echo  $lastname=trim($this->input->get_post("lastname"));  //นามสกุล
+               echo "<br>";
+               
+                                echo  $fname1 =  $_FILES['file1']['name'];
+                                echo "<br>";
+                     	echo $fsize1=$_FILES['file1']['size'];
+                                echo "<br>";
+                     	echo $ftmpname1=$_FILES['file1']['tmp_name'];
+                                echo "<br>";
+                     	echo $ftypename1=$_FILES['file1']['type'];
+                                echo "<br>";
         }
 }
 
