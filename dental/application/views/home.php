@@ -361,19 +361,19 @@
         <div title="ประวัติทั่วไป" style="padding:10px">
 
 
-            <form id="ff" method="post">
+            <form id="fr_add_patient" method="post"  enctype="multipart/form-data"  novalidate="novalidate">
             <table cellpadding="5">
 
                  <tr>
                     <td>HN   :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                        <input class="easyui-textbox" type="text" name="name" data-options="required:false" style="max-width: 90px  "></input>
 
                     DN   :
-                      <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                      <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
 
                     Ortho No :
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                        <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
 
 
 
@@ -389,7 +389,7 @@
                               CN No :
                      </td>
                      <td>
-                             <input class="easyui-textbox" type="text" name="name" data-options="required:true" style="max-width: 90px  "></input>
+                             <input class="easyui-textbox" type="text" name="name"  style="max-width: 90px  "></input>
                      </td>
                  </tr>
 
@@ -409,9 +409,9 @@
                 <tr>
                     <td>ชื่อ - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="width:100px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="name"   style="width:100px;height: 30px;"></input>
 
-                        <input class="easyui-textbox" type="text" name="name" data-options="required:true"  style="width:200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="name"   style="width:200px;height: 30px;"></input>
                     </td>
                 </tr>
 
@@ -427,7 +427,7 @@
 
                 <tr>
                     <td>ที่อยู่ :</td>
-                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="name" ></input></td>
                 </tr>
 
                 <tr>
@@ -435,7 +435,7 @@
                        สัญชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="name" data-options="required:true"></input>
+                       <input class="easyui-textbox" type="text" name="name" ></input>
 
                     </td>
 
@@ -446,7 +446,7 @@
                        เชื้อชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="name" data-options="required:true"></input>
+                       <input class="easyui-textbox" type="text" name="name" ></input>
 
                     </td>
 
@@ -455,15 +455,15 @@
 
                  <tr>
                     <td>ศาสนา :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
                 </tr>
 
 
                <tr>
                     <td>ชื่อบิดา - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:150px;height: 30px;"></input>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject" style="width:150px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject"  style="width:200px;height: 30px;"></input>
 
                     </td>
 
@@ -474,7 +474,7 @@
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
                 </tr>
 
 
@@ -495,7 +495,7 @@
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
                 </tr>
 
 
@@ -503,8 +503,8 @@
                 <tr>
                     <td>ชื่อมารดา - นามสกุล </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width: 150px;height: 30px;"></input>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width: 200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject"  style="width: 150px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject"  style="width: 200px;height: 30px;"></input>
 
                     </td>
 
@@ -516,7 +516,7 @@
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
                 </tr>
 
                  <tr>
@@ -534,7 +534,7 @@
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
                 </tr>
 
 
@@ -543,23 +543,13 @@
                         ชื่อ สามี/ภรรยา  - นามสกุล :
                     </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
-                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="subject"  style="width:100px;height: 30px;"></input>
+                         <input class="easyui-textbox" type="text" name="subject"  style="width:100px;height: 30px;"></input>
                     </td>
                 </tr>
 
 
-                <!--
-                  <tr>
-                    <td>
-                        ชื่อ ภรรยา - นามสกุล :
-                    </td>
-                    <td>
-                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
-                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true" style="width:100px;height: 30px;"></input>
-                    </td>
-                </tr>
-                -->
+
 
 
 
@@ -599,7 +589,7 @@
               <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่ทราบ
               <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่เคย
               <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true" /> เคย
-               ระบุ <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:200px;height: 30px;" /></input>
+               ระบุ <input class="easyui-textbox" type="text" name="subject"   style="width:200px;height: 30px;" /></input>
 
             </td>
            </tr>
@@ -610,7 +600,7 @@
                    สถานที่ที่ได้รับการรักษามาก่อน :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:200px;height: 30px;" /></input>
+                   <input class="easyui-textbox" type="text" name="subject"   style="width:200px;height: 30px;" /></input>
                </td>
            </tr>
 
@@ -620,7 +610,7 @@
                    แพทย์เจ้าของคนไข้ :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                   <input class="easyui-textbox" type="text" name="subject" ></input>
                </td>
            </tr>
 
@@ -628,13 +618,33 @@
                <tr>
                    <td>ระดับพัฒนาการผู้ป่วย :  </td>
                    <td>
-                       <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  style="width: 150px;height: 30px;" />
+                       <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" > ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  style="width: 150px;height: 30px;" />
+                   </td>
+               </tr>
+
+               <tr>
+                   <td colspan="2">
+                      <?=nbs(50)?>
+          <a href="javascript:void(0)" class="easyui-linkbutton"
+           iconCls="icon-man"
+           style="width:100px;height:40px;"
+            onClick="
+               $('#fr_add_patient').form('submit',{
+                   url:'<?=base_url()?>index.php/welcome/insert_patient/',
+                   success:function(data)
+                   {
+                      alert(data);
+                   }
+               });
+
+              "  >  บันทึกข้อมูล </a>
+
                    </td>
                </tr>
 
             </table>
 
-
+                 </form>
 
 
 
@@ -815,7 +825,7 @@
 
 
 
-        </form>
+
     </div>
 
 

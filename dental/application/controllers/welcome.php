@@ -3,7 +3,7 @@
 class Welcome extends CI_Controller {
 
 
-    
+
     var  $title=" ศูนย์ตะวันฉาย มหาวิทยาลัยขอนแก่น | TAWANCHAI KhoenKean University Version 1.0 "; //The Entrar-shadow Website form | w3layouts
     var  $title_fr1=" ระบบการติดตามการรักษา version 1.0 ";
 	public function index()
@@ -17,7 +17,7 @@ class Welcome extends CI_Controller {
             //echo "testing page";
              $data['title']= $this->title;
               $data['title_fr1']= $this->title_fr1;
-              
+
              $data["tr1"]="บำบัดทางทันตกรรมจัดฟันก่อนการศัลยกรรมสำหรับทารก (PSOT)";
              $data["tr2"]="ตรวจความพิการทางประสาท";
              $data["tr3"]="ตรวจภาวะแทรกซ้อนทางพันธุกรรม";
@@ -32,39 +32,39 @@ class Welcome extends CI_Controller {
              $data["tr12"]="ผ่าตัดตกแต่งกระดูกขากรรไกร";
              $data["tr13"]="ยืดถ่างขยายกระดูกขากรรไกร";
              $data["tr14"]="ฝึกการพูด";
-               
+
              $this->load->view('home',$data);
         }
         public   function  callHN() //call all System  (12_progress)
         {
              $q = isset($_POST['q']) ? strval($_POST['q']) : '';
-            
+
              $tb1="12_progress";
              $fname1="Clinic";
              $tb2="01_demographic";
-             $va1="Epilepsy Clinic";   
+             $va1="Epilepsy Clinic";
              $on1="12_progress.HN=01_demographic.HN";
              $where1="12_progress.Clinic";
              $lk1="12_progress.HN";
-             $va_arr = array();            
-             $this->db->select('*');   
+             $va_arr = array();
+             $this->db->select('*');
             // $this->db->join($tb2,$on1,"left");
              $this->db->join($tb2, $on1 );
              $this->db->like($lk1,$q);
-             $query=$this->db->get_where($tb1,array($where1=>$va1),20,0);  
-            // $query=$this->db->get($tb1,15,0);  
-                        
+             $query=$this->db->get_where($tb1,array($where1=>$va1),20,0);
+            // $query=$this->db->get($tb1,15,0);
+
              foreach($query->result() as $row )
              {
                  $va_arr[]=$row;
              }
              echo json_encode($va_arr);
-           
+
         }
-        public function insert_fr()
+        public function insert_patient() //บันทึกประวัติผู้ป่วย
         {
-            
-        
+                 echo "test ";
+
         }
 }
 
