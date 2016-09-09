@@ -177,8 +177,59 @@
                     $('#diag3').window('open');
             });
         }
+        
         </script>
 
+         <script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#calYear1').bind('click',function(){
+                      
+                       var  strdate=$('#birthdatefahter').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+             
+       
+                   //-- คำนวณอายุของมารดา --
+             $(function(){
+                 $('#calYear2').bind('click',function(){
+                      
+                       var  strdate=$('#birthdatemother').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+             
+             
+         </script>
 
 
     </head>
@@ -422,12 +473,12 @@
 
                  <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
-                    <td><input class="easyui-datetimebox"  style="width:200px"></td>
+                    <td><input class="easyui-datetimebox"  style="width:200px" id="birthdate" name="birthdate" ></td>
                 </tr>
 
                 <tr>
                     <td>ที่อยู่ :</td>
-                    <td><input class="easyui-textbox" type="text" name="name" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="address" id="address" value=" 123 ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002 " ></input></td>
                 </tr>
 
                 <tr>
@@ -435,7 +486,7 @@
                        สัญชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="name" ></input>
+                       <input class="easyui-textbox" type="text" name="nationality"  id="nationality" value="ไทย"></input>
 
                     </td>
 
@@ -446,7 +497,7 @@
                        เชื้อชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="name" ></input>
+                       <input class="easyui-textbox" type="text" name="race"  id="race" value="ไทย" ></input>
 
                     </td>
 
@@ -455,15 +506,15 @@
 
                  <tr>
                     <td>ศาสนา :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="religion" id="religion"  value="พุทธ" ></input></td>
                 </tr>
 
 
                <tr>
                     <td>ชื่อบิดา - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject" style="width:150px;height: 30px;"></input>
-                        <input class="easyui-textbox" type="text" name="subject"  style="width:200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="namefather"  id="namefather" style="width:150px;height: 30px;" value="สุรพงษ์" />
+                        <input class="easyui-textbox" type="text" name="fatherlastname" id="fatherlastname"  style="width:200px;height: 30px;" value="สุขเจริญ" />
 
                     </td>
 
@@ -474,17 +525,17 @@
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="career"  id="career" value="รับจ้างทั่วไป" ></input></td>
                 </tr>
 
 
                 <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
-                        <input class="easyui-datetimebox"  style="width:200px">
+                        <input class="easyui-datetimebox"  style="width:200px"  id="birthdatefahter"  name="birthdatefahter">
 
-                      <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
-                      <input class="easyui-textbox"  style="width:50px; height: 30px;"  >
+                        <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear1"  name="calYear1">คำนวณอายุ</a>
+                        <input class="easyui-textbox"  id="age1"  name="age1"  style="width:50px; height: 30px;"  > ปี
 
                     </td>
 
@@ -495,7 +546,7 @@
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="disease" id="disease"  value="โรคลมชัก" ></input></td>
                 </tr>
 
 
@@ -503,8 +554,8 @@
                 <tr>
                     <td>ชื่อมารดา - นามสกุล </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject"  style="width: 150px;height: 30px;"></input>
-                        <input class="easyui-textbox" type="text" name="subject"  style="width: 200px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="mothername"  id="mothername"  style="width: 150px;height: 30px;" value="นวลฉวี" ></input>
+                        <input class="easyui-textbox" type="text" name="motherlastname"  id="motherlastname"  style="width: 200px;height: 30px;"  value="สุขเจริญ"   ></input>
 
                     </td>
 
@@ -516,17 +567,17 @@
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="mothercareer" id="mothercareer"  value="บริษัทเอกชน" ></input></td>
                 </tr>
 
                  <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
-                        <input class="easyui-datetimebox"  style="width:200px">
+                        <input class="easyui-datetimebox"  style="width:200px"  name="birthdatemother"  id="birthdatemother" />
 
-                      <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' ">คำนวณอายุ</a>
-                      <input class="easyui-textbox"  style="width:50px; height: 30px;"  >
-
+                        <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear2" name="calYear2" >คำนวณอายุ</a>
+                        <input class="easyui-textbox"  style="width:50px; height: 30px;" readonly="true"  id="age2" name="age2" > ปี
+                          
                     </td>
                 </tr>
 
@@ -534,7 +585,7 @@
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="subject" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="diseasemother" id="diseasemother"  value="ความดันสูง" ></input></td>
                 </tr>
 
 
@@ -543,8 +594,8 @@
                         ชื่อ สามี/ภรรยา  - นามสกุล :
                     </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="subject"  style="width:100px;height: 30px;"></input>
-                         <input class="easyui-textbox" type="text" name="subject"  style="width:100px;height: 30px;"></input>
+                        <input class="easyui-textbox" type="text" name="spousename"  id="spousename"  style="width:100px;height: 30px;"  value="อาทิตยา"></input>
+                        <input class="easyui-textbox" type="text"   name="spouselastname"  id="spouselastname"    style="width:100px;height: 30px;"  value="นามวงศ์" ></input>
                     </td>
                 </tr>
 
@@ -556,7 +607,7 @@
                   <tr>
                     <td>สวัสดิการการรักษา :</td>
                     <td>
-                        <select class="easyui-combobox" name="language">
+                        <select class="easyui-combobox"  id="benefits"  name="benefits" >
 
 
                             <option value="1">ประกันสังคม</option>
@@ -569,7 +620,7 @@
 
                         </select>
 
-                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    id="otherbenefits" name="otherbenefits"  value="ประกันชีวิตเอกชน"  />
 
                     </td>
                 </tr>

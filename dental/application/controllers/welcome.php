@@ -78,7 +78,9 @@ class Welcome extends CI_Controller {
                echo  "<br>";
                echo  $lastname=trim($this->input->get_post("lastname"));  //นามสกุล
                echo "<br>";
-               
+
+
+               //--------------รูปถ่าย :---------------------------------
                                 echo  $fname1 =  $_FILES['file1']['name'];
                                 echo "<br>";
                      	echo $fsize1=$_FILES['file1']['size'];
@@ -87,6 +89,74 @@ class Welcome extends CI_Controller {
                                 echo "<br>";
                      	echo $ftypename1=$_FILES['file1']['type'];
                                 echo "<br>";
+               //--------------รูปถ่าย :---------------------------------
+
+            echo $birthdate=trim($this->input->get_post("birthdate"));  //วัน/เดือน/ปี เกิด :
+            echo "<br>";
+
+            echo  $address=trim($this->input->get_post("address"));  //ที่อยู่ :
+            echo "<br>";
+
+            echo $nationality=trim($this->input->get_post("nationality")); //สัญชาติ :
+            echo "<br>";
+
+            echo $race=trim($this->input->get_post("race")); //เชื้อชาติ :
+            echo "<br>";
+
+            echo  $religion=trim($this->input->get_post("religion")); //ศาสนา :
+            echo "<br>";
+
+            echo $namefather=trim($this->input->get_post('namefather')); //ชื่อบิดา
+            echo "<br>";
+
+            echo $fatherlastname=trim($this->input->get_post("fatherlastname")); //บิดา - นามสกุล :
+            echo "<br>";
+            
+            echo  $career=trim($this->input->get_post("career")); //อาชีพ :
+            echo "<br>";
+            
+            echo  $birthdatefahter=trim($this->input->get_post("birthdatefahter"));  //วัน/เดือน/ปี เกิด : บิดา
+            echo "<br>";
+            
+            echo  $age1=trim($this->input->get_post("age1")); //อายุบิดา
+            echo "<br>";
+            
+            echo  $disease=trim($this->input->get_post("disease"));  //โรคประจำตัวบิดา :
+            echo "<br>";
+            
+            echo  $mothername=trim($this->input->get_post("mothername"));  //ชื่อมารดา 
+            echo "<br>";
+            
+            echo $motherlastname=trim($this->input->get_post("motherlastname"));  // - นามสกุล 
+            echo "<br>";
+            
+            echo $mothercareer =trim($this->input->get_post("mothercareer")); //อาชีพ : มารดา
+            echo "<br>";
+            
+            echo  $birthdatemother=trim($this->input->get_post('birthdatemother')); // //วัน/เดือน/ปี เกิด : มารดา
+            echo "<br>";
+             
+            echo  $age2=trim($this->input->get_post("age2")); //อายุมารดา
+            echo "<br>";
+            
+            
+            echo  $diseasemother=trim($this->input->get_post("diseasemother"));  //โรคประจำตัวมารดา :
+            echo "<br>";
+            
+            
+             echo  $spousename=trim($this->input->get_post("spousename"));  //ชื่อ สามี/ภรรยา - นามสกุล :
+             echo "<br>";
+             
+             echo $spouselastname=trim($this->input->get_post("spouselastname"));   //ชื่อ  นามสกุล : 
+             echo "<br>";
+             
+             echo $benefits=trim($this->input->get_post('benefits'));  //สวัสดิการการรักษา 
+             echo "<br>";
+             
+             echo $otherbenefits=trim($this->input->get_post("otherbenefits"));  //สวัสดิการการรักษา  อื่นๆ
+             echo "<br>";
+                
+                
         }
 }
 
