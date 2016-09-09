@@ -159,8 +159,10 @@
                 });
             }
 
+            
 
         </script>
+        
 
         <script type="text/javascript">
         function  showpopup1() //สำหรับแสดง  dialog1
@@ -230,6 +232,8 @@
              
              
          </script>
+         
+ 
 
 
     </head>
@@ -607,12 +611,22 @@
                   <tr>
                     <td>สวัสดิการการรักษา :</td>
                     <td>
-                        <select class="easyui-combobox"  id="benefits"  name="benefits" >
-
-
+                        <select class="easyui-combobox"  id="benefits"  name="benefits"  data-options="
+                                onSelect:function(rec){
+                                   if( $('#benefits').combobox('getValue') == 5 )
+                                   {
+                                        $('#otherbenefits').textbox('clear');     
+                                        $('#otherbenefits').textbox('setValue','ระบุสวัสดิการการรักษา');
+                                        $('#otherbenefits').textbox('readonly',false);    
+                                   }
+                                   else
+                                   {
+                                         $('#otherbenefits').textbox('setValue','');
+                                      //   $('#otherbenefits').textbox('readonly',false);
+                                   }
+                                }
+                                ">
                             <option value="1">ประกันสังคม</option>
-
-
                             <option value="2">บัตรทอง</option>
                             <option value="3">จ่ายตรงข้าราชการ</option>
                             <option value="4">เงินสด</option>
@@ -620,7 +634,7 @@
 
                         </select>
 
-                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    id="otherbenefits" name="otherbenefits"  value="ประกันชีวิตเอกชน"  />
+                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    id="otherbenefits" name="otherbenefits"  readonly="true"   />
 
                     </td>
                 </tr>
