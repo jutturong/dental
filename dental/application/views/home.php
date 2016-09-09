@@ -231,9 +231,63 @@
              });
              
              
+             //-----ระบุการรักษามาก่อน
+             
+             
          </script>
          
- 
+         <script type="text/javascript" >
+              //evertreat3
+              //เคยได้รับการรักษามาก่อน : v
+              $(function(){
+                       $('#evertreat1').bind('click',function(){
+                            //alert('t');
+                            $('#otherevertreat').textbox('readonly',true);
+                            $('#otherevertreat').textbox('setValue',"");
+                      });
+                      
+                          $('#evertreat2').bind('click',function(){
+                            //alert('t');
+                            $('#otherevertreat').textbox('readonly',true);
+                            $('#otherevertreat').textbox('setValue',"");
+                      });
+                      
+                      $('#evertreat3').bind('click',function(){
+                            //alert('t');
+                            $('#otherevertreat').textbox('readonly',false);
+                           // $('#otherevertreat').textbox('setValue',"ระบุ  เคยได้รับการรักษามาก่อน ");
+                      });
+                  
+              });
+         </script>
+         
+        <script type="text/javascript" > 
+            //ระดับพัฒนาการผู้ป่วย : 
+            $(function(){
+                  /*
+                   developmentallevel1
+
+otherdevelopmentallevel
+                   */  
+                  
+                     $('#developmentallevel1').bind('click',function()
+                     {
+                           //alert('1');
+                           $('#otherdevelopmentallevel').textbox('setValue','');
+                           $('#otherdevelopmentallevel').textbox('readonly',true);
+                     });
+                
+                     $('#developmentallevel2').bind('click',function()
+                     {
+                           //alert('2');
+                           $('#otherdevelopmentallevel').textbox('readonly',false);
+                           //ระดับพัฒนาการผู้ป่วย : 
+                           $('#otherdevelopmentallevel').textbox('setValue','ระบุระดับพัฒนาการผู้ป่วย');
+                     });
+                   
+                
+            });
+         </script>
 
 
     </head>
@@ -642,7 +696,7 @@
 
                 <tr>
                       <td>หมายเลข :</td>
-                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;" />  </td>
+                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;"   id="numberbenefits"  name="numberbenefits"  value="TR145287"   />  </td>
                 </tr>
 
 
@@ -651,10 +705,10 @@
                เคยได้รับการรักษามาก่อน :
             </td>
             <td>
-              <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่ทราบ
-              <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" /> ไม่เคย
-              <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true" /> เคย
-               ระบุ <input class="easyui-textbox" type="text" name="subject"   style="width:200px;height: 30px;" /></input>
+                <input type="radio" name="evertreat"  id="evertreat1" value="1"    /> ไม่ทราบ
+                <input type="radio" name="evertreat"  id="evertreat2"  value="2"   /> ไม่เคย
+                <input type="radio" name="evertreat"  id="evertreat3"   value="3" /> เคย ระบุ : <input class="easyui-textbox"  name="otherevertreat"   id="otherevertreat"   style="width:150px;height: 30px;"   />
+                
 
             </td>
            </tr>
@@ -665,7 +719,7 @@
                    สถานที่ที่ได้รับการรักษามาก่อน :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="subject"   style="width:200px;height: 30px;" /></input>
+                   <input class="easyui-textbox" type="text" name="treatmentfacility"   id="treatmentfacility" style="width:170px;height: 30px;"  value="รพ.พยาบาลศรีนครินทร์"  />
                </td>
            </tr>
 
@@ -675,7 +729,7 @@
                    แพทย์เจ้าของคนไข้ :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="subject" ></input>
+                   <input class="easyui-textbox" type="text" name="doctor" id="doctor"  value="นพ.นพคุณ ดวงจินทร์ดา"></input>
                </td>
            </tr>
 
@@ -683,7 +737,7 @@
                <tr>
                    <td>ระดับพัฒนาการผู้ป่วย :  </td>
                    <td>
-                       <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" > ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  style="width: 150px;height: 30px;" />
+                       <input type="radio" name="developmentallevel" value="1"  id="developmentallevel1"   class="easyui-validatebox" > ปกติ <input type="radio" name="developmentallevel"   id="developmentallevel2"   value="2"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  id="otherdevelopmentallevel"  name="otherdevelopmentallevel"  style="width: 150px;height: 30px;"  readonly="true" />
                    </td>
                </tr>
 

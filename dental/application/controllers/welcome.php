@@ -156,7 +156,35 @@ class Welcome extends CI_Controller {
              echo $otherbenefits=trim($this->input->get_post("otherbenefits"));  //สวัสดิการการรักษา  อื่นๆ
              echo "<br>";
                 
-                
+             echo $numberbenefits=trim($this->input->get_post("numberbenefits"));    //หมายเลข :
+             echo "<br>";
+                 
+             echo  $evertreat=trim($this->input->get_post('evertreat'));     // เคยได้รับการรักษามาก่อน :   1=ไม่ทราบ   2=ไม่เคย  3=เคย ระบุ
+             echo "<br>";
+             
+             echo  $otherevertreat=trim($this->input->get_post("otherevertreat"));   //เคย ระบุ 
+             echo "<br>";
+             
+             echo  $treatmentfacility=trim($this->input->get_post('treatmentfacility'));   // สถานที่ที่ได้รับการรักษามาก่อน :
+             echo "<br>";
+             
+             echo  $doctor=trim($this->input->get_post("doctor"));  // แพทย์เจ้าของคนไข้ :
+              echo "<br>";
+              
+              
+              /*
+               developmentallevel1
+
+otherdevelopmentallevel
+               */
+              
+              echo  $developmentallevel=trim($this->input->get_post('developmentallevel'));  //ระดับพัฒนาการผู้ป่วย
+              echo "<br>";
+              
+              echo  $otherdevelopmentallevel=trim($this->input->get_post("otherdevelopmentallevel")); //ระดับพัฒนาการผู้ป่วย
+              echo "<br>";
+              
+              
         }
 }
 
