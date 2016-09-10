@@ -308,6 +308,21 @@ $this->db->insert('mytable', $data);
                   }
               
         }
+        //----- ่json call table name is    tb_history_patient
+        //   127.0.0.1/dental/index.php/welcome/json_tb1/
+        //    http://127.0.0.1/dental/index.php/welcome/json_tb1/
+        function  json_tb1()
+        {
+            $tb="tb_history_patient";
+            $this->db->order_by("id_history_patient","DESC");
+            $query=$this->db->get($tb,10);
+            foreach($query->result() as $row)
+            {
+                  $rows[]=$row;
+            }
+            echo json_encode($rows);
+        }
+        
 }
 
 /* End of file welcome.php */

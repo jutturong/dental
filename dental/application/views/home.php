@@ -79,7 +79,34 @@
                                   //alert('t');
                             }
                         }
+                    },
+                    {
+                        text:'Reload',
+                        iconCls:'icon-reload',
+                        handler:function()
+                        {
+                            $('#dg1').datagrid('reload');
+                        }
                     }
+                    ,
+                    {
+                        text:'Delete',
+                        iconCls:'icon-remove',
+                        handler:function(){
+                            //alert('t');
+                            var  row=$('#dg1').datagrid('getSelected');
+                            if( row )
+                            {
+                                //alert('t');
+                                var  id=row.id_history_patient;
+                                //alert(id);
+                                if( id > 0 )
+                                {
+                                    
+                                }
+                            }
+                        } 
+                    },
                                  ]
         </script>
 
@@ -424,12 +451,27 @@ otherdevelopmentallevel
                              <table id="dg1"  name="dg1" class="easyui-datagrid" title="แสดงประวัติผู้ป่วย" style="width:1100px;height:300px"
             data-options="singleSelect:true,
                                   collapsible:true,
-
-                                  url:'<?=base_url()?>datagrid_data1.json',
-                                  method:'get',
+                                  url:'<?=base_url()?>index.php/welcome/json_tb1/',
+                                  method:'post',
+                                  columns:[[  
+                                        { field:'firstname',title:'ชื่อ'  },
+                                        { field:'lastname',title:'นามสกุล' },
+                                        { field:'HN',title:'HN' ,align:'center' },
+                                        { field:'DN' , title:'DN' , align:'center' },
+                                        { field:'othnumber',   title:'Ortho No',   align:'center' },
+                                        { field:'CN',   title:'CN No',   align:'center' },
+                                        { field:'CN',   title:'CN No',   align:'center' },
+                                        { field:'seriesnumber',   title:'เลขบัตรประชาชน ',   align:'center' },
+                                        { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },  
+                                        
+                                        
+                                        
+                                       
+                                  ]],
                                   toolbar:toolbar ,
-
                                   ">
+                                 
+            <!--                     
         <thead>
             <tr>
                 <th data-options="field:'itemid',width:80">ลำดับที่</th>
@@ -441,15 +483,14 @@ otherdevelopmentallevel
                  <th data-options="field:'status',width:150,align:'center'">Other No.</th>
                  <th data-options="field:'status',width:60,align:'center'">CN series.</th>
 
-                 <!--
-                 <th data-options="field:'treatment',width:100,align:'center'">Treatment </th>
-                 <th data-options="field:'diagnosis',width:100,align:'center'">Diagnosis </th>
-                    -->
+        
 
 
 
             </tr>
         </thead>
+           -->
+        
     </table>
 
               <div class="easyui-panel">
@@ -758,6 +799,7 @@ otherdevelopmentallevel
                           {
                                     $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');                     
                                     $('#dia1').dialog('close');
+                                    $('#dg1').datagrid('reload');
                           }else if( data == '0' )
                           {
                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลล้มเหลว');
@@ -768,6 +810,7 @@ otherdevelopmentallevel
                });
 
               "  >  บันทึกข้อมูล </a>
+                       <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-remove"  onclick="  $('#dia1').dialog('close');   "  > ปิด (Close) </a>      
 
                    </td>
                </tr>
