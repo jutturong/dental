@@ -752,7 +752,18 @@ otherdevelopmentallevel
                    url:'<?=base_url()?>index.php/welcome/insert_patient/',
                    success:function(data)
                    {
-                      alert(data);
+                          //alert(data);
+                          
+                          if( data == '1' )
+                          {
+                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');                     
+                                    $('#dia1').dialog('close');
+                          }else if( data == '0' )
+                          {
+                                   $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลล้มเหลว');
+                          }
+                          
+                         
                    }
                });
 

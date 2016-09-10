@@ -63,113 +63,165 @@ class Welcome extends CI_Controller {
         }
         public function insert_patient() //บันทึกประวัติผู้ป่วย
         {
-                 //echo "test ";
-                 echo $HN=trim($this->input->get_post("HN"));
-                 echo "<br>";
-                 echo $DN=trim($this->input->get_post("DN"));
-                 echo "<br>";
-                 echo $othnumber=trim($this->input->get_post("othnumber"));
-                 echo "<br>";
-                 echo $CN=trim($this->input->get_post("CN"));
-                echo "<br>";
-                echo $seriesnumber=trim($this->input->get_post("seriesnumber"));  //บัตรประชนชน
-                echo "<br>";
-               echo  $firstname=trim($this->input->get_post("firstname"));  //ชื่อ
-               echo  "<br>";
-               echo  $lastname=trim($this->input->get_post("lastname"));  //นามสกุล
-               echo "<br>";
+                //---------- create database name=>tb_history_patient
+               //id_history_patient     1
+            
+                  $HN=trim($this->input->get_post("HN"));  //2
+                 //echo "<br>";
+                  $DN=trim($this->input->get_post("DN"));  //3
+                 //echo "<br>";
+                  $othnumber=trim($this->input->get_post("othnumber"));  //4
+                 //echo "<br>";
+                  $CN=trim($this->input->get_post("CN"));  //5
+                //echo "<br>";
+                 $seriesnumber=trim($this->input->get_post("seriesnumber"));  //บัตรประชนชน  //6
+                //echo "<br>";
+                 $firstname=trim($this->input->get_post("firstname"));  //ชื่อ  //7
+               //echo  "<br>";
+                 $lastname=trim($this->input->get_post("lastname"));  //นามสกุล  //8
+               //echo "<br>";
 
+
+               //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                  $fname1 =  $_FILES['file1']['name'];  //9   =>filename
+                                //echo "<br>";
+                     	 $fsize1=$_FILES['file1']['size'];
+                                //echo "<br>";
+                     	 $ftmpname1=$_FILES['file1']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename1=$_FILES['file1']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(  $fname1   )      )
+                                   {
+                                           $source = $_FILES['file1']['tmp_name'];
+                                           $file_rec = $_FILES['file1']['tmp_name'];
+                                           $target = "upload/".$_FILES['file1']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
 
                //--------------รูปถ่าย :---------------------------------
-                                echo  $fname1 =  $_FILES['file1']['name'];
-                                echo "<br>";
-                     	echo $fsize1=$_FILES['file1']['size'];
-                                echo "<br>";
-                     	echo $ftmpname1=$_FILES['file1']['tmp_name'];
-                                echo "<br>";
-                     	echo $ftypename1=$_FILES['file1']['type'];
-                                echo "<br>";
-               //--------------รูปถ่าย :---------------------------------
 
-            echo $birthdate=trim($this->input->get_post("birthdate"));  //วัน/เดือน/ปี เกิด :
-            echo "<br>";
+             $birthdate=trim($this->input->get_post("birthdate"));  //วัน/เดือน/ปี เกิด :  09/14/2016 08:45:29      //10
+            //echo "<br>";
+            
+            //---------- convert วัน-เดือน-ปี  in database
+            if(  !empty($birthdate)  &&  $birthdate != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$birthdate);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                       $conv_birthdate= $ex2[2]."-".$ex2[0]."-".$ex2[1];   // birthdate
+                      //echo "<br>";       
+            }else{
+                 $conv_birthdate='';
+            }
+            
 
-            echo  $address=trim($this->input->get_post("address"));  //ที่อยู่ :
-            echo "<br>";
+             $address=trim($this->input->get_post("address"));  //ที่อยู่ :     //11
+            //echo "<br>";
 
-            echo $nationality=trim($this->input->get_post("nationality")); //สัญชาติ :
-            echo "<br>";
+             $nationality=trim($this->input->get_post("nationality")); //สัญชาติ :    //12
+            //echo "<br>";
+ 
+             $race=trim($this->input->get_post("race")); //เชื้อชาติ :    //13
+            //echo "<br>";
 
-            echo $race=trim($this->input->get_post("race")); //เชื้อชาติ :
-            echo "<br>";
+              $religion=trim($this->input->get_post("religion")); //ศาสนา :    //14
+            //echo "<br>";
 
-            echo  $religion=trim($this->input->get_post("religion")); //ศาสนา :
-            echo "<br>";
+             $namefather=trim($this->input->get_post('namefather')); //ชื่อบิดา    //15
+            //echo "<br>"; 
 
-            echo $namefather=trim($this->input->get_post('namefather')); //ชื่อบิดา
-            echo "<br>";
-
-            echo $fatherlastname=trim($this->input->get_post("fatherlastname")); //บิดา - นามสกุล :
-            echo "<br>";
+             $fatherlastname=trim($this->input->get_post("fatherlastname")); //บิดา - นามสกุล :   //16
+            //echo "<br>";
             
-            echo  $career=trim($this->input->get_post("career")); //อาชีพ :
-            echo "<br>";
+              $career=trim($this->input->get_post("career")); //อาชีพ :   //17
+            //echo "<br>";
             
-            echo  $birthdatefahter=trim($this->input->get_post("birthdatefahter"));  //วัน/เดือน/ปี เกิด : บิดา
-            echo "<br>";
+              $birthdatefahter=trim($this->input->get_post("birthdatefahter"));  //วัน/เดือน/ปี เกิด : บิดา
+           // echo "<br>";
+                        //---------- convert วัน-เดือน-ปี  in database
+            if(  !empty($birthdatefahter)  &&  $birthdatefahter != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$birthdatefahter);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                       $conv_birthdatefahter= $ex2[2]."-".$ex2[0]."-".$ex2[1];   //18  =>birthdatefahter
+                      //echo "<br>";       
+            }
+            else{
+                 $conv_birthdatefahter='';
+            }
             
-            echo  $age1=trim($this->input->get_post("age1")); //อายุบิดา
-            echo "<br>";
             
-            echo  $disease=trim($this->input->get_post("disease"));  //โรคประจำตัวบิดา :
-            echo "<br>";
             
-            echo  $mothername=trim($this->input->get_post("mothername"));  //ชื่อมารดา 
-            echo "<br>";
             
-            echo $motherlastname=trim($this->input->get_post("motherlastname"));  // - นามสกุล 
-            echo "<br>";
+             $age1=trim($this->input->get_post("age1")); //อายุบิดา   //19
+            //echo "<br>";
             
-            echo $mothercareer =trim($this->input->get_post("mothercareer")); //อาชีพ : มารดา
-            echo "<br>";
+              $disease=trim($this->input->get_post("disease"));  //โรคประจำตัวบิดา :    //20
+            //echo "<br>";
             
-            echo  $birthdatemother=trim($this->input->get_post('birthdatemother')); // //วัน/เดือน/ปี เกิด : มารดา
-            echo "<br>";
+              $mothername=trim($this->input->get_post("mothername"));  //ชื่อมารดา    //21
+            //echo "<br>";
+            
+             $motherlastname=trim($this->input->get_post("motherlastname"));  // - นามสกุล   //22
+            //echo "<br>";
+            
+             $mothercareer =trim($this->input->get_post("mothercareer")); //อาชีพ : มารดา  //23
+            //echo "<br>";
+            
+              $birthdatemother=trim($this->input->get_post('birthdatemother')); // //วัน/เดือน/ปี เกิด : มารดา
+            //echo "<br>";
+         //---------- convert วัน-เดือน-ปี  in database
+            if(  !empty($birthdatemother)  &&  $birthdatemother != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$birthdatemother);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_birthdatemother= $ex2[2]."-".$ex2[0]."-".$ex2[1];    //24   =>   birthdatemother
+                    //  echo "<br>";       
+            }
+            else{
+                 $conv_birthdatemother='';
+            }
              
-            echo  $age2=trim($this->input->get_post("age2")); //อายุมารดา
-            echo "<br>";
+              $age2=trim($this->input->get_post("age2")); //อายุมารดา    //25
+           // echo "<br>";
             
             
-            echo  $diseasemother=trim($this->input->get_post("diseasemother"));  //โรคประจำตัวมารดา :
-            echo "<br>";
+              $diseasemother=trim($this->input->get_post("diseasemother"));  //โรคประจำตัวมารดา :    //26
+            //echo "<br>";
             
             
-             echo  $spousename=trim($this->input->get_post("spousename"));  //ชื่อ สามี/ภรรยา - นามสกุล :
-             echo "<br>";
+               $spousename=trim($this->input->get_post("spousename"));  //ชื่อ สามี/ภรรยา - นามสกุล :    //27
+             //echo "<br>";
              
-             echo $spouselastname=trim($this->input->get_post("spouselastname"));   //ชื่อ  นามสกุล : 
-             echo "<br>";
+              $spouselastname=trim($this->input->get_post("spouselastname"));   //ชื่อ  นามสกุล :    //28
+             //echo "<br>";
              
-             echo $benefits=trim($this->input->get_post('benefits'));  //สวัสดิการการรักษา 
-             echo "<br>";
+              $benefits=trim($this->input->get_post('benefits'));  //สวัสดิการการรักษา   //29
+            // echo "<br>";
              
-             echo $otherbenefits=trim($this->input->get_post("otherbenefits"));  //สวัสดิการการรักษา  อื่นๆ
-             echo "<br>";
+              $otherbenefits=trim($this->input->get_post("otherbenefits"));  //สวัสดิการการรักษา  อื่นๆ    //30
+             //echo "<br>";
                 
-             echo $numberbenefits=trim($this->input->get_post("numberbenefits"));    //หมายเลข :
-             echo "<br>";
+              $numberbenefits=trim($this->input->get_post("numberbenefits"));    //หมายเลข :   //31
+             //echo "<br>";
                  
-             echo  $evertreat=trim($this->input->get_post('evertreat'));     // เคยได้รับการรักษามาก่อน :   1=ไม่ทราบ   2=ไม่เคย  3=เคย ระบุ
-             echo "<br>";
+               $evertreat=trim($this->input->get_post('evertreat'));     // เคยได้รับการรักษามาก่อน :   1=ไม่ทราบ   2=ไม่เคย  3=เคย ระบุ      //32
+             //echo "<br>";
              
-             echo  $otherevertreat=trim($this->input->get_post("otherevertreat"));   //เคย ระบุ 
-             echo "<br>";
+               $otherevertreat=trim($this->input->get_post("otherevertreat"));   //เคย ระบุ    //33
+             //echo "<br>";
              
-             echo  $treatmentfacility=trim($this->input->get_post('treatmentfacility'));   // สถานที่ที่ได้รับการรักษามาก่อน :
-             echo "<br>";
+               $treatmentfacility=trim($this->input->get_post('treatmentfacility'));   // สถานที่ที่ได้รับการรักษามาก่อน :     //34
+             //echo "<br>";
              
-             echo  $doctor=trim($this->input->get_post("doctor"));  // แพทย์เจ้าของคนไข้ :
-              echo "<br>";
+               $doctor=trim($this->input->get_post("doctor"));  // แพทย์เจ้าของคนไข้ :      //35
+              //echo "<br>";
               
               
               /*
@@ -178,12 +230,82 @@ class Welcome extends CI_Controller {
 otherdevelopmentallevel
                */
               
-              echo  $developmentallevel=trim($this->input->get_post('developmentallevel'));  //ระดับพัฒนาการผู้ป่วย
-              echo "<br>";
+               $developmentallevel=trim($this->input->get_post('developmentallevel'));  //ระดับพัฒนาการผู้ป่วย    //36
+              //echo "<br>";
               
-              echo  $otherdevelopmentallevel=trim($this->input->get_post("otherdevelopmentallevel")); //ระดับพัฒนาการผู้ป่วย
-              echo "<br>";
+               $otherdevelopmentallevel=trim($this->input->get_post("otherdevelopmentallevel")); //ระดับพัฒนาการผู้ป่วย     //37
+              //echo "<br>";
               
+                $daterecord=date("Y-m-d");   //38
+               //echo "<br>";
+               
+               //39  id_user ของผู้บันทึกข้อมูล
+               
+               /*
+                $data = array(
+        'title' => $title,
+        'name' => $name,
+        'date' => $date
+);
+
+$this->db->insert('mytable', $data);  
+                
+                */
+               
+               $table="tb_history_patient";   //FROM `tb_history_patient` 
+               $data=array(
+                   'HN'=>$HN,
+                   'DN'=>$DN,
+                   'othnumber'=>$othnumber,
+                   'CN'=>$CN,
+                   'seriesnumber'=>$seriesnumber,
+                   'firstname'=>$firstname,
+                   'lastname'=>$lastname,
+                   'filename'=>$fname1,
+                   'birthdate'=>$conv_birthdate,
+                   'address'=>$address,
+                   'nationality'=>$nationality,
+                   'race'=>$race,
+                   'religion'=>$religion,
+                   'namefather'=>$namefather,
+                   'fatherlastname'=>$fatherlastname,
+                   'career'=>$career,
+                   'birthdatefahter'=>$conv_birthdatefahter,
+                   'age1'=>$age1,
+                   'disease'=>$disease,
+                   'mothername'=>$mothername,
+                   'motherlastname'=>$motherlastname,
+                   'mothercareer'=>$mothercareer,
+                   'birthdatemother'=>$conv_birthdatemother,
+                   'age2'=>$age2,
+                   'diseasemother'=>$diseasemother,
+                   'spousename'=>$spousename,
+                   'spouselastname'=>$spouselastname,
+                   'benefits'=>$benefits,
+                   'otherbenefits'=>$otherbenefits,
+                   'numberbenefits'=>$numberbenefits,
+                   'evertreat'=>$evertreat,
+                   'otherevertreat'=>$otherevertreat,
+                   'treatmentfacility'=>$treatmentfacility,
+                   'doctor'=>$doctor,
+                   'developmentallevel'=>$developmentallevel,
+                   'otherdevelopmentallevel'=>$otherdevelopmentallevel,
+                   'daterecord'=>$daterecord,
+                   'id_user'=>'',
+                   
+               );
+               
+                  $check_inst=$this->db->insert($table,$data);
+                  if(  $check_inst   )
+                  {
+                       //$jcheck=1;
+                        echo 1;
+                  }
+                  else
+                  {
+                       //$jcheck=0;
+                       echo 0;
+                  }
               
         }
 }
