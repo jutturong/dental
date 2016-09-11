@@ -33,7 +33,15 @@
                                var  row=   $('#dg1').datagrid('getSelected');    //productid
                                 if( row )
                                 {
+                                      var  id=row.id_history_patient;  
+                                      var  	firstname=row.firstname;
+                                      var    lastname=row.lastname;
+                                      //alert(id);
+                                      // $('#diag1').window('open');
                                       showpopup1();
+                                      // id="id_history_patient" 
+                                      $('#id_history_patient').textbox('setValue',id);
+                                      $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
                                       btnclr();
                                  }
                         }
@@ -102,7 +110,21 @@
                                 //alert(id);
                                 if( id > 0 )
                                 {
-                                    
+                                    var  url="<?=base_url()?>index.php/welcome/delete_tb1/" +  id ;
+                                      $.post(url,function(result){
+                                           // alert(result);
+                                            if( result == 1  )
+                                            {
+                                                $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                $('#dg1').datagrid('reload');
+                                            }
+                                            else if( result == 0 )
+                                            {
+                                                 $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                            }
+                                           
+                                            
+                                      });
                                 }
                             }
                         } 
@@ -196,7 +218,8 @@
         {
             $(function(){
                 //$.messager.alert('Info','','info');
-                 $('#diag1').window('open');
+                    $('#diag1').window('open');  //file-> fr_diagnosis.php
+                    
             });
         }
         function  showpopup2() //สำหรับแสดง dialog2  ที่เพิ่มมาใหม่
@@ -453,6 +476,8 @@ otherdevelopmentallevel
                                   collapsible:true,
                                   url:'<?=base_url()?>index.php/welcome/json_tb1/',
                                   method:'post',
+                                  rownumbers:true,
+                                  singleSelect:true,
                                   columns:[[  
                                         { field:'firstname',title:'ชื่อ'  },
                                         { field:'lastname',title:'นามสกุล' },

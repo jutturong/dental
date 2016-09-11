@@ -311,16 +311,60 @@ $this->db->insert('mytable', $data);
         //----- ่json call table name is    tb_history_patient
         //   127.0.0.1/dental/index.php/welcome/json_tb1/
         //    http://127.0.0.1/dental/index.php/welcome/json_tb1/
-        function  json_tb1()
+        function  json_tb1()  //$tb="tb_history_patient";
         {
             $tb="tb_history_patient";
             $this->db->order_by("id_history_patient","DESC");
-            $query=$this->db->get($tb,10);
+           //  $query=$this->db->get($tb,10);
+            $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {
                   $rows[]=$row;
             }
             echo json_encode($rows);
+        }
+        
+          //    http://127.0.0.1/dental/index.php/welcome/delete_tb1/22
+        function delete_tb1() // delete => $tb="tb_history_patient";
+        {
+            
+              
+              /*
+               $tables = array('table1', 'table2', 'table3');
+$this->db->where('id', '5');
+$this->db->delete($tables);
+               */
+              
+                $tb="tb_history_patient";
+                $id=trim($this->uri->segment(3));
+                
+                //id_history_patient
+                $this->db->where('id_history_patient',$id);
+                $ck=$this->db->delete($tb);
+                 if( $ck )
+                 {
+                     echo 1;
+                 }
+                 else if( !$ck )
+                 {
+                     echo 0;
+                 }
+              
+        }
+        
+          //    http://127.0.0.1/dental/index.php/welcome/insert_tb2
+        function insert_tb2() //table insert   => tb_diagnosis
+        {
+               //echo "T";
+               echo $id_history_patient=trim($this->input->get_post("id_history_patient"));
+               echo "<br>";
+               echo  $result_analysis=trim($this->input->get_post("result_analysis"));
+               echo  "<br>";
+               echo  $facialcleft=trim($this->input->get_post("facialcleft"));
+               echo "<br>";
+               echo  $otherfacialcleft=trim($this->input->get_post("otherfacialcleft"));
+               echo "<br>";
+               
         }
         
 }

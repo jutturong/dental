@@ -72,6 +72,7 @@
                             var  ans1="Bilateral cleft lip with alveolus";
                           //  alert(ans1);
                             $.messager.alert('วิเคราะห์ผล',ans1);
+                            $('#result_analysis').textbox('setValue',ans1);
                      }
 
                      // 1.2  id="comp_right"   1.2
@@ -79,42 +80,49 @@
                      {
                               var  ans1="Unilateral cleft lip with alveolus";
                               $.messager.alert('วิเคราะห์ผล',ans1);
+                               $('#result_analysis').textbox('setValue',ans1);
                      }
                        // id="comp_left"  1.1
                        else if(    $('#comp_left').is(":checked")    )
                        {
                                 var  ans1="Unilateral cleft lip with alveolus";
                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
                        }
                       // id="completed_left"    value="2.1"
                       else if(    $('#completed_left').is(":checked")    )
                       {
                                var  ans1="Unilateral cleft lip with alveolus";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       // id="completed_right"  value="2.2"
                       else if(    $('#completed_right').is(":checked")    )
                       {
                                var  ans1="Unilateral cleft lip with alveolus";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       // id="incomplete_both"   value="1.6"
                       else if(    $('#incomplete_both').is(":checked")    )
                       {
                                var  ans1="Bilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       //name="lip"  value="1.5"    id="incomplete_right"
                       else if(    $('#incomplete_right').is(":checked")    )
                       {
                                var  ans1="Unilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       //name="lip"  value="1.4"   id="incomplete_left"
                       else if(    $('#incomplete_left').is(":checked")    )
                       {
                                var  ans1="Unilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       //  id="hardpalate_complete"  value="3.1"
                       // id="softpalate_cleft"  value="4.1"
@@ -122,24 +130,28 @@
                       {
                                var  ans1="Complete hard palate cleft";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       // id="hardpalate_incomplete"   value="3.2"
                       else if(    $('#hardpalate_incomplete').is(":checked")    )
                       {
                                var  ans1="Incomplete hard palate cleft";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                       //  id="hardpalate_submucous"    value="3.3"
                       else if(    $('#hardpalate_submucous').is(":checked")    )
                       {
                                var  ans1="Submucous cleft";
                                $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
                       }
                        //id="softpalate_bifid_uvula"  value="4.2"
                        else if(    $('#softpalate_bifid_uvula').is(":checked")    )
                        {
                                 var  ans1="Bi fid uvala";
                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
                        }
 
           });
@@ -170,6 +182,12 @@
        {
 
            //lip_noncleft
+             $('#result_analysis').textbox('setValue','');
+             
+             
+             $('#facialcleft1').attr('checked',false);
+             $('#facialcleft2').attr('checked',false);
+             
             $('#lip_noncleft').attr('checked',false); //1.1
 
              $('#comp_left').attr('checked',false); //1.1
@@ -214,9 +232,30 @@
        }
 </script>
 
+<script type="text/javascript"  >
+    $(function(){
+        
+        //Non-cleft 
+        $('#facialcleft1').bind('click',function()
+         {
+              //$.messager.alert('t','t');
+              $('#otherfacialcleft').textbox('readonly',true);
+              
+              
+         });
+         //Cleft ระบุ
+                 $('#facialcleft2').bind('click',function()
+         {
+              //$.messager.alert('t','t');
+                $('#otherfacialcleft').textbox('readonly',false);
+                 $('#otherfacialcleft').textbox('setValue',' ระบุ Facial cleft ');
+              
+         });
+         
+    });
+</script>
 
-
-<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:700px;height:750px;padding:5px;">
+<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:700px;height:800px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     <div class="easyui-tabs" >
@@ -224,12 +263,25 @@
 
           <div title=" Diagnosis " style="padding:10px" data-options="iconCls:'icon-save'">
 
+              
+              <div class="easyui-panel"  style="padding: 5px;width: 600px;"   >
+                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" $.messager.alert('t','t');  " >เรียกดูข้อมูล</a>
+              </div>
 
 
-        <form id="fr_tr1" action="<?=base_url()?>index.php/welcome/insert_fr" method="post" enctype="multipart/form-data">
+              <form id="fr_tr1" name="fr_tr1"   method="post" enctype="multipart/form-data"  novalidate="novalidate" >
             <table>
 
-
+                <tr>
+                    <td align="right">
+                        ชื่อ - นามสกุล :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname"  name="name_lastname"  style="width:200px;height: 30px;" readonly="true"  />
+                    </td>
+                </tr>
+                
                 <tr>
                     <td align="right" valign="top">Lip :</td>
                     <td>
@@ -326,9 +378,9 @@
                     <td align="right" valign="top">Facial cleft :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="lang" value=""><span>Non-cleft</span>
-                        <input type="radio" /> Cleft
-                        ระบุ <input class="easyui-textbox"  style="width: 200px;height: 30px;"   />
+                        <input type="radio" name="facialcleft"  id="facialcleft1" value="1"><span>Non-cleft</span>
+                        <input type="radio" name="facialcleft"  id="facialcleft2"  value="2" /> Cleft
+                        ระบุ <input class="easyui-textbox"  style="width: 200px;height: 30px;"    name="otherfacialcleft"  id="otherfacialcleft"  readonly="true"  />
                         <!--
                         <div style="margin:10px 0;"></div>
                         <input type="checkbox" name="lang" value=""><span>Midline cleft</span>
@@ -352,13 +404,33 @@
                     <td>
                         <a href="#" class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "  id="btn_clear"  data-options=" iconCls:'icon-cancel'   "      onclick=" btnclr()"   > Clear </a>
                         <a  id="analy1"   href="#"   class="easyui-linkbutton"  style=" width: 100px;  height: 40px; "   data-options="  iconCls:'icon-man'     " > วิเคราะห์ผล </a>
+                        
+                      
 
+                    </td>
+                    <td>
+                        <input class="easyui-textbox"  style="width: 300px;height: 60px;"  readonly="true"  id="result_analysis"  name="result_analysis"  />
                     </td>
                 </tr>
 
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="บันทึกข้อมูล"></input></td>
+                    <td>
+                        
+                        <!--<input type="submit" value="บันทึกข้อมูล"></input>-->
+                        
+                        <a href="javascript:void(0)"   class="easyui-linkbutton"  iconCls="icon-save"   style="width: 100px;height: 40px;"  
+                           onClick="
+                                   $('#fr_tr1').form('submit',{
+                                          url:'<?=base_url()?>index.php/welcome/insert_tb2',
+                                          success:function(data)
+                                          {
+                                                alert(data);
+                                          }
+                                   });
+                                        "    >บันทึกข้อมูล</a>
+                    
+                    </td>
                 </tr>
 
 
