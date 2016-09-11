@@ -184,6 +184,7 @@
            //lip_noncleft
              $('#result_analysis').textbox('setValue','');
              
+             $('#otherfacialcleft').textbox('setValue','');
              
              $('#facialcleft1').attr('checked',false);
              $('#facialcleft2').attr('checked',false);
@@ -265,7 +266,7 @@
 
               
               <div class="easyui-panel"  style="padding: 5px;width: 600px;"   >
-                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" $.messager.alert('t','t');  " >เรียกดูข้อมูล</a>
+                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" $('#dg_diagnosis').dialog('open');  " >เรียกดูข้อมูล</a>
               </div>
 
 
@@ -425,10 +426,25 @@
                                           url:'<?=base_url()?>index.php/welcome/insert_tb2',
                                           success:function(data)
                                           {
-                                                alert(data);
+                                               // alert(data);
+                                               if( data == 1 )
+                                               {
+                                                   
+                                                     $('#dg_diagnosis').dialog('open');
+                                                    
+                                                     $('#grid_diagnosis').datagrid('reload');
+                                                     
+                                                       $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                                     
+                                               }else if( data= 0)
+                                               {
+                                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                               }
                                           }
                                    });
                                         "    >บันทึกข้อมูล</a>
+                        
+                        <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-remove"   onclick="  $('#diag1').window('close');  "   style="width: 100px;height: 40px;"     >ปิด (Close)</a>
                     
                     </td>
                 </tr>
@@ -656,3 +672,56 @@
 </div>
 
 <!-- dialog analy การวิเคราะห์จากการเลือกผู้ป่วย -->
+
+
+
+
+<!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->
+<div class="easyui-dialog"   id="dg_diagnosis"  data-options=" closed:true  "  title="Diagnosis"  iconCls="icon-man"  style="width:500px;height: 400px;"  >
+     <!--  http://127.0.0.1/dental/index.php/welcome/json_tb2 -->
+    <div class="easyui-datagrid" data-options="
+         url:'<?=base_url()?>index.php/welcome/json_tb2',
+         singleSelect:true,
+         columns:[[
+         
+           { field:'firstname',title:'ชื่อ' ,align:'center' },
+           { field:'lastname', title:'นามสกุล', align:'center' },
+           {    field:'result_analysis' , title:'   การวิเคราะห์ผล '  , align:'center'  },
+           {  field:'facialcleft', title:'Facial cleft', align:'center'  },
+           {  field:'otherfacialcleft',title:'ระบุ Facial cleft ',align:'center' },
+           
+         ]],
+         toolbar:[
+            { text:'Reload',iconCls:'icon-reload', handler:function(){ $('#grid_diagnosis').datagrid('reload');  }  },
+            { text:'Delete', iconCls:'icon-remove', handler:function()
+                  {     
+                      //http://127.0.0.1/dental/index.php/welcome/del_tb2/7
+                      var    row=$('#grid_diagnosis').datagrid('getSelected');
+                      if(row)
+                      {
+                            var  id=row.id_diagnosis;
+                            //alert(id);
+                            var url='<?=base_url()?>index.php/welcome/del_tb2/'  + id; 
+                            $.post(url,function(data)
+                                {
+                                       //alert(data);
+                                       if( data == 1 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }else if( data == 0 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }
+                                     
+                                });
+                      }
+                  
+                  }  
+             }
+         ]
+         "  id="grid_diagnosis"  ></div>
+    
+</div>
+<!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->

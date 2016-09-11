@@ -356,15 +356,66 @@ $this->db->delete($tables);
         function insert_tb2() //table insert   => tb_diagnosis
         {
                //echo "T";
-               echo $id_history_patient=trim($this->input->get_post("id_history_patient"));
-               echo "<br>";
-               echo  $result_analysis=trim($this->input->get_post("result_analysis"));
-               echo  "<br>";
-               echo  $facialcleft=trim($this->input->get_post("facialcleft"));
-               echo "<br>";
-               echo  $otherfacialcleft=trim($this->input->get_post("otherfacialcleft"));
-               echo "<br>";
+            //  id_diagnosis //1
+                $id_history_patient=trim($this->input->get_post("id_history_patient"));  //2
+               //echo "<br>";
+                $result_analysis=trim($this->input->get_post("result_analysis"));  //3  วิเคราะห์ผล
+               //echo  "<br>";
+                $facialcleft=trim($this->input->get_post("facialcleft"));  //4 Facial cleft : 1=Non-cleft ,2=Cleft ระบุ	 
+
+              // echo "<br>";
+                $otherfacialcleft=trim($this->input->get_post("otherfacialcleft"));  //5  ระบุ Facial cleft : 	
+
+              // echo "<br>";
                
+               // `tb_diagnosis` 
+                $tb="tb_diagnosis";
+                $data=array(
+                    'id_history_patient'=>$id_history_patient,
+                    'result_analysis'=>$result_analysis,
+                    'facialcleft'=>$facialcleft,
+                    'otherfacialcleft'=>$otherfacialcleft,
+                );
+                   $check_inst=$this->db->insert($tb,$data);
+                         if(  $check_inst   )
+                  {
+                       //$jcheck=1;
+                        echo 1;
+                  }
+                  else
+                  {
+                       //$jcheck=0;
+                       echo 0;
+                  }
+               
+        }
+        
+          //    http://127.0.0.1/dental/index.php/welcome/json_tb2
+        function  json_tb2() //ดึงข้อมูล => `tb_diagnosis` 
+        {
+              $tb1="tb_diagnosis";   //main table
+              $tb2="tb_history_patient";  // table join  name
+              
+              $this->db->join($tb2, $tb2.".id_history_patient=".$tb1.".id_history_patient" ,"left");
+              $query=$this->db->get($tb1);
+              foreach($query->result() as $row )
+              {
+                    $rows[]=$row;
+              }
+              echo  json_encode($rows);
+        }
+          //    http://127.0.0.1/dental/index.php/welcome/del_tb2/7
+        function del_tb2()  #   delete  ข้อมูล => `tb_diagnosis` 
+        {
+             $tb="tb_diagnosis";
+             $id=$this->uri->segment(3);
+             $this->db->where('id_diagnosis',$id);
+             $del=$this->db->delete($tb);
+             if( $del )
+             {  echo 1; }
+             elseif( !$del )
+             {  echo 0;  }
+             
         }
         
 }
