@@ -417,6 +417,41 @@ $this->db->delete($tables);
              {  echo 0;  }
              
         }
+        //-------------- Treatment -------------------------------------------------------
+        //---------Treatment 1-----------------------------------
+         //    http://127.0.0.1/dental/index.php/welcome/inst_tr1
+        function inst_tr1() //form treatment 1
+        {
+            
+               echo $id_history_patient=trim($this->input->get_post("id_history_patient"));  //2
+               echo "<br>";
+               echo  $doctor_fr1=trim($this->input->get_post("doctor_fr1"));  //ทันตแพทย์ผู้ทำการรักษา
+               echo "<br>";
+               echo $joindoctor_fr1=trim($this->input->get_post("joindoctor_fr1")); // ทันตแพทย์ผู้ร่วมทำการรักษา :
+               echo "<br>";
+               
+               
+               echo  $date_fr1=trim($this->input->get_post("date_fr1"));   //วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+               echo "<br>";
+                  //---------- convert วัน-เดือน-ปี  in database
+            if(  !empty($date_fr1)  &&  $date_fr1 != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$date_fr1);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr1= $ex2[2]."-".$ex2[0]."-".$ex2[1];    //24   =>   birthdatemother
+                    //  echo "<br>";       
+            }
+            else{
+                  $conv_date_fr1='';
+            }
+            
+               echo  $conv_date_fr1;
+               echo "<br>";
+               
+               
+        }
+        
         
 }
 

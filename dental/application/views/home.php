@@ -57,6 +57,12 @@
                             if( row )
                              {
                                     //alert(row);
+                                    var  id=row.id_history_patient;  
+                                    var  	firstname=row.firstname;
+                                      var    lastname=row.lastname;
+                                  //   alert(id);
+                                      $('#id_history_patient').textbox('setValue',id);
+                                      $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
                                      showpopup2();
                                }
 
