@@ -967,10 +967,62 @@
 
 
 <div id="dia_treat3" class="easyui-window" title="1. Pre-surgical orthopedics therapy (PSOT)" data-options="modal:true,closed:true" 
-     style="width:700px;height:450px;padding:5px;">
+     style="width:700px;height:480px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
+    
+    <div class="easyui-panel"  style="padding: 5px;"  >
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-man"  style="width:100px;height: 40px;" 
+           onclick="    
+                    $('#dia_psot').dialog('open');
+                    // buttons:[ { text:'Close', }  ]  
+                   
+                    $('#dg_psot').datagrid({
+                        url:'<?=base_url()?>index.php/welcome/json_tr1',
+                        rownumbers:true,
+                        singleSelect:true,
+                        columns:[[
+                                { field:'doctor',title:' ทันตแพทย์ผู้ทำการรักษา ' , align:'center' },
+                                {  field:'joindoctor'  , title:'ทันตแพทย์ผู้ร่วมทำการรักษา' , align:'center'  },
+                                {  field:'begin_date', title:'เริ่มทำการรักษา' ,  align:'center'    },
+                                {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
+                                {  field:'procedure', title:'Procedurev' ,  align:'center'    },
+                                {  field:'otherprocedure', title:' Procedurev อื่นๆ ระบุ ' ,  align:'center'    },
+                              //  {  field:'otherprocedure', title:'Procedurev' ,  align:'center'    },
+                                {  field:'cast', title:'Dental Cast' ,  align:'center'    },
+                                
+                        ]],
+                         toolbar:[
+                            { text:'Reload',iconCls:'icon-reload',handler:function(){   $('#dg_psot').datagrid('reload');   }   },
+                          
+                            { text:'Delete' , iconCls:'icon-remove' ,handler:function()
+                                {
+                                     var  row=    $('#dg_psot').datagrid('getSelected');
+                                       if( row )
+                                       {
+                                           var  id=row.id_psot;
+                                           //alert( id );
+                                           
+                                       }
+                                 } 
+                             },
+                         ] ,
+                         
+                    });
+                     
+
+           "
+           
+           
+           >แสดงข้อมูล</a>
+        
+        <div class="easyui-dialog"  id="dia_psot"  data-options=" closed:true "  title="  Pre-surgical orthopedics therapy (PSOT)  " style="width: 700px;height: 400px;" >
+            <div class="easyui-datagrid"  id="dg_psot"  ></div>
+        </div>
+        
+        
+    </div>
     
             <form id="fr1"     method="post" enctype="multipart/form-data">
             <table>

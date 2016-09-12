@@ -423,11 +423,11 @@ $this->db->delete($tables);
         function inst_tr1() //form treatment 1
         {
             
-               echo $id_history_patient=trim($this->input->get_post("id_history_patient"));  //2
+                $id_history_patient=trim($this->input->get_post("id_history_patient"));  //2
                //echo "<br>";
-               echo  $doctor_fr1=trim($this->input->get_post("doctor_fr1"));  //ทันตแพทย์ผู้ทำการรักษา
+                 $doctor_fr1=trim($this->input->get_post("doctor_fr1"));  //ทันตแพทย์ผู้ทำการรักษา
                //echo "<br>";
-               echo $joindoctor_fr1=trim($this->input->get_post("joindoctor_fr1")); // ทันตแพทย์ผู้ร่วมทำการรักษา :
+                $joindoctor_fr1=trim($this->input->get_post("joindoctor_fr1")); // ทันตแพทย์ผู้ร่วมทำการรักษา :
                //echo "<br>";
                
                
@@ -439,14 +439,14 @@ $this->db->delete($tables);
                       $ex1=explode(" ",$date_fr1);
                       $dmy1=$ex1[0];  
                       $ex2=explode("/",$dmy1);
-                        $conv_date_fr1= $ex2[2]."-".$ex2[0]."-".$ex2[1];    //24   =>   birthdatemother
+                        $conv_date_fr1= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
                     //  echo "<br>";       
             }
             else{
                   $conv_date_fr1='';
             }
             
-               echo  $conv_date_fr1;
+              // echo  $conv_date_fr1;
               // echo "<br>";
                
         
@@ -474,26 +474,26 @@ $this->db->delete($tables);
 
                 
                 
-               echo   $conv_date2_fr1;
-                echo "<br>";
+               //echo   $conv_date2_fr1;
+               // echo "<br>";
                 
 
-             echo  $procedure_fr1=trim($this->input->get_post("procedure_fr1"));  //Procedure : 
-             echo "<br>";
+              $procedure_fr1=trim($this->input->get_post("procedure_fr1"));  //Procedure : 
+            // echo "<br>";
               
-              echo $otherprocedure_fr1=trim($this->input->get_post("otherprocedure_fr1"));  // 5.อื่นๆ   Procedure : 
-              echo "<br>";
+               $otherprocedure_fr1=trim($this->input->get_post("otherprocedure_fr1"));  // 5.อื่นๆ   Procedure : 
+              //echo "<br>";
              
               //  id="file1_fr1" 
               //--------------รูปถ่าย :--รูปถ่ายก่อนการรักษา (Before) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                          echo        $file1_fr1 =  $_FILES['file1_fr1']['name'];  //9   =>filename
-                                echo "<br>";
-                     	echo  $fsize1_fr1=$_FILES['file1_fr1']['size'];
-                                echo "<br>";
-                     echo	 $ftmpname1_fr1=$_FILES['file1_fr1']['tmp_name'];
-                                echo "<br>";
-                    echo 	 $ftypename1_fr1=$_FILES['file1_fr1']['type'];
-                                echo "<br>";
+                                 $file1_fr1 =  $_FILES['file1_fr1']['name'];  //9   =>filename
+                               // echo "<br>";
+                                 $fsize1_fr1=$_FILES['file1_fr1']['size'];
+                              // echo "<br>";
+                     	 $ftmpname1_fr1=$_FILES['file1_fr1']['tmp_name'];
+                              //  echo "<br>";
+                     	 $ftypename1_fr1=$_FILES['file1_fr1']['type'];
+                                //echo "<br>";
                                   if(   !empty(  $file1_fr1   )      )
                                    {
                                            $source = $_FILES['file1_fr1']['tmp_name'];
@@ -506,14 +506,14 @@ $this->db->delete($tables);
                                 
               //  id="file2_fr1" 
                //--------------รูปถ่าย :--รูปถ่ายระหว่างการรักษา (During) :------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    echo        $file2_fr1 =  $_FILES['file2_fr1']['name'];  //9   =>filename
-                                echo "<br>";
-                     	echo  $fsize2_fr1=$_FILES['file2_fr1']['size'];
-                                echo "<br>";
-                     echo	 $ftmpname2_fr1=$_FILES['file2_fr1']['tmp_name'];
-                                echo "<br>";
-                    echo 	 $ftypename2_fr1=$_FILES['file2_fr1']['type'];
-                                echo "<br>";
+                                 $file2_fr1 =  $_FILES['file2_fr1']['name'];  //9   =>filename
+                               // echo "<br>";
+                                $fsize2_fr1=$_FILES['file2_fr1']['size'];
+                               // echo "<br>";
+                     	 $ftmpname2_fr1=$_FILES['file2_fr1']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename2_fr1=$_FILES['file2_fr1']['type'];
+                                //echo "<br>";
                                   if(   !empty(   $file2_fr1   )      )
                                    {
                                            $source = $_FILES['file2_fr1']['tmp_name'];
@@ -527,14 +527,14 @@ $this->db->delete($tables);
                                    
               //  id="file3_fr1" 
                    //--------------รูปถ่ายหลังการรักษา (After) : ------------------------------ ให้ upload ไปไว้ที่ ้upload
-                                                     echo        $file3_fr1 =  $_FILES['file3_fr1']['name'];  //9   =>filename
-                                echo "<br>";
-                     	echo  $fsize3_fr1=$_FILES['file3_fr1']['size'];
-                                echo "<br>";
-                     echo	 $ftmpname3_fr1=$_FILES['file3_fr1']['tmp_name'];
-                                echo "<br>";
-                    echo 	 $ftypename3_fr1=$_FILES['file3_fr1']['type'];
-                                echo "<br>";
+                                             $file3_fr1 =  $_FILES['file3_fr1']['name'];  //9   =>filename
+                              //  echo "<br>";
+                     	 $fsize3_fr1=$_FILES['file3_fr1']['size'];
+                              //  echo "<br>";
+                     	 $ftmpname3_fr1=$_FILES['file3_fr1']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename3_fr1=$_FILES['file3_fr1']['type'];
+                               // echo "<br>";
                                   if(   !empty(   $file3_fr1   )      )
                                    {
                                            $source = $_FILES['file3_fr1']['tmp_name'];
@@ -545,10 +545,43 @@ $this->db->delete($tables);
                                    } 
                                    
                  
-                      echo $cast=trim($this->input->get_post("cast"));             
-                      echo "<br>";
+                       $cast=trim($this->input->get_post("cast"));             
+                     // echo "<br>";
                       
+                      
+                      $data=array(
+                          'id_history_patient'=>$id_history_patient,       #
+                          'doctor'=>$doctor_fr1,  #ทันตแพทย์ผู้ทำการรักษา        
+                          'joindoctor'=>$joindoctor_fr1,  #ทันตแพทย์ผู้ร่วมทำการรักษา :
+                          'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+                          'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
+                          'procedure'=>$procedure_fr1, #Procedure : 
+                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
+                          'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
+                          'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
+                          'cast'=>$cast,  #Dental Cast : 
+                      );
+                      
+                      $tb="tb_psot";
+                      $ck=$this->db->insert($tb,$data);
+                      if( $ck )
+                      {  echo 1; }
+                      elseif( !$ck )
+                      {  echo 0;  }
                                    
+        }
+       //    http://127.0.0.1/dental/index.php/welcome/json_tr1
+        function  json_tr1() # json  call  1.Pre-surgical orthopedics therapy (PSOT)
+        {
+             $tb1="tb_psot";
+             // `tb_history_patient` 
+             $tbj1="tb_history_patient";
+             $this->db->join($tbj1,$tb1.".id_history_patient=".$tbj1.".id_history_patient","left");
+             $q=$this->db->get($tb1);
+             foreach($q->result() as $row)
+             { $rows[]=$row;  }
+             echo json_encode($rows);
         }
         
         
