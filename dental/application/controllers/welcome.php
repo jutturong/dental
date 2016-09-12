@@ -481,13 +481,74 @@ $this->db->delete($tables);
              echo  $procedure_fr1=trim($this->input->get_post("procedure_fr1"));  //Procedure : 
              echo "<br>";
               
-             echo   $conv_date2_fr1=trim($this->input->get_post(" $conv_date2_fr1"));  //
-               echo "<br>";
-     
+              echo $otherprocedure_fr1=trim($this->input->get_post("otherprocedure_fr1"));  // 5.อื่นๆ   Procedure : 
+              echo "<br>";
              
-              
-              
+              //  id="file1_fr1" 
+              //--------------รูปถ่าย :--รูปถ่ายก่อนการรักษา (Before) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
+                          echo        $file1_fr1 =  $_FILES['file1_fr1']['name'];  //9   =>filename
+                                echo "<br>";
+                     	echo  $fsize1_fr1=$_FILES['file1_fr1']['size'];
+                                echo "<br>";
+                     echo	 $ftmpname1_fr1=$_FILES['file1_fr1']['tmp_name'];
+                                echo "<br>";
+                    echo 	 $ftypename1_fr1=$_FILES['file1_fr1']['type'];
+                                echo "<br>";
+                                  if(   !empty(  $file1_fr1   )      )
+                                   {
+                                           $source = $_FILES['file1_fr1']['tmp_name'];
+                                           $file_rec = $_FILES['file1_fr1']['tmp_name'];
+                                           $target = "upload/".$_FILES['file1_fr1']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }        
+                                
+                                
+              //  id="file2_fr1" 
+               //--------------รูปถ่าย :--รูปถ่ายระหว่างการรักษา (During) :------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    echo        $file2_fr1 =  $_FILES['file2_fr1']['name'];  //9   =>filename
+                                echo "<br>";
+                     	echo  $fsize2_fr1=$_FILES['file2_fr1']['size'];
+                                echo "<br>";
+                     echo	 $ftmpname2_fr1=$_FILES['file2_fr1']['tmp_name'];
+                                echo "<br>";
+                    echo 	 $ftypename2_fr1=$_FILES['file2_fr1']['type'];
+                                echo "<br>";
+                                  if(   !empty(   $file2_fr1   )      )
+                                   {
+                                           $source = $_FILES['file2_fr1']['tmp_name'];
+                                           $file_rec = $_FILES['file2_fr1']['tmp_name'];
+                                           $target = "upload/".$_FILES['file2_fr1']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   } 
+                                   
+                                   
+                                   
+              //  id="file3_fr1" 
+                   //--------------รูปถ่ายหลังการรักษา (After) : ------------------------------ ให้ upload ไปไว้ที่ ้upload
+                                                     echo        $file3_fr1 =  $_FILES['file3_fr1']['name'];  //9   =>filename
+                                echo "<br>";
+                     	echo  $fsize3_fr1=$_FILES['file3_fr1']['size'];
+                                echo "<br>";
+                     echo	 $ftmpname3_fr1=$_FILES['file3_fr1']['tmp_name'];
+                                echo "<br>";
+                    echo 	 $ftypename3_fr1=$_FILES['file3_fr1']['type'];
+                                echo "<br>";
+                                  if(   !empty(   $file3_fr1   )      )
+                                   {
+                                           $source = $_FILES['file3_fr1']['tmp_name'];
+                                           $file_rec = $_FILES['file3_fr1']['tmp_name'];
+                                           $target = "upload/".$_FILES['file3_fr1']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   } 
+                                   
                  
+                      echo $cast=trim($this->input->get_post("cast"));             
+                      echo "<br>";
+                      
+                                   
         }
         
         

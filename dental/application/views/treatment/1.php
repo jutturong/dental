@@ -79,17 +79,20 @@
                  $('#procedure2_fr1').bind('click',function(){
                  //alert('t');
                  $('#otherprocedure_fr1').textbox('readonly',true);
+                  $('#otherprocedure_fr1').textbox('setValue',"");
          });
          
                        $('#procedure3_fr1').bind('click',function(){
                  //alert('t');
                  $('#otherprocedure_fr1').textbox('readonly',true);
+                   $('#otherprocedure_fr1').textbox('setValue',"");
          });
          
          
                                 $('#procedure4_fr1').bind('click',function(){
                 //alert('t');
                  $('#otherprocedure_fr1').textbox('readonly',true);
+                   $('#otherprocedure_fr1').textbox('setValue',"");
          });
          
          
@@ -1040,7 +1043,7 @@
                        รูปถ่ายก่อนการรักษา (Before) :   
                     </td>
                     <td>
-                        <input class="easyui-filebox"   />
+                        <input class="easyui-filebox"  id="file1_fr1"  name="file1_fr1"  />
                     </td>
                 </tr>
                 
@@ -1049,7 +1052,7 @@
                        รูปถ่ายระหว่างการรักษา (During) :   
                     </td>
                     <td>
-                        <input class="easyui-filebox"   />
+                        <input class="easyui-filebox"   id="file2_fr1"  name="file2_fr1"  />
                     </td>
                 </tr>
                 
@@ -1058,7 +1061,7 @@
                        รูปถ่ายหลังการรักษา (After) :   
                     </td>
                     <td>
-                        <input class="easyui-filebox"   />
+                        <input class="easyui-filebox"    id="file3_fr1"  name="file3_fr1"    />
                     </td>
                 </tr>
                 
@@ -1072,7 +1075,7 @@
                     </td>
                     <td>
                          
-                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        <input  type="radio"  name="cast"  id="yes"  value="1" > Yes  <input  type="radio"  name="cast"    id="no"  value="2" > No
                         
                     </td>
                     
