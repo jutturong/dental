@@ -1,4 +1,6 @@
- <script type="text/javascript">
+ 
+<!--   คำนวณอายุ  daiag 1   ----------------->
+<script type="text/javascript">
             //-- คำนวณอายุของบิดา --
              $(function(){
                  $('#cal1_fr1').bind('click',function(){
@@ -22,6 +24,83 @@
                  });
              });
 
+</script>
+
+ <script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal2_fr1').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date2_fr1').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2_fr1').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+<!--   คำนวณอายุ  daiag 1   ----------------->
+
+<script type="text/javascript">
+     $(function(){
+           // $("#procedure1_fr1")
+          //procedure2_fr1
+          //procedure3_fr1
+          //procedure4_fr1
+          //procedure5_fr1
+          //otherprocedure_fr1
+          
+          //   else if(    $('#completed_left').is(":checked")    )
+          
+          /*
+          if(   $('#procedure1_fr1').is(':checked')  )
+          {
+                  alert('t');
+          }
+          */
+         
+         $('#procedure1_fr1').bind('click',function(){
+                 //alert('t');
+                 $('#otherprocedure_fr1').textbox('readonly',true);
+         });
+         
+                 $('#procedure2_fr1').bind('click',function(){
+                 //alert('t');
+                 $('#otherprocedure_fr1').textbox('readonly',true);
+         });
+         
+                       $('#procedure3_fr1').bind('click',function(){
+                 //alert('t');
+                 $('#otherprocedure_fr1').textbox('readonly',true);
+         });
+         
+         
+                                $('#procedure4_fr1').bind('click',function(){
+                //alert('t');
+                 $('#otherprocedure_fr1').textbox('readonly',true);
+         });
+         
+         
+                                         $('#procedure5_fr1').bind('click',function(){
+                // alert('t');
+                 $('#otherprocedure_fr1').textbox('readonly',false);
+                 $('#otherprocedure_fr1').textbox('setValue',"ระบุ");
+         });
+         
+          
+     });
 </script>
 
 
@@ -921,7 +1000,7 @@
                 <tr>
                     <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
                     <td>
-                        <input name="date_fr1" id="date_fr1" class="easyui-datebox"></input>
+                        <input name="date_fr1" id="date_fr1" class="easyui-datetimebox"></input>
                         
                         <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"   id="cal1_fr1"    />คำนวณอายุ</a>
                         <input class="easyui-textbox"  id="age1_fr1"  name="age1_fr1"   style="width: 50px;height: 30px;"   />
@@ -932,10 +1011,10 @@
                 <tr>
                     <td>วัน/เดือน/ปี ที่สิ้นสุดการรักษา :</td>
                     <td>
-                        <input name="name1" id="name1" class="easyui-datebox"></input>
+                        <input    name="date2_fr1"   id="date2_fr1"   class="easyui-datetimebox"></input>
                         
-                     <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"     />คำนวณอายุ</a>
-                        <input class="easyui-textbox"   style="width: 50px;height: 30px;"   />
+                     <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"    id="cal2_fr1"    />คำนวณอายุ</a>
+                        <input class="easyui-textbox"   style="width: 50px;height: 30px;"    id="age2_fr1"  name="age2_fr1"    />
                         
                     </td>
                 </tr>
@@ -945,13 +1024,13 @@
                          Procedure : 
                     </td>
                     <td>
-                        <input type="checkbox"  />  1.Strapping  
-                        <input type="checkbox"  />  2.Nasal Molding 
-                        <input type="checkbox"  />  3.Alveolar  Molding  
-                        <input type="checkbox"  /> 4. Simple Obturator 
+                        <input type="radio"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
+                        <input  type="radio"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
+                        <input  type="radio"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
+                        <input  type="radio"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
                         <br>
-                        <input type="checkbox"  />  5.อื่นๆ 
-                        <input class="easyui-textbox"   data-options=" mutilne:true, "  style="width:300px;height: 20px"    /> 
+                        <input   type="radio" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
+                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"   value="อื่นๆ ระบุ"  /> 
                     </td>
                 </tr>
                 
