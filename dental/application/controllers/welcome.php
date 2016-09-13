@@ -742,6 +742,23 @@ id="file3_fr4"
             echo "<br>";
             
             
+             // $tb="tb_psot";
+             $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
+             $data=array(
+                  //  'id_interceptive'
+                   "id_history_patient"=>$id_history_patient_fr4,
+                   "doctor"=>$doctor_fr4,
+                   "begin_date"=>$conv_date_fr4,
+                    "end_date"=>$conv_date2_fr4,
+                    "goslon"=>$goslon,
+                    "incisor"=>$incisor,
+                     "skeletal"=>$skeletal,
+                     "fname1"=>$fname1,
+                      "fname2"=>$fname2,
+                     "fname3"=>$fname3,
+                     "dentalcast"=>$dentalcast,
+              );
+             
             
             
         }
