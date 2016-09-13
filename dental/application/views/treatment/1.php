@@ -1003,6 +1003,22 @@
                                        {
                                            var  id=row.id_psot;
                                            //alert( id );
+                                           var  url='<?=base_url()?>index.php/welcome/del_tr1/'  + id ;
+                                           $.post(url,function(data){ 
+                                                  //alert(data);
+                                                  if( data == 1 )
+                                                  {
+                                                       $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                       $('#dg_psot').datagrid('reload');
+                                                  }
+                                                  else if( data == 0 )
+                                                  {
+                                                       $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                                      //$('#dg_psot').datagrid('reload');
+                                                  }
+                                                  
+                                                  
+                                             });
                                            
                                        }
                                  } 
@@ -1174,9 +1190,21 @@
                                  $('#fr1').form('submit',{
                                        url:'<?=base_url()?>index.php/welcome/inst_tr1',
                                        success:function(data){
-                                           alert(data);
+                                           //alert(data);
                                            
-                                           
+                                             if( data == 1 )
+                                             {
+                                                  $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                                  $('#dia_psot').dialog('open');
+                                                  $('#dg_psot').datagrid('reload');                                             
+                                             }
+                                              else if( data==0)
+                                              {
+                                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                                    $('#dg_psot').datagrid('reload');       
+                                              }
+                                                
+                                             
                                        }
 
                                   });

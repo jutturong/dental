@@ -583,6 +583,22 @@ $this->db->delete($tables);
              { $rows[]=$row;  }
              echo json_encode($rows);
         }
+        #   http://127.0.0.1/dental/index.php/welcome/del_tr1/3
+        function del_tr1()# delete table =>1.Pre-surgical orthopedics therapy (PSOT)
+        {
+            $id=trim($this->uri->segment(3));
+            $tb="tb_psot";
+            $this->db->where('id_psot',$id);
+             $ck=$this->db->delete($tb);
+             if( $ck )
+             {
+                 echo 1;
+             }
+             elseif( !$ck )
+             {
+                 echo 0;
+             }
+        }
         
         
 }
