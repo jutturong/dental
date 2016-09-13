@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2016 at 10:59 PM
+-- Generation Time: Sep 13, 2016 at 11:25 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.17
 
@@ -120,16 +120,14 @@ CREATE TABLE IF NOT EXISTS `tb_psot` (
   `file3` int(11) NOT NULL,
   `cast` int(5) NOT NULL,
   PRIMARY KEY (`id_psot`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tb_psot`
 --
 
 INSERT INTO `tb_psot` (`id_psot`, `id_history_patient`, `doctor`, `joindoctor`, `begin_date`, `end_date`, `procedure`, `otherprocedure`, `file1`, `file2`, `file3`, `cast`) VALUES
-(1, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(2, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(3, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1);
+(1, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
