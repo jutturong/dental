@@ -599,6 +599,152 @@ $this->db->delete($tables);
                  echo 0;
              }
         }
+        #   http://127.0.0.1/dental/index.php/welcome/insert_fr4
+        function  insert_fr4() //------- เพิ่ม  in table  =>   	4. Interceptive orthodontic treatment 
+        {
+            
+            /*
+                          $data=array(
+                          'id_history_patient'=>$id_history_patient,       #
+                          'doctor'=>$doctor_fr1,  #ทันตแพทย์ผู้ทำการรักษา        
+                          'joindoctor'=>$joindoctor_fr1,  #ทันตแพทย์ผู้ร่วมทำการรักษา :
+                          'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+                          'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
+                          'procedure'=>$procedure_fr1, #Procedure : 
+                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
+                          'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
+                          'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
+                          'cast'=>$cast,  #Dental Cast : 
+                      );
+             */
+            
+             echo $id_history_patient_fr4=trim($this->input->get_post("id_history_patient_fr4"));
+             echo "<br>";
+             echo  $doctor_fr4=trim($this->input->get_post("doctor_fr4"));
+             echo "<br>"; 
+             echo  $date_fr4=trim($this->input->get_post("date_fr4"));
+             echo "<br>"; 
+               if(  !empty($date_fr4)  &&  $date_fr4 != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$date_fr4);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr4= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                  $conv_date_fr4='';
+            }
+            echo  $conv_date_fr4;
+            echo "<br>";
+            
+            
+             echo $date2_fr4=trim($this->input->get_post("date2_fr4"));
+              echo "<br>";
+                             if(  !empty($date2_fr4)  &&  $date2_fr4 != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$date2_fr4);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date2_fr4= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                    $conv_date2_fr4='';
+            }
+            echo    $conv_date2_fr4;
+            echo "<br>";
+            
+            echo $goslon=trim($this->input->get_post("goslon"));  //Classification of GOSLON
+            echo "<br>";
+            
+            echo $incisor=trim($this->input->get_post("incisor")); //ncisor classification of malocclusion 
+            echo "<br>";
+            
+            echo $skeletal=trim($this->input->get_post("skeletal")); //Skeletal classification of malocclusion : 
+            echo "<br>";
+             
+            
+            /*
+              id="file1_fr4"
+  id="file2_fr4"
+id="file3_fr4"
+             */
+            
+            
+                           //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                              echo    $fname1 =  $_FILES['file1_fr4']['name'];  //9   =>filename
+                              echo "<br>";
+                     	 $fsize1=$_FILES['file1_fr4']['size'];
+                                //echo "<br>";
+                     	 $ftmpname1=$_FILES['file1_fr4']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename1=$_FILES['file1_fr4']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(  $fname1   )      )
+                                   {
+                                           $source = $_FILES['file1_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['file1_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['file1_fr4']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+
+                           //--------------รูปถ่าย :---------------------------------
+                                   
+                                   
+                          //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                              echo    $fname2 =  $_FILES['file2_fr4']['name'];  //9   =>filename
+                              echo "<br>";
+                     	 $fsize2=$_FILES['file2_fr4']['size'];
+                                //echo "<br>";
+                     	 $ftmpname2=$_FILES['file2_fr4']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename2=$_FILES['file2_fr4']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(  $fname2   )      )
+                                   {
+                                           $source = $_FILES['file2_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['file2_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['file2_fr4']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+
+                           //--------------รูปถ่าย :---------------------------------
+                                   
+                                        //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                              echo    $fname3 =  $_FILES['file3_fr4']['name'];  //9   =>filename
+                              echo "<br>";
+                     	 $fsize3=$_FILES['file3_fr4']['size'];
+                                //echo "<br>";
+                     	 $ftmpname3=$_FILES['file3_fr4']['tmp_name'];
+                                //echo "<br>";
+                     	 $ftypename3=$_FILES['file3_fr4']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(  $fname3   )      )
+                                   {
+                                           $source = $_FILES['file3_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['file3_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['file3_fr4']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+
+                           //--------------รูปถ่าย :---------------------------------
+            
+            
+            echo  $dentalcast=trim($this->input->get_post("dentalcast"));  //Dental Cast
+            echo "<br>";
+            
+            
+            
+            
+        }
         
         
 }

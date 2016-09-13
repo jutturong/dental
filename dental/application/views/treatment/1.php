@@ -1,5 +1,5 @@
  
-<!--   คำนวณอายุ  daiag 1   ----------------->
+<!--   วัน/เดือน/ปี ที่เริ่มทำการรักษา   ----------------->
 <script type="text/javascript">
             //-- คำนวณอายุของบิดา --
              $(function(){
@@ -27,7 +27,7 @@
 </script>
 
  <script type="text/javascript">
-            //-- คำนวณอายุของบิดา --
+            //-- วัน/เดือน/ปี ที่สิ้นสุดการรักษา --
              $(function(){
                  $('#cal2_fr1').bind('click',function(){
                       //date_fr1
@@ -51,6 +51,60 @@
              });
 
 </script>
+
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr4').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr4').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr4').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+ <script type="text/javascript">
+            //-- วัน/เดือน/ปี ที่สิ้นสุดการรักษา --
+             $(function(){
+                 $('#cal2_fr4').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date2_fr4').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2_fr4').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+
 <!--   คำนวณอายุ  daiag 1   ----------------->
 
 <script type="text/javascript">
@@ -1238,8 +1292,9 @@
     <div style="margin:0px 0 0px 0;"></div>
         
     
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+          
             <table>
+                
                 <tr>
                     <td>ผู้ที่ให้คำแนะนำ :</td>
                     <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
@@ -1306,7 +1361,7 @@
                 </tr>
       
             </table>
-        </form>
+       
     
     
 </div>  
@@ -3007,7 +3062,7 @@
 
 
 
-<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:700px;height:500px;padding:5px;">
+<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:600px;height:650px;padding:5px;">
 
     <!--
     <div style="margin:0px 0 0px 0;"></div>
@@ -3067,18 +3122,40 @@
         </form>
     -->
         
+    
+    
+    
+    <form id="fr4"     method="post" enctype="multipart/form-data">
+        
+
+    <div class="easyui-panel"  style="padding: 5px;"  >
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  iconCls="icon-man"  style="width: 100px;height: 40px;"    >แสดงข้อมูล</a>
+    </div>        
+   
+    <div style="padding:10px 5px;" > 
+        <label>
+            ชื่อ - นามสกุล : 
+            
+                        <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr4"  name="name_lastname_fr4"  style="width:200px;height: 30px;" readonly="true"  />
+                        
+                        
+        </label>
+    </div>
+    
+    
           <div style="padding:10px 5px;" > 
               <label>
-                  ทันตแพทย์ผู้ทำการรักษา :  <input class="easyui-combobox"   style="width:200px;height: 40px;"    />
+                  ทันตแพทย์ผู้ทำการรักษา :  <input class="easyui-textbox"  id="doctor_fr4"  name="doctor_fr4"  value="พญ.กานดา สิทธิ"  style="width:200px;height: 40px;"    />
               </label>
           </div>
     <div style="padding: 10px 5px;">
         
         <label>
-            วัน/เดือน/ปี ที่เริ่มทำการรักษา :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+            วัน/เดือน/ปี ที่เริ่มทำการรักษา :  <input class="easyui-datetimebox"  id="date_fr4"  name="date_fr4"  style="width:150px;height: 40px;"   />
 
-            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width:50px;height: 30px;"    />
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  id="cal1_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;"  id="age1_fr4"  name="age1_fr4"   />
             
         </label>
         
@@ -3087,10 +3164,10 @@
     
         <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่สิ้นสุดการรักษา :  <input class="easyui-datebox"  style="width:150px;height: 40px;"   />
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา :  <input class="easyui-datetimebox"  id="date2_fr4" name="date2_fr4"  style="width:150px;height: 40px;"   />
             
-               <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width:50px;height: 30px;"    />
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "   id="cal2_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;"   id="age2_fr4"  name="age2_fr4" />
             
         </label>
     </div>
@@ -3099,7 +3176,7 @@
        <div style="padding: 10px 5px;">
               Classification of GOSLON  : 
           
-              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+              <select class="easyui-combobox"  id="goslon"  name="goslon"  style="width:200px;height: 40px;"   >
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -3110,17 +3187,17 @@
     
       <div style="padding: 10px 5px;">
                     Incisor classification of malocclusion : 
-                    <input type="radio" name="inc1"   />  I
-                    <input type="radio"   name="inc1"  />  II div 1
-                     <input type="radio"   name="inc1"  />  II div 2
-                    <input type="radio"  name="inc1"   />  III
+                    <input type="radio" name="incisor"   id="incisor1"  value="1" />  I
+                    <input type="radio"   name="incisor" id="incisor2" value="2" />  II div 1
+                    <input type="radio"   name="incisor" id="incisor3"  value="3" />  II div 2
+                    <input type="radio"  name="incisor" id="incisor4" value="4"  />  III
     </div>
     
           <div style="padding: 10px 5px;">
                     Skeletal  classification of malocclusion : 
-                    <input type="radio" name="inc1"   />  I
-                    <input type="radio"   name="inc1"  />  II
-                    <input type="radio"  name="inc1"   />  III
+                    <input type="radio" name="skeletal"   id="skeletal1"  value="1"  />  I
+                    <input type="radio"  name="skeletal"  id="skeletal2"  value="2"/>  II
+                    <input type="radio"  name="skeletal"  id="skeletal3" value="3"  />  III
     </div>
     
     <!--
@@ -3143,7 +3220,7 @@
     <div style="padding: 10px 5px;">
         <label>
             รูปถ่าย (Before) :
-            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"   id="file1_fr4"  name="file1_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
@@ -3151,33 +3228,46 @@
        <div style="padding: 10px 5px;">
         <label>
             รูปถ่ายระหว่างการรักษา (During) :
-            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"    id="file2_fr4"  name="file2_fr4"     data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
             รูปถ่ายหลังการรักษา (After) :
-            <input class="easyui-filebox"   data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"   id="file3_fr4"  name="file3_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
     
     <div style="padding: 10px 5px;">
          <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
-        </label>
+             Dental Cast : 
+          </label>    
+             <input  type="radio"  name="dentalcast"   id="dental_cast_yes" value="1" /> Yes  
+             <input  type="radio"  name="dentalcast"  id="dental_cast_no" value="2" /> No
+       
     </div>
     
     
     <div style="padding: 5px 120px;">
        
-        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:90px;height: 40px;"     >Save</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:90px;height: 40px;"  onclick="
+                $('#fr4').form('submit',{
+                    url:'<?=base_url()?>index.php/welcome/insert_fr4',
+                    success:function(data)
+                     {
+                          alert(data);
+                     }
+                });
+           
+           "   >Save</a>
         <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' , onClick:function(){  $('#dia_treat4B').window('close');  } "     style="width:90px;height: 40px;"     >Close</a>
     </div>
     
 </div>
 
+ </form>
 
 <div id="dia_treat9B" class="easyui-window" title=" 9. Orthognathic surgery " data-options="modal:true,closed:true" style="width:700px;height:250px;padding:5px;">
 
@@ -3247,7 +3337,13 @@
     
     
     <div  style="padding: 10px 100px;">
-        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' "  >Save</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' " onclick="
+            
+    
+               
+           
+           
+           " >Save</a>
            <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_treat1').window('close');  "  >Close</a>
     </div>
     

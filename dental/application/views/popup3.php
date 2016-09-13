@@ -4,6 +4,8 @@
         //$.messager.alert('Info','','info');
        // $("#dia_treat1").window('open');
         $(win).window('open');
+        
+        
    }
    
 </script>
@@ -59,14 +61,18 @@
                     <td>4. Interceptive orthodontic treatment  </td>
                 </tr>
                 
-                 <tr>
+                 
+                <!--
+                <tr>
                     <td> 
-                        <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
+                       
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat1')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
-                   <!--  <td>5. ทันตกรรมจัดฟัน เตรียมการสำหรับการปลูกถ่ายกระดูกที่สันเหงือก  </td> -->
+                
                     <td>5. Orthodonic preparation for bone graft surgery </td>
                 </tr>
+                -->
+                
                 
                             <tr>
                     <td> 

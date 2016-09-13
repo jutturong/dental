@@ -60,10 +60,20 @@
                                     var  id=row.id_history_patient;  
                                     var  	firstname=row.firstname;
                                       var    lastname=row.lastname;
-                                  //   alert(id);
+                                  
+                                  
+                                  //-----1. Pre-surgical orthopedics therapy (PSOT)--------- 
                                       $('#id_history_patient').textbox('setValue',id);
                                       $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
-                                     showpopup2();
+                                      
+                                      
+                                      
+                                 //--------4. Interceptive orthodontic treatment -------------   
+                                      $('#id_history_patient_fr4').textbox('setValue',id);
+                                      $('#name_lastname_fr4').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                 
+                                     showpopup2();                     
                                }
 
                         }
