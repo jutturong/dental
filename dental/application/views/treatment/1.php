@@ -3062,7 +3062,7 @@
 
 
 
-<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:600px;height:650px;padding:5px;">
+<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:600px;height:700px;padding:5px;">
 
     <!--
     <div style="margin:0px 0 0px 0;"></div>
@@ -3129,7 +3129,76 @@
         
 
     <div class="easyui-panel"  style="padding: 5px;"  >
-        <a href="javascript:void(0)"  class="easyui-linkbutton"  iconCls="icon-man"  style="width: 100px;height: 40px;"    >แสดงข้อมูล</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  iconCls="icon-man" 
+           onclick="
+                    $('#dia_fr4').dialog('open');
+           "
+           style="width: 100px;height: 40px;"    >
+            แสดงข้อมูล
+        </a>
+        
+        
+        <div class="easyui-dialog"  id="dia_fr4"  data-options="closed:true,resizable:true,"  title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
+            <div  class="easyui-datagrid"  id="dg_fr4" 
+                  data-options="
+                     url:'<?=base_url()?>index.php/welcome/json_fr4',
+                     rownumbers:true,
+                     singleSelect:true,
+                     columns:[[   
+                         { field:'firstname',title:'ชื่อ' , align:'center' },
+                         { field:'lastname',title:'นามสกุล' , align:'center' },
+                         { field:'doctor',   title:'ทันตแพทย์ผู้ทำการรักษา',  align:'center' } ,
+                         { field:'begin_date',   title:'วัน/เดือน/เริ่มทำการรักษา',  align:'center' } ,
+                         { field:'end_date',   title:'สิ้นสุดการรักษา',  align:'center' } ,
+                         { field:'goslon',   title:'Classification of GOSLON',  align:'center' } ,
+                         { field:'incisor',   title:'Incisor classification of malocclusion',  align:'center' } ,
+                         { field:'skeleta',   title:'Skeletal classification of malocclusion',  align:'center' } ,
+                         { field:'dentalcast',title:'Dental Cast',align:'center' },
+                     ]]
+                     ,
+                     toolbar:[
+                       { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr4').datagrid('reload');  } },
+                       {  text:'Delete',iconCls:'icon-remove', handler:function()
+                               {
+                                     var row=$('#dg_fr4').datagrid('getSelected');
+                                     if( row )
+                                     {
+                                           
+                                           var  id=row.id_interceptive;
+                                           //alert( id );
+                                           $.messager.confirm('Delete Data','คุณต้องการลบข้อมูล',function(r)
+                                               {
+                                                    if(r)
+                                                      {
+                                                             var  url='<?=base_url()?>index.php/welcome/del_fr4/' + id ;
+                                                             $.post(url,function(data)
+                                                               {
+                                                                      //alert(data);
+                                                                      if( data == 1 )
+                                                                      {
+                                                                           $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                                           $('#dg_fr4').datagrid('reload');
+                                                                           
+                                                                      }
+                                                                      else if( data==0)
+                                                                      {
+                                                                          $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                                                      }
+                                                               });
+                                                             
+                                                      }
+                                               });
+                                     }
+                                }    
+                       }
+                     ]
+                  "
+                  style="width:590px;height: 380px;"
+                  >
+                
+            </div>
+        </div>
+        
     </div>        
    
     <div style="padding:10px 5px;" > 
@@ -3220,7 +3289,7 @@
     <div style="padding: 10px 5px;">
         <label>
             รูปถ่าย (Before) :
-            <input class="easyui-filebox"   id="file1_fr4"  name="file1_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"   id="fileupload1_fr4"  name="fileupload1_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
@@ -3228,14 +3297,14 @@
        <div style="padding: 10px 5px;">
         <label>
             รูปถ่ายระหว่างการรักษา (During) :
-            <input class="easyui-filebox"    id="file2_fr4"  name="file2_fr4"     data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"   id="fileupload2_fr4"    name="fileupload2_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
             รูปถ่ายหลังการรักษา (After) :
-            <input class="easyui-filebox"   id="file3_fr4"  name="file3_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
+            <input class="easyui-filebox"     id="fileupload3_fr4"     name="fileupload3_fr4"     data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
@@ -3257,7 +3326,19 @@
                     url:'<?=base_url()?>index.php/welcome/insert_fr4',
                     success:function(data)
                      {
-                          alert(data);
+                            //alert(data);
+                            if( data == 1 )
+                            {
+                               
+                                $('#dia_fr4').dialog('open');
+                                $('#dg_fr4').datagrid('reload');
+                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                
+                            }
+                            else 
+                            {
+                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                            }
                      }
                 });
            

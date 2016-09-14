@@ -619,12 +619,15 @@ $this->db->delete($tables);
                       );
              */
             
-             echo $id_history_patient_fr4=trim($this->input->get_post("id_history_patient_fr4"));
-             echo "<br>";
-             echo  $doctor_fr4=trim($this->input->get_post("doctor_fr4"));
-             echo "<br>"; 
-             echo  $date_fr4=trim($this->input->get_post("date_fr4"));
-             echo "<br>"; 
+              $id_history_patient_fr4=trim($this->input->get_post("id_history_patient_fr4"));
+             //echo "<br>";
+               $doctor_fr4=trim($this->input->get_post("doctor_fr4"));
+            //echo "<br>"; 
+               
+               
+               
+               $date_fr4=trim($this->input->get_post("date_fr4"));
+             //echo "<br>"; 
                if(  !empty($date_fr4)  &&  $date_fr4 != ''  )  //09/14/2016 08:45:29
             {
                       $ex1=explode(" ",$date_fr4);
@@ -636,12 +639,12 @@ $this->db->delete($tables);
             else{
                   $conv_date_fr4='';
             }
-            echo  $conv_date_fr4;
-            echo "<br>";
+           // echo  $conv_date_fr4;
+           //echo "<br>";
             
             
-             echo $date2_fr4=trim($this->input->get_post("date2_fr4"));
-              echo "<br>";
+              $date2_fr4=trim($this->input->get_post("date2_fr4"));
+              //echo "<br>";
                              if(  !empty($date2_fr4)  &&  $date2_fr4 != ''  )  //09/14/2016 08:45:29
             {
                       $ex1=explode(" ",$date2_fr4);
@@ -653,114 +656,151 @@ $this->db->delete($tables);
             else{
                     $conv_date2_fr4='';
             }
-            echo    $conv_date2_fr4;
-            echo "<br>";
+            //echo    $conv_date2_fr4;
+            //echo "<br>";
             
-            echo $goslon=trim($this->input->get_post("goslon"));  //Classification of GOSLON
-            echo "<br>";
+             $goslon=trim($this->input->get_post("goslon"));  //Classification of GOSLON
+            //echo "<br>";
             
-            echo $incisor=trim($this->input->get_post("incisor")); //ncisor classification of malocclusion 
-            echo "<br>";
+             $incisor=trim($this->input->get_post("incisor")); //ncisor classification of malocclusion 
+            //echo "<br>";
             
-            echo $skeletal=trim($this->input->get_post("skeletal")); //Skeletal classification of malocclusion : 
-            echo "<br>";
+           $skeletal=trim($this->input->get_post("skeletal")); //Skeletal classification of malocclusion : 
+           // echo "<br>";
              
+
             
-            /*
-              id="file1_fr4"
-  id="file2_fr4"
-id="file3_fr4"
-             */
+
             
-            
-                           //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
-                              echo    $fname1 =  $_FILES['file1_fr4']['name'];  //9   =>filename
-                              echo "<br>";
-                     	 $fsize1=$_FILES['file1_fr4']['size'];
+           
+             //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    $file1_fr1 =  $_FILES['fileupload1_fr4']['name'];  //9   =>filename
+                               // echo "<br>";
+                           //echo "<br>";
+                     	 $fsize1=$_FILES['fileupload1_fr4']['size'];
                                 //echo "<br>";
-                     	 $ftmpname1=$_FILES['file1_fr4']['tmp_name'];
+                     	 $ftmpname1=$_FILES['fileupload1_fr4']['tmp_name'];
                                 //echo "<br>";
-                     	 $ftypename1=$_FILES['file1_fr4']['type'];
+                     	 $ftypename1=$_FILES['fileupload1_fr4']['type'];
                                 //echo "<br>";
                                 
-                                if(   !empty(  $fname1   )      )
+                                if(   !empty(  $file1_fr1   )      )
                                    {
-                                           $source = $_FILES['file1_fr4']['tmp_name'];
-                                           $file_rec = $_FILES['file1_fr4']['tmp_name'];
-                                           $target = "upload/".$_FILES['file1_fr4']['name'];
+                                           $source = $_FILES['fileupload1_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr4']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    }
-
-                           //--------------รูปถ่าย :---------------------------------
-                                   
-                                   
-                          //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
-                              echo    $fname2 =  $_FILES['file2_fr4']['name'];  //9   =>filename
-                              echo "<br>";
-                     	 $fsize2=$_FILES['file2_fr4']['size'];
+                   
+                       //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    $file2_fr1 =  $_FILES['fileupload2_fr4']['name'];  //9   =>filename
+                               // echo "<br>";
+                           //echo "<br>";
+                     	 $fsize2=$_FILES['fileupload2_fr4']['size'];
                                 //echo "<br>";
-                     	 $ftmpname2=$_FILES['file2_fr4']['tmp_name'];
+                     	 $ftmpname2=$_FILES['fileupload2_fr4']['tmp_name'];
                                 //echo "<br>";
-                     	 $ftypename2=$_FILES['file2_fr4']['type'];
+                     	 $ftypename2=$_FILES['fileupload2_fr4']['type'];
                                 //echo "<br>";
                                 
-                                if(   !empty(  $fname2   )      )
+                                if(   !empty(     $file2_fr1     )      )
                                    {
-                                           $source = $_FILES['file2_fr4']['tmp_name'];
-                                           $file_rec = $_FILES['file2_fr4']['tmp_name'];
-                                           $target = "upload/".$_FILES['file2_fr4']['name'];
+                                           $source = $_FILES['fileupload2_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr4']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
-                                   }
-
-                           //--------------รูปถ่าย :---------------------------------
-                                   
-                                        //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
-                              echo    $fname3 =  $_FILES['file3_fr4']['name'];  //9   =>filename
-                              echo "<br>";
-                     	 $fsize3=$_FILES['file3_fr4']['size'];
+                                   }               
+            
+      //--------------รูปถ่าย :--------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    $file3_fr1 =  $_FILES['fileupload3_fr4']['name'];  //9   =>filename
+                               // echo "<br>";
+                           //echo "<br>";
+                     	 $fsize3=$_FILES['fileupload3_fr4']['size'];
                                 //echo "<br>";
-                     	 $ftmpname3=$_FILES['file3_fr4']['tmp_name'];
+                     	 $ftmpname3=$_FILES['fileupload3_fr4']['tmp_name'];
                                 //echo "<br>";
-                     	 $ftypename3=$_FILES['file3_fr4']['type'];
+                     	 $ftypename3=$_FILES['fileupload3_fr4']['type'];
                                 //echo "<br>";
                                 
-                                if(   !empty(  $fname3   )      )
+                                if(   !empty(    $file3_fr1     )      )
                                    {
-                                           $source = $_FILES['file3_fr4']['tmp_name'];
-                                           $file_rec = $_FILES['file3_fr4']['tmp_name'];
-                                           $target = "upload/".$_FILES['file3_fr4']['name'];
+                                           $source = $_FILES['fileupload3_fr4']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr4']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr4']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
-                                   }
+                                   }    
+            
+            
+            
 
-                           //--------------รูปถ่าย :---------------------------------
             
             
-            echo  $dentalcast=trim($this->input->get_post("dentalcast"));  //Dental Cast
-            echo "<br>";
-            
-            
-             // $tb="tb_psot";
-             $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
-             $data=array(
-                  //  'id_interceptive'
-                   "id_history_patient"=>$id_history_patient_fr4,
-                   "doctor"=>$doctor_fr4,
-                   "begin_date"=>$conv_date_fr4,
-                    "end_date"=>$conv_date2_fr4,
-                    "goslon"=>$goslon,
-                    "incisor"=>$incisor,
-                     "skeletal"=>$skeletal,
-                     "fname1"=>$fname1,
-                      "fname2"=>$fname2,
-                     "fname3"=>$fname3,
-                     "dentalcast"=>$dentalcast,
+              $dentalcast=trim($this->input->get_post("dentalcast"));  //Dental Cast
+            //echo "<br>";
+  
+    $data=array(
+                  //  'id_interceptive'        #1
+                   "id_history_patient"=>$id_history_patient_fr4,   #2
+                   "doctor"=>$doctor_fr4,  //ทันตแพทย์ผู้ทำการรักษา    #3
+                   "begin_date"=>$conv_date_fr4,  //วัน/เดือน/ปี ที่เริ่มทำการรักษา  #4
+                    "end_date"=>$conv_date2_fr4,  //วัน/เดือน/ปี ที่สิ้นสุดการรักษา  #5
+                   "goslon"=>$goslon,  //Classification of GOSLON  #6
+                    "incisor"=>$incisor,  //Incisor classification of malocclusion   #7
+                    "skeleta"=>$skeletal,  //Skeletal classification of malocclusion   #8
+                    "filename1"=> $file1_fr1,  //รูปถ่าย (Before)  #9
+                      "filename2"=>$file2_fr1,  //รูปถ่ายระหว่างการรักษา (During)   #10
+                    "filename3"=> $file3_fr1,  //รูปถ่ายหลังการรักษา (After)  #11
+                    "dentalcast"=>$dentalcast,   //Dental Cast :  #12
               );
-             
-            
-            
+              $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
+              $ck=$this->db->insert($tb,$data);
+              $inst=$this->db->insert($tb,$data);
+              if( $inst  )
+              {
+                      echo 1;
+              }
+              elseif( $inst )
+              {
+                      echo  0;
+              }
+        }
+        
+        #   http://127.0.0.1/dental/index.php/welcome/json_fr4
+        function json_fr4()  //=>table    `tb_interceptive` 
+        {
+                  $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
+                  $tbj1="tb_history_patient";
+                  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tbj1.".id_history_patient","left");
+                  $q=$this->db->get($tb);
+                  foreach($q->result() as $row)
+                  {
+                        $rows[]=$row;
+                  }
+                  echo  json_encode($rows);
+                  
+        }
+        #   http://127.0.0.1/dental/index.php/welcome/del_fr4
+        function del_fr4()
+        {
+               $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
+               $id=$this->uri->segment(3);
+              
+               $this->db->where('id_interceptive',$id);
+               
+               
+               $ck=$this->db->delete($tb);
+               if( $ck )
+               {
+                   echo 1;
+               }
+               elseif( !$ck )
+               {
+                   echo 0;
+               }
+                
         }
         
         
