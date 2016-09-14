@@ -803,6 +803,130 @@ $this->db->delete($tables);
                 
         }
         
+        #--------------- form 6  6. Bone graft surgery  -----------------------------------
+         #   http://127.0.0.1/dental/index.php/welcome/inst_fr6
+        function inst_fr6()
+        {
+          
+                        /*
+                          $data=array(
+                          'id_history_patient'=>$id_history_patient,       #
+                          'doctor'=>$doctor_fr1,  #ทันตแพทย์ผู้ทำการรักษา        
+                          'joindoctor'=>$joindoctor_fr1,  #ทันตแพทย์ผู้ร่วมทำการรักษา :
+                          'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+                          'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
+                          'procedure'=>$procedure_fr1, #Procedure : 
+                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
+                          'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
+                          'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
+                          'cast'=>$cast,  #Dental Cast : 
+                      );
+             */
+            
+                echo   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
+                echo "<br>";
+                echo  $doctor=trim($this->input->get_post("doctor_fr6"));
+                echo "<br>";
+                 
+                
+                $date_fr6=trim($this->input->get_post("date_fr6"));
+             //echo "<br>"; 
+               if(  !empty($date_fr6)  &&  $date_fr6 != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$date_fr6);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr6= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                   $conv_date_fr6='';
+            }
+            
+            echo   $conv_date_fr6;
+            echo "<br>";
+            
+            echo $technic=trim($this->input->get_post("technic"));    //เทคนิคที่ใช้ 
+             echo "<br>";
+            
+            
+             
+                                    //------------รูปถ่ายก่อนการรักษา (ฺBefore) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                echo    $file1 =  $_FILES['fileupload1_fr6']['name'];  //9   =>filename
+                                echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file1      )      )
+                                   {
+                                           $source = $_FILES['fileupload1_fr6']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr6']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr6']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                     
+             
+             
+                               
+                                   
+                          //------------รูปถ่ายระหว่างการรักษา (ฺDuring) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    $file2 =  $_FILES['fileupload2_fr6']['name'];  //9   =>filename
+                               // echo "<br>";
+                           //echo "<br>";
+                     	// $fsize2=$_FILES['fileupload2_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname2=$_FILES['fileupload2_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename2=$_FILES['fileupload2_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(      $file2      )      )
+                                   {
+                                           $source = $_FILES['fileupload2_fr6']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr6']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr6']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                                   
+           
+                                   
+                                   //------------รูปถ่ายหลังการรักษา (ฺAfter) :  : ------------------------------- ให้ upload ไปไว้ที่ ้upload
+                                    $file3 =  $_FILES['fileupload3_fr6']['name'];  //9   =>filename
+                              
+                     	// $fsize3=$_FILES['fileupload3_fr6']['size'];
+                                
+                     	// $ftmpname3=$_FILES['fileupload3_fr6']['tmp_name'];
+                             
+                     	// $ftypename3=$_FILES['fileupload3_fr6']['type'];
+                                
+                                
+                                if(   !empty(        $file3        )      )
+                                   {
+                                           $source = $_FILES['fileupload3_fr6']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr6']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr6']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                                   
+                                   
+                               echo    $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6")); //Dental Cast : 
+                               echo "<br>";
+                               
+                                   
+                                
+                
+        }
         
 }
 

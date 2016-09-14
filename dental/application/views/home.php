@@ -42,7 +42,14 @@
                                       // id="id_history_patient" 
                                       $('#id_history_patient').textbox('setValue',id);
                                       $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
+                                      
+                                      
+                                      
+                                      
                                       btnclr();
+                                      
+                                      
+                                      
                                  }
                         }
                     },
@@ -72,6 +79,8 @@
                                       $('#id_history_patient_fr4').textbox('setValue',id);
                                       $('#name_lastname_fr4').textbox('setValue',firstname+'  '+lastname);
                                  
+                                     $('#id_history_patient_fr6').textbox('setValue',id);
+                                      $('#name_lastname_fr6').textbox('setValue',firstname+'  '+lastname);
                                  
                                      showpopup2();                     
                                }

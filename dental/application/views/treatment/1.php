@@ -105,6 +105,32 @@
 </script>
 
 
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr6').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr6').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr6').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
 <!--   คำนวณอายุ  daiag 1   ----------------->
 
 <script type="text/javascript">
@@ -2507,16 +2533,33 @@
 
 
 
-<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:900px;height:600px;padding:5px;">
+<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
+    
+    <div class="easyui-panel" style="padding: 3px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  >เรียกดูข้อมูล</a>
+    </div>
         
     
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+            <form id="fr6"  method="post" enctype="multipart/form-data">
             <table>
+                
+                
+                <tr>
+                    <td>
+                          ชื่อ - นามสกุล : 
+                    </td>
+                    <td>
+                         <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:200px;height: 30px;" readonly="true"  />
+                    </td>
+                </tr>
+                
+                
                 <tr>
                     <td> แพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-combobox"  value="พญ.ภัทรราพร วรรณวดี"></input></td>
                 </tr>
                 
                 
@@ -2527,10 +2570,10 @@
                     <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
                         
-                         <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a>
+                        <input class="easyui-textbox"   style="width: 50px;height: 40px;"   id="age1_fr6"   />
                         
                     </td>
                 </tr>
@@ -2550,7 +2593,7 @@
                     <td>เทคนิคที่ใช้ :</td>
                     <td>
                     
-                        <input class="easyui-textbox"></input>
+                        <input class="easyui-textbox"  id="technic" name="technic"  value="เทคนิคการผ่าตัด"></input>
                     </td>
                 </tr>
                 
@@ -2561,7 +2604,7 @@
             </label>
                     </td>
                     <td>
-           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
                     </td>
             </tr>               
 
@@ -2573,7 +2616,7 @@
             </label>
                     </td>
                     <td>
-           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
                     </td>
             </tr>               
                   
@@ -2586,7 +2629,7 @@
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
                 </td>
             </tr>
  
@@ -2601,7 +2644,7 @@
                     </td>
                     <td>
                          
-                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        <input  type="radio"  id="dentalcast_fr6"  name="dentalcast_fr6"> Yes  <input  type="radio"> No
                         
                     </td>
                     
@@ -2649,8 +2692,19 @@
                 
                 <tr>
                     <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                           onclick="
+                              $('#fr6').form('submit',{
+                                  url:'<?=base_url()?>index.php/welcome/inst_fr6',
+                                  success: function(data)
+                                  {
+                                      alert(data);
+                                  }
+                              })
+                           "
+                           
+                           >Save</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
