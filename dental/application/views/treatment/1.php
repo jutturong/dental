@@ -243,8 +243,59 @@
 </script>
 
 
+<!--------------8. Corrective Orthodontic Treatment ----------------->
+<!--   วัน/เดือน/ปี ที่เริ่มทำการรักษา   ----------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr8').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr8').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr8').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
 
+</script>
 
+ <script type="text/javascript">
+            //-- วัน/เดือน/ปี ที่สิ้นสุดการรักษา --
+             $(function(){
+                 $('#cal2_fr8').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date2_fr8').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2_fr8').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
 
 
 <div id="dia10"  title="10. Other surgery " style="width:800px;height: 800px;padding: 10px;" class="easyui-dialog"     data-options="
@@ -2318,16 +2369,88 @@
     
 </div>
 
-<div id="dia_treat12" class="easyui-window" title=" 8. Corrective Orthodontic Treatment  " data-options="modal:true,closed:true" style="width:700px;height:300px;padding:5px;">
+<div id="dia_treat12" class="easyui-window" title=" 8. Corrective Orthodontic Treatment  " data-options="modal:true,closed:true" style="width:600px;height:540px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
+    <div class="easyui-panel"  style="padding:5px;" >
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"  iconCls="icon-print"  
+           onclick="
+                 $('#dia_fr8').dialog('open');
+           "
+           
+           >ดูข้อมูล</a>
+    </div>
     
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+    <div class="easyui-dialog"  id="dia_fr8"   title="8. Corrective Orthodontic Treatment "  data-options="
+         closed:true,
+         buttons:[ {  text:'ปิด (Close)',iconCls:'icon-cancel' , handler:function(){ $('#dia_fr8').dialog('close');  }     } ]
+         "  style="width: 500px;height: 400px;"  >
+        <div class="easyui-datagrid"  id="dg_fr8"  style="width: 480px;height: 400px;" 
+             data-options="
+               url:'<?=base_url()?>index.php/welcome/json_tr8',
+               singleSelect:true,
+               rownumbers:true,
+               columns:[[
+               { title:'ทันตแพทย์ผู้ทำการรักษา',align:'center', field:'doctor' },
+               { title:'วัน/เดือน/ปี ที่เริ่มทำการรักษา', align:'center', field:'begin_date'  },
+               { title:'วัน/เดือน/ปี ที่สิ้นสุดการรักษา', align:'center', field:'end_date'  },
+               { field:'goslon' , align:'center' ,title:'Classification of GOSLON' },
+               { field:'incisor'  , align:'center' , title:'Incisor classification of malocclusion' },
+                { field:'skeletal'  , align:'center' ,  title:'Skeletal classification of malocclusion' },
+                { field:'tool' , align:'center'  , title:'ชนิดของเครื่องมือ'  },
+                {  field:'dentalcast'  , align:'center'  , title:'Dental Cast'   },
+               ]],
+               toolbar:[
+                  { text:'Reload',iconCls:'icon-reload',handler:function(){ $('#dg_fr8').datagrid('reload');  } },
+                  { text:'Delete',iconCls:'icon-cancel',handler:function(){
+                               var  row=$('#dg_fr8').datagrid('getSelected');
+                               if( row )
+                               {
+                                    id=row.id_corrective;
+                                    //alert(id);
+                                    var  url='<?=base_url()?>index.php/welcome/del_fr8/' + id;
+                                    $.messager.confirm('ต้องการลบข้อมูล','คุณต้องการลบข้อมูล',function(r){
+                                            if( r )
+                                            {
+                                                 $.post(url,function(){
+                                                 
+                                                      //alert('t');
+                                                       $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                       $('#dg_fr8').datagrid('reload');
+                                                       
+                                                 });
+                                            }
+                                    });
+                                    
+                               }
+                      }
+                  }
+               ]
+             "
+             
+             >
+            
+        </div>
+    </div>
+    
+            <form id="fr8"  method="post" enctype="multipart/form-data">
             <table>
+                
+                <tr>
+                    <td>
+                          ชื่อ - นามสกุล : 
+                    </td>
+                    <td>
+                         <input class="easyui-textbox"  id="id_history_patient_fr8"   name="id_history_patient_fr8"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr8"  name="name_lastname_fr8"  style="width:200px;height: 30px;" readonly="true"  />
+                    </td>
+                </tr>
+                
+                
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td><input name="doctor_fr8" id="doctor_fr8" class="easyui-textbox"  value="ทพญ.กาญจนา ด่านภักดี"></input></td>
                 </tr>
                 
                 
@@ -2335,11 +2458,11 @@
                     <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-datetimebox"  id="date_fr8" name="date_fr8" ></input>
                         
                         
-                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        <a href="javascript:void(0)"  id="cal1_fr8" name='cal1_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+                                                  <input class="easyui-textbox"   id="age1_fr8"   name="age1_fr8"    style="width: 50px;height: 40px;"    />
                         
                         
                     </td>
@@ -2355,11 +2478,11 @@
                         
                         
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-datetimebox"  id="date2_fr8"  name="date2_fr8"></input>
                         
                         
-                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        <a href="javascript:void(0)"  id="cal2_fr8"  name='cal2_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+                                                  <input class="easyui-textbox"  id="age2_fr8" name="age2_fr8"  style="width: 50px;height: 40px;"    />
                     
             
             
@@ -2372,7 +2495,7 @@
               Classification of GOSLON  : 
                 </td>
                 <td>
-              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                    <select class="easyui-combobox"  id="goslon_fr8"  name="goslon_fr8"  style="width:200px;height: 40px;"   >
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -2389,13 +2512,13 @@
                     Incisor classification of malocclusion : 
       </td>
       <td>
-                    <input type="radio" name="inc1"   />  I
+          <input type="radio" name="incisor_fr8"    id="incisor1"     value="1"  />  I
                     
-                    <input type="radio"   name="inc1"  />  II div 1 
+                    <input type="radio"   name="incisor_fr8"     id="incisor2"    value="2"    />  II div 1 
                     
-                       <input type="radio"   name="inc1"  />  II div 2
+                       <input type="radio"   name="incisor_fr8"     id="incisor3"    value="3"   />  II div 2
                     
-                    <input type="radio"  name="inc1"   />  III
+                    <input type="radio"   name="incisor_fr8"     id="incisor4"    value="4"    />  III
     </div>
                     </td>
             </tr>
@@ -2406,9 +2529,9 @@
                     Skeletal  classification of malocclusion : 
           </td>
           <td>
-                    <input type="radio" name="inc1"   />  I
-                    <input type="radio"   name="inc1"  />  II
-                    <input type="radio"  name="inc1"   />  III
+              <input type="radio" name="skeletal_fr8"   id="skeletal1_fr8"  value="1"   />  I
+                    <input type="radio"   name="skeletal_fr8"   id="skeletal2_fr8"  value="2"  />  II
+                    <input type="radio"  name="skeletal_fr8"   id="skeletal3_fr8"  value="3"  />  III
     </div>
                     </td>
                </tr> 
@@ -2416,7 +2539,7 @@
                 
                  <tr>
                     <td>ชนิดของเครื่องมือ :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td><input name="tool_fr8" id="tool_fr8" class="easyui-textbox"></input></td>
                 </tr>
           
                      
@@ -2447,7 +2570,7 @@
          รูปถ่ายก่อนการรักษา (Before) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+          <input class="easyui-filebox" name="fileupload1_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
  
@@ -2456,7 +2579,7 @@
          รูปถ่ายระหว่างรักษา (During) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+          <input class="easyui-filebox" name="fileupload2_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
  
@@ -2465,7 +2588,7 @@
          รูปถ่ายหลังรักษา (After) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+          <input class="easyui-filebox" name="fileupload3_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
  
@@ -2479,7 +2602,7 @@
                     </td>
                     <td>
                          
-                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        <input  type="radio" name="dentalcast_fr8"  id="dentalcast1_fr8"  value="1" > Yes  <input  type="radio"  name="dentalcast_fr8"  id="dentalcast2_fr8" value="2"> No
                         
                     </td>
                     
@@ -2487,9 +2610,31 @@
  
                 
                 <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                    <td colspan="2" align="center">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width:100px;height: 40px;" 
+                           onclick="
+                                $('#fr8').form('submit',{
+                                    url:'<?=base_url()?>index.php/welcome/insert_fr8/',
+                                    success:function(data)
+                                     {
+                                           //alert(data);
+                                           if( data == 1)
+                                           {
+                                                  $.messager.alert('สถานะการเพิ่มข้อมูล','เพิ่มข้อมูลสำเร็จ');
+                                                  $('#dia_fr8').dialog('open');
+                                                  $('#dg_fr8').datagrid('reload');
+                                           }
+                                           else
+                                           {
+                                                 $.messger.alert('สถานะการเพิ่มข้อมูล','เพิ่มข้อมูลผิดพลาด');
+                                           }
+                                     }
+                                    
+                                });
+                           "
+                           
+                           >Save</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>

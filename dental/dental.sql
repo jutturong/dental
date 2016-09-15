@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2016 at 04:18 PM
--- Server version: 5.5.50-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.19
+-- Generation Time: Sep 15, 2016 at 10:16 PM
+-- Server version: 5.5.49-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,6 +47,37 @@ INSERT INTO `tb_bonegraft` (`id_bonegraft`, `id_history_patient`, `doctor`, `dat
 (6, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0),
 (7, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0),
 (14, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_corrective`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_corrective` (
+  `id_corrective` int(11) NOT NULL AUTO_INCREMENT,
+  `id_history_patient` int(11) NOT NULL,
+  `doctor` varchar(100) NOT NULL,
+  `begin_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `goslon` int(11) NOT NULL,
+  `incisor` int(5) NOT NULL,
+  `skeletal` int(5) NOT NULL,
+  `tool` text NOT NULL,
+  `file1` text NOT NULL,
+  `file2` text NOT NULL,
+  `file3` text NOT NULL,
+  `dentalcast` int(5) NOT NULL,
+  PRIMARY KEY (`id_corrective`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `tb_corrective`
+--
+
+INSERT INTO `tb_corrective` (`id_corrective`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeletal`, `tool`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
+(1, 21, 'ทพญ.กาญจนา ด่านภักดี', '0000-00-00', '0000-00-00', 1, 4, 3, 'ชนิดของเครื่องมือ :', '', '', '', 1),
+(2, 21, 'ทพญ.กาญจนา ด่านภักดี', '2012-02-01', '2005-02-02', 5, 4, 3, 'ชนิดของเครื่องมือ :', '10690103_764556926991167_1787453937051832021_n.jpg', 'd89cdfec85eb868a2abe1b1cc5e568d5.png', '12102555214751.jpg', 1);
 
 -- --------------------------------------------------------
 

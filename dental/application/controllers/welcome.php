@@ -1184,6 +1184,205 @@ $this->db->delete($tables);
                     echo 0;
                 }
         }
+        #-------------8. Corrective Orthodontic Treatment ------------------ 
+         #   http://127.0.0.1/dental/index.php/welcome/insert_fr8/
+        function insert_fr8()
+        {
+                $id_history_patient=trim($this->input->get_post("id_history_patient_fr8"));
+              //echo "<br>";
+              
+              /*
+                $data=array(
+                                 //    id_growth       1
+                               "id_history_patient"=>$id_history_patient_fr7,   //2
+                               "doctor"=>$doctor,  //ทันตแพทย์ผู้ทำการรักษา :      3
+                               "begin_date"=>$date_fr7,  //วัน/เดือน/ปี ที่เริ่มทำการรักษา     4
+                               "end_date"=> $date2_fr7,  //วัน/เดือน/ปี ที่สิ้นสุดการรักษา      5
+                               "goslon"=>$goslon_fr7,    //Classification of GOSLON        6
+                               "incisor"=> $Incisor_fr7,    // Incisor classification of malocclusion:     7
+                               "skeletal"=>$skeletal_fr7, //Skeletal classification :      8
+                               "typetool"=>$typetool_fr7,  //// Facial mask      9
+                               "other_typetool"=>$other_typetool_fr7 ,  //Facial mask     ระบุ      10
+                               "appliance"=>$appliance_fr7,    //Facial mask     11
+                               "other_appliance"=>$other_appliance_fr7,   // Functional appliance     ระบุ     12
+                               "filename1"=>$file1,  //รูปถ่ายก่อนการรักษา (Before)     13
+                               "filename2"=>$file2 ,   //รูปถ่ายระหว่างรักษา (During)      14
+                               "filename3"=>$file3 ,   //รูปถ่ายหลังรักษา (After) :       15
+                               "dentalcast"=>$dentalcast_fr7,   //Dental Cast :       16
+                           );
+               */
+              
+               $doctor=trim($this->input->get_post("doctor_fr8")); //ทันตแพทย์ผู้ทำการรักษา :
+              //echo   "<br>";
+              
+               $begin_date=trim($this->input->get_post("date_fr8")); //วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+              //echo   "<br>";
+              
+                      if(  !empty($begin_date)  &&  $begin_date != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$begin_date);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr8= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                   $conv_date_fr8='';
+            }
+            
+            //echo $conv_date_fr8;
+            //echo "<br>";
+            
+              
+               $end_date=trim($this->input->get_post("date2_fr8")); //วัน/เดือน/ปี ที่สิ้นสุดการรักษา :
+              //echo   "<br>";
+                            if(  !empty($end_date)  &&  $end_date != ''  )  //09/14/2016 08:45:29
+            {
+                      $ex1=explode(" ",$end_date);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date2_fr8= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                   $conv_date2_fr8='';
+            }
+              
+            //  $conv_date2_fr8;
+            //echo "<br>";
+            
+             $goslon_fr8=trim($this->input->get_post("goslon_fr8"));  //Classification of GOSLON : 
+            //echo "<br>";
+              
+              $incisor = trim($this->input->get_post('incisor_fr8'));  //Incisor classification of malocclusion : 
+            //echo "<br>";
+                 
+             $skeletal=trim($this->input->get_post("skeletal_fr8"));  // Skeletal classification of malocclusion :
+             //echo "<br>";
+             
+              $tool_fr8=trim($this->input->get_post("tool_fr8"));   //ชนิดของเครื่องมือ :
+             //echo "<br>";
+             
+             //----------รูปถ่ายก่อนการรักษา (Before) : 
+                            $file1 =  $_FILES['fileupload1_fr8']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file1      )      )
+                                   {
+                                           $source = $_FILES['fileupload1_fr8']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr8']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr8']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+             
+             //----------รูปถ่ายระหว่างรักษา (During) : 
+                                       $file2 =  $_FILES['fileupload2_fr8']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file2      )      )
+                                   {
+                                           $source = $_FILES['fileupload2_fr8']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr8']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr8']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+             
+             
+             //----------รูปถ่ายหลังรักษา (After) : 
+                                 $file3 =  $_FILES['fileupload3_fr8']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file3      )      )
+                                   {
+                                           $source = $_FILES['fileupload3_fr8']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr8']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr8']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                 $dentalcast_fr8=trim($this->input->get_post("dentalcast_fr8"));   //Dental Cast :                  
+                //echo "<br>";
+                
+               
+                $data=array(
+                    // id_corrective      //1
+                     "id_history_patient"=> $id_history_patient,   //2
+                      "doctor"=>$doctor,    //3
+                      "begin_date"=>$conv_date_fr8 ,   //4
+                      "end_date"=>$conv_date2_fr8 ,   //5
+                     "goslon"=>$goslon_fr8,   //6
+                     "incisor"=>$incisor,    //7
+                     "skeletal"=>$skeletal,    //8
+                     "tool"=>$tool_fr8,    //9
+                     "file1"=>$file1,    //10
+                     "file2"=>$file2,    //11
+                     "file3"=> $file3,    //12
+                     "dentalcast"=>$dentalcast_fr8,    //13
+                );
+                 $tb="tb_corrective";
+                 $ck=$this->db->insert($tb,$data);
+                 if( $ck )
+                 {
+                     echo 1;
+                 }elseif( !$ck )
+                 {
+                     echo 0;
+                 }
+                
+        }
+         #   http://127.0.0.1/dental/index.php/welcome/json_tr8
+        function json_tr8() //7. Growth modification 
+        {
+                   $tb="tb_corrective";
+                      $tbj1="tb_history_patient";
+                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                    $q=$this->db->get($tb);
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        }
+         #   http://127.0.0.1/dental/index.php/welcome/del_fr8/
+        function  del_fr8()
+        {
+                $id=trim($this->uri->segment(3));
+                  $tb="tb_corrective";
+                $this->db->where('id_corrective',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
         
 }
 

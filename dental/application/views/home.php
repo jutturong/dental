@@ -85,6 +85,13 @@
                                      $('#id_history_patient_fr7').textbox('setValue',id);
                                       $('#name_lastname_fr7').textbox('setValue',firstname+'  '+lastname);   
                                       
+                                      //--------8. Corrective Orthodontic Treatment -----------
+                                      $('#id_history_patient_fr8').textbox('setValue',id);
+                                      $('#name_lastname_fr8').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                     $('#id_history_patient_fr8').textbox('setValue',id);
+                                      $('#name_lastname_fr8').textbox('setValue',firstname+'  '+lastname);   
+                                      
                                       
                                  
                                      showpopup2();                     
