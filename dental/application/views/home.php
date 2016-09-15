@@ -70,12 +70,22 @@
                                       
                                       
                                       
-                                 //--------4. Interceptive orthodontic treatment -------------   
+                                 //--------6. Interceptive orthodontic treatment -------------   
                                       $('#id_history_patient_fr4').textbox('setValue',id);
                                       $('#name_lastname_fr4').textbox('setValue',firstname+'  '+lastname);
                                  
                                      $('#id_history_patient_fr6').textbox('setValue',id);
                                       $('#name_lastname_fr6').textbox('setValue',firstname+'  '+lastname);
+                                      
+                                      
+                                             //-------- 7. Growth modification t -------------   
+                                      $('#id_history_patient_fr7').textbox('setValue',id);
+                                      $('#name_lastname_fr7').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                     $('#id_history_patient_fr7').textbox('setValue',id);
+                                      $('#name_lastname_fr7').textbox('setValue',firstname+'  '+lastname);   
+                                      
+                                      
                                  
                                      showpopup2();                     
                                }

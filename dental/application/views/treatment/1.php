@@ -131,6 +131,62 @@
 
 </script>
 
+<!---------------7. Growth modification----------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr7').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr7').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr7').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+ <script type="text/javascript">
+            //-- วัน/เดือน/ปี ที่สิ้นสุดการรักษา --
+             $(function(){
+                 $('#cal2_fr7').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date2_fr7').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2_fr7').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+
+
+
 <!--   คำนวณอายุ  daiag 1   ----------------->
 
 <script type="text/javascript">
@@ -185,6 +241,9 @@
           
      });
 </script>
+
+
+
 
 
 
@@ -1969,13 +2028,61 @@
 </div>
 
 
-<div id="dia_treat12_7" class="easyui-window" title=" 7. Growth modification  " data-options="modal:true,closed:true" style="width:800px;height:500px;">
+<div id="dia_treat12_7" class="easyui-window" title=" 7. Growth modification  " data-options="modal:true,closed:true" style="width:750px;height:650px;">
 
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+    
+    <div class="easyui-panel" style="padding: 5px;" >
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls='icon-man'   onclick="  $('#dia_fr7').dialog('open');   " >ดูข้อมูล</a>
+        
+    </div>
+    
+    <div class="easyui-dialog"  id="dia_fr7"   title="7. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
+        <div class="easyui-datagrid"   id="dg_fr7"   data-options="  
+                url:'<?=base_url()?>index.php/welcome/json_tr7',
+                singleSelect:true,
+                rownumbers:true,
+                columns:[[   
+                     { field:'firstname', title:'ชื่อ', align:'center',  },
+                     {  field:'lastname',title:'นามสกลุ', align:'center',  },
+                     
+                ]],
+                toolbar:[  
+                     {  text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr7').datagrid('reload');  }  },
+                     {  text:'Delete',iconCls:'icon-cancel', handler:function()
+                            {    
+                                  var  row=$('#dg_fr7').datagrid('getSelected');
+                                  if(row)
+                                  {
+                                        var  id=row.id_growth;
+                                        alert(id);
+                                  }
+                            
+                            }  
+                     }
+                ]
+             "  ></div>
+    </div>
+    
+    
+    
+    
+            <form id="fr7"  method="post" enctype="multipart/form-data">
                 <table >
+                    
+                    <tr>
+                    <td>
+                          ชื่อ - นามสกุล : 
+                    </td>
+                    <td>
+                         <input class="easyui-textbox"  id="id_history_patient_fr7"   name="id_history_patient_fr7"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr7"  name="name_lastname_fr7"  style="width:200px;height: 30px;" readonly="true"  />
+                    </td>
+                </tr>
+                    
+                    
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                    <td><input name="doctor_fr7" id="doctor_fr7" class="easyui-textbox"  value="นพ.รณชัย ทองภูมิ" style="width:200px;height: 30px;"></input></td>
                 </tr>
                 
                 
@@ -1983,10 +2090,10 @@
                     <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-datetimebox"  id="date_fr7" name="date_fr7"   />
                         
-                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "   id="cal1_fr7" >คำนวณอายุ</a>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age1_fr7"  name="age1_fr7"  />
             
             
                     </td>
@@ -1998,11 +2105,11 @@
                     <td>วัน/เดือน/ปี ที่สิ้นสุดการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-datetimebox" id="date2_fr7"  name="date2_fr7"></input>
                         
                         
-           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+                        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "      id="cal2_fr7"  id="cal2_fr7"  >คำนวณอายุ</a>
+           <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age2_fr7"   name="age2_fr7"  />
             
             
                     </td>
@@ -2014,7 +2121,7 @@
               Classification of GOSLON  : 
                 </td>
                 <td>
-              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                    <select class="easyui-combobox"   style="width:200px;height: 40px;"   id="goslon_fr7"  name="goslon_fr7"  >
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -2034,7 +2141,7 @@
                         <input name="name1" id="name1" class="easyui-combobox"></input>
                       -->
                       
-                                             <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                      <select class="easyui-combobox"  id="Incisor_fr7"   name="Incisor_fr7"   style="width:200px;height: 40px;"   >
                        <option value="1">I</option>
                <option value="2">II div 1</option>
                        <option value="3">II div 2</option>
@@ -2054,13 +2161,13 @@
                         <input name="name1" id="name1" class="easyui-combobox"></input>
                         -->
                         
-                         <input type="radio" name="inc1"   />  I
+                        <input type="radio" name="skeletal_fr7"  value="1"  id="skeletal1_fr7"  />  I
                     
-                       <input type="radio"   name="inc1"  />  II 
+                        <input type="radio"   name="skeletal_fr7"  value="2"   id="skeletal2_fr7" />  II 
               
       
                     
-                    <input type="radio"  name="inc1"   />  III
+                        <input type="radio"  name="skeletal_fr7"  value="3"  id="skeletal3_fr7"   />  III
                     
                     
                     </td>
@@ -2074,8 +2181,8 @@
                         <input name="name1" id="name1" class="easyui-combobox"></input>
                     -->
                     
-                    <input type="radio"  > Facial mask  <?=nbs(3)?> ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 30px"  />
-                    <input type="radio"  > Functional appliance  <?=nbs(3)?>   ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 30px"  />
+                    <input type="radio"  name="typetool_fr7"  value="1"  id="facialmask" > Facial mask  <?=nbs(3)?> ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 40px"  name="other_typetool_fr7"  />
+                    <input type="radio"  name="appliance_fr7"  value="1"  id="appliance"  > Functional appliance  <?=nbs(3)?>   ระบุ <input  class="easyui-textbox"  style="widht:100px;height: 40px"   name="other_appliance_fr7"  />
                     
                     
                     </td>
@@ -2109,7 +2216,7 @@
          รูปถ่ายก่อนการรักษา (Before) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+          <input class="easyui-filebox" name="fileupload1_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
      </td>
  </tr> 
  
@@ -2118,7 +2225,7 @@
          รูปถ่ายระหว่างรักษา (During) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+          <input class="easyui-filebox" name="fileupload2_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
      </td>
  </tr> 
  
@@ -2127,7 +2234,7 @@
          รูปถ่ายหลังรักษา (After) :
      </td>
      <td>
-          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:50%">
+          <input class="easyui-filebox" name="fileupload3_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
      </td>
  </tr> 
  
@@ -2141,7 +2248,7 @@
                     </td>
                     <td>
                          
-                                      <input  type="radio"> Yes  <input  type="radio"> No
+                        <input  type="radio"  name="dentalcast_fr7"  id="dentalcast1_fr7" value="1" > Yes  <input  type="radio"  name="dentalcast_fr7"   id="dentalcast2_fr7"  value="2"> No
                         
                     </td>
                     
@@ -2150,8 +2257,29 @@
                 
                 <tr>
                     <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" style="width: 100px;height: 40px;"
+                           onclick="
+                              $('#fr7').form('submit',{
+                                   url:'<?=base_url()?>index.php/welcome/insert_fr7',
+                                   success:function(data){
+                                          //  alert(data);
+                                          if( data == 1 )
+                                          {
+                                              $('#dia_fr7').dialog('open');
+                                              $('$dg_fr7').datagrid('reload');
+                                              $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
+                                              
+                                          }
+                                          else 
+                                          {
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                          }
+                                    }
+                              });
+                           
+                           "
+                           >Save</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
