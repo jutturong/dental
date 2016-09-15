@@ -42,13 +42,8 @@
                                       // id="id_history_patient" 
                                       $('#id_history_patient').textbox('setValue',id);
                                       $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
-                                      
-                                      
-                                      
-                                      
+
                                       btnclr();
-                                      
-                                      
                                       
                                  }
                         }

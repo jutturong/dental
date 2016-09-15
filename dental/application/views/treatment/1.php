@@ -2538,7 +2538,71 @@
     <div style="margin:0px 0 0px 0;"></div>
     
     <div class="easyui-panel" style="padding: 3px;">
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  >เรียกดูข้อมูล</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+           onclick="
+              // alert('t');
+                    $('#dia_fr6').dialog('open');
+           "
+           >
+            เรียกดูข้อมูล</a>
+        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="6. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+                 data-options="  
+                    url:'<?=base_url()?>index.php/welcome/json_fr6 ',
+                   singleSelect:true,
+                   rownumbers:true,
+                   columns:[[
+                       { field:'firstname', title:'ชื่อ', align:'center'  },
+                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                       { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
+                       { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
+                        { title:'เทคนิคที่ใช้ :',  field:'technic',  },
+                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                   ]],
+                   toolbar:[ 
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
+                   {  text:'Delete',iconCls:'icon-remove',handler:function()
+                         {   
+                              var  rows=$('#dg_fr6').datagrid('getSelected');
+                              if( rows )
+                              {
+                                     
+                                     var  id=rows.id_bonegraft;
+                                      //alert(id);
+                                      $.messager.confirm('สถานะการลบข้อมูล',' คุณต้องการลบข้อมูลหรือไม่ ', function(r){
+                                           if( r )
+                                             {
+                                                   //alert('t');
+                                                   //alert(id);
+                                                    var  url='<?=base_url()?>index.php/welcome/del_fr6/'   +  id;
+                                                    $.post(url,function(data){
+                                                            // alert(data);
+                                                              if( data == 1 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                                     $('#dg_fr6').datagrid('reload');
+                                                              }
+                                                              else if( data == 0 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลล้มเหลว');
+                                                              }
+                                                    });
+                                             }
+                                      } );
+                                          
+                                      
+                                     
+                                        
+                                   
+                              }
+                         } 
+                     }
+                   ]
+                 "
+                 
+                 ></div>
+        </div>
+           
     </div>
         
     
@@ -2698,7 +2762,16 @@
                                   url:'<?=base_url()?>index.php/welcome/inst_fr6',
                                   success: function(data)
                                   {
-                                      alert(data);
+                                         //alert(data);
+                                         if( data == 1 )
+                                         {
+                                               $('#dia_fr6').dialog('open');
+                                               $('#dg_fr6').datagrid('reload');
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                         }
+                                         else{
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                         }
                                   }
                               })
                            "

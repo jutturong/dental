@@ -808,26 +808,12 @@ $this->db->delete($tables);
         function inst_fr6()
         {
           
-                        /*
-                          $data=array(
-                          'id_history_patient'=>$id_history_patient,       #
-                          'doctor'=>$doctor_fr1,  #ทันตแพทย์ผู้ทำการรักษา        
-                          'joindoctor'=>$joindoctor_fr1,  #ทันตแพทย์ผู้ร่วมทำการรักษา :
-                          'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
-                          'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
-                          'procedure'=>$procedure_fr1, #Procedure : 
-                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
-                          'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
-                          'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
-                          'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
-                          'cast'=>$cast,  #Dental Cast : 
-                      );
-             */
+
             
-                echo   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
-                echo "<br>";
-                echo  $doctor=trim($this->input->get_post("doctor_fr6"));
-                echo "<br>";
+                   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
+                //echo "<br>";
+                  $doctor=trim($this->input->get_post("doctor_fr6"));
+                //echo "<br>";
                  
                 
                 $date_fr6=trim($this->input->get_post("date_fr6"));
@@ -844,17 +830,17 @@ $this->db->delete($tables);
                    $conv_date_fr6='';
             }
             
-            echo   $conv_date_fr6;
-            echo "<br>";
+            //echo   $conv_date_fr6;
+            //echo "<br>";
             
-            echo $technic=trim($this->input->get_post("technic"));    //เทคนิคที่ใช้ 
-             echo "<br>";
+             $technic=trim($this->input->get_post("technic"));    //เทคนิคที่ใช้ 
+            // echo "<br>";
             
             
              
                                     //------------รูปถ่ายก่อนการรักษา (ฺBefore) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                echo    $file1 =  $_FILES['fileupload1_fr6']['name'];  //9   =>filename
-                                echo "<br>";
+                                    $file1 =  $_FILES['fileupload1_fr6']['name'];  //9   =>filename
+                                //echo "<br>";
                            //echo "<br>";
                      	// $fsize1=$_FILES['fileupload1_fr6']['size'];
                                 //echo "<br>";
@@ -920,13 +906,81 @@ $this->db->delete($tables);
                                    
                                    
                                    
-                               echo    $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6")); //Dental Cast : 
-                               echo "<br>";
+                                   $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6")); //Dental Cast : 
+                               //echo "<br>";
+                               
+                               
+                                                      /*
+                          $data=array(
+                          'id_history_patient'=>$id_history_patient,       #
+                          'doctor'=>$doctor_fr1,  #ทันตแพทย์ผู้ทำการรักษา        
+                          'joindoctor'=>$joindoctor_fr1,  #ทันตแพทย์ผู้ร่วมทำการรักษา :
+                          'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
+                          'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
+                          'procedure'=>$procedure_fr1, #Procedure : 
+                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
+                          'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
+                          'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
+                          'cast'=>$cast,  #Dental Cast : 
+                      );
+             */  
                                
                                    
-                                
-                
+                               $tb="tb_bonegraft";
+                               $data=array(
+                                   // "id_bonegraft",               //1
+                                   "id_history_patient"  =>$id_history_patient_fr6,   //2
+                                   "doctor"=>$doctor,  //แพทย์ผู้ทำการรักษา :      //3
+                                   "date1"=>$date_fr6,  //วัน/เดือน/ปี ที่่ทำการรักษา :      //4
+                                   "technic"=>$technic, //เทคนิคที่ใช้ :               //5
+                                   "file1"=>$file1, //รูปถ่ายก่อนการรักษา (ฺBefore) :            //6
+                                     "file2"=>$file2, //รูปถ่ายระหว่างการรักษา (ฺDuring)         //7
+                                    "file3"=> $file3 , //รูปถ่ายหลังการรักษา (ฺAfter) :                //8
+                                   "dentalcast"=> $dentalcast_fr6,   //Dental Cast :             //9
+                               );
+                               
+                               
+                               $inst=$this->db->insert($tb,$data);
+                               if( $inst )
+                               {
+                                    echo 1;
+                               }
+                               elseif( !$inst )
+                               {
+                                   echo 0;
+                               }
         }
+       #   http://127.0.0.1/dental/index.php/welcome/json_fr6 
+        function  json_fr6() //6. Bone graft surgery 
+        {
+                $tb="tb_bonegraft";
+                $tbj1="tb_history_patient";
+                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                $q=$this->db->get($tb);
+                foreach($q->result() as $row)
+                {
+                    $rows[]=$row;
+                }
+                echo json_encode($rows);
+        }
+        #   http://127.0.0.1/dental/index.php/welcome/del_fr6/4
+        function  del_fr6()
+        {
+                $id=trim($this->uri->segment(3));
+                $tb="tb_bonegraft";
+                $this->db->where('id_bonegraft',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
+        
         
 }
 
