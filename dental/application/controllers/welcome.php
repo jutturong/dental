@@ -1168,7 +1168,22 @@ $this->db->delete($tables);
                     }
                     echo  json_encode($rows);
         }
-        
+                #   http://127.0.0.1/dental/index.php/welcome/del_fr7/
+        function  del_fr7()
+        {
+                $id=trim($this->uri->segment(3));
+                 $tb="tb_growth"; 
+                $this->db->where('id_growth',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
         
 }
 

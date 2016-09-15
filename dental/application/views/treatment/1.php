@@ -2044,6 +2044,7 @@
                 columns:[[   
                      { field:'firstname', title:'ชื่อ', align:'center',  },
                      {  field:'lastname',title:'นามสกลุ', align:'center',  },
+                      {  field:'doctor',title:' ทันตแพทย์ผู้ทำการรักษา ', align:'center',  },
                      
                 ]],
                 toolbar:[  
@@ -2054,7 +2055,34 @@
                                   if(row)
                                   {
                                         var  id=row.id_growth;
-                                        alert(id);
+                                         //alert(id);
+                                        var  url='<?=base_url()?>index.php/welcome/del_fr7/' +  id ;
+                                        //  alert(url);
+                                        
+                                        $.messager.confirm('ต้องการลบข้อมูล','คุณแน่ใจว่าต้องการลบข้อมูล',function(r){
+                                                  if( r )
+                                                  {
+                                                                        $.post(url,function(data)
+                                                              {  
+                                                                    //alert(data); 
+                                                                     if( data == 1 )
+                                                                     {
+                                                                                $('#dg_fr7').datagrid('reload');
+                                                                                $.messager.alert('สถานะการลบข้อมูล','Success');
+                                                                     }else{
+                                                                               $.messager.alert('สถานะการลบข้อมูล','ผิดพลาด');
+                                                                     }
+                                                                     
+                                                               });
+                                                
+                                                
+                                                  
+                                                  }
+                                         
+                                        });
+                                           
+                                                
+                                                
                                   }
                             
                             }  
