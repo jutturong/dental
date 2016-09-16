@@ -978,11 +978,60 @@
             <div class="easyui-panel"  style="padding: 5px;">
                 <a href="javascript:void(0)"   class="easyui-linkbutton"   iconCls="icon-print"   style="width: 100px;height: 40px;"  onclick="  
                         $('#dia_fr9_b').dialog('open');
+                        $('#dg_fr9_2').datagrid('reload');
                    
                    "  >ดูข้อมูล</a>
             </div>
-            <div class="easyui-dialog"   id="dia_fr9_b"  style="width: 600px;height: 300px;"  closed="true"  title=" Distraction "   >
-                
+            <div class="easyui-dialog"   id="dia_fr9_b"   data-options=" buttons:[ { text:'ปิด (Close)',iconCls:'icon-cancel',  handler:function(){ $('#dia_fr9_b').dialog('close');  }  } ]   "   style="width: 600px;height: 300px;"  closed="true"  title=" Distraction "   >
+                <div class="easyui-datagrid"  id="dg_fr9_2"  
+                     data-options="
+                     url:'<?=base_url()?>index.php/welcome/json_tr9_2',
+                      singleSelect:true,
+                      rownumbers:true,
+                      columns:[[
+                       { field:'doctor',title:'แพทย์ผู้ทำการรักษา ' ,align:'center',  },
+                       { field:'begin_date',title:'วัน/เดือน/ปี ที่ทำการรักษา' ,align:'center',  },
+                       { field:'end_date',title:'วัน/เดือน/ปี ที่สิ้นสุดการรักษา' ,align:'center',  },
+                       { field:'goslon',title:'Classification of GOSLON' ,align:'center',  },
+                       { field:'incisor',title:'Incisor classification of malocclusion' ,align:'center',  },
+                       { field:'skeletal',title:'Skeletal classicfication' ,align:'center',  },
+                       { field:'technic',title:'เทคนิคการผ่าตัด' ,align:'center',  },
+                       { field:'othertechnic',title:'Maxilla ระบุ' ,align:'center',  },
+                       { field:'mandible',title:'Mandible' ,align:'center',  },
+                       { field:'othermandible',title:'Mandible ระบุ' ,align:'center',  },
+                       { field:'tool',title:'ชนิดเครื่องมือ' ,align:'center',  },
+                       //{ field:'file1',title:'ชนิดเครื่องมือ' ,align:'center',  },
+                      
+                      ]],
+                     toolbar:[
+                       { text:'Reload',iconCls:'icon-reload',handler:function(){ $('#dg_fr9_2').datagrid('reload');   }  },
+                        { text:'Delete',iconCls:'icon-remove',handler:function()
+                            {
+                                 var  row=$('#dg_fr9_2').datagrid('getSelected');
+                                 if( row )
+                                 {
+                                      var  id=row.id_distraction;
+                                       //  http://127.0.0.1/dental/index.php/welcome/del_fr9_2/
+                                      var  url='<?=base_url()?>index.php/welcome/del_fr9_2/' + id;
+                                   //   alert(url);
+                                    //  alert( id );
+                                        $.messager.confirm('ลบข้อมูล','คุณต้องการลบข้อมูล',function(r)
+                                           {
+                                                 if(r)
+                                                 {
+                                                      $.post(url,function(data){ 
+                                                              $('#dg_fr9_2').datagrid('reload');
+                                                      });
+                                                 }
+                                           });
+                                      
+                                 }
+                                
+                            }   
+                         },
+                     ]
+                     "
+                     ></div>
                 
             </div>
             <!---------------------- begin ------------------------------------------>
@@ -1132,7 +1181,17 @@
                     url:'<?=base_url()?>index.php/welcome/insert_fr9_2/',
                     success:function(data)
                      {
-                         alert(data);
+                          // alert(data);
+                          if( data == 1 )
+                          {
+                            $('#dia_fr9_b').dialog('open');
+                            $('#dg_fr9_2').datagrid('reload');
+                             $.messager.alert('สถานะการบันทึกข้อมูล','สำเร็จ');
+                          }
+                          else{
+                              
+                              $.messager.alert('สถานะการบันทึกข้อมูล','ผิดพลาด');
+                          }
                          
                      }
                 });
