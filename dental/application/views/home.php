@@ -97,8 +97,14 @@
                                       $('#name_lastname_fr9').textbox('setValue',firstname+'  '+lastname);
                                  
                                      $('#id_history_patient_fr9').textbox('setValue',id);
-                                      $('#name_lastname_fr9').textbox('setValue',firstname+'  '+lastname);   
+                                      $('#name_lastname_fr9').textbox('setValue',firstname+'  '+lastname);  
                                       
+                                      //--------9. Orthognathic surgery ---Distraction--------
+                                      $('#id_history_patient_fr9_2').textbox('setValue',id);
+                                      $('#name_lastname_fr9_2').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                     $('#id_history_patient_fr9_2').textbox('setValue',id);
+                                      $('#name_lastname_fr9_2').textbox('setValue',firstname+'  '+lastname);  
                                  
                                      showpopup2();                     
                                }

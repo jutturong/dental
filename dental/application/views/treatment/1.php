@@ -324,6 +324,56 @@
 
 </script>
 
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr9_2').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr9_2').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr9_2').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+ <script type="text/javascript">
+            //-- วัน/เดือน/ปี ที่สิ้นสุดการรักษา --
+             $(function(){
+                 $('#cal2_fr9_2').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date2_fr9_2').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age2_fr9_2').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
 
 
 
@@ -925,29 +975,49 @@
         
         <div title="Distraction" style="padding:10px">
           
-            
+            <div class="easyui-panel"  style="padding: 5px;">
+                <a href="javascript:void(0)"   class="easyui-linkbutton"   iconCls="icon-print"   style="width: 100px;height: 40px;"  onclick="  
+                        $('#dia_fr9_b').dialog('open');
+                   
+                   "  >ดูข้อมูล</a>
+            </div>
+            <div class="easyui-dialog"   id="dia_fr9_b"  style="width: 600px;height: 300px;"  closed="true"  title=" Distraction "   >
+                
+                
+            </div>
             <!---------------------- begin ------------------------------------------>
+             <form id="fr9_2"  method="post" enctype="multipart/form-data">
+                                <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr9_2"   name="id_history_patient_fr9_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr9_2"  name="name_lastname_fr9_2"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>  
+            
+            
+            
     <div style="padding: 10px 5px;">
         <label>
-            แพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
+            แพทย์ผู้ทำการรักษา : <input class="easyui-textbox" id="doctor_fr9_2"  name="doctor_fr9_2" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
         </label>
     </div>
     <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datetimebox" id="date_fr9_2"   name="date_fr9_2" style="width:200px;height: 40px;"  />
             
-             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+             <input class="easyui-textbox"  id="age1_fr9_2"   style="width: 50px;height: 40px;"    /> 
             
         </label>
     </div>
    
              <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datetimebox" id="date2_fr9_2"  name="date2_fr9_2"  style="width:200px;height: 40px;"  />
             
-             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal2_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"  id="age2_fr9_2"   style="width: 50px;height: 40px;"    /> 
             
         </label>
     </div>
@@ -965,7 +1035,7 @@
               Classification of GOSLON  : 
                 </td>
                 <td>
-              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                    <select class="easyui-combobox"  id="goslon_fr9_2"  name="goslon_fr9_2"   style="width:200px;height: 40px;"   >
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -983,7 +1053,7 @@
             <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
            -->
            
-                          <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+           <select class="easyui-combobox"  id="incisor_fr9_2"   name="incisor_fr9_2"  style="width:200px;height: 40px;"   >
                        <option value="1">I</option>
                <option value="2">II div 1</option>
                        <option value="3">II div 2</option>
@@ -1002,13 +1072,13 @@
             <input class="easyui-combobox" data-options=" prompt:' Skeleton  classicfication '   "  style="width:200px;height: 40px;"   />
             -->
             
-                       <input type="radio" name="inc1"   />  I
+            <input type="radio"   name="skeletal_fr9_2"    id="skeletal1_fr9_2"   value="1"   />  I
                     
-                       <input type="radio"   name="inc1"  />  II 
+                       <input type="radio"   name="skeletal_fr9_2"     id="skeletal2_fr9_2"   value="2"  />  II 
               
       
                     
-                    <input type="radio"  name="inc1"   />  III
+                    <input type="radio"  name="skeletal_fr9_2"     id="skeletal3_fr9_2"   value="3"   />  III
         
         </label>
     </div>
@@ -1017,9 +1087,9 @@
         <label>
             เทคนิคการผ่าตัด : 
             
-            <input type="radio"  > Maxilla    ระบุ  : <input  class="easyui-textbox"   style="width: 100px;height: 30px;"   />   
+            <input type="radio"  id="technic_fr9_2"  name="technic_fr9_2"  value="1"> Maxilla    ระบุ  : <input  class="easyui-textbox"  name="othertechnic_fr9_2"  style="width: 100px;height: 30px;"   />   
             
-            <input type="radio"  > Mandible  ระบุ  : <input  class="easyui-textbox"  style="width: 100px;height: 30px;"   />  
+            <input type="radio"  value="1"  name="mandible_fr9_2" > Mandible  ระบุ  : <input  class="easyui-textbox"  name="othermandible_fr9_2"  style="width: 100px;height: 30px;"   />  
             
           
             <!--
@@ -1033,36 +1103,44 @@
     
     <div style="padding: 10px 5px;">
         <label>
-               ชนิดเครื่องมือ : <input class="easyui-textbox"   style="width: 200px;height: 30px;"   />
+            ชนิดเครื่องมือ : <input class="easyui-textbox"  id="tool_fr9_2"  name="tool_fr9_2"  style="width: 200px;height: 30px;"   />
         </label>
     </div>
     
     <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox"  id="fileupload1_fr9_2"  name="fileupload1_fr9_2"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"     id="fileupload2_fr9_2"  name="fileupload2_fr9_2"    data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"    id="fileupload3_fr9_2"  name="fileupload3_fr9_2"    data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
     <div style="padding: 10px 120px;">
         <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton"   onclick="
-              
+                //alert('t');
+                $('#fr9_2').form('submit',{
+                    url:'<?=base_url()?>index.php/welcome/insert_fr9_2/',
+                    success:function(data)
+                     {
+                         alert(data);
+                         
+                     }
+                });
            
            "  >Save</a>
           <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
     </div>
-    
+             </form>
       <!---------------------- end ------------------------------------------>
             
         </div>

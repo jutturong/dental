@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2016 at 10:16 PM
--- Server version: 5.5.49-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.17
+-- Generation Time: Sep 16, 2016 at 04:11 PM
+-- Server version: 5.5.50-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -105,6 +105,30 @@ INSERT INTO `tb_diagnosis` (`id_diagnosis`, `id_history_patient`, `result_analys
 (4, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft'),
 (6, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft'),
 (7, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_distraction`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_distraction` (
+  `id_distraction` int(11) NOT NULL DEFAULT '0',
+  `id_history_patient` int(11) NOT NULL,
+  `doctor` varchar(70) COLLATE utf16_bin NOT NULL,
+  `begin_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `goslon` int(5) NOT NULL,
+  `incisor` int(5) NOT NULL,
+  `skeletal` int(5) NOT NULL,
+  `technic` int(5) NOT NULL,
+  `othertechnic` varchar(50) COLLATE utf16_bin NOT NULL,
+  `tool` varchar(80) COLLATE utf16_bin NOT NULL,
+  `file1` varchar(80) COLLATE utf16_bin NOT NULL,
+  `file2` varchar(80) COLLATE utf16_bin NOT NULL,
+  `file3` varchar(80) COLLATE utf16_bin NOT NULL,
+  PRIMARY KEY (`id_distraction`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 
 -- --------------------------------------------------------
 
@@ -226,6 +250,40 @@ INSERT INTO `tb_interceptive` (`id_interceptive`, `id_history_patient`, `doctor`
 (40, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1),
 (42, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1),
 (43, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_orthognathic`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_orthognathic` (
+  `id_orthognathic` int(11) NOT NULL AUTO_INCREMENT,
+  `id_history_patient` int(11) NOT NULL,
+  `doctor` text COLLATE utf16_bin NOT NULL,
+  `begin_date` date NOT NULL,
+  `goslon` int(5) NOT NULL,
+  `incisor` int(5) NOT NULL,
+  `skeletal` int(5) NOT NULL,
+  `technic` int(5) NOT NULL,
+  `othertechnic` text COLLATE utf16_bin NOT NULL,
+  `mandible` int(5) NOT NULL,
+  `othermandible` text COLLATE utf16_bin NOT NULL,
+  `tool` text COLLATE utf16_bin NOT NULL,
+  `file1` text COLLATE utf16_bin NOT NULL,
+  `dentalcast` int(5) NOT NULL,
+  PRIMARY KEY (`id_orthognathic`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tb_orthognathic`
+--
+
+INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`, `begin_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `dentalcast`) VALUES
+(4, 21, 'พญ.กันยากร โนนสูง', '2013-02-13', 1, 1, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 1),
+(5, 21, 'พญ.กันยากร โนนสูง', '2011-02-08', 4, 3, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
+(6, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
+(7, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01-install-select.png', 2);
 
 -- --------------------------------------------------------
 
