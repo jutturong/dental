@@ -92,6 +92,12 @@
                                      $('#id_history_patient_fr8').textbox('setValue',id);
                                       $('#name_lastname_fr8').textbox('setValue',firstname+'  '+lastname);   
                                       
+                                                //--------9. Orthognathic surgery -----------
+                                      $('#id_history_patient_fr9').textbox('setValue',id);
+                                      $('#name_lastname_fr9').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                     $('#id_history_patient_fr9').textbox('setValue',id);
+                                      $('#name_lastname_fr9').textbox('setValue',firstname+'  '+lastname);   
                                       
                                  
                                      showpopup2();                     

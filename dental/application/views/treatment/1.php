@@ -297,6 +297,37 @@
 
 </script>
 
+<!--------------9. Orthognathic surgery ----------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr9').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr9').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr9').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+
+
+
+
 
 <div id="dia10"  title="10. Other surgery " style="width:800px;height: 800px;padding: 10px;" class="easyui-dialog"     data-options="
      
@@ -627,25 +658,122 @@
 </div>
 
 
-<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:800px;height: 550px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
+<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:600px;height: 700px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
      closed:true,
      
      ">
     
+    
+    
+    
+    
     <div class="easyui-tabs" style="width:700px;" >
         <div title=" Orthognathic surgery ( Main ) " style="padding:10px">
+            
+            <div class="easyui-panel" style="padding:3px;"  >
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;" iconCls="icon-print"  onclick="
+                         $('#preview_fr9').dialog('open');
+                         $('#dg_fr9').datagrid('reload');
+                         // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
+                           // $('#preview_fr9').datagrid('reload');
+                           
+                   "   >ดูข้อมูล</a>
+                
+                <div class="easyui-dialog"  closed="true" id="preview_fr9" title="Orthognathic surgery ( Main )" 
+                     data-options="
+                     resizable:true,
+                     buttons:[
+                         { text:' ปิด (Close) '  ,iconCls:'icon-cancel',handler:function(){  $('#preview_fr9').dialog('close');  } },
+                         
+                       ]
+                     
+                     "
+                     style="width:580px;height: 300px;" >
+                    
+                    
+                    <div class="easyui-datagrid"   id="dg_fr9"  data-options="  
+                       url:'<?=base_url()?>index.php/welcome/json_tr9',
+                       singleSelect:true,
+                       rownumbers:true,
+                       columns:[[
+                           {  field:'doctor',  title: ' แพทย์ผู้ทำการรักษา ' ,align:'center' },
+                           {  field:'begin_date',  title: ' วัน/เดือน/ปี ที่ทำการรักษา  ' ,align:'center' },
+                           {  field:'goslon',  title: ' Classification of GOSLON  ' ,align:'center' },
+                           {  field:'incisor',  title: ' Incisor classification of malocclusion  ' ,align:'center' },
+                           {  field:'skeletal',  title: ' Skeletal classicfication  ' ,align:'center' },
+                           {  field:'technic',  title: ' เทคนิคการผ่าตัด  Maxilla ' ,align:'center' },
+                           {  field:'othertechnic',  title: ' Maxilla ระบุ ' ,align:'center' },
+                            {  field:'mandible',  title: ' Mandible ' ,align:'center' },
+                            {  field:'othermandible',  title: ' Mandible ระบุ ' ,align:'center' },
+                            {  field:'tool',  title: ' ชนิดเครื่องมือ ' ,align:'center' },
+                             {  field:'dentalcast',  title: ' Dental Cast ' ,align:'center' },
+                       ]],
+                       toolbar:[
+                           {  text:'Reload',iconCls:'icon-reload', handler:function(){ $('#dg_fr9').datagrid('reload');  } },
+                           {  text:'Delete',iconCls:'icon-remove',handler:function(){  
+                                   var row=$('#dg_fr9').datagrid('getSelected');
+                                   if( row )
+                                   {
+                                        var  id=row.id_orthognathic;
+                                        //alert(id);
+                                           var  url='<?=base_url()?>index.php/welcome/del_fr9/' + id;
+                                           $.messager.confirm('ลบข้อมูล','คุณแน่ใจว่าต้องการลบข้อมูล',function(r)
+                                                {
+                                                       if( r )
+                                                       {
+                                                               $.post(url,function(data)
+                                                                  {
+                                                                           //if( data == 1 )
+                                                                          // {
+                                                                                  //$.messager.alert('สถานะการลบข้อมูล','ข้อมูลถูกลบแล้ว');
+                                                                                  $('#dg_fr9').datagrid('reload');
+                                                                           //}
+                                                                           //else{
+                                                                              //   $.messager.alert('สถานะการลบข้อมูล','การข้อมูลถูกลบแล้ว');
+                                                                          // }
+                                                                  });
+                                                       }
+                                                });
+                                        
+                                   }
+                           
+                           }  }
+                       ]
+                       "    >
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+  
+            
+            
             <!---------------------- begin ------------------------------------------>
+            <form id="fr9"  method="post" enctype="multipart/form-data">
+            
+                      <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr9"   name="id_history_patient_fr9"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr9"  name="name_lastname_fr9"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+            
+            
+            
     <div style="padding: 10px 5px;">
         <label>
-            แพทย์ผู้ทำการรักษา : <input class="easyui-combobox" data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   />
+            แพทย์ผู้ทำการรักษา : <input class="easyui-textbox"   id="doctor_fr9"   name="doctor_fr9"    data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   value="พญ.กันยากร โนนสูง"   />
         </label>
     </div>
     <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox" style="width:200px;height: 40px;"  />
+            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox"  id="date_fr9"  name="date_fr9"  style="width:200px;height: 40px;"  />
             
-             <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    /> 
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"   id="age1_fr9" style="width: 50px;height: 40px;"    /> 
             
         </label>
     </div>
@@ -667,7 +795,7 @@
               Classification of GOSLON  : 
                 </td>
                 <td>
-              <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+                    <select class="easyui-combobox"  id="goslon_fr9"   name="goslon_fr9"   style="width:200px;height: 40px;"   >
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -684,7 +812,7 @@
             <input class="easyui-combobox" data-options=" prompt:' Angle \'s classicfication '   "  style="width:200px;height: 40px;"   />
              -->
              
-               <select class="easyui-combobox"   style="width:200px;height: 40px;"   >
+             <select class="easyui-combobox"  id="incisor_fr9"  name="incisor_fr9"   style="width:200px;height: 40px;"   >
                        <option value="1">I</option>
                <option value="2">II div 1</option>
                        <option value="3">II div 2</option>
@@ -705,13 +833,13 @@
             
             
             
-                    <input type="radio" name="inc1"   />  I
+            <input type="radio"    name="skeletal_fr9"    id="skeletal1_fr9"    value="1"  />  I
                     
-                       <input type="radio"   name="inc1"  />  II 
+                       <input type="radio"    name="skeletal_fr9"    id="skeletal2_fr9"  value="2"   />  II 
               
       
                     
-                    <input type="radio"  name="inc1"   />  III
+                    <input type="radio"  name="skeletal_fr9"    id="skeletal3_fr9"   value="3"   />  III
                  
                     
             </label>
@@ -721,9 +849,9 @@
         <label>
             เทคนิคการผ่าตัด : 
             
-            <input type="radio"  > Maxilla    ระบุ  : <input  class="easyui-textbox"   style="width: 100px;height: 30px;"   />   
+            <input type="radio"   name="technic_fr9"   id="maxilla_fr9"  value="1"  > Maxilla    ระบุ  : <input  class="easyui-textbox"     name="othertechnic_fr9"  id="othertechnic_fr9"   style="width: 100px;height: 30px;"   />   
             
-            <input type="radio"  > Mandible  ระบุ  : <input  class="easyui-textbox"  style="width: 100px;height: 30px;"   />  
+            <input type="radio"  name="mandible_fr9"  id="mandible_fr9" value="1"  > Mandible  ระบุ  : <input  class="easyui-textbox"  style="width: 100px;height: 30px;"  id="othermandible_fr9"  name="othermandible_fr9"  />  
             
           
             <!--
@@ -737,31 +865,31 @@
     
     <div style="padding: 10px 5px;">
         <label>
-               ชนิดเครื่องมือ : <input class="easyui-textbox"   style="width: 200px;height: 30px;"   />
+            ชนิดเครื่องมือ : <input class="easyui-textbox"   style="width: 200px;height: 30px;"   id="tool_fr9"  name="tool_fr9"   />
         </label>
     </div>
     
     <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox"     name="fileupload1_fr9"   id="fileupload1_fr9"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"     name="fileupload2_fr9"   id="fileupload2_fr9"    data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr9"   id="fileupload3_fr9"     data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
     <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : <input  type="radio"    id="dentalcast1_fr9"      name="dentalcast_fr9"   value="1"  /> Yes  <input  type="radio"     name="dentalcast_fr9"     id="dentalcast2_fr9"    value="2"   /> No
         </label>
     </div>
     
@@ -769,10 +897,29 @@
     
     
     <div style="padding: 10px 120px;">
-        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton">Save</a>
+        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton"  onclick="
+                 //alert('t');
+                 $('#fr9').form('submit',{
+                     url:'<?=base_url()?>index.php/welcome/insert_fr9',
+                     success:function(data)
+                     {
+                            //alert(data);
+                            if( data == 1 )
+                            {
+                                   $('#preview_fr9').dialog('open');
+                                   $('#dg_fr9').datagrid('reload');
+                                   $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
+                            }else
+                            {
+                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                            }
+                     }
+                     
+                 });
+           ">Save</a>
           <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
     </div>
-    
+    </form>  
       <!---------------------- end ------------------------------------------>
         </div>
         
@@ -909,7 +1056,10 @@
     </div>
     
     <div style="padding: 10px 120px;">
-        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton">Save</a>
+        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton"   onclick="
+              
+           
+           "  >Save</a>
           <a href="javascript:void(0)"  iconCls="icon-cancel"   style="width:90px;height: 40px"  onclick=" $('#dia9').dialog('close');  "  class="easyui-linkbutton">Close</a>
     </div>
     

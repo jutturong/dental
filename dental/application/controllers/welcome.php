@@ -1383,6 +1383,145 @@ $this->db->delete($tables);
                     echo 0;
                 }
         }
+        #------------------- 9. Orthognathic surgery -------------
+        #   http://127.0.0.1/dental/index.php/welcome/insert_fr9/
+        function insert_fr9()
+        {
+                $id_history_patient=trim($this->input->get_post("id_history_patient_fr9"));
+              //echo "<br>";
+               $doctor_fr9=trim($this->input->get_post("doctor_fr9")); //แพทย์ผู้ทำการรักษา
+               //echo "<br>";
+               
+                 $date_fr9=trim($this->input->get_post("date_fr9"));
+               //echo "<br>";
+               if(  !empty($date_fr9)  &&  $date_fr9 != ''  )  //09/14/2016 08:45:29  วัน/เดือน/ปี ที่ทำการรักษา
+            {
+                      $ex1=explode(" ",$date_fr9);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr9= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                   $conv_date_fr9='';
+            }
+            
+            //echo  $conv_date_fr9;
+           // echo "<br>";
+            
+
+             $goslon_fr9=trim($this->input->get_post("goslon_fr9"));  //Classification of GOSLON :
+           //echo "<br>";
+           
+             $incisor_fr9=trim( $this->input->get_post("incisor_fr9")  );  //Incisor classification of malocclusion
+           //echo "<br>";
+           
+             $skeletal_fr9=trim($this->input->get_post("skeletal_fr9"));     //Skeletal classicfication :
+          // echo "<br>";
+           
+            $technic_fr9=trim( $this->input->get_post("technic_fr9")  );   //เทคนิคการผ่าตัด
+          //echo  "<br>";
+          
+            $othertechnic_fr9=trim( $this->input->get_post("othertechnic_fr9") );   //Maxilla ระบุ 
+          //echo  "<br>";
+          
+            $mandible_fr9=trim( $this->input->get_post("mandible_fr9"));  //Mandible ระบุ
+          //echo  "<br>";
+          
+            $othermandible_fr9=trim( $this->input->get_post("othermandible_fr9") );   // Mandible ระบุ 
+          //echo  "<br>";
+          
+          
+           $tool_fr9=trim(  $this->input->get_post("tool_fr9")  );   //ชนิดเครื่องมือ
+         //echo  "<br>";
+         
+         
+         //--------------------------รูปถ่ายก่อนการรักษา (Before) :
+         // name="file1_fr9"   id="file1_fr9" 
+          //----------รูปถ่ายก่อนการรักษา (Before) : 
+                            $file1 =  $_FILES['fileupload1_fr9']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file1      )      )
+                                   {
+                                           $source = $_FILES['fileupload1_fr9']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr9']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr9']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                                   
+                  
+                  $dentalcast_fr9=trim($this->input->get_post("dentalcast_fr9"));   //Dental Cast :
+             //echo  "<br>";
+             
+             //Orthognathic surgery 
+             $tb="tb_orthognathic";
+             $data=array(
+                 //id_orthognathic    //1
+                   "id_history_patient"=>$id_history_patient,  //2
+                   "doctor"=>$doctor_fr9,  //3
+                   "begin_date"=>$conv_date_fr9 ,   //4
+                   "goslon"=> $goslon_fr9,  //5
+                   "incisor"=>$incisor_fr9,  //6
+                   "skeletal"=>$skeletal_fr9,  //7
+                    "technic"=>$technic_fr9,  //8
+                   "othertechnic"=> $othertechnic_fr9,  //9
+                   "mandible"=>$mandible_fr9,  //10
+                   "othermandible"=>$othermandible_fr9,  //11
+                  "tool"=>$tool_fr9, //12
+                  "file1"=> $file1 ,  //13
+                  "dentalcast"=>$dentalcast_fr9,     //14
+             );
+                $inst = $this->db->insert($tb,$data);
+                if( $inst )
+                {
+                    echo 1;
+                }
+                else
+                {
+                    echo 0;
+                }
+                                   
+        }
+          #   http://127.0.0.1/dental/index.php/welcome/json_tr9
+        function json_tr9()
+        {
+            $tb="tb_orthognathic";
+            $tbj1="tb_history_patient";
+                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                    $q=$this->db->get($tb);
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        }
+           #   http://127.0.0.1/dental/index.php/welcome/del_fr9/
+        function  del_fr9()
+        {
+                $id=trim($this->uri->segment(3));
+                    $tb="tb_orthognathic";
+                $this->db->where('id_orthognathic',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
+            
         
 }
 
