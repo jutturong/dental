@@ -105,6 +105,15 @@
                                  
                                      $('#id_history_patient_fr9_2').textbox('setValue',id);
                                       $('#name_lastname_fr9_2').textbox('setValue',firstname+'  '+lastname);  
+                                      
+                                         //--------11. Other dental procedure -------
+                                      $('#id_history_patient_fr11_1').textbox('setValue',id);
+                                      $('#name_lastname_fr11_1').textbox('setValue',firstname+'  '+lastname);
+                                 
+                                     $('#id_history_patient_fr11_1').textbox('setValue',id);
+                                      $('#name_lastname_fr11_1').textbox('setValue',firstname+'  '+lastname);  
+                                      
+                                      
                                  
                                      showpopup2();                     
                                }
