@@ -1871,6 +1871,153 @@ $this->db->delete($tables);
                     echo 0;
                 }
         }
+       #   http://127.0.0.1/dental/index.php/welcome/insert_fr11_2
+        function insert_fr11_2(){
+              $id_history_patient_fr11_2=trim($this->input->get_post('id_history_patient_fr11_2'));
+            //echo "<br>";
+              $dental_fr11_2=trim($this->input->get_post("dental_fr11_2"));  //ทันตแพทย์ผู้ทำการรักษา
+            // echo "<br>";
+            
+             //date_fr11_2
+             $date_fr11_2=trim($this->input->get_post("date_fr11_2"));   //วัน/เดือน/ปี ที่ทำ : 
+             //echo "<br>";
+            if(  !empty($date_fr11_2)  &&  $date_fr11_2 != ''  )  //09/14/2016 08:45:29  วัน/เดือน/ปี ที่ทำการรักษา
+            {
+                      $ex1=explode(" ",$date_fr11_2);
+                      $dmy1=$ex1[0];  
+                      $ex2=explode("/",$dmy1);
+                        $conv_date_fr11_2= $ex2[2]."-".$ex2[0]."-".$ex2[1];    
+                    //  echo "<br>";       
+            }
+            else{
+                   $conv_date_fr11_2='';
+            }
+            //echo $conv_date_fr11_2;
+            //echo "<br>";
+            
+             $appliance_11_2=trim( $this->input->get_post("appliance_11_2") );  //Type of Appliance : 
+            //echo "<br>";
+            
+             $otherappliance_11_2=trim($this->input->get_post('otherappliance_11_2')); //Type of Appliance :  Other
+            //echo "<br>";
+             
+            
+            
+             //----------รูปถ่ายก่อนการรักษา (Before ) : 
+                            $file1 =  $_FILES['fileupload1_fr11_2']['name'];  //9   =>filename
+                        //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file1      )      )
+                                   {
+                                           $source = $_FILES['fileupload1_fr11_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr11_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr11_2']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                                   
+                              //----------รูปถ่ายระหว่างการรักษา (During ) :
+                            $file2 =  $_FILES['fileupload2_fr11_2']['name'];  //9   =>filename
+                        //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file2      )      )
+                                   {
+                                           $source = $_FILES['fileupload2_fr11_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr11_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr11_2']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }                  
+            
+            
+                       //----------รูปถ่ายหลังการรักษา (After ) :
+                            $file3 =  $_FILES['fileupload3_fr11_2']['name'];  //9   =>filename
+                        //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file3      )      )
+                                   {
+                                           $source = $_FILES['fileupload3_fr11_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr11_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr11_2']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }  
+                                   
+                    $dentalcast_11_2=trim($this->input->get_post("dentalcast_11_2"));      // Dental Cast :           
+                  //echo "<br>";
+                  
+                  $tb="tb_prosthodontic";
+                  $data=array(
+                      //id_prosthodontic       //1
+                      "id_history_patient"=>$id_history_patient_fr11_2,  //2
+                      "dental"=>$dental_fr11_2,  //3
+                      "begin_date"=>$conv_date_fr11_2,  //4
+                      "appliance"=>$appliance_11_2,  //5
+                      "otherappliance"=>$otherappliance_11_2,   //6
+                      "file1"=>$file1 ,   //7
+                      "file2"=>$file2,    //8
+                       "file3"=>$file3,    //9
+                       "dentalcast"=>$dentalcast_11_2,   //10
+                  );
+                
+                  $ck=$this->db->insert($tb,$data);
+                  if( $ck )
+                  { echo 1; }
+                  elseif( $ck )
+                  {  echo 0; }
+        }
+         #   http://127.0.0.1/dental/index.php/welcome/json_tr11_2
+       function json_tr11_2()
+        {
+             $tb="tb_prosthodontic";   
+            $tbj1="tb_history_patient";
+                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                    $q=$this->db->get($tb);
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
+                 #   http://127.0.0.1/dental/index.php/welcome/del_fr11_2/
+           function  del_fr11_2()
+        {
+                $id=trim($this->uri->segment(3));
+                 $tb="tb_prosthodontic";  // `tb_dentalprocedure` 
+                $this->db->where('id_prosthodontic',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
+        
 }
 
 /* End of file welcome.php */

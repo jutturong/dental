@@ -402,6 +402,51 @@
 
 </script>
 
+<!--------------11. Other dental procedure   Prosthondontic ----------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr11_2').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr11_2').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr11_2').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
+
+</script>
+
+
+<script type="text/javascript/"  >
+   $(function(){
+       
+       /*
+       //appliance_11_2
+         if( $('#appliance_11_2').combobox('getValue') == 7   )
+         {
+             alert('t');
+         }
+        */
+       
+       
+     
+         
+   });
+
+</script>
 
 <div id="dia10"  title="10. Other surgery " style="width:800px;height: 800px;padding: 10px;" class="easyui-dialog"     data-options="
      
@@ -4348,20 +4393,88 @@
       
     </div>
         
+        
+        
+        
      <div title="Prosthodontic treament" style="padding:10px">
-<!-------------------- begin ---------------------->               
+         
+         <div class="easyui-panel"  style="padding:5px"  >
+             <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print"  style="width:100px;height: 40px;"  onclick="
+                    $('#dia_fr11_2').dialog('open');
+                    $('#dg_fr11_2').datagrid('reload');
+                "  >ดูข้อมูล</a>
+             
+         </div> 
+         <div class="easyui-dialog"  closed="true"  id="dia_fr11_2"  title="Prosthodontic treament"  data-options="
+                buttons:[ { text:'ปิด (Close)', iconCls:'icon-cancel', handler:function(){  $('#dia_fr11_2').dialog('close');  } }  ]
+              "  style="width: 600px;height: 500px;" >
+             <div  class="easyui-datagrid"  id="dg_fr11_2" data-options="
+                   url:'<?=base_url()?>index.php/welcome/json_tr11_2',
+                   singleSelect:true,
+                   rownumbers:true,
+                   columns:[[
+                      { field:'dental',title:'ทันตแพทย์ผู้ทำการรักษา',align:'center',  },
+                      { field:'begin_date',title:'วัน/เดือน/ปี ที่ทำ',align:'center',  },
+                      { field:'appliance',title:'Type of Appliance',align:'center',  },
+                      { field:'appliance',title:'Type of Appliance ระบุ',align:'center',  },
+                     { field:'otherappliance',title:'Dental Cast',align:'center',  },
+                      
+                   ]],
+                   toolbar:[
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){ $('#dg_fr11_2').datagrid('reload');  } },
+                   { text:'Delete',iconCls:'icon-cancel',handler:function()
+                        {
+                                var  row=$('#dg_fr11_2').datagrid('getSelected'); 
+                                if(row)
+                                {
+                                    var  id=row.id_prosthodontic;
+                                       $.messager.confirm('คุณต้องการลบข้อมูล','ต้องการลบข้อมูลหรือไม่',function(r)
+                                          {
+                                                 var  url='<?=base_url()?>index.php/welcome/del_fr11_2/'  +  id ;
+                                                 if(r)
+                                                 {
+                                                     $.post(url,function()
+                                                         {
+                                                               $('#dg_fr11_2').datagrid('reload');
+                                                               
+                                                         });
+                                                 }
+                                          });
+                                }
+                        }  
+                   }
+                   ]
+                   " style="width: 600px;height: 500px;"    >
+                 
+             </div>
+         </div>
+         
+<!-------------------- begin ----------------------> 
+<form id="fr11_2"  method="post" enctype="multipart/form-data">
+     <div style="padding: 10px 5px"  >
+         
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr11_2"   name="id_history_patient_fr11_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr11_2"  name="name_lastname_fr11_2"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+         
+         
+     </div>
+
+
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  name="dental_fr11_2"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr11_2"  name="date_fr11_2"   style="widht:200px;height: 30px;"  />
             
-                                      <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr11_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            <input class="easyui-textbox"  id="age1_fr11_2"  style="width: 50px;height: 40px;"    />
 
             
         </label>
@@ -4370,53 +4483,98 @@
         <div style="padding: 10px 5px"  >
         <label>
             Type of Appliance  : 
-            
+         </label>   
                      <!--
                      <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
                      -->
                      
-                     <select  class="easyui-combobox"  >
-                           <option>1.TP</option>
-                           <option>2.Crown</option>
-                            <option>3.Bridge</option>
-                              <option>4.Partial denture</option>
-                                <option>5.Implant</option>
-                                   <option>6.Speech Appliance</option>
-                                     <option>7.Other</option>
+                     <select   id="appliance_11_2" name="appliance_11_2"  style="width: 200px;height: 40px;" 
+                              onchange="  
+                                  //alert('t');  
+                                    if( $('#appliance_11_2').val() == 7   )
+                                    {
+                                        //alert('t');
+                                        $('#otherappliance_11_2').textbox('readonly',false);
+                                         $('#otherappliance_11_2').textbox('setValue','ระบุ');
+                                    }
+                                    else
+                                    {
+                                          $('#otherappliance_11_2').textbox('readonly',true);
+                                         $('#otherappliance_11_2').textbox('setValue','');
+                                    }
+                              "
+                               >
+                         <option value="1">1.TP</option>
+                           <option  value="2">2.Crown</option>
+                            <option  value="3">3.Bridge</option>
+                              <option value="4">4.Partial denture</option>
+                                <option value="5">5.Implant</option>
+                                   <option value="6">6.Speech Appliance</option>
+                                     <option value="7">7.Other</option>
                      </select>
                      
                      
-                     <input class="easyui-textbox"   style="width:300px;height: 40px;"  />
+                     <input class="easyui-textbox"  readonly="true"   id="otherappliance_11_2"  name="otherappliance_11_2"  style="width:300px;height: 40px;"  />
                      
-        </label>
+        
     </div> 
     
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox"  name="fileupload1_fr11_2"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During ) : <input class="easyui-filebox"   name="fileupload2_fr11_2"  data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After ) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After ) : <input class="easyui-filebox"   name="fileupload3_fr11_2"   data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>  
 
   <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
-        </label>
+            Dental Cast : 
+            </label>
+            <input  type="radio"  name="dentalcast_11_2"  id="dentalcast1_11_2"   value="1" > Yes  <input  type="radio"  name="dentalcast_11_2"  id="dentalcast2_11_2"   value="2" > No
+        
     </div>
 
-
+    <div style="padding: 10px 5px;">
+        <label>
+            <?=nbs(100)?>
+            <a href="javascript:void(0)"   class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                        //alert('t');
+                        $('#fr11_2').form('submit',{
+                            url:'<?=base_url()?>index.php/welcome/insert_fr11_2',
+                            success:function(data)
+                               { 
+                                    // alert(data);  
+                                     if( data == 1 )
+                                     {     
+                                      $('#dia_fr11_2').dialog('open');
+                                      $('#dg_fr11_2').datagrid('reload');
+                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                      }
+                                      else{
+                                          
+                                           $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                      }
+                               }
+                        });
+               
+               " >บันทึก </a>
+            
+        </label>
+    </div>
+    
+</form>
       <!-------------------- begin ---------------------->    
     </div>
         
