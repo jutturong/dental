@@ -667,28 +667,32 @@
     </div> 
     
     
-     <div style="padding: 10px 5px;">
+      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_3"   id="fileupload1_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_3"   id="fileupload2_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_3"   id="fileupload3_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
-    </div>   
+    </div>    
        
          <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_3"  id="dentalcast1_fr10_3"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_3"  id="dentalcast2_fr10_3"  value="2"> No
+       
     </div>
            
            
@@ -744,29 +748,36 @@
     </div> 
     
     
-     <div style="padding: 10px 5px;">
+    <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_4"   id="fileupload1_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_4"   id="fileupload2_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_4"   id="fileupload3_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
-    </div>   
+    </div>    
+          
+          
       
         <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_4"  id="dentalcast1_fr10_4"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_4"  id="dentalcast2_fr10_4"  value="2"> No
+       
     </div>
+          
           
            <div style="padding: 10px 5px;">
              <label>
@@ -820,26 +831,32 @@
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_5"   id="fileupload1_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_5"   id="fileupload2_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_5"   id="fileupload3_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
-    </div>     
+    </div>    
+         
+         
      
-       <div style="padding: 10px 5px;">
+        <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_5"  id="dentalcast1_fr10_5"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_5"  id="dentalcast2_fr10_5"  value="2"> No
+       
     </div>
          
           <div style="padding: 10px 5px;">
@@ -874,7 +891,7 @@
        
        
        <div style="padding: 10px 5px"  >
-           อื่นๆ : <input class="easyui-textbox"  style="width: 200px;height: 30px;"    />
+           อื่นๆ : <input class="easyui-textbox"  name="other_fr11_6"  id="other_fr11_6"  style="width: 200px;height: 30px;"    />
            
        </div>
        
@@ -898,29 +915,33 @@
     </div> 
     
     
-     <div style="padding: 10px 5px;">
+   <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox"  name="file1_fr10_1"  id="file1_fr10_1"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_6"   id="fileupload1_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"  name="fileupload2_fr10_1"  data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_6"   id="fileupload2_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_6"   id="fileupload3_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>           
        
        
-         <div style="padding: 10px 5px;">
+       <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"  name="dentalcast_fr10_1"   id="dentalcast1_fr10_1"   value="1" /> Yes  <input  type="radio"  name="dentalcast_fr10_1"   id="dentalcast2_fr10_1"  value="2" /> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_6"  id="dentalcast1_fr10_6"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_6"  id="dentalcast2_fr10_6"  value="2"> No
+       
     </div>
            
             <div style="padding: 10px 5px;">
