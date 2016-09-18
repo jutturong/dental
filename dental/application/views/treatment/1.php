@@ -429,159 +429,240 @@
 
 </script>
 
-
-<script type="text/javascript/"  >
-   $(function(){
-       
-       /*
-       //appliance_11_2
-         if( $('#appliance_11_2').combobox('getValue') == 7   )
-         {
-             alert('t');
-         }
-        */
-       
-       
-     
-         
-   });
+<!-- --------------------  	10. Other surgery  1 ------------------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr10_1').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr10_1').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                        //alert( date1[0]  );
+                          var  bdyear=date1[0].split("/");
+                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
+                        var   d=new Date();
+                        var  curyear=d.getFullYear();
+                       // alert( curyear  ); //ปี พศ ปัจจุบัน
+                       if(   curyear  >=  bdyear[2]   )
+                       {
+                             var  c= curyear  -  bdyear[2];
+                             //alert( showAge );
+                             $('#age1_fr10_1').textbox('setValue',c);
+                       }
+                      
+                        
+                 });
+             });
 
 </script>
 
-<div id="dia10"  title="10. Other surgery " style="width:800px;height: 800px;padding: 10px;" class="easyui-dialog"     data-options="
+
+
+
+<div id="dia10"  title="10. Other surgery " style="width:800px;height: 650px;padding: 5px;" class="easyui-dialog"     data-options="
      
      closed:true,
      buttons:[
-     {  text:'Save', iconCls:'icon-save'   },
+     //{  text:'Save', iconCls:'icon-save'   },
      {  text:'Close', iconCls:'icon-cancel',handler:function(){  $('#dia10').dialog('close');  } }
      ]
      ">
     
     
-      <div class="easyui-tabs" style="width:700px;height:800px">
+      <div class="easyui-tabs" >
                 <div title="Vestibuloplasty" style="padding:10px">
        
-     <!-------------------- begin ---------------------->               
+     <!-------------------- begin ---------------------->     
+     <form id="fr10_1"  method="post" enctype="multipart/form-data" novalidate="novalidate">
+     <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_1"   name="id_history_patient_fr10_1"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_1"  name="name_lastname_fr10_1"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+     
+     
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  name="doctor_fr10_1"   data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
+         
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_1" name="date_fr10_1"  style="widht:200px;height: 30px;"  />
             
-               <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"    />
+            <a href="javascript:void(0)" id="cal1_fr10_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+               <input class="easyui-textbox"  id="age1_fr10_1"  style="width: 50px;height: 40px;"    />
 
             
             
         </label>
     </div> 
+         
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"   name="tool_tr10_1"    prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_1"   id="fileupload1_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_1"   id="fileupload2_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_1"   id="fileupload3_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>       
 
   <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_1"  id="dentalcast1_fr10_1"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_1"  id="dentalcast2_fr10_1"  value="2"> No
+       
     </div>
 
+         <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_1').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_1',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
 
-     
-      <!-------------------- begin ---------------------->                   
+     </form>
+      <!-------------------- end ---------------------->                   
                        
                        
                 </div>
                <div title="Frenectomy" style="padding:10px">
-                         <!-------------------- begin ---------------------->               
+                         <!-------------------- begin ---------------------->    
+                         <form id="fr10_2"  method="post" enctype="multipart/form-data">           
+                              <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_2"  name="name_lastname_fr10_2"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+                         
+                         
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  name="doctor_fr10_2"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_2" name="date_fr10_2"  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"   name="tool_tr10_2"   prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
     
-     <div style="padding: 10px 5px;">
+      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_2"   id="fileupload1_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_2"   id="fileupload2_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_2"   id="fileupload3_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
-    </div>    
+    </div>        
                          
-                           <div style="padding: 10px 5px;">
+                          <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : 
         </label>
+            <input  type="radio"  name="dentalcast_fr10_2"  id="dentalcast1_fr10_2"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_2"  id="dentalcast2_fr10_2"  value="2"> No
+       
     </div>
-
+                             
+               <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_2').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_2',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
+                             
+</form>
                          
-      <!-------------------- begin ---------------------->   
+      <!-------------------- end ---------------------->   
                 </div>
                  <div title="Gingivectomy" style="padding:10px">
-       <!-------------------- begin ---------------------->               
+       <!-------------------- begin ---------------------->    
+       <form id="fr10_3"  method="post" enctype="multipart/form-data">    
+             <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_3"   name="id_history_patient_fr10_3"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_3"  name="name_lastname_fr10_3"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+       
+       
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  name="doctor_fr10_3"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_3" name="date_fr10_3"  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"   name="tool_tr10_3"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
@@ -609,29 +690,56 @@
             Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
         </label>
     </div>
+           
+           
+                          <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_3').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_3',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
+           
+           
 
-       
-       
-      <!-------------------- begin ---------------------->                     
+       </form>
+      <!-------------------- end ---------------------->                     
                 </div>
           
               <div title="Torectomy" style="padding:10px">
-      <!-------------------- begin ---------------------->               
+      <!-------------------- begin ---------------------->    
+      <form id="fr10_4"  method="post" enctype="multipart/form-data">  
+             <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_4"   name="id_history_patient_fr10_4"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_4"  name="name_lastname_fr10_4"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+      
+      
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  name="doctor_fr10_4"   data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_4" name="date_fr10_4"  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"    name="tool_tr10_4"    prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
@@ -659,27 +767,53 @@
             Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
         </label>
     </div>
-
-      <!-------------------- begin ---------------------->                      
+          
+           <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_4').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_4',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
+          
+                               </form>
+      <!-------------------- end ---------------------->                      
                 </div>
                 
                 <div title="Oronasal fistula closure" style="padding:10px">
-     <!-------------------- begin ---------------------->               
+     <!-------------------- begin ---------------------->   
+     <form id="fr10_5"  method="post" enctype="multipart/form-data">  
+                  <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_5"   name="id_history_patient_fr10_5"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_5"  name="name_lastname_fr10_5"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+     
+     
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox" name="doctor_fr10_5"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_5" name="date_fr10_5"  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"    name="tool_tr10_5"   prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
@@ -707,12 +841,38 @@
             Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
         </label>
     </div>
-
-      <!-------------------- begin ---------------------->                       
+         
+          <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_5').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_5',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
+         
+     </form>
+      <!-------------------- end ---------------------->                       
                 </div>
           
                 <div title="อื่นๆ " style="padding:10px">
        <!-------------------- begin ----------------------> 
+       <form id="fr10_6"  method="post"   enctype="multipart/form-data"  >  
+                         <div style="padding: 10px 5px;">
+                <label>
+                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_6"   name="id_history_patient_fr10_6"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr10_6"  name="name_lastname_fr10_6"  style="width:200px;height: 30px;" readonly="true"  />
+                    
+                </label>
+            </div>
+       
+       
        <div style="padding: 10px 5px"  >
            อื่นๆ : <input class="easyui-textbox"  style="width: 200px;height: 30px;"    />
            
@@ -722,31 +882,31 @@
     <div style="padding: 10px 5px"  >
 
         <label>
-            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
+            ทันตแพทย์ผู้ทำการรักษา : <input class="easyui-textbox" name="doctor_fr10_6"  data-options=" prompt:'  ทันตแพทย์ผู้ทำการรักษา  ' "  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datebox"   style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_6" name="date_fr10_6"  style="widht:200px;height: 30px;"  />
         </label>
     </div> 
        
         <div style="padding: 10px 5px"  >
         <label>
-            เครื่องมือที่ใช้  : <input class="easyui-textbox"  prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
+            เครื่องมือที่ใช้  : <input class="easyui-textbox"    name="tool_tr10_6"    prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
     
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่ายก่อนการรักษา (ฺBefore) : <input class="easyui-filebox"  name="file1_fr10_1"  id="file1_fr10_1"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"  name="fileupload2_fr10_1"  data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
@@ -759,11 +919,28 @@
        
          <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Cast : <input  type="radio"  name="dentalcast_fr10_1"   id="dentalcast1_fr10_1"   value="1" /> Yes  <input  type="radio"  name="dentalcast_fr10_1"   id="dentalcast2_fr10_1"  value="2" /> No
         </label>
     </div>
-
-      <!-------------------- begin ---------------------->                     
+           
+            <div style="padding: 10px 5px;">
+             <label>
+                 <?=nbs(100)?>
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                    $('#fr10_6').form('submit',{
+                        url:'<?=base_url()?>index.php/welcome/insert_fr10_6',
+                        success:function(data)
+                            {
+                                alert(data);
+                            }
+                    });
+                    "   >บันทึก</a>
+             </label>
+         </div>
+           
+           
+       </form>
+      <!-------------------- end ---------------------->                     
                 </div>
           
             </div>  
