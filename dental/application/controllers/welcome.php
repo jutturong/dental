@@ -2096,6 +2096,27 @@ $this->db->delete($tables);
                                    
                   echo   $dentalcast_fr10_1= trim($this->input->get_post("dentalcast_fr10_1"));  //Dental Cast :               
                   echo  "<br>";
+                  
+                  $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_1,  //2
+                      "id_tab"=>1,  //3
+                      "doctor"=>$doctor_fr10_1,   //4
+                      "begin_date"=>$conv_date_fr10_1,  //5
+                      "tool"=>$tool_tr10_1,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_1,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
               
         }
         #http://127.0.0.1/dental/index.php/welcome/insert_fr10_2
@@ -2178,6 +2199,28 @@ $this->db->delete($tables);
                                    
                   echo   $dentalcast_fr10_2= trim($this->input->get_post("dentalcast_fr10_2"));  //Dental Cast :               
                   echo  "<br>";
+                  
+                  
+                  $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_2,  //2
+                      "id_tab"=>2,  //3
+                      "doctor"=>$doctor_fr10_2,   //4
+                      "begin_date"=>$conv_date_fr10_2,  //5
+                      "tool"=>$tool_tr10_2,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_2,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
               
         }
          #http://127.0.0.1/dental/index.php/welcome/insert_fr10_2
@@ -2256,6 +2299,28 @@ $this->db->delete($tables);
                                    
                   echo   $dentalcast_fr10_3= trim($this->input->get_post("dentalcast_fr10_3"));  //Dental Cast :               
                   echo  "<br>";
+                  
+                  
+                  $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_3,  //2
+                      "id_tab"=>3,  //3
+                      "doctor"=>$doctor_fr10_3,   //4
+                      "begin_date"=>$conv_date_fr10_3,  //5
+                      "tool"=>$tool_tr10_3,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_3,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
               
         }
         #http://127.0.0.1/dental/index.php/welcome/insert_fr10_2
@@ -2338,6 +2403,28 @@ $this->db->delete($tables);
                                    
                   echo   $dentalcast_fr10_4= trim($this->input->get_post("dentalcast_fr10_4"));  //Dental Cast :               
                   echo  "<br>";
+                  
+                  
+                   $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_4,  //2
+                      "id_tab"=>4,  //3
+                      "doctor"=>$doctor_fr10_4,   //4
+                      "begin_date"=>$conv_date_fr10_4,  //5
+                      "tool"=>$tool_tr10_4,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_4,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
               
               
         }         
@@ -2424,6 +2511,28 @@ $this->db->delete($tables);
                
                    echo   $dentalcast_fr10_5= trim($this->input->get_post("dentalcast_fr10_5"));  //Dental Cast :               
                   echo  "<br>";
+                  
+                  
+                    $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_5,  //2
+                      "id_tab"=>5,  //3
+                      "doctor"=>$doctor_fr10_5,   //4
+                      "begin_date"=>$conv_date_fr10_5,  //5
+                      "tool"=>$tool_tr10_5,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_5,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
             
         }
         #http://127.0.0.1/dental/index.php/welcome/insert_fr10_2
@@ -2511,9 +2620,63 @@ $this->db->delete($tables);
                    echo   $dentalcast_fr10_6= trim($this->input->get_post("dentalcast_fr10_6"));  //Dental Cast :               
                   echo  "<br>";
                   
-                  
+                     
+                    $tb="tb_othersurgery";
+                  $data=array(
+                      // id_othersurgery,   //1
+                      "id_history_patient"=>$id_history_patient_fr10_6,  //2
+                      "id_tab"=>6,  //3
+                      "doctor"=>$doctor_fr10_6,   //4
+                      "begin_date"=>$conv_date_fr10_6,  //5
+                      "tool"=>$tool_tr10_6,  //6
+                      "filename1"=> $file1,  //7
+                       "filename2"=> $file2,  //8
+                        "filename3"=> $file3,  //9
+                       "dentalcast"=> $dentalcast_fr10_6,  //10
+                  );
+                    $inst = $this->db->insert($tb,$data);
+                    if(  $inst )
+                    {
+                        echo 1;
+                    }
+                    elseif(  !$inst  )
+                    {   echo 0; }
               
         }
+        
+       #http://127.0.0.1/dental/index.php/welcome/json_tr10/1
+       function json_tr10()
+        {
+              $id_call=trim($this->uri->segment(3));
+              $tb="tb_othersurgery";
+            $tbj1="tb_history_patient";
+                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                    $q=$this->db->get_where($tb,array("id_tab"=>$id_call));
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
+          #   http://127.0.0.1/dental/index.php/welcome/del_fr10/
+           function  del_fr10()
+        {
+                $id=trim($this->uri->segment(3));
+                   $tb="tb_othersurgery"; // `tb_dentalprocedure` 
+                $this->db->where('id_othersurgery',$id);
+                $del=$this->db->delete($tb);
+                if( $del )
+                {
+                    echo 1;
+                }
+                elseif( !$del )
+                {
+                    echo 0;
+                }
+        }
+        
+        
+        
 }
 
 /* End of file welcome.php */

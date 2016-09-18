@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 16, 2016 at 10:13 PM
+-- Generation Time: Sep 18, 2016 at 10:09 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.17
 
@@ -82,6 +82,34 @@ INSERT INTO `tb_corrective` (`id_corrective`, `id_history_patient`, `doctor`, `b
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_dentalprocedure`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_dentalprocedure` (
+  `id_dentalprocedure` int(11) NOT NULL AUTO_INCREMENT,
+  `id_history_patient` int(11) NOT NULL,
+  `tooth` varchar(60) COLLATE utf16_bin NOT NULL,
+  `dental` varchar(60) COLLATE utf16_bin NOT NULL,
+  `begin_date` date NOT NULL,
+  `tool` text COLLATE utf16_bin NOT NULL,
+  `fileupload1` varchar(100) COLLATE utf16_bin NOT NULL,
+  `fileupload2` varchar(100) COLLATE utf16_bin NOT NULL,
+  `fileupload3` varchar(100) COLLATE utf16_bin NOT NULL,
+  PRIMARY KEY (`id_dentalprocedure`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `tb_dentalprocedure`
+--
+
+INSERT INTO `tb_dentalprocedure` (`id_dentalprocedure`, `id_history_patient`, `tooth`, `dental`, `begin_date`, `tool`, `fileupload1`, `fileupload2`, `fileupload3`) VALUES
+(1, 21, 'Tooth', 'ทพญ.กาญจนา ด่านภักดี', '2013-02-06', 'ครื่องมือที่ใช้', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-11 23:34:40.png', 'Screenshot from 2016-09-13 21:21:13.png'),
+(2, 21, 'Tooth', 'ทพญ.กาญจนา ด่านภักดี', '2016-09-07', 'ครื่องมือที่ใช้', 'Screenshot from 2016-09-11 23:34:40.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-08 11:58:51.png'),
+(5, 21, 'Tooth', 'ทพญ.กาญจนา ด่านภักดี', '2014-02-05', 'ครื่องมือที่ใช้', 'Screenshot from 2016-09-13 21:21:13.png', 'Screenshot from 2016-09-11 23:34:40.png', 'Screenshot from 2016-09-11 23:19:32.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_diagnosis`
 --
 
@@ -130,17 +158,15 @@ CREATE TABLE IF NOT EXISTS `tb_distraction` (
   `file2` varchar(80) COLLATE utf16_bin NOT NULL,
   `file3` varchar(80) COLLATE utf16_bin NOT NULL,
   PRIMARY KEY (`id_distraction`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `tb_distraction`
 --
 
 INSERT INTO `tb_distraction` (`id_distraction`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `file2`, `file3`) VALUES
-(1, 21, 'ทพญ.กาญจนา ด่านภักดี', '0000-00-00', '0000-00-00', 0, 0, 0, 0, '', 0, '', '', '', '', ''),
-(2, 21, 'ทพญ.กาญจนา ด่านภักดี', '2012-02-08', '0000-00-00', 0, 0, 0, 0, '', 0, '', '', '', '', ''),
-(3, 21, 'ทพญ.กาญจนา ด่านภักดี', '2012-02-08', '0000-00-00', 0, 0, 0, 0, '', 0, '', '', '', '', ''),
-(4, 21, 'ทพญ.กาญจนา ด่านภักดี', '2012-02-08', '2015-02-11', 0, 0, 0, 0, '', 0, '', '', '', '', '');
+(5, 21, 'ทพญ.กาญจนา ด่านภักดี', '2011-02-08', '2014-02-05', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png'),
+(6, 21, 'ทพญ.กาญจนา ด่านภักดี', '2011-02-08', '2014-02-05', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png');
 
 -- --------------------------------------------------------
 
@@ -296,6 +322,68 @@ INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`
 (5, 21, 'พญ.กันยากร โนนสูง', '2011-02-08', 4, 3, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
 (6, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
 (7, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01-install-select.png', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_othersurgery`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_othersurgery` (
+  `id_othersurgery` int(11) NOT NULL AUTO_INCREMENT,
+  `id_history_patient` int(11) NOT NULL,
+  `id_tab` int(5) NOT NULL,
+  `doctor` varchar(100) COLLATE utf16_bin NOT NULL,
+  `begin_date` date NOT NULL,
+  `tool` varchar(100) COLLATE utf16_bin NOT NULL,
+  `filename1` varchar(100) COLLATE utf16_bin NOT NULL,
+  `filename2` varchar(100) COLLATE utf16_bin NOT NULL,
+  `filename3` varchar(100) COLLATE utf16_bin NOT NULL,
+  `dentalcast` int(10) NOT NULL,
+  PRIMARY KEY (`id_othersurgery`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tb_othersurgery`
+--
+
+INSERT INTO `tb_othersurgery` (`id_othersurgery`, `id_history_patient`, `id_tab`, `doctor`, `begin_date`, `tool`, `filename1`, `filename2`, `filename3`, `dentalcast`) VALUES
+(1, 21, 1, 'พญ.กาญจนา ด่านภักดี', '2014-02-05', 'กรรไกร', 'Screenshot from 2016-09-11 23:19:32.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-08 10:35:51.png', 1),
+(2, 21, 2, 'พญ.กาญจนา ด่านภักดี', '2015-02-04', 'กรรไกร', 'Screenshot from 2016-09-10 13:15:58.png', 'Screenshot from 2016-09-08 10:35:51.png', 'Screenshot from 2016-09-10 13:16:06.png', 2),
+(3, 21, 3, 'พญ.กาญจนา ด่านภักดี', '2016-09-13', 'กรรไกร', 'Screenshot from 2016-09-08 10:35:51.png', 'Screenshot from 2016-09-10 13:16:06.png', 'Screenshot from 2016-09-11 23:34:40.png', 2),
+(4, 21, 4, 'พญ.กาญจนา ด่านภักดี', '2016-09-06', 'กรรไกร', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-03 21:24:31.png', 1),
+(5, 21, 5, 'พญ.กาญจนา ด่านภักดี', '2014-02-05', 'กรรไกร', 'Screenshot from 2016-09-10 13:15:58.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-11 23:34:40.png', 2),
+(6, 21, 5, 'พญ.กาญจนา ด่านภักดี', '2014-02-05', 'กรรไกร', 'Screenshot from 2016-09-10 13:15:58.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-11 23:34:40.png', 2),
+(7, 21, 6, 'พญ.กาญจนา ด่านภักดี', '2014-02-11', 'กรรไกร', 'Screenshot from 2016-09-08 11:58:51.png', 'Screenshot from 2016-09-11 23:41:50.png', 'Screenshot from 2016-09-10 13:15:58.png', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_prosthodontic`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_prosthodontic` (
+  `id_prosthodontic` int(11) NOT NULL AUTO_INCREMENT,
+  `id_history_patient` int(11) NOT NULL,
+  `dental` varchar(100) COLLATE utf16_bin NOT NULL,
+  `begin_date` date NOT NULL,
+  `appliance` int(5) NOT NULL,
+  `otherappliance` varchar(100) COLLATE utf16_bin NOT NULL,
+  `file1` varchar(100) COLLATE utf16_bin NOT NULL,
+  `file2` varchar(100) COLLATE utf16_bin NOT NULL,
+  `file3` varchar(100) COLLATE utf16_bin NOT NULL,
+  `dentalcast` int(5) NOT NULL,
+  PRIMARY KEY (`id_prosthodontic`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `tb_prosthodontic`
+--
+
+INSERT INTO `tb_prosthodontic` (`id_prosthodontic`, `id_history_patient`, `dental`, `begin_date`, `appliance`, `otherappliance`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
+(7, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2),
+(8, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2),
+(9, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2);
 
 -- --------------------------------------------------------
 

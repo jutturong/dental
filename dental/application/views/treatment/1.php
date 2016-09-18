@@ -471,7 +471,33 @@
     
       <div class="easyui-tabs" >
                 <div title="Vestibuloplasty" style="padding:10px">
-       
+                    
+                    <div class="easyui-panel"  style="padding: 5px;">
+                        <a href="javascript:void(0)"  iconCls="icon-print"  
+                           onclick="
+                                $('#dia_fr10_1').dialog('open');
+                                $('#dg_fr10_1').datagrid('reload');
+                           "
+                           
+                           class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
+                    </div>
+                    
+                    <div class="easyui-dialog"  id="dia_fr10_1"  closed="true"  style="width: 700px;height: 400px;"  title="Vestibuloplasty"   >
+                        <div class="easyui-datagrid"  id="dg_fr10_1"  
+                              data-options="
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/1',
+                                 singleSelect:true,
+                                 rownumbers:true,
+                                 columns:[[  
+                                    { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   }
+                                    
+                                 ]]
+                                 
+                              "
+                             ></div> 
+                    </div>
+                
+               
      <!-------------------- begin ---------------------->     
      <form id="fr10_1"  method="post" enctype="multipart/form-data" novalidate="novalidate">
      <div style="padding: 10px 5px;">
