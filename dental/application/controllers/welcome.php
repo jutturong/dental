@@ -930,7 +930,7 @@ $this->db->delete($tables);
                                    // "id_bonegraft",               //1
                                    "id_history_patient"  =>$id_history_patient_fr6,   //2
                                    "doctor"=>$doctor,  //แพทย์ผู้ทำการรักษา :      //3
-                                   "date1"=>$date_fr6,  //วัน/เดือน/ปี ที่่ทำการรักษา :      //4
+                                   "date1"=>$conv_date_fr6,  //วัน/เดือน/ปี ที่่ทำการรักษา :      //4
                                    "technic"=>$technic, //เทคนิคที่ใช้ :               //5
                                    "file1"=>$file1, //รูปถ่ายก่อนการรักษา (ฺBefore) :            //6
                                      "file2"=>$file2, //รูปถ่ายระหว่างการรักษา (ฺDuring)         //7
@@ -1459,6 +1459,48 @@ $this->db->delete($tables);
                                    }
                                    
                                    
+                  //----------รูปถ่ายระหว่างการรักษา (During) ------------------
+                            $file2 =  $_FILES['fileupload2_fr9']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file2      )      )
+                                   {
+                                           $source = $_FILES['fileupload2_fr9']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr9']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr9']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }
+                                   
+                //----------รูปถ่ายหลังการรักษา (After) :------------------------------------------
+                            $file3 =  $_FILES['fileupload3_fr9']['name'];  //9   =>filename
+                                //echo "<br>";
+                           //echo "<br>";
+                     	// $fsize1=$_FILES['fileupload1_fr6']['size'];
+                                //echo "<br>";
+                     	// $ftmpname1=$_FILES['fileupload1_fr6']['tmp_name'];
+                                //echo "<br>";
+                     	// $ftypename1=$_FILES['fileupload1_fr6']['type'];
+                                //echo "<br>";
+                                
+                                if(   !empty(     $file3      )      )
+                                   {
+                                           $source = $_FILES['fileupload3_fr9']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr9']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr9']['name'];
+                                           move_uploaded_file( $source, $target );// or die ("Couldn't copy");
+                                          // $size = getImageSize( $target );
+                                   }                
+                                   
+                                   
+                                   
                   
                   $dentalcast_fr9=trim($this->input->get_post("dentalcast_fr9"));   //Dental Cast :
              //echo  "<br>";
@@ -1479,6 +1521,8 @@ $this->db->delete($tables);
                    "othermandible"=>$othermandible_fr9,  //11
                   "tool"=>$tool_fr9, //12
                   "file1"=> $file1 ,  //13
+                  "file2"=> $file2 ,  //13
+                  "file3"=> $file3 ,  //13
                   "dentalcast"=>$dentalcast_fr9,     //14
              );
                 $inst = $this->db->insert($tb,$data);

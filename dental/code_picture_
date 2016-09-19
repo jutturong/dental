@@ -1,0 +1,24 @@
+ {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
+                                                       var  file1=row.filename1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
+                                                       var  file1=row.filename2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
+                                                       var  file1=row.filename3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },

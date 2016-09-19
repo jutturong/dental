@@ -1559,6 +1559,7 @@
                      buttons:[
                          { text:' ปิด (Close) '  ,iconCls:'icon-cancel',handler:function(){  $('#preview_fr9').dialog('close');  } },
                          
+                         
                        ]
                      
                      "
@@ -1611,7 +1612,32 @@
                                         
                                    }
                            
-                           }  }
+                           }  
+                          },
+                           {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr9').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr9').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr9').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
                        ]
                        "    >
                         
@@ -1639,7 +1665,7 @@
             
     <div style="padding: 10px 5px;">
         <label>
-            แพทย์ผู้ทำการรักษา : <input class="easyui-textbox"   id="doctor_fr9"   name="doctor_fr9"    data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"   value="พญ.กันยากร โนนสูง"   />
+            แพทย์ผู้ทำการรักษา : <input class="easyui-textbox"   id="doctor_fr9"   name="doctor_fr9"    data-options=" prompt:'เลือกแพทย์ผู้ทำการรักษา '   "  style="width:200px;height: 40px;"      />
         </label>
     </div>
     <div style="padding: 10px 5px;">
@@ -1853,6 +1879,31 @@
                                 
                             }   
                          },
+                          {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr9_2').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr9_2').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr9_2').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                         
                      ]
                      "
                      ></div>
@@ -2324,6 +2375,34 @@
                                        }
                                  } 
                              },
+                             
+                              {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_psot').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_psot').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_psot').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                             
+                             
+                             
                          ] ,
                          
                     });
@@ -2334,7 +2413,7 @@
            
            >แสดงข้อมูล</a>
         
-        <div class="easyui-dialog"  id="dia_psot"  data-options=" closed:true "  title="  Pre-surgical orthopedics therapy (PSOT)  " style="width: 700px;height: 400px;" >
+        <div class="easyui-dialog"  id="dia_psot"  data-options=" closed:true ,buttons:[ {   text:'ปิด (Close)', iconCls:'icon-cancel', handler:function(){  $('#dia_psot').dialog('close');   }  }  ]"  title="  Pre-surgical orthopedics therapy (PSOT)  " style="width: 700px;height: 400px;" >
             <div class="easyui-datagrid"  id="dg_psot"  ></div>
         </div>
         
@@ -2805,7 +2884,7 @@
     <div style="margin:0px 0 0px 0;"></div>
         
     
-            <form id="ff" action="form1_proc.php" method="post" enctype="multipart/form-data">
+            <form id="ff"  method="post" enctype="multipart/form-data">
             <table>
                 
                 <!--
@@ -3248,7 +3327,34 @@
                                   }
                             
                             }  
-                     }
+                     },
+                     
+                      {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr7').datagrid('getSelected');
+                                                       var  file1=row.filename1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr7').datagrid('getSelected');
+                                                       var  file1=row.filename2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr7').datagrid('getSelected');
+                                                       var  file1=row.filename3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                     
+                     
                 ]
              "  ></div>
     </div>
@@ -3272,7 +3378,7 @@
                     
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="doctor_fr7" id="doctor_fr7" class="easyui-textbox"  value="นพ.รณชัย ทองภูมิ" style="width:200px;height: 30px;"></input></td>
+                    <td><input name="doctor_fr7" id="doctor_fr7" class="easyui-textbox"   style="width:200px;height: 30px;"></input></td>
                 </tr>
                 
                 
@@ -3456,12 +3562,16 @@
                                           if( data == 1 )
                                           {
                                               $('#dia_fr7').dialog('open');
-                                              $('$dg_fr7').datagrid('reload');
+                                              //$('$dg_fr7').datagrid('reload');
+                                               $('#dg_fr7').datagrid('reload');
                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                               
                                           }
                                           else 
                                           {
+                                                $('#dia_fr7').dialog('open');
+                                              //$('$dg_fr7').datagrid('reload');
+                                               $('#dg_fr7').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                           }
                                     }
@@ -3469,7 +3579,7 @@
                            
                            "
                            >Save</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12_7').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -3536,7 +3646,34 @@
                                     
                                }
                       }
-                  }
+                  },
+                   {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr8').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr8').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr8').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                  
+                  
+                  
                ]
              "
              
@@ -3561,7 +3698,7 @@
                 
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="doctor_fr8" id="doctor_fr8" class="easyui-textbox"  value="ทพญ.กาญจนา ด่านภักดี"></input></td>
+                    <td><input name="doctor_fr8" id="doctor_fr8" class="easyui-textbox"  ></input></td>
                 </tr>
                 
                 
@@ -4008,7 +4145,33 @@
                                    
                               }
                          } 
-                     }
+                     },
+                     
+                      {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                     
                    ]
                  "
                  
@@ -4035,7 +4198,7 @@
                 
                 <tr>
                     <td> แพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-combobox"  value="พญ.ภัทรราพร วรรณวดี"></input></td>
+                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
                 </tr>
                 
                 
@@ -4069,7 +4232,7 @@
                     <td>เทคนิคที่ใช้ :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="technic" name="technic"  value="เทคนิคการผ่าตัด"></input>
+                        <input class="easyui-textbox"  id="technic" name="technic" ></input>
                     </td>
                 </tr>
                 
@@ -4120,7 +4283,7 @@
                     </td>
                     <td>
                          
-                        <input  type="radio"  id="dentalcast_fr6"  name="dentalcast_fr6"> Yes  <input  type="radio"> No
+                        <input  type="radio"  id="dentalcast1_fr6"  name="dentalcast_fr6" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6"  name="dentalcast_fr6" value="2"> No
                         
                     </td>
                     
@@ -4677,7 +4840,14 @@
         </a>
         
         
-        <div class="easyui-dialog"  id="dia_fr4"  data-options="closed:true,resizable:true,"  title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
+        <div class="easyui-dialog"  id="dia_fr4"  data-options="closed:true,
+             resizable:true,
+             buttons:[    
+                {  text:'ปิด (Close)' ,iconCls:'icon-cancel',handler:function(){  $('#dia_fr4').dialog('close');  }  }
+             ]
+             "  
+             
+             title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
             <div  class="easyui-datagrid"  id="dg_fr4" 
                   data-options="
                      url:'<?=base_url()?>index.php/welcome/json_fr4',
@@ -4729,8 +4899,36 @@
                                                });
                                      }
                                 }    
-                       }
-                     ]
+                       },
+                       
+                        {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr4').datagrid('getSelected');
+                                                       var  file1=row.filename1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr4').datagrid('getSelected');
+                                                       var  file1=row.filename2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr4').datagrid('getSelected');
+                                                       var  file1=row.filename3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                     ] ,
+                     
+                   
+                     
                   "
                   style="width:590px;height: 380px;"
                   >
@@ -4754,7 +4952,7 @@
     
           <div style="padding:10px 5px;" > 
               <label>
-                  ทันตแพทย์ผู้ทำการรักษา :  <input class="easyui-textbox"  id="doctor_fr4"  name="doctor_fr4"  value="พญ.กานดา สิทธิ"  style="width:200px;height: 40px;"    />
+                  ทันตแพทย์ผู้ทำการรักษา :  <input class="easyui-textbox"  id="doctor_fr4"  name="doctor_fr4"   style="width:200px;height: 40px;"    />
               </label>
           </div>
     <div style="padding: 10px 5px;">
@@ -5037,6 +5235,32 @@
                              }
                          }   
                     },
+                    
+                     {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr11_1').datagrid('getSelected');
+                                                       var  file1=row.fileupload1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr11_1').datagrid('getSelected');
+                                                       var  file1=row.fileupload2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr11_1').datagrid('getSelected');
+                                                       var  file1=row.fileupload3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                                     
                   ]
                   "
                   ></div>
@@ -5197,7 +5421,31 @@
                                           });
                                 }
                         }  
-                   }
+                   },
+                    {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr11_2').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr11_2').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr11_2').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
                    ]
                    " style="width: 600px;height: 500px;"    >
                  

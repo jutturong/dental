@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2016 at 01:11 PM
+-- Generation Time: Sep 19, 2016 at 03:48 PM
 -- Server version: 5.5.50-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.19
 
@@ -32,21 +32,21 @@ CREATE TABLE IF NOT EXISTS `tb_bonegraft` (
   `doctor` text COLLATE utf32_bin NOT NULL,
   `date1` date NOT NULL,
   `technic` varchar(100) COLLATE utf32_bin NOT NULL,
-  `file1` int(100) NOT NULL,
-  `file2` int(100) NOT NULL,
-  `file3` int(100) NOT NULL,
+  `file1` text COLLATE utf32_bin NOT NULL,
+  `file2` text COLLATE utf32_bin NOT NULL,
+  `file3` text COLLATE utf32_bin NOT NULL,
   `dentalcast` int(10) NOT NULL,
   PRIMARY KEY (`id_bonegraft`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `tb_bonegraft`
 --
 
 INSERT INTO `tb_bonegraft` (`id_bonegraft`, `id_history_patient`, `doctor`, `date1`, `technic`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
-(6, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0),
-(7, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0),
-(14, 21, 'พญ.ภัทรราพร วรรณวดี', '0000-00-00', 'เทคนิคการผ่าตัด', 0, 0, 0, 0);
+(20, 21, 'พญ.ภัทรราพร วรรณวดี', '2014-02-04', 'เทคนิคการผ่าตัด', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', 'a9d49d30c30d297df9478e0bbeacc259.jpeg', 2),
+(21, 21, 'พญ.ภัทรราพร วรรณวดี', '2014-02-04', 'เทคนิคการผ่าตัด', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', 'a9d49d30c30d297df9478e0bbeacc259.jpeg', 2),
+(22, 21, 'พญ.ภัทรราพร วรรณวดี', '2014-02-04', 'เทคนิคการผ่าตัด', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', 'a9d49d30c30d297df9478e0bbeacc259.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `tb_corrective` (
 --
 
 INSERT INTO `tb_corrective` (`id_corrective`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeletal`, `tool`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
-(1, 21, 'ทพญ.กาญจนา ด่านภักดี', '0000-00-00', '0000-00-00', 1, 4, 3, 'ชนิดของเครื่องมือ :', '', '', '', 1),
 (2, 21, 'ทพญ.กาญจนา ด่านภักดี', '2012-02-01', '2005-02-02', 5, 4, 3, 'ชนิดของเครื่องมือ :', '10690103_764556926991167_1787453937051832021_n.jpg', 'd89cdfec85eb868a2abe1b1cc5e568d5.png', '12102555214751.jpg', 1);
 
 -- --------------------------------------------------------
@@ -165,8 +164,7 @@ CREATE TABLE IF NOT EXISTS `tb_distraction` (
 --
 
 INSERT INTO `tb_distraction` (`id_distraction`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `file2`, `file3`) VALUES
-(5, 21, 'ทพญ.กาญจนา ด่านภักดี', '2011-02-08', '2014-02-05', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png'),
-(6, 21, 'ทพญ.กาญจนา ด่านภักดี', '2011-02-08', '2014-02-05', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png');
+(5, 21, 'ทพญ.กาญจนา ด่านภักดี', '2011-02-08', '2014-02-05', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', 'Screenshot from 2016-09-03 21:24:31.png', 'Screenshot from 2016-09-10 13:15:24.png', 'Screenshot from 2016-09-11 23:41:50.png');
 
 -- --------------------------------------------------------
 
@@ -192,15 +190,16 @@ CREATE TABLE IF NOT EXISTS `tb_growth` (
   `filename3` varchar(60) COLLATE utf32_bin NOT NULL,
   `dentalcast` int(10) NOT NULL,
   PRIMARY KEY (`id_growth`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tb_growth`
 --
 
 INSERT INTO `tb_growth` (`id_growth`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeletal`, `typetool`, `other_typetool`, `appliance`, `other_appliance`, `filename1`, `filename2`, `filename3`, `dentalcast`) VALUES
-(1, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 3, 1, 'Facial mask     ระบุ', 1, 'Functional appliance     ระบุ', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 2),
-(2, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 3, 1, 'Facial mask     ระบุ', 1, 'Functional appliance     ระบุ', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 'cf7d5352020f6a18e9be8d39404ab747.jpg', 2);
+(4, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 'Facial mask     ระบุ', 1, 'Functional appliance', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(5, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 'Facial mask     ระบุ', 1, 'Functional appliance', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(6, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 'Facial mask     ระบุ', 1, 'Functional appliance', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -278,16 +277,14 @@ CREATE TABLE IF NOT EXISTS `tb_interceptive` (
   `filename3` text COLLATE utf8_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_interceptive`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `tb_interceptive`
 --
 
 INSERT INTO `tb_interceptive` (`id_interceptive`, `id_history_patient`, `doctor`, `begin_date`, `end_date`, `goslon`, `incisor`, `skeleta`, `filename1`, `filename2`, `filename3`, `dentalcast`) VALUES
-(40, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1),
-(42, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1),
-(43, 21, 'พญ.กานดา สิทธิ', '0000-00-00', '0000-00-00', 1, 2, 1, '', '', '', 1);
+(44, 21, 'พญ.กานดา สิทธิ', '2013-02-05', '2013-02-20', 4, 2, 2, '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', 'a9d49d30c30d297df9478e0bbeacc259.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -309,19 +306,18 @@ CREATE TABLE IF NOT EXISTS `tb_orthognathic` (
   `othermandible` text COLLATE utf16_bin NOT NULL,
   `tool` text COLLATE utf16_bin NOT NULL,
   `file1` text COLLATE utf16_bin NOT NULL,
+  `file2` text COLLATE utf16_bin NOT NULL,
+  `file3` text COLLATE utf16_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_orthognathic`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `tb_orthognathic`
 --
 
-INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`, `begin_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `dentalcast`) VALUES
-(4, 21, 'พญ.กันยากร โนนสูง', '2013-02-13', 1, 1, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 1),
-(5, 21, 'พญ.กันยากร โนนสูง', '2011-02-08', 4, 3, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
-(6, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '', 2),
-(7, 21, 'พญ.กันยากร โนนสูง', '0000-00-00', 1, 1, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01-install-select.png', 2);
+INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`, `begin_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
+(8, 21, 'พญ.กันยากร โนนสูง', '2014-02-04', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -385,16 +381,16 @@ CREATE TABLE IF NOT EXISTS `tb_prosthodontic` (
   `file3` varchar(100) COLLATE utf16_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_prosthodontic`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `tb_prosthodontic`
 --
 
 INSERT INTO `tb_prosthodontic` (`id_prosthodontic`, `id_history_patient`, `dental`, `begin_date`, `appliance`, `otherappliance`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
-(7, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2),
-(8, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2),
-(9, 21, 'พญ.กาญจนา ด่านภักดี', '2014-02-04', 7, 'ระบุ', '', '', '', 2);
+(10, 21, 'พญ.กาญจนา ด่านภักดี', '2013-02-06', 7, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(11, 21, 'พญ.กาญจนา ด่านภักดี', '2013-02-06', 7, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(12, 21, 'พญ.กาญจนา ด่านภักดี', '2013-02-06', 7, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -413,19 +409,19 @@ CREATE TABLE IF NOT EXISTS `tb_psot` (
   `otherprocedure` varchar(100) COLLATE utf16_bin NOT NULL,
   `file1` text COLLATE utf16_bin NOT NULL,
   `file2` text COLLATE utf16_bin NOT NULL,
-  `file3` int(11) NOT NULL,
+  `file3` text COLLATE utf16_bin NOT NULL,
   `cast` int(5) NOT NULL,
   PRIMARY KEY (`id_psot`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tb_psot`
 --
 
 INSERT INTO `tb_psot` (`id_psot`, `id_history_patient`, `doctor`, `joindoctor`, `begin_date`, `end_date`, `procedure`, `otherprocedure`, `file1`, `file2`, `file3`, `cast`) VALUES
-(1, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(2, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(3, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1);
+(3, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', '641607', 1),
+(4, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '2014-02-04', '2014-02-05', 5, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241', 1),
+(5, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '2014-02-04', '2014-02-05', 5, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
