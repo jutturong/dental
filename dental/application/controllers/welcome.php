@@ -2020,14 +2020,14 @@ $this->db->delete($tables);
           #http://127.0.0.1/dental/index.php/welcome/insert_fr10_1
         function  insert_fr10_1() //---- รวมการบันทึก ใน table ทั้งหมดของ treatment 10
         {
-              echo  $id_history_patient_fr10_1=trim($this->input->get_post("id_history_patient_fr10_1"));
-              echo "<br>";
+                $id_history_patient_fr10_1=trim($this->input->get_post("id_history_patient_fr10_1"));
+              //echo "<br>";
               
-              echo $doctor_fr10_1=trim($this->input->get_post("doctor_fr10_1")); //ทันตแพทย์ผู้ทำการรักษา
-              echo "<br>";
+               $doctor_fr10_1=trim($this->input->get_post("doctor_fr10_1")); //ทันตแพทย์ผู้ทำการรักษา
+              //echo "<br>";
               
-                 echo $date_fr10_1=trim($this->input->get_post("date_fr10_1"));  //วัน/เดือน/ปี ที่ทำ 
-              echo "<br>";
+                 $date_fr10_1=trim($this->input->get_post("date_fr10_1"));  //วัน/เดือน/ปี ที่ทำ 
+              //echo "<br>";
                 if(  !empty(   $date_fr10_1   )  &&  $date_fr10_1 != ''  )  //09/14/2016 08:45:29  วัน/เดือน/ปี ที่ทำการรักษา
             {
                       $ex1=explode(" ",$date_fr10_1);
@@ -2039,19 +2039,16 @@ $this->db->delete($tables);
             else{
                        $conv_date_fr10_1='';
             }
-              echo     $conv_date_fr10_1;
-              echo "<br>";
+             //echo     $conv_date_fr10_1;
+              //echo "<br>";
               
-              
-              
-              
-               echo $tool_tr10_1= trim($this->input->get_post("tool_tr10_1")); //เครื่องมือที่ใช้
-               echo "<br>";
+               $tool_tr10_1= trim($this->input->get_post("tool_tr10_1")); //เครื่องมือที่ใช้
+              // echo "<br>";
                
                
                             //----------รูปถ่ายก่อนการรักษา (Before ) : 
-                      echo      $file1 =  $_FILES['fileupload1_fr10_1']['name'];  //9   =>filename
-                      echo "<br>";
+                            $file1 =  $_FILES['fileupload1_fr10_1']['name'];  //9   =>filename
+                      //echo "<br>";
                               
                                 if(   !empty(     $file1      )      )
                                    {
@@ -2065,8 +2062,8 @@ $this->db->delete($tables);
                                    
                 
                              //----------รูปถ่ายระหว่างการรักษา (During)
-                         echo    $file2 =  $_FILES['fileupload2_fr10_1']['name'];  //9   =>filename
-                        echo "<br>";
+                             $file2 =  $_FILES['fileupload2_fr10_1']['name'];  //9   =>filename
+                        //echo "<br>";
                                 
                                 if(   !empty(   $file2     )      )
                                    {
@@ -2079,8 +2076,8 @@ $this->db->delete($tables);
                                    
                           
                          //----------รูปถ่ายหลังการรักษา (After) 
-                      echo    $file3 =  $_FILES['fileupload3_fr10_1']['name'];  //9   =>filename
-                      echo "<br>";
+                          $file3 =  $_FILES['fileupload3_fr10_1']['name'];  //9   =>filename
+                      //echo "<br>";
                                 
                                 if(   !empty(   $file3     )      )
                                    {
@@ -2094,8 +2091,8 @@ $this->db->delete($tables);
 
                            
                                    
-                  echo   $dentalcast_fr10_1= trim($this->input->get_post("dentalcast_fr10_1"));  //Dental Cast :               
-                  echo  "<br>";
+                     $dentalcast_fr10_1= trim($this->input->get_post("dentalcast_fr10_1"));  //Dental Cast :               
+                  //echo  "<br>";
                   
                   $tb="tb_othersurgery";
                   $data=array(
@@ -2658,7 +2655,7 @@ $this->db->delete($tables);
                     }
                     echo  json_encode($rows);
         } 
-          #   http://127.0.0.1/dental/index.php/welcome/del_fr10/
+          #http://127.0.0.1/dental/index.php/welcome/del_fr10/
            function  del_fr10()
         {
                 $id=trim($this->uri->segment(3));

@@ -460,14 +460,12 @@
 
 
 <div id="dia10"  title="10. Other surgery " style="width:800px;height: 650px;padding: 5px;" class="easyui-dialog"     data-options="
-     
      closed:true,
      buttons:[
      //{  text:'Save', iconCls:'icon-save'   },
      {  text:'Close', iconCls:'icon-cancel',handler:function(){  $('#dia10').dialog('close');  } }
      ]
      ">
-    
     
       <div class="easyui-tabs" >
                 <div title="Vestibuloplasty" style="padding:10px">
@@ -478,21 +476,74 @@
                                 $('#dia_fr10_1').dialog('open');
                                 $('#dg_fr10_1').datagrid('reload');
                            "
-                           
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
                     
-                    <div class="easyui-dialog"  id="dia_fr10_1"  closed="true"  style="width: 700px;height: 400px;"  title="Vestibuloplasty"   >
+                    <div class="easyui-dialog"  id="dia_fr10_1"  closed="true"
+                         data-options="   
+                            buttons:[  
+                               { text:'ปิด (Close)',iconCls:'icon-cancel' , handler:function(){ $('#dia_fr10_1').dialog('close');  } }
+                            ]
+                         "
+                         style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_1"  
                               data-options="
                                  url:'<?=base_url()?>index.php/welcome/json_tr10/1',
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
-                                    { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   }
-                                    
-                                 ]]
-                                 
+                                    { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
+                                    { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
+                                    { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                 ]],
+                                 toolbar:[
+                                   { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_1').datagrid('reload'); } },
+                                    {  text:'Delete', iconCls:'icon-cancel', handler:function()
+                                        {
+                                              var  row=$('#dg_fr10_1').datagrid('getSelected');
+                                              if( row )
+                                               {
+                                                    $.messager.confirm('ลบข้อมูล','คุณต้องการลบข้อมูล', function(r)
+                                                     {
+                                                           if(r)
+                                                           {
+                                                                   id = row.id_othersurgery;
+                                                                   var  url='<?=base_url()?>index.php/welcome/del_fr10/' + id;
+                                                                   //alert(url);
+                                                                   $.post(url,function(){
+                                                                          $('#dg_fr10_1').datagrid('reload');
+                                                                   });
+                                                           }
+                                                     } );
+                                               }
+                                         }  
+                                     },
+                                     {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr10_1').datagrid('getSelected');
+                                                       var  file1=row.filename1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr10_1').datagrid('getSelected');
+                                                       var  file1=row.filename2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr10_1').datagrid('getSelected');
+                                                       var  file1=row.filename3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       window.open(url);
+                                        }  
+                                     },
+                                 ]
                               "
                              ></div> 
                     </div>
@@ -572,7 +623,19 @@
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_1',
                         success:function(data)
                             {
-                                alert(data);
+                                  // alert(data);
+                                  if( data == 1 )
+                                  {  
+                                           $('#dia_fr10_1').dialog('open');
+                                           $('#dg_fr10_1').datagrid('reload');
+                                           $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
+                                   }
+                                   else{
+                                       
+                                           $('#dia_fr10_1').dialog('open');
+                                           $('#dg_fr10_1').datagrid('reload');
+                                           $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                   }
                             }
                     });
                     "   >บันทึก</a>
