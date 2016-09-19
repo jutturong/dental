@@ -2435,14 +2435,14 @@
                 
                 <tr>
                     <td>ทันตแพทย์ผู้ทำการรักษา :</td>
-                    <td> <input name="doctor_fr1" id="doctor_fr1"    class="easyui-textbox"   style="width: 200px;height: 30px;"  value="นพ.ปราโมทย์  คำชะนินท์"    /> </td>
+                    <td> <input name="doctor_fr1" id="doctor_fr1"    class="easyui-textbox"   style="width: 200px;height: 30px;"     /> </td>
                 </tr>
                 
                  <tr>
                     <td>ทันตแพทย์ผู้ร่วมทำการรักษา :</td>
                     <td>
                         
-                        <input class="easyui-textbox"   name="joindoctor_fr1"  id="joindoctor_fr1"    style="width:200px;height: 30px"  value="พญ.อินทญา  คำชะนินท์"   />
+                        <input class="easyui-textbox"   name="joindoctor_fr1"  id="joindoctor_fr1"    style="width:200px;height: 30px"   />
                     
                     </td>
                 </tr>
@@ -2481,7 +2481,7 @@
                         <input  type="radio"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
                         <br>
                         <input   type="radio" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
-                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"   value="อื่นๆ ระบุ"  /> 
+                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
                     </td>
                 </tr>
                 
@@ -2594,7 +2594,7 @@
                            
                            
                            style="width:100px;height: 40px;">Save</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width:100px;height: 40px;" >Close</a>
+                           <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width:100px;height: 40px;"  onclick="  $('#dia_treat3').dialog('close');  " >Close</a>
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'"  onclick=" $('#dia_sub_dia_treat3').dialog('open');  "   style="width:100px;height: 40px;" >Preview</a>
                     </td>
                   
