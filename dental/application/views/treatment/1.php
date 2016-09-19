@@ -2380,8 +2380,17 @@
                                                 {
                                                        var  row=$('#dg_psot').datagrid('getSelected');
                                                        var  file1=row.file1;
-                                                       var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                               
+                                                         if( file1.length > 0 )
+                                                         { 
+                                                                    var  url='<?=base_url()?>upload/' + file1;
+                                                                    if( file1.length > 0 )
+                                                                    {  
+                                                                       window.open(url);
+                                                                   }   
+                                                         }          
+                                                       
+                                                       
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -2389,7 +2398,11 @@
                                                        var  row=$('#dg_psot').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       if( file1.length > 0 )
+                                                       {
+                                                              window.open(url);
+                                                       }
+                                                 
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -2397,7 +2410,11 @@
                                                        var  row=$('#dg_psot').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                                     
                                         }  
                                      },
                              
@@ -3334,7 +3351,11 @@
                                                        var  row=$('#dg_fr7').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -3342,7 +3363,11 @@
                                                        var  row=$('#dg_fr7').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                         //window.open(url);
+                                                       if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -3350,7 +3375,11 @@
                                                        var  row=$('#dg_fr7').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                      
@@ -4906,7 +4935,11 @@
                                                        var  row=$('#dg_fr4').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -4914,7 +4947,11 @@
                                                        var  row=$('#dg_fr4').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -4922,7 +4959,11 @@
                                                        var  row=$('#dg_fr4').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                      ] ,
