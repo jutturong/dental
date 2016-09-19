@@ -526,7 +526,11 @@
                                                        var  row=$('#dg_fr10_1').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -534,7 +538,11 @@
                                                        var  row=$('#dg_fr10_1').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -542,7 +550,11 @@
                                                        var  row=$('#dg_fr10_1').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -705,7 +717,11 @@
                                                        var  row=$('#dg_fr10_2').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       // window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -713,7 +729,11 @@
                                                        var  row=$('#dg_fr10_2').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -721,7 +741,11 @@
                                                        var  row=$('#dg_fr10_2').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -880,7 +904,11 @@
                                                        var  row=$('#dg_fr10_3').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -888,7 +916,11 @@
                                                        var  row=$('#dg_fr10_3').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -896,7 +928,11 @@
                                                        var  row=$('#dg_fr10_3').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -1055,7 +1091,11 @@
                                                        var  row=$('#dg_fr10_4').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -1063,7 +1103,11 @@
                                                        var  row=$('#dg_fr10_4').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -1071,7 +1115,11 @@
                                                        var  row=$('#dg_fr10_4').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -1228,7 +1276,11 @@
                                                        var  row=$('#dg_fr10_5').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -1236,7 +1288,11 @@
                                                        var  row=$('#dg_fr10_5').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -1244,7 +1300,11 @@
                                                        var  row=$('#dg_fr10_5').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -1400,7 +1460,11 @@
                                                        var  row=$('#dg_fr10_6').datagrid('getSelected');
                                                        var  file1=row.filename1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -1408,7 +1472,11 @@
                                                        var  row=$('#dg_fr10_6').datagrid('getSelected');
                                                        var  file1=row.filename2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -1416,7 +1484,11 @@
                                                        var  row=$('#dg_fr10_6').datagrid('getSelected');
                                                        var  file1=row.filename3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                  ]
@@ -1619,7 +1691,11 @@
                                                        var  row=$('#dg_fr9').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -1627,7 +1703,11 @@
                                                        var  row=$('#dg_fr9').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -1635,7 +1715,11 @@
                                                        var  row=$('#dg_fr9').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                        ]
@@ -1884,7 +1968,11 @@
                                                        var  row=$('#dg_fr9_2').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -1892,7 +1980,11 @@
                                                        var  row=$('#dg_fr9_2').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -1900,7 +1992,11 @@
                                                        var  row=$('#dg_fr9_2').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                          
@@ -2387,6 +2483,7 @@
                                                                     if( file1.length > 0 )
                                                                     {  
                                                                        window.open(url);
+                                                                        
                                                                    }   
                                                          }          
                                                        
@@ -3681,7 +3778,11 @@
                                                        var  row=$('#dg_fr8').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       // window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -3689,7 +3790,11 @@
                                                        var  row=$('#dg_fr8').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     // window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -3697,7 +3802,11 @@
                                                        var  row=$('#dg_fr8').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                   
@@ -4181,7 +4290,11 @@
                                                        var  row=$('#dg_fr6').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -4189,7 +4302,11 @@
                                                        var  row=$('#dg_fr6').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -4197,7 +4314,11 @@
                                                        var  row=$('#dg_fr6').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                      
@@ -5282,7 +5403,11 @@
                                                        var  row=$('#dg_fr11_1').datagrid('getSelected');
                                                        var  file1=row.fileupload1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -5290,7 +5415,11 @@
                                                        var  row=$('#dg_fr11_1').datagrid('getSelected');
                                                        var  file1=row.fileupload2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -5298,7 +5427,11 @@
                                                        var  row=$('#dg_fr11_1').datagrid('getSelected');
                                                        var  file1=row.fileupload3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                    //   window.open(url);
+                                                       if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                                      
@@ -5468,7 +5601,11 @@
                                                        var  row=$('#dg_fr11_2').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                     //  window.open(url);
+                                                        if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                 }  
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
@@ -5476,7 +5613,11 @@
                                                        var  row=$('#dg_fr11_2').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                                }  
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
@@ -5484,7 +5625,11 @@
                                                        var  row=$('#dg_fr11_2').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
+                                                    //   window.open(url);
+                                                       if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
                                         }  
                                      },
                    ]
