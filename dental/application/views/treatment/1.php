@@ -2709,7 +2709,7 @@
                            
                            style="width:100px;height: 40px;">Save</a>
                            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width:100px;height: 40px;"  onclick="  $('#dia_treat3').dialog('close');  " >Close</a>
-                        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'"  onclick=" $('#dia_sub_dia_treat3').dialog('open');  "   style="width:100px;height: 40px;" >Preview</a>
+                         <!-- <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'"  onclick=" $('#dia_sub_dia_treat3').dialog('open');  "   style="width:100px;height: 40px;" >Preview</a> -->
                     </td>
                   
                 </tr>
