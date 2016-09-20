@@ -2713,14 +2713,154 @@ $this->db->delete($tables);
                 }
         }
         
-        #---- all table in from -------------------------------
-        #http://127.0.0.1/dental/index.php/welcome/all_table
-        function all_table()
+        #--1. Pre-surgical orthopedics therapy (PSOT) -----------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr1()
+        function showjson_fr1()
         {
               //FROM `tb_psot` 
+             //	id_history_patient
+             $tb_m="tb_history_patient";
+             
              $tbj1="tb_psot";
-             $this->db->order_by( $tbj1.".begin_date","asc");
-             $q=$this->db->get($tbj1);
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+        #---- 4. Interceptive orthodontic treatment ----------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr1()
+        function showjson_fr4()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+                #---- 4. Interceptive orthodontic treatment ----------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr1()
+        function showjson_fr6()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_othersurgery";  //$tb="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+                        #---7. Growth modification ----------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr7()
+        function showjson_fr7()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_growth";  //$tb="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+                                #---8. Corrective Orthodontic Treatment ----------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr8()
+        function showjson_fr8()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_corrective";  //$tb="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+       #---9. Orthognathic surgery --------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr8()
+        function showjson_fr9()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_othersurgery";  //$tb="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+               #---9. Distraction --------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr8()
+        function showjson_fr9_2()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             $tbj1="tb_distraction";  //$tb="tb_othersurgery";
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;

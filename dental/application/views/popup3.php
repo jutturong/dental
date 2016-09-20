@@ -20,20 +20,131 @@
         <div class="easyui-layout" data-options="fit:true">
             <div data-options="region:'east',split:true"  style="width:400px">
                 
-                <!--  data show in all tab table  -->
-                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" ลำดับของการรักษาเรียงลำดับตาม วัน-เดือน-ปี"  id="dg_all_table"
+                
+                <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 1. Pre-surgical orthopedics therapy (PSOT) "  id="dg_view_fr1"
                      data-options="
-                        url:'http://127.0.0.1/dental/index.php/welcome/all_table',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr1',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr1').datagrid('reload');  }  }  ] ,
                         columns:[[
-                           { field:'begin_date' ,  }
-                        ]]
-                   
-                        
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
                      "
-                     style="width: 400px;height: 300px;padding: 5px;"    >
-                    
+                     style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                 <!--  data show in all tab table  -->
+                <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
+                
+                                <!--    	4. Interceptive orthodontic treatment    -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 4. Interceptive orthodontic treatment  "  id="dg_view_fr4"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr4',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr4').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                <!--   	4. Interceptive orthodontic treatment    -->
+                
+                <!--  6. Bone graft surgery     -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  6. Bone graft surgery  "  id="dg_view_fr6"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr6',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr6').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                 <!--  6. Bone graft surgery     -->
+                 
+                               
+                                   <!--  7. Growth modification      -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 7. Growth modification   "  id="dg_view_fr7"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr7',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr7').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                 <!--  7. Growth modification     -->
+                 
+                <!--   	8. Corrective Orthodontic Treatment      -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  8. Corrective Orthodontic Treatment    "  id="dg_view_fr8"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr8',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr8').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                 <!--   	8. Corrective Orthodontic Treatment      -->
+                 
+                 
+                <!--   9. Orthognathic surgery    1    -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9.Orthognathic surgery(Main)   "  id="dg_view_fr9_1"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr9',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr9_1').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                  <!--   9. Orthognathic surgery    1    -->
+                  
+                  
+                <!--   9. Distraction  -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9. Distraction    "  id="dg_view_fr9_2"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr9_2',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr9_2').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                  <!--  9. Distraction    -->
+                  
+                  
+                 
             </div>
             
             <div data-options="region:'center'" style="padding:5px;">
