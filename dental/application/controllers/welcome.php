@@ -2713,7 +2713,21 @@ $this->db->delete($tables);
                 }
         }
         
-        
+        #---- all table in from -------------------------------
+        #http://127.0.0.1/dental/index.php/welcome/all_table
+        function all_table()
+        {
+              //FROM `tb_psot` 
+             $tbj1="tb_psot";
+             $this->db->order_by( $tbj1.".begin_date","asc");
+             $q=$this->db->get($tbj1);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
         
 }
 

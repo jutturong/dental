@@ -18,8 +18,25 @@
     
     
         <div class="easyui-layout" data-options="fit:true">
-            <div data-options="region:'east',split:true" style="width:80px"></div>
-            <div data-options="region:'center'" style="padding:10px;">
+            <div data-options="region:'east',split:true"  style="width:400px">
+                
+                <!--  data show in all tab table  -->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" ลำดับของการรักษาเรียงลำดับตาม วัน-เดือน-ปี"  id="dg_all_table"
+                     data-options="
+                        url:'http://127.0.0.1/dental/index.php/welcome/all_table',
+                        columns:[[
+                           { field:'begin_date' ,  }
+                        ]]
+                   
+                        
+                     "
+                     style="width: 400px;height: 300px;padding: 5px;"    >
+                    
+                </div>
+                 <!--  data show in all tab table  -->
+            </div>
+            
+            <div data-options="region:'center'" style="padding:5px;">
                   
                      
                      
@@ -135,21 +152,7 @@
                 </tr>
                 
                 
-                
-                
-         
-                
-                
-                
-                
-                
-                
-                
-                
-                  
-                
-                        
-                
+
                 
             </table>
                      
