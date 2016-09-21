@@ -69,7 +69,7 @@
                       // id="completed_both"  value="2.3"
                     if(   $('#completed_both').is(":checked")  &&   $('#comp_both').is(":checked")    )
                      {
-                            var  ans1="Bilateral cleft lip with alveolus";
+                            var  ans1="Complete Bilateral cleft lip with alveolus";
                           //  alert(ans1);
                             $.messager.alert('วิเคราะห์ผล',ans1);
                             $('#result_analysis').textbox('setValue',ans1);
@@ -78,17 +78,25 @@
                      // 1.2  id="comp_right"   1.2
                      else if(    $('#comp_right').is(":checked")    )
                      {
-                              var  ans1="Unilateral cleft lip with alveolus";
+                              var  ans1="Complete right Unilateral cleft lip with alveolus";
                               $.messager.alert('วิเคราะห์ผล',ans1);
                                $('#result_analysis').textbox('setValue',ans1);
                      }
                        // id="comp_left"  1.1
                        else if(    $('#comp_left').is(":checked")    )
                        {
-                                var  ans1="Unilateral cleft lip with alveolus";
+                                var  ans1="Complete left Unilateral cleft lip with alveolus";
                                 $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                        }
+                       //completed_both  //2.3
+                       else if(    $('#completed_both').is(":checked")    )
+                      {
+                               var  ans1="with alveolus";
+                               $.messager.alert('วิเคราะห์ผล',ans1);
+                                $('#result_analysis').textbox('setValue',ans1);
+                      }
+                       
                       // id="completed_left"    value="2.1"
                       else if(    $('#completed_left').is(":checked")    )
                       {
@@ -106,21 +114,21 @@
                       // id="incomplete_both"   value="1.6"
                       else if(    $('#incomplete_both').is(":checked")    )
                       {
-                               var  ans1="Bilateral cleft lip";
+                               var  ans1="Incomplete  bilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
                                 $('#result_analysis').textbox('setValue',ans1);
                       }
                       //name="lip"  value="1.5"    id="incomplete_right"
                       else if(    $('#incomplete_right').is(":checked")    )
                       {
-                               var  ans1="Unilateral cleft lip";
+                               var  ans1="Incomplete right unilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
                                 $('#result_analysis').textbox('setValue',ans1);
                       }
                       //name="lip"  value="1.4"   id="incomplete_left"
                       else if(    $('#incomplete_left').is(":checked")    )
                       {
-                               var  ans1="Unilateral cleft lip";
+                               var  ans1="Incomplete left unilateral cleft lip";
                                $.messager.alert('วิเคราะห์ผล',ans1);
                                 $('#result_analysis').textbox('setValue',ans1);
                       }
@@ -256,7 +264,7 @@
     });
 </script>
 
-<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:700px;height:800px;padding:5px;">
+<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:600px;height:550px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     <div class="easyui-tabs" >

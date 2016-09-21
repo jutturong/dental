@@ -303,8 +303,8 @@
                       $("#dia1").dialog({
                          // title:"เพิ่มข้อมูลประวัติของผู้ป่วย",
                           title: title ,
-                          width:700,
-                          height:700,
+                          width:600,
+                          height:550,
                           closed:false,
                           cache:false,
 
@@ -638,7 +638,7 @@ otherdevelopmentallevel
 
     <div id="dia1" class="easyui-window" title="" data-options="modal:true,closed:true,iconCls:'icon-man'" style="width:500px;height:200px;padding:10px;">
     <div style="margin:10px 0 10px 0;"></div>
-    <div class="easyui-tabs" style="width:600px;height:600px">
+    <div class="easyui-tabs" style="width:600px;height:500px">
         <div title="ประวัติทั่วไป" style="padding:10px">
 
 
@@ -667,7 +667,7 @@ otherdevelopmentallevel
 
                  <tr>
                      <td>
-                              CN No :
+                              เลข สปสช. :
                      </td>
                      <td>
                          <input class="easyui-textbox" type="text" name="CN" id="CN"  style="max-width: 90px  " value="RY2135"></input>
@@ -695,6 +695,14 @@ otherdevelopmentallevel
                         <input class="easyui-textbox" type="text" name="lastname" id="lastname"   style="width:200px;height: 30px;" value="สุขเจริญ"></input>
                     </td>
                 </tr>
+                
+                <tr>
+                    <td>เพศ :</td>
+                    <td>   
+                            <input  type="radio"  value="1"  name="sex"  id="sex_m" /> ชาย 
+                           <input type="radio"   name="sex" value="2"  > หญิง
+                    </td>
+                </tr>
 
                 <tr>
                     <td>รูปถ่าย :</td>
@@ -704,6 +712,11 @@ otherdevelopmentallevel
                  <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td><input class="easyui-datetimebox"  style="width:200px" id="birthdate" name="birthdate" ></td>
+                </tr>
+                
+                <tr>
+                    <td> เบอร์โทรศัพท์ :</td>
+                    <td> <input   class="easyui-numberbox"     style="width:150px;  height: 30px;"   ></td>
                 </tr>
 
                 <tr>

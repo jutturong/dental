@@ -1622,24 +1622,8 @@
                          $('#dg_fr9').datagrid('reload');
                          // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
                            // $('#preview_fr9').datagrid('reload');
-                           
-                   "   >ดูข้อมูล</a>
-                
-                <div class="easyui-dialog"  closed="true" id="preview_fr9" title="Orthognathic surgery ( Main )" 
-                     data-options="
-                     resizable:true,
-                     buttons:[
-                         { text:' ปิด (Close) '  ,iconCls:'icon-cancel',handler:function(){  $('#preview_fr9').dialog('close');  } },
-                         
-                         
-                       ]
-                     
-                     "
-                     style="width:580px;height: 300px;" >
-                    
-                    
-                    <div class="easyui-datagrid"   id="dg_fr9"  data-options="  
-                       url:'<?=base_url()?>index.php/welcome/json_tr9/'  +  $('#id_history_patient_fr9').textbox('getValue')  ,
+                          $('#dg_fr9').datagrid({
+                              url:'<?=base_url()?>index.php/welcome/json_tr9/'  +  $('#id_history_patient_fr9').textbox('getValue')    ,
                        singleSelect:true,
                        rownumbers:true,
                        columns:[[
@@ -1723,10 +1707,24 @@
                                         }  
                                      },
                        ]
-                       "    >
-                        
-                    </div>
+                          });
+                   "   >ดูข้อมูล</a>
+                
+                <div class="easyui-dialog"  closed="true" id="preview_fr9" title="Orthognathic surgery ( Main )" 
+                     data-options="
+                     resizable:true,
+                     buttons:[
+                         { text:' ปิด (Close) '  ,iconCls:'icon-cancel',handler:function(){  $('#preview_fr9').dialog('close');  } },
+                         
+                         
+                       ]
+                     
+                     "
+                     style="width:580px;height: 300px;" >
                     
+                    
+                    <div class="easyui-datagrid"   id="dg_fr9"  data-options="        "    ></div>
+   
                 </div>
                 
             </div>
@@ -2592,12 +2590,12 @@
                          Procedure : 
                     </td>
                     <td>
-                        <input type="radio"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
-                        <input  type="radio"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
-                        <input  type="radio"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
-                        <input  type="radio"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
+                        <input type="checkbox"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
+                        <input  type="checkbox"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
+                        <input  type="checkbox"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
+                        <input  type="checkbox"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
                         <br>
-                        <input   type="radio" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
+                        <input   type="checkbox" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
                         <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
                     </td>
                 </tr>
