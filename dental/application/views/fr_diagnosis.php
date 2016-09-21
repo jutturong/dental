@@ -274,7 +274,56 @@
 
               
               <div class="easyui-panel"  style="padding: 5px;width: 600px;"   >
-                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" $('#dg_diagnosis').dialog('open');  " >เรียกดูข้อมูล</a>
+                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" 
+                      $('#dg_diagnosis').dialog('open');  
+                       $('#grid_diagnosis').datagrid({
+                           
+                            url:'<?=base_url()?>index.php/welcome/json_tb2/' +    $('#id_history_patient_diag').textbox('getValue')  ,
+         singleSelect:true,
+         columns:[[
+         
+           { field:'firstname',title:'ชื่อ' ,align:'center' },
+           { field:'lastname', title:'นามสกุล', align:'center' },
+           {    field:'result_analysis' , title:'   การวิเคราะห์ผล '  , align:'center'  },
+           {  field:'facialcleft', title:'Facial cleft', align:'center'  },
+           {  field:'otherfacialcleft',title:'ระบุ Facial cleft ',align:'center' },
+           
+         ]],
+         toolbar:[
+            { text:'Reload',iconCls:'icon-reload', handler:function(){ $('#grid_diagnosis').datagrid('reload');  }  },
+            { text:'Delete', iconCls:'icon-remove', handler:function()
+                  {     
+                      //http://127.0.0.1/dental/index.php/welcome/del_tb2/7
+                      var    row=$('#grid_diagnosis').datagrid('getSelected');
+                      if(row)
+                      {
+                            var  id=row.id_diagnosis;
+                            //alert(id);
+                            var url='<?=base_url()?>index.php/welcome/del_tb2/'  + id; 
+                            $.post(url,function(data)
+                                {
+                                       //alert(data);
+                                       if( data == 1 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }else if( data == 0 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }
+                                     
+                                });
+                      }
+                  
+                  }  
+             }
+         ]
+                           
+                       });                  
+                     
+                     
+                     " >เรียกดูข้อมูล</a>
               </div>
 
 
@@ -286,8 +335,8 @@
                         ชื่อ - นามสกุล :
                     </td>
                     <td>
-                        <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
-                        <input class="easyui-textbox"  id="name_lastname"  name="name_lastname"  style="width:200px;height: 30px;" readonly="true"  />
+                        <input class="easyui-textbox"  id="id_history_patient_diag"   name="id_history_patient_diag"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_diag"  name="name_lastname_diag"  style="width:200px;height: 30px;" readonly="true"  />
                     </td>
                 </tr>
                 
@@ -431,7 +480,7 @@
                         <a href="javascript:void(0)"   class="easyui-linkbutton"  iconCls="icon-save"   style="width: 100px;height: 40px;"  
                            onClick="
                                    $('#fr_tr1').form('submit',{
-                                          url:'<?=base_url()?>index.php/welcome/insert_tb2',
+                                          url:'<?=base_url()?>index.php/welcome/insert_tb2/',
                                           success:function(data)
                                           {
                                                // alert(data);
@@ -687,49 +736,9 @@
 <!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->
 <div class="easyui-dialog"   id="dg_diagnosis"  data-options=" closed:true  "  title="Diagnosis"  iconCls="icon-man"  style="width:500px;height: 400px;"  >
      <!--  http://127.0.0.1/dental/index.php/welcome/json_tb2 -->
-    <div class="easyui-datagrid" data-options="
-         url:'<?=base_url()?>index.php/welcome/json_tb2',
-         singleSelect:true,
-         columns:[[
-         
-           { field:'firstname',title:'ชื่อ' ,align:'center' },
-           { field:'lastname', title:'นามสกุล', align:'center' },
-           {    field:'result_analysis' , title:'   การวิเคราะห์ผล '  , align:'center'  },
-           {  field:'facialcleft', title:'Facial cleft', align:'center'  },
-           {  field:'otherfacialcleft',title:'ระบุ Facial cleft ',align:'center' },
-           
-         ]],
-         toolbar:[
-            { text:'Reload',iconCls:'icon-reload', handler:function(){ $('#grid_diagnosis').datagrid('reload');  }  },
-            { text:'Delete', iconCls:'icon-remove', handler:function()
-                  {     
-                      //http://127.0.0.1/dental/index.php/welcome/del_tb2/7
-                      var    row=$('#grid_diagnosis').datagrid('getSelected');
-                      if(row)
-                      {
-                            var  id=row.id_diagnosis;
-                            //alert(id);
-                            var url='<?=base_url()?>index.php/welcome/del_tb2/'  + id; 
-                            $.post(url,function(data)
-                                {
-                                       //alert(data);
-                                       if( data == 1 )
-                                       {
-                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
-                                            $('#grid_diagnosis').datagrid('reload');
-                                       }else if( data == 0 )
-                                       {
-                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
-                                            $('#grid_diagnosis').datagrid('reload');
-                                       }
-                                     
-                                });
-                      }
-                  
-                  }  
-             }
-         ]
-         "  id="grid_diagnosis"  ></div>
+    <div class="easyui-datagrid"  id="grid_diagnosis"  ></div>
+        
+        
     
 </div>
 <!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->

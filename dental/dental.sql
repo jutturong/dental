@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 21, 2016 at 04:30 PM
--- Server version: 5.5.50-0ubuntu0.14.04.1
+-- Generation Time: Sep 21, 2016 at 11:25 PM
+-- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `tb_diagnosis` (
   `facialcleft` int(2) NOT NULL,
   `otherfacialcleft` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id_diagnosis`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `tb_diagnosis`
@@ -247,15 +247,18 @@ CREATE TABLE IF NOT EXISTS `tb_history_patient` (
   `otherdevelopmentallevel` text NOT NULL,
   `daterecord` date NOT NULL,
   `id_user` int(5) NOT NULL,
+  `sex` int(2) NOT NULL,
+  `tel` varchar(15) NOT NULL,
   PRIMARY KEY (`id_history_patient`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `tb_history_patient`
 --
 
-INSERT INTO `tb_history_patient` (`id_history_patient`, `HN`, `DN`, `othnumber`, `CN`, `seriesnumber`, `firstname`, `lastname`, `filename`, `birthdate`, `address`, `nationality`, `race`, `religion`, `namefather`, `fatherlastname`, `career`, `birthdatefahter`, `age1`, `disease`, `mothername`, `motherlastname`, `mothercareer`, `birthdatemother`, `age2`, `diseasemother`, `spousename`, `spouselastname`, `benefits`, `otherbenefits`, `numberbenefits`, `evertreat`, `otherevertreat`, `treatmentfacility`, `doctor`, `developmentallevel`, `otherdevelopmentallevel`, `daterecord`, `id_user`) VALUES
-(21, 'ER2315', 'RT2136', 'TY2316', 'RY2135', '1111111111111', 'สมเกียรติ', 'สุขเจริญ', '', '0000-00-00', '123 ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002', 'ไทย', 'ไทย', 'พุทธ', 'สุรพงษ์', 'สุขเจริญ', 'รับจ้างทั่วไป', '0000-00-00', 36, 'โรคลมชัก', 'นวลฉวี', 'สุขเจริญ', 'บริษัทเอกชน', '0000-00-00', 41, 'ความดันสูง', 'อาทิตยา', 'นามวงศ์', 1, 'ระบุสวัสดิการการรักษา', 'TR145287', '3', 0, 'รพ.พยาบาลศรีนครินทร์', 'นพ.นพคุณ ดวงจินทร์ดา', 2, 'ระบุระดับพัฒนาการผู้ป่วย', '2016-09-10', 0);
+INSERT INTO `tb_history_patient` (`id_history_patient`, `HN`, `DN`, `othnumber`, `CN`, `seriesnumber`, `firstname`, `lastname`, `filename`, `birthdate`, `address`, `nationality`, `race`, `religion`, `namefather`, `fatherlastname`, `career`, `birthdatefahter`, `age1`, `disease`, `mothername`, `motherlastname`, `mothercareer`, `birthdatemother`, `age2`, `diseasemother`, `spousename`, `spouselastname`, `benefits`, `otherbenefits`, `numberbenefits`, `evertreat`, `otherevertreat`, `treatmentfacility`, `doctor`, `developmentallevel`, `otherdevelopmentallevel`, `daterecord`, `id_user`, `sex`, `tel`) VALUES
+(21, 'ER2315', 'RT2136', 'TY2316', 'RY2135', '1111111111111', 'สมเกียรติ', 'สุขเจริญ', '', '0000-00-00', '123 ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002', 'ไทย', 'ไทย', 'พุทธ', 'สุรพงษ์', 'สุขเจริญ', 'รับจ้างทั่วไป', '0000-00-00', 36, 'โรคลมชัก', 'นวลฉวี', 'สุขเจริญ', 'บริษัทเอกชน', '0000-00-00', 41, 'ความดันสูง', 'อาทิตยา', 'นามวงศ์', 1, 'ระบุสวัสดิการการรักษา', 'TR145287', '3', 0, 'รพ.พยาบาลศรีนครินทร์', 'นพ.นพคุณ ดวงจินทร์ดา', 2, 'ระบุระดับพัฒนาการผู้ป่วย', '2016-09-10', 0, 0, ''),
+(22, 'ER2315', 'RT2136', 'TY2316', 'RY2135', '1111111111111', 'การดา', 'มารศรี', '', '0000-00-00', '123 ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002', 'ไทย', 'ไทย', 'พุทธ', 'สุรพงษ์', 'สุขเจริญ', 'รับจ้างทั่วไป', '2011-02-08', 0, 'โรคลมชัก', 'นวลฉวี', 'สุขเจริญ', 'บริษัทเอกชน', '0000-00-00', 0, 'ความดันสูง', 'อาทิตยา', 'นามวงศ์', 1, '', 'TR145287', '', 0, 'รพ.พยาบาลศรีนครินทร์', 'นพ.นพคุณ ดวงจินทร์ดา', 2, '', '2016-09-21', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -310,14 +313,15 @@ CREATE TABLE IF NOT EXISTS `tb_orthognathic` (
   `file3` text COLLATE utf16_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_orthognathic`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tb_orthognathic`
 --
 
 INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`, `begin_date`, `goslon`, `incisor`, `skeletal`, `technic`, `othertechnic`, `mandible`, `othermandible`, `tool`, `file1`, `file2`, `file3`, `dentalcast`) VALUES
-(8, 21, 'พญ.กันยากร โนนสูง', '2014-02-04', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1);
+(8, 21, 'พญ.กันยากร โนนสูง', '2014-02-04', 4, 3, 1, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'ชนิดเครื่องมือ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(9, 21, '141111', '0000-00-00', 1, 1, 0, 0, '', 0, '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 

@@ -36,14 +36,19 @@
                                       var  id=row.id_history_patient;  
                                       var  	firstname=row.firstname;
                                       var    lastname=row.lastname;
-                                      //alert(id);
+                                     //  alert(id);
                                       // $('#diag1').window('open');
-                                      showpopup1();
-                                      // id="id_history_patient" 
-                                      $('#id_history_patient').textbox('setValue',id);
-                                      $('#name_lastname').textbox('setValue',firstname+'  '+lastname);
+                                    //  showpopup1();
+                                     //  showpopup1();
+                                      // id="id_history_patient"
+                                      
+                                       $('#id_history_patient_diag').textbox('setValue','');
+                                      
+                                      $('#diag1').window('open');  //file-> fr_diagnosis.php
+                                      $('#id_history_patient_diag').textbox('setValue',id);
+                                      $('#name_lastname_diag').textbox('setValue',firstname+'  '+lastname);
 
-                                      btnclr();
+                                     // btnclr();
                                       
                                  }
                         }
@@ -648,13 +653,13 @@ otherdevelopmentallevel
                  <tr>
                     <td>HN   :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="HN"  id="HN" data-options="required:false" style="max-width: 90px  " value="ER2315"></input>
+                        <input class="easyui-textbox" type="text" name="HN"  id="HN" data-options="required:false" style="max-width: 90px  " ></input>
 
                     DN   :
-                    <input class="easyui-textbox" type="text" name="DN" id="DN"  style="max-width: 90px  " value="RT2136"></input>
+                    <input class="easyui-textbox" type="text" name="DN" id="DN"  style="max-width: 90px  " ></input>
 
                     Ortho No :
-                    <input class="easyui-textbox" type="text" name="othnumber"  id="othnumber"  style="max-width: 90px  " value="TY2316"></input>
+                    <input class="easyui-textbox" type="text" name="othnumber"  id="othnumber"  style="max-width: 90px  " ></input>
 
 
 
@@ -670,7 +675,7 @@ otherdevelopmentallevel
                               เลข สปสช. :
                      </td>
                      <td>
-                         <input class="easyui-textbox" type="text" name="CN" id="CN"  style="max-width: 90px  " value="RY2135"></input>
+                         <input class="easyui-textbox" type="text" name="CN" id="CN"  style="max-width: 90px  "></input>
                      </td>
                  </tr>
 
@@ -681,7 +686,7 @@ otherdevelopmentallevel
                          เลขบัตรประชาชน :
                      </td>
                      <td>
-                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"  id="seriesnumber" name="seriesnumber"  value="1111111111111"  />
+                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"  id="seriesnumber" name="seriesnumber"    />
                      </td>
 
                  </tr>
@@ -690,9 +695,9 @@ otherdevelopmentallevel
                 <tr>
                     <td>ชื่อ - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="firstname" id="firstname"    style="width:100px;height: 30px;"  value="สมเกียรติ"></input>
+                        <input class="easyui-textbox" type="text" name="firstname" id="firstname"    style="width:100px;height: 30px;"  ></input>
 
-                        <input class="easyui-textbox" type="text" name="lastname" id="lastname"   style="width:200px;height: 30px;" value="สุขเจริญ"></input>
+                        <input class="easyui-textbox" type="text" name="lastname" id="lastname"   style="width:200px;height: 30px;" ></input>
                     </td>
                 </tr>
                 
@@ -700,7 +705,7 @@ otherdevelopmentallevel
                     <td>เพศ :</td>
                     <td>   
                             <input  type="radio"  value="1"  name="sex"  id="sex_m" /> ชาย 
-                           <input type="radio"   name="sex" value="2"  > หญิง
+                           <input type="radio"   name="sex" value="2"   id="sex_w"> หญิง
                     </td>
                 </tr>
 
@@ -716,12 +721,12 @@ otherdevelopmentallevel
                 
                 <tr>
                     <td> เบอร์โทรศัพท์ :</td>
-                    <td> <input   class="easyui-numberbox"     style="width:150px;  height: 30px;"   ></td>
+                    <td> <input   class="easyui-numberbox"   name="tel"  style="width:150px;  height: 30px;"   ></td>
                 </tr>
 
                 <tr>
                     <td>ที่อยู่ :</td>
-                    <td><input class="easyui-textbox" type="text" name="address" id="address" value=" 123 ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002 " ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="address" id="address"  ></input></td>
                 </tr>
 
                 <tr>
@@ -729,7 +734,7 @@ otherdevelopmentallevel
                        สัญชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="nationality"  id="nationality" value="ไทย"></input>
+                       <input class="easyui-textbox" type="text" name="nationality"  id="nationality" ></input>
 
                     </td>
 
@@ -740,7 +745,7 @@ otherdevelopmentallevel
                        เชื้อชาติ :
                     </td>
                     <td>
-                       <input class="easyui-textbox" type="text" name="race"  id="race" value="ไทย" ></input>
+                       <input class="easyui-textbox" type="text" name="race"  id="race" ></input>
 
                     </td>
 
@@ -749,15 +754,15 @@ otherdevelopmentallevel
 
                  <tr>
                     <td>ศาสนา :</td>
-                    <td><input class="easyui-textbox" type="text" name="religion" id="religion"  value="พุทธ" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="religion" id="religion"  ></input></td>
                 </tr>
 
 
                <tr>
                     <td>ชื่อบิดา - นามสกุล :</td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="namefather"  id="namefather" style="width:150px;height: 30px;" value="สุรพงษ์" />
-                        <input class="easyui-textbox" type="text" name="fatherlastname" id="fatherlastname"  style="width:200px;height: 30px;" value="สุขเจริญ" />
+                        <input class="easyui-textbox" type="text" name="namefather"  id="namefather" style="width:150px;height: 30px;"  />
+                        <input class="easyui-textbox" type="text" name="fatherlastname" id="fatherlastname"  style="width:200px;height: 30px;"  />
 
                     </td>
 
@@ -768,7 +773,7 @@ otherdevelopmentallevel
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="career"  id="career" value="รับจ้างทั่วไป" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="career"  id="career"  ></input></td>
                 </tr>
 
 
@@ -789,7 +794,7 @@ otherdevelopmentallevel
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="disease" id="disease"  value="โรคลมชัก" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="disease" id="disease"  ></input></td>
                 </tr>
 
 
@@ -797,8 +802,8 @@ otherdevelopmentallevel
                 <tr>
                     <td>ชื่อมารดา - นามสกุล </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="mothername"  id="mothername"  style="width: 150px;height: 30px;" value="นวลฉวี" ></input>
-                        <input class="easyui-textbox" type="text" name="motherlastname"  id="motherlastname"  style="width: 200px;height: 30px;"  value="สุขเจริญ"   ></input>
+                        <input class="easyui-textbox" type="text" name="mothername"  id="mothername"  style="width: 150px;height: 30px;" ></input>
+                        <input class="easyui-textbox" type="text" name="motherlastname"  id="motherlastname"  style="width: 200px;height: 30px;"    ></input>
 
                     </td>
 
@@ -810,7 +815,7 @@ otherdevelopmentallevel
 
                 <tr>
                     <td>อาชีพ :</td>
-                    <td><input class="easyui-textbox" type="text" name="mothercareer" id="mothercareer"  value="บริษัทเอกชน" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="mothercareer" id="mothercareer"   ></input></td>
                 </tr>
 
                  <tr>
@@ -828,7 +833,7 @@ otherdevelopmentallevel
 
                  <tr>
                     <td>โรคประจำตัว :</td>
-                    <td><input class="easyui-textbox" type="text" name="diseasemother" id="diseasemother"  value="ความดันสูง" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="diseasemother" id="diseasemother"   ></input></td>
                 </tr>
 
 
@@ -837,8 +842,8 @@ otherdevelopmentallevel
                         ชื่อ สามี/ภรรยา  - นามสกุล :
                     </td>
                     <td>
-                        <input class="easyui-textbox" type="text" name="spousename"  id="spousename"  style="width:100px;height: 30px;"  value="อาทิตยา"></input>
-                        <input class="easyui-textbox" type="text"   name="spouselastname"  id="spouselastname"    style="width:100px;height: 30px;"  value="นามวงศ์" ></input>
+                        <input class="easyui-textbox" type="text" name="spousename"  id="spousename"  style="width:100px;height: 30px;"  ></input>
+                        <input class="easyui-textbox" type="text"   name="spouselastname"  id="spouselastname"    style="width:100px;height: 30px;"   ></input>
                     </td>
                 </tr>
 
@@ -881,7 +886,7 @@ otherdevelopmentallevel
 
                 <tr>
                       <td>หมายเลข :</td>
-                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;"   id="numberbenefits"  name="numberbenefits"  value="TR145287"   />  </td>
+                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;"   id="numberbenefits"  name="numberbenefits"     />  </td>
                 </tr>
 
 
@@ -904,7 +909,7 @@ otherdevelopmentallevel
                    สถานที่ที่ได้รับการรักษามาก่อน :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="treatmentfacility"   id="treatmentfacility" style="width:170px;height: 30px;"  value="รพ.พยาบาลศรีนครินทร์"  />
+                   <input class="easyui-textbox" type="text" name="treatmentfacility"   id="treatmentfacility" style="width:170px;height: 30px;"    />
                </td>
            </tr>
 
@@ -914,7 +919,7 @@ otherdevelopmentallevel
                    แพทย์เจ้าของคนไข้ :
                </td>
                <td>
-                   <input class="easyui-textbox" type="text" name="doctor" id="doctor"  value="นพ.นพคุณ ดวงจินทร์ดา"></input>
+                   <input class="easyui-textbox" type="text" name="doctor" id="doctor"  ></input>
                </td>
            </tr>
 
