@@ -29,3 +29,20 @@
                                                          {
                                                             window.open(url);     
                                                          }
+
+//-----------------------------------
+
+  var id=$('#id_history_patient').textbox('getValue');
+
+      $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+ $id=$this->uri->segment(3);
+
+   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
+
+  var id=$('#id_history_patient_fr4').textbox('getValue');
+    url:'<?=base_url()?>index.php/welcome/json_fr4/'  + id  ,
+  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+  $this->db->order_by("begin_date","desc");
+ $('#id_history_patient_fr8').textbox('getValue') ,
+
+

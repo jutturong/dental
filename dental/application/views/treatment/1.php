@@ -1639,7 +1639,7 @@
                     
                     
                     <div class="easyui-datagrid"   id="dg_fr9"  data-options="  
-                       url:'<?=base_url()?>index.php/welcome/json_tr9',
+                       url:'<?=base_url()?>index.php/welcome/json_tr9/'  +  $('#id_history_patient_fr9').textbox('getValue')  ,
                        singleSelect:true,
                        rownumbers:true,
                        columns:[[
@@ -3390,13 +3390,16 @@
 
     
     <div class="easyui-panel" style="padding: 5px;" >
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls='icon-man'   onclick="  $('#dia_fr7').dialog('open');   " >ดูข้อมูล</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls='icon-man'   onclick="  
+            $('#dia_fr7').dialog('open');  
+                   
+           " >ดูข้อมูล</a>
         
     </div>
     
     <div class="easyui-dialog"  id="dia_fr7"   title="7. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
         <div class="easyui-datagrid"   id="dg_fr7"   data-options="  
-                url:'<?=base_url()?>index.php/welcome/json_tr7',
+                url:'<?=base_url()?>index.php/welcome/json_tr7/' + $('#id_history_patient_fr7').textbox('getValue') ,
                 singleSelect:true,
                 rownumbers:true,
                 columns:[[   
@@ -3738,7 +3741,7 @@
          "  style="width: 500px;height: 400px;"  >
         <div class="easyui-datagrid"  id="dg_fr8"  style="width: 480px;height: 400px;" 
              data-options="
-               url:'<?=base_url()?>index.php/welcome/json_tr8',
+               url:'<?=base_url()?>index.php/welcome/json_tr8/' + $('#id_history_patient_fr8').textbox('getValue') ,
                singleSelect:true,
                rownumbers:true,
                columns:[[
@@ -4231,14 +4234,12 @@
         <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
            onclick="
               // alert('t');
+                    
                     $('#dia_fr6').dialog('open');
-           "
-           >
-            เรียกดูข้อมูล</a>
-        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="6. Bone graft surgery "  style="width:600px;height: 400px;"  >
-            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
-                 data-options="  
-                    url:'<?=base_url()?>index.php/welcome/json_fr6 ',
+                    var id =   $('#id_history_patient_fr6').textbox('getValue');
+                  //  alert(id);
+                   $('#dg_fr6').datagrid({
+                        url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
@@ -4326,7 +4327,15 @@
                                      },
                      
                    ]
-                 "
+                       
+                   });
+                  
+           "
+           >
+            เรียกดูข้อมูล</a>
+        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="6. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+                
                  
                  ></div>
         </div>
@@ -4989,7 +4998,7 @@
                        $('#dia_fr4').dialog('open');             
                        var id=$('#id_history_patient_fr4').textbox('getValue');
                           
-                          
+                        
                       $('#dg_fr4').datagrid({
                          
                           url:'<?=base_url()?>index.php/welcome/json_fr4/'  + id  ,

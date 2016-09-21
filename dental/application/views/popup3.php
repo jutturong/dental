@@ -44,7 +44,7 @@
                 </div>
                 <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
                 
-                                <!--    	4. Interceptive orthodontic treatment    -->
+                     <!--    	4. Interceptive orthodontic treatment    -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 4. Interceptive orthodontic treatment  "  id="dg_view_fr4"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr4',
