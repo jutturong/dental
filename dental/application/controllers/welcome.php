@@ -2742,7 +2742,10 @@ $this->db->delete($tables);
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
              
-             $tbj1="tb_othersurgery";
+        
+               $tbj1="tb_interceptive"; 
+               
+               
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
              $q=$this->db->get($tbj1,3);
@@ -2869,6 +2872,56 @@ $this->db->delete($tables);
              
         }
         
+         #---10. Vestilbuloplasty --------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr10_1()
+        function showjson_fr10_1()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             //$tbj1="tb_distraction";  //$tb="tb_othersurgery";
+              $tbj1="tb_othersurgery";
+             
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
+        
+                 #---10. Vestilbuloplasty --------------------------
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr10_1()
+        function showjson_fr10_2()
+        {
+              //FROM `tb_psot` 
+             //	id_history_patient
+             //   $tb_m="tb_othersurgery";
+            // $tb_m="tb_othersurgery";
+              // $tb_m="tb_othersurgery";
+             $tb_m="tb_history_patient";
+             
+             //$tbj1="tb_distraction";  //$tb="tb_othersurgery";
+             //  $tb="tb_othersurgery";
+              $tbj1="tb_othersurgery";
+             
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $q=$this->db->get($tbj1,3);
+             foreach($q->result() as $row)
+             {
+                  $rows[]=$row;
+             }
+              echo  json_encode($rows);
+             
+        }
 }
 
 /* End of file welcome.php */

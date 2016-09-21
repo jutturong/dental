@@ -143,6 +143,23 @@
                 </div>
                   <!--  9. Distraction    -->
                   
+              <!---------------10. Other surgery    1 ----------------->
+                <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  10.Vestibuloplasty   "  id="dg_view_fr10_1"
+                     data-options="
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr10_1',
+                        singleSelect:true,
+                        rownumbers:true,
+                        toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr10_1').datagrid('reload');  }  }  ] ,
+                        columns:[[
+                           { field:'begin_date' , title: ' วัน-เดือน-ปี  ' , align:'center'  ,   width:90  },
+                           { field:'firstname', title:'ชื่อ', align:'center'   ,width:100 },
+                           { field:'lastname',title:'นามสกุล',align:'center' ,width:100  },
+                        ]]                     
+                     "
+                     style="width: 400px;height: 200px;padding: 5px;"    >
+                </div>
+                 <!---------------10. Other surgery    1 ----------------->
+                  
                   
                  
             </div>

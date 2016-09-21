@@ -22,3 +22,10 @@
                                                        window.open(url);
                                         }  
                                      },
+
+
+
+            if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
