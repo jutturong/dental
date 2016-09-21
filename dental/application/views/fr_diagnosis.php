@@ -21,51 +21,50 @@
                         //  var    comp_left=$('#comp_left');
 
                         // id="comp_right"   1.2
-                          var    comp_right=$('#comp_right');
+                       //   var    comp_right=$('#comp_right');
 
                         // id="comp_both"  1.3
-                         var    comp_both=$('#comp_both');
+                       //  var    comp_both=$('#comp_both');
 
                       //name="lip"  value="1.4"   id="incomplete_left"
-                                  var    incomplete_left=$('#incomplete_left');
+                            //      var    incomplete_left=$('#incomplete_left');
 
                       //name="lip"  value="1.5"    id="incomplete_right"
-                          var    incomplete_right=$('#incomplete_right');
+                       //   var    incomplete_right=$('#incomplete_right');
 
                // id="incomplete_both"   value="1.6"
 
-                var    incomplete_both=$('#incomplete_both');
+           //     var    incomplete_both=$('#incomplete_both');
 
                 //-------------Alveolus------------
-                        // id="noncleft_al"
+                  
                         // id="completed_left"    value="2.1"
-                     var    completed_left=$('#completed_left');
+                 //    var    completed_left=$('#completed_left');
                       // id="completed_right"  value="2.2"
-                         var    completed_right=$('#completed_right');
+                  //       var    completed_right=$('#completed_right');
 
                        // id="completed_both"  value="2.3"
-                      var    completed_both=$('#completed_both');
+                 //     var    completed_both=$('#completed_both');
 
                     //---------------Hard palate ----------
                     //  id="hardpalate_complete"  value="3.1"
-                       var    hardpalate_complete=$('#hardpalate_complete');
+                  //     var    hardpalate_complete=$('#hardpalate_complete');
 
                    //  id="hardpalate_incomplete"   value="3.2"
-               var    hardpalate_incomplete=$('#hardpalate_incomplete');
+           //    var    hardpalate_incomplete=$('#hardpalate_incomplete');
 
                        //  id="hardpalate_submucous"    value="3.3"
-                      var    hardpalate_submucous=$('#hardpalate_submucous');
+                 //     var    hardpalate_submucous=$('#hardpalate_submucous');
 
 
                        //------------Soft palate :-------------
                    // id="softpalate_cleft"  value="4.1"
-                     var    softpalate_cleft=$('#softpalate_cleft');
+                //     var    softpalate_cleft=$('#softpalate_cleft');
                    //id="softpalate_bifid_uvula"  value="4.2"
-                    var    softpalate_bifid_uvula=$('#softpalate_bifid_uvula');
+               //     var    softpalate_bifid_uvula=$('#softpalate_bifid_uvula');
 
-
-                      //  1.3+2.3
-                      // id="comp_both"  1.3
+/*
+           
                       // id="completed_both"  value="2.3"
                     if(   $('#completed_both').is(":checked")  &&   $('#comp_both').is(":checked")    )
                      {
@@ -161,6 +160,22 @@
                                 $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                        }
+        */
+                     
+                       // 1.1  + 2.1 || 2.2 + 3.1+ 4.1
+                      if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
+                     {
+                                 var  ans1="Complete left unilateral cleft lip with alveolus complete hard palate cleft";
+                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
+                     }
+                     // 1.2 + 2.1||2.2 +3.1+4.1
+                     else if( $('#comp_right').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
+                     {
+                                var  ans1="Complete right  unilateral cleft lip with alveolus complete hard palate cleft";
+                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
+                     }
 
           });
 
