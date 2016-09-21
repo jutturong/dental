@@ -2425,9 +2425,12 @@
            onclick="    
                     $('#dia_psot').dialog('open');
                     // buttons:[ { text:'Close', }  ]  
+                 //  var  row = $('#dg_psot').datagrid('getSelected');
+                  var id=$('#id_history_patient').textbox('getValue');
+                  //alert(id);
                    
                     $('#dg_psot').datagrid({
-                        url:'<?=base_url()?>index.php/welcome/json_tr1',
+                        url:'<?=base_url()?>index.php/welcome/json_fr1/' + id ,
                         rownumbers:true,
                         singleSelect:true,
                         columns:[[
@@ -4983,24 +4986,13 @@
     <div class="easyui-panel"  style="padding: 5px;"  >
         <a href="javascript:void(0)"  class="easyui-linkbutton"  iconCls="icon-man" 
            onclick="
-                    $('#dia_fr4').dialog('open');
-           "
-           style="width: 100px;height: 40px;"    >
-            แสดงข้อมูล
-        </a>
-        
-        
-        <div class="easyui-dialog"  id="dia_fr4"  data-options="closed:true,
-             resizable:true,
-             buttons:[    
-                {  text:'ปิด (Close)' ,iconCls:'icon-cancel',handler:function(){  $('#dia_fr4').dialog('close');  }  }
-             ]
-             "  
-             
-             title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
-            <div  class="easyui-datagrid"  id="dg_fr4" 
-                  data-options="
-                     url:'<?=base_url()?>index.php/welcome/json_fr4',
+                       $('#dia_fr4').dialog('open');             
+                       var id=$('#id_history_patient_fr4').textbox('getValue');
+                          
+                          
+                      $('#dg_fr4').datagrid({
+                         
+                          url:'<?=base_url()?>index.php/welcome/json_fr4/'  + id  ,
                      rownumbers:true,
                      singleSelect:true,
                      columns:[[   
@@ -5090,12 +5082,26 @@
                      ] ,
                      
                    
+                          
+                      });
                      
-                  "
-                  style="width:590px;height: 380px;"
-                  >
-                
-            </div>
+                       
+           "
+           style="width: 100px;height: 40px;"    >
+            แสดงข้อมูล
+        </a>
+        
+        
+        <div class="easyui-dialog"  id="dia_fr4"  data-options="closed:true,
+             resizable:true,
+             buttons:[    
+                {  text:'ปิด (Close)' ,iconCls:'icon-cancel',handler:function(){  $('#dia_fr4').dialog('close');  }  }
+             ]
+             "  
+             
+             title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
+            <div  class="easyui-datagrid"  id="dg_fr4"       style="width:590px;height: 380px;" >   </div>
+  
         </div>
         
     </div>        

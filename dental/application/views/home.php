@@ -332,7 +332,7 @@
         {
             $(function(){
                   // $('#diag2').window('open');
-                    $('#diag3').window('open');
+                    $('#diag3').dialog('open');
             });
         }
         

@@ -313,16 +313,34 @@ $this->db->insert('mytable', $data);
         //    http://127.0.0.1/dental/index.php/welcome/json_tb1/
         function  json_tb1()  //$tb="tb_history_patient";
         {
+            $id=$this->uri->segment(3);
             $tb="tb_history_patient";
             $this->db->order_by("id_history_patient","DESC");
            //  $query=$this->db->get($tb,10);
-            $query=$this->db->get($tb);
+          //  $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+             $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {
                   $rows[]=$row;
             }
             echo json_encode($rows);
         }
+        
+         function  json_fr1()  //$tb="tb_history_patient";
+        {
+            $id=$this->uri->segment(3);
+            $tb="tb_history_patient";
+            $this->db->order_by("id_history_patient","DESC");
+           //  $query=$this->db->get($tb,10);
+           $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+           //  $query=$this->db->get($tb);
+            foreach($query->result() as $row)
+            {
+                  $rows[]=$row;
+            }
+            echo json_encode($rows);
+        }
+        
         
           //    http://127.0.0.1/dental/index.php/welcome/delete_tb1/22
         function delete_tb1() // delete => $tb="tb_history_patient";
@@ -773,8 +791,10 @@ $this->db->delete($tables);
         {
                   $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
                   $tbj1="tb_history_patient";
-                  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tbj1.".id_history_patient","left");
-                  $q=$this->db->get($tb);
+                  $id=$this->uri->segment(3);
+                  $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+                //  $q=$this->db->get($tb);
+                 $q=$this->db->get_where($tb,array("id_history_patient"=>$id));
                   foreach($q->result() as $row)
                   {
                         $rows[]=$row;

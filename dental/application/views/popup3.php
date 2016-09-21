@@ -11,7 +11,13 @@
 </script>
 
 
-<div id="diag3" class="easyui-window" title=" รายละเอียดแผนการรักษา " data-options="modal:true,closed:true" style="width:700px;height:750px;padding:5px;">
+<div id="diag3" class="easyui-dialog" title=" รายละเอียดแผนการรักษา " 
+     data-options="
+     modal:true,
+     closed:true,
+     buttons:[ { text:'ปิด (Close)', iconCls:'icon-cancel', handler:function(){  $('#diag3').dialog('close'); }   } ]
+     " 
+     style="width:700px;height:550px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     
