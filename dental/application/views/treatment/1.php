@@ -490,7 +490,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_1"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/1',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/1/'  +      $('#id_history_patient_fr10_1').textbox('getValue')  ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -681,7 +681,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_2"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/2',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/2/' +   $('#id_history_patient_fr10_2').textbox('getValue') ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -868,7 +868,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_3"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/3',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/3/'  +  $('#id_history_patient_fr10_3').textbox('getValue') ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -1055,7 +1055,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_4"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/4',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/4/'  + $('#id_history_patient_fr10_4').textbox('getValue') ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -1240,7 +1240,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_5"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/5',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/5/' +   $('#id_history_patient_fr10_5').textbox('getValue') ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -1424,7 +1424,7 @@
                          style="width: 500px;height: 400px;"  title="Vestibuloplasty"    >
                         <div class="easyui-datagrid"  id="dg_fr10_6"  
                               data-options="
-                                 url:'<?=base_url()?>index.php/welcome/json_tr10/6',
+                                 url:'<?=base_url()?>index.php/welcome/json_tr10/6/' +   $('#id_history_patient_fr10_6').textbox('getValue') ,
                                  singleSelect:true,
                                  rownumbers:true,
                                  columns:[[  
@@ -1919,7 +1919,7 @@
             <div class="easyui-dialog"   id="dia_fr9_b"   data-options=" buttons:[ { text:'ปิด (Close)',iconCls:'icon-cancel',  handler:function(){ $('#dia_fr9_b').dialog('close');  }  } ]   "   style="width: 600px;height: 300px;"  closed="true"  title=" Distraction "   >
                 <div class="easyui-datagrid"  id="dg_fr9_2"  
                      data-options="
-                     url:'<?=base_url()?>index.php/welcome/json_tr9_2',
+                     url:'<?=base_url()?>index.php/welcome/json_tr9_2/'  +      $('#id_history_patient_fr9_2').textbox('getValue')  ,
                       singleSelect:true,
                       rownumbers:true,
                       columns:[[

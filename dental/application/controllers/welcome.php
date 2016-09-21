@@ -1793,10 +1793,12 @@ $this->db->delete($tables);
         #   http://127.0.0.1/dental/index.php/welcome/json_tr9_2
         function json_tr9_2()
         {
+             $id=$this->uri->segment(3);
             $tb="tb_distraction";     
             $tbj1="tb_history_patient";
                 $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
-                    $q=$this->db->get($tb);
+                //    $q=$this->db->get($tb);
+                $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
                     foreach($q->result() as $row)
                     {
                           $rows[]=$row;
@@ -2729,10 +2731,12 @@ $this->db->delete($tables);
        function json_tr10()
         {
               $id_call=trim($this->uri->segment(3));
+                $id=trim($this->uri->segment(4));
+                
               $tb="tb_othersurgery";
             $tbj1="tb_history_patient";
                 $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
-                    $q=$this->db->get_where($tb,array("id_tab"=>$id_call));
+                    $q=$this->db->get_where($tb,array("id_tab"=>$id_call,"id_history_patient"=>$id));
                     foreach($q->result() as $row)
                     {
                           $rows[]=$row;
