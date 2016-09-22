@@ -169,6 +169,32 @@
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
+                        // 1.1  + 2.1 || 2.2 + 3.2
+                     else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&    $('#hardpalate_incomplete').is(":checked")      )
+                     {
+                                 var  ans1="Complete left unilateral cleft lip with alveolus Incomplete hard palate cleft";
+                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
+                     }
+                     
+                              // 1.1  + 2.1 || 2.2 + 3.3
+                     else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&   $('#hardpalate_submucous').is(":checked")    )
+                     {
+                                 var  ans1="Complete left unilateral cleft lip with alveolus Incomplete hard palate cleft";
+                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
+                     }
+                     
+                             // 1.1  + 2.1 || 2.2 + 4.2
+                     else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&     $('#softpalate_bifid_uvula').is(":checked")       )
+                     {
+                                 var  ans1="Complete left unilateral cleft lip with alveolus Incomplete hard palate cleft";
+                                 $.messager.alert('วิเคราะห์ผล',ans1);
+                                 $('#result_analysis').textbox('setValue',ans1);
+                     }
+                     
+                     
+                     
                      // 1.2 + 2.1||2.2 +3.1+4.1
                      else if( $('#comp_right').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
                      {
