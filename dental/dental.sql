@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 21, 2016 at 11:25 PM
+-- Generation Time: Sep 22, 2016 at 09:29 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.19
 
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `tb_diagnosis` (
   `facialcleft` int(2) NOT NULL,
   `otherfacialcleft` text COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id_diagnosis`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `tb_diagnosis`
@@ -131,7 +131,9 @@ INSERT INTO `tb_diagnosis` (`id_diagnosis`, `id_history_patient`, `result_analys
 (3, 21, 'Complete hard palate cleft', 2, 'ระบุ Facial cleft'),
 (4, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft'),
 (6, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft'),
-(7, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft');
+(7, 21, 'Bilateral cleft lip', 2, 'ระบุ Facial cleft'),
+(9, 21, '', 0, ''),
+(10, 21, 'Complete left unilateral cleft lip with alveolus complete hard palate cleft', 0, '');
 
 -- --------------------------------------------------------
 

@@ -2268,7 +2268,7 @@
     
     <div  style="padding: 10px 100px;">
         <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;"  data-options=" iconCls:'icon-save' "  >Save</a>
-           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_treat1').window('close');  "  >Close</a>
+           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_reat1').window('close');  "  >Close</a>
     </div>
     
     
@@ -2568,9 +2568,10 @@
                     <td>
                         <input name="date_fr1" id="date_fr1" class="easyui-datetimebox"></input>
                         
-                        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"   id="cal1_fr1"    />คำนวณอายุ</a>
-                        <input class="easyui-textbox"  id="age1_fr1"  name="age1_fr1"   style="width: 50px;height: 30px;"   />
-                        
+                       <!-- <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "    style="widht:80px;height: 30px;"   id="cal1_fr1"      />คำนวณอายุ</a> -->
+                        <label>อายุ </label>
+                        <input class="easyui-textbox"  id="age1_fr1"  name="age1_fr1"  readonly="true"  style="width: 50px;height: 30px;"   />
+                         <label>ปี</label>
                     </td>
                 </tr>
                 
@@ -2579,8 +2580,10 @@
                     <td>
                         <input    name="date2_fr1"   id="date2_fr1"   class="easyui-datetimebox"></input>
                         
-                     <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"    id="cal2_fr1"    />คำนวณอายุ</a>
-                        <input class="easyui-textbox"   style="width: 50px;height: 30px;"    id="age2_fr1"  name="age2_fr1"    />
+                   <!--  <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"    id="cal2_fr1"    />คำนวณอายุ</a> -->
+                   <label>อายุ </label>
+                        <input class="easyui-textbox"  style="width: 50px;height: 30px;"   readonly="true"  id="age2_fr1"  name="age2_fr1"    />
+                        <label>ปี</label>
                         
                     </td>
                 </tr>
@@ -3518,9 +3521,10 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr7" name="date_fr7"   />
                         
-                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "   id="cal1_fr7" >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age1_fr7"  name="age1_fr7"  />
-            
+                                                <!--  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "   id="cal1_fr7" >คำนวณอายุ</a> -->
+                                                <label>อายุ</label>
+            <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age1_fr7"  readonly="true"  name="age1_fr7"  />
+             <label>ปี</label>
             
                     </td>
                 </tr>
@@ -3534,9 +3538,10 @@
                         <input class="easyui-datetimebox" id="date2_fr7"  name="date2_fr7"></input>
                         
                         
-                        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "      id="cal2_fr7"  id="cal2_fr7"  >คำนวณอายุ</a>
-           <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age2_fr7"   name="age2_fr7"  />
-            
+                      <!--  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "      id="cal2_fr7"  id="cal2_fr7"  >คำนวณอายุ</a> -->
+                      <label>อายุ</label>
+                      <input class="easyui-textbox"   style="width: 50px;height: 40px;"  readonly="true"  id="age2_fr7"   name="age2_fr7"  />
+            <label>ปี</label>
             
                     </td>
                 </tr>
@@ -3850,10 +3855,13 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr8" name="date_fr8" ></input>
                         
-                        
+                        <!--
                         <a href="javascript:void(0)"  id="cal1_fr8" name='cal1_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-                                                  <input class="easyui-textbox"   id="age1_fr8"   name="age1_fr8"    style="width: 50px;height: 40px;"    />
+                         -->                  
                         
+                         <label>อายุ</label>
+                         <input class="easyui-textbox"   id="age1_fr8" readonly="true"   name="age1_fr8"    style="width: 50px;height: 40px;"    />
+                        <label>ปี</label>
                         
                     </td>
                 </tr>
@@ -3870,10 +3878,12 @@
                     
                         <input class="easyui-datetimebox"  id="date2_fr8"  name="date2_fr8"></input>
                         
-                        
+                        <!--
                         <a href="javascript:void(0)"  id="cal2_fr8"  name='cal2_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-                                                  <input class="easyui-textbox"  id="age2_fr8" name="age2_fr8"  style="width: 50px;height: 40px;"    />
-                    
+                           -->                     
+                        <label>อายุ</label>
+                        <input class="easyui-textbox"  id="age2_fr8"  readonly="true"  name="age2_fr8"  style="width: 50px;height: 40px;"    />
+                        <label>ปี</label>
             
             
                     </td>
@@ -4371,8 +4381,10 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
                         
-                        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a>
-                        <input class="easyui-textbox"   style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <!--<a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> -->
+                        <label>อายุ</label>
+                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <label>ปี</label>
                         
                     </td>
                 </tr>
@@ -5135,8 +5147,10 @@
         <label>
             วัน/เดือน/ปี ที่เริ่มทำการรักษา :  <input class="easyui-datetimebox"  id="date_fr4"  name="date_fr4"  style="width:150px;height: 40px;"   />
 
-            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  id="cal1_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width:50px;height: 30px;"  id="age1_fr4"  name="age1_fr4"   />
+            <!-- <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  id="cal1_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> -->
+            <label>อายุ </label>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;"   readonly="true"  id="age1_fr4"  name="age1_fr4"   />
+            <label>ปี</label>
             
         </label>
         
@@ -5147,8 +5161,10 @@
         <label>
             วัน/เดือน/ปี ที่สิ้นสุดการรักษา :  <input class="easyui-datetimebox"  id="date2_fr4" name="date2_fr4"  style="width:150px;height: 40px;"   />
             
-            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "   id="cal2_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a>
-            <input class="easyui-textbox"   style="width:50px;height: 30px;"   id="age2_fr4"  name="age2_fr4" />
+         <!--   <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "   id="cal2_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> -->
+            <label>อายุ </label>
+            <input class="easyui-textbox"   style="width:50px;height: 30px;" readonly="true"   id="age2_fr4"  name="age2_fr4" />
+         <label>ปี</label>
             
         </label>
     </div>

@@ -66,8 +66,48 @@
                                     //alert(row);
                                     var  id=row.id_history_patient;  
                                     var  	firstname=row.firstname;
-                                      var    lastname=row.lastname;
-                                  
+                                    var    lastname=row.lastname;
+                                      
+                                     var  br=row.birthdate;
+                                      //alert(birthdate);
+                                       var ex1=br.split("-");
+                                      // alert(ex1[0]);
+                                       
+                                       var  d=new Date();
+                                       var  n=d.getFullYear();
+                                      // alert(n);
+                                       
+                                       //--------- คำนวณอายุ-------------------
+                                       if(  n >=  ex1[0]  )
+                                       {
+                                            var  calage= n - ex1[0];
+                                           // alert(  calage );
+                                           
+                                           //----------- fr1------------------------------------------
+                                           $('#age1_fr1').textbox('setValue',calage);
+                                           $('#age2_fr1').textbox('setValue',calage);
+                                           
+                                           //------------ fr4-----------------------------------------
+                                           $('#age1_fr4').textbox('setValue',calage);
+                                           $('#age2_fr4').textbox('setValue',calage);
+                                           
+                                           //-------------fr6-----------------------------------------
+                                            $('#age1_fr6').textbox('setValue',calage);
+                                            
+                                            //-------------fr7-----------------------------------------
+                                            $('#age1_fr7').textbox('setValue',calage); 
+                                            $('#age2_fr7').textbox('setValue',calage); 
+                                              
+                                              //-------------fr8-----------------------------------------
+                                            $('#age1_fr8').textbox('setValue',calage); 
+                                            $('#age2_fr8').textbox('setValue',calage); 
+                                            
+                                             //-------------fr9-----------------------------------------
+                                            $('#age1_fr9').textbox('setValue',calage); 
+                                            $('#age1_fr9_2').textbox('setValue',calage);
+                                            $('#age2_fr9_2').textbox('setValue',calage);
+                                           
+                                       }
                                   
                                   //-----1. Pre-surgical orthopedics therapy (PSOT)--------- 
                                       $('#id_history_patient').textbox('setValue',id);
@@ -165,6 +205,9 @@
                                  
                                      $('#id_history_patient_fr11_2').textbox('setValue',id);
                                       $('#name_lastname_fr11_2').textbox('setValue',firstname+'  '+lastname);  
+                                      
+                                      //-------------- วัน-เดือน-ปี เกิด-------------------
+                                      
                                       
                                       
                                       
