@@ -335,10 +335,11 @@ $this->db->insert('mytable', $data);
          function  json_fr1()  //$tb="tb_history_patient";
         {
             $id=$this->uri->segment(3);
-            $tb="tb_history_patient";
+            //$tb="tb_history_patient";
+            $tb="tb_psot";
             $this->db->order_by("id_history_patient","DESC");
            //  $query=$this->db->get($tb,10);
-           $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+           $query=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
            //  $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {
@@ -807,7 +808,7 @@ $this->db->delete($tables);
                   $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
                   $tbj1="tb_history_patient";
                   $id=$this->uri->segment(3);
-                  $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+                //  $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
                 //  $q=$this->db->get($tb);
                     $this->db->order_by("id_interceptive","desc");
                    $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
@@ -995,7 +996,7 @@ $this->db->delete($tables);
                $id=$this->uri->segment(3);
                 
                 
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+              //  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
              //   $q=$this->db->get($tb);
                 $this->db->order_by("id_bonegraft","desc");
                 $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
@@ -1206,7 +1207,7 @@ $this->db->delete($tables);
                $id=$this->uri->segment(3);   
               $tb="tb_growth"; 
                       $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
                    // $q=$this->db->get($tb);
                    $this->db->order_by("id_growth","desc");
                   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
@@ -1411,7 +1412,7 @@ $this->db->delete($tables);
                        $id=$this->uri->segment(3);
                        
                        
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+              //  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
                   //  $q=$this->db->get($tb);
                  $this->db->order_by("id_corrective","desc");
                  $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
@@ -1591,18 +1592,19 @@ $this->db->delete($tables);
                 }
                                    
         }
-          #   http://127.0.0.1/dental/index.php/welcome/json_tr9
+          #   http://127.0.0.1/dental/index.php/welcome/json_tr9/
         function json_tr9()
         {
             $tb="tb_orthognathic";
+            //tb_orthognathic
             $tbj1="tb_history_patient";
             
             $id=$this->uri->segment(3);
             
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+            //    $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
                     //$q=$this->db->get($tb);
                  $this->db->order_by("id_orthognathic","desc");
-                 $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
+                 $q=$this->db->get_where($tb,array("id_history_patient"=>$id)); //id_history_patient
                     foreach($q->result() as $row)
                     {
                           $rows[]=$row;
@@ -1813,7 +1815,7 @@ $this->db->delete($tables);
              $id=$this->uri->segment(3);
             $tb="tb_distraction";     
             $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+            //    $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
                 //    $q=$this->db->get($tb);
                  $this->db->order_by("id_distraction","desc");
                  $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
@@ -1955,10 +1957,13 @@ $this->db->delete($tables);
          #   http://127.0.0.1/dental/index.php/welcome/json_tr11_1
        function json_tr11_1()
         {
+           $id=trim($this->uri->segment(3));
            $tb="tb_dentalprocedure";       
             $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
-                    $q=$this->db->get($tb);
+               // $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                 $this->db->order_by("id_dentalprocedure","desc");
+                  //  $q=$this->db->get($tb);
+                    $q=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
                     foreach($q->result() as $row)
                     {
                           $rows[]=$row;
@@ -2098,13 +2103,16 @@ $this->db->delete($tables);
                   elseif( $ck )
                   {  echo 0; }
         }
-         #   http://127.0.0.1/dental/index.php/welcome/json_tr11_2
+         #   http://127.0.0.1/dental/index.php/welcome/json_tr11_2/21
        function json_tr11_2()
         {
              $tb="tb_prosthodontic";   
             $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
-                    $q=$this->db->get($tb);
+            $id=trim($this->uri->segment(3));
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+            $this->db->order_by("id_prosthodontic","desc");
+        $q=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
+                  //  $q=$this->db->get($tb,3);
                     foreach($q->result() as $row)
                     {
                           $rows[]=$row;
@@ -2756,8 +2764,8 @@ $this->db->delete($tables);
                 
               $tb="tb_othersurgery";
             $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
-                $this->db->order_by("begin_date","asc");
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+                $this->db->order_by("id_othersurgery","desc");
                   //  $q=$this->db->get_where($tb,array("id_tab"=>$id_call,"id_history_patient"=>$id));
                       $q=$this->db->get_where($tb,array( "id_tab"=>$id_call,$tb.".id_history_patient"=>$id ),1);
                     foreach($q->result() as $row)

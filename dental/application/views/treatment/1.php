@@ -1626,12 +1626,14 @@
                          $('#dg_fr9').datagrid('reload');
                          // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
                            // $('#preview_fr9').datagrid('reload');
+                           // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
                           $('#dg_fr9').datagrid({
                               url:'<?=base_url()?>index.php/welcome/json_tr9/'  +  $('#id_history_patient_fr9').textbox('getValue')    ,
                        singleSelect:true,
                        rownumbers:true,
                        columns:[[
                            {  field:'doctor',  title: ' แพทย์ผู้ทำการรักษา ' ,align:'center' },
+                           
                            {  field:'begin_date',  title: ' วัน/เดือน/ปี ที่ทำการรักษา  ' ,align:'center' },
                            {  field:'goslon',  title: ' Classification of GOSLON  ' ,align:'center' },
                            {  field:'incisor',  title: ' Incisor classification of malocclusion  ' ,align:'center' },
@@ -1642,6 +1644,7 @@
                             {  field:'othermandible',  title: ' Mandible ระบุ ' ,align:'center' },
                             {  field:'tool',  title: ' ชนิดเครื่องมือ ' ,align:'center' },
                              {  field:'dentalcast',  title: ' Dental Cast ' ,align:'center' },
+                             
                        ]],
                        toolbar:[
                            {  text:'Reload',iconCls:'icon-reload', handler:function(){ $('#dg_fr9').datagrid('reload');  } },
@@ -2752,7 +2755,7 @@
 </div>
 
 
-<div id="dia_treat4" class="easyui-window" title=" Feeding and neonatal care in children with cleft lip-palate " data-options="modal:true,closed:true" style="width:500px;height:200px;padding:5px;">
+<div id="dia_treat4" class="easyui-window" title=" Feeding and neonatal care in children with cleft lip-palate " data-options="modal:true,closed:true" style="width:400px;height:200px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -3414,14 +3417,8 @@
     <div class="easyui-panel" style="padding: 5px;" >
         <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls='icon-man'   onclick="  
             $('#dia_fr7').dialog('open');  
-                   
-           " >ดูข้อมูล</a>
-        
-    </div>
-    
-    <div class="easyui-dialog"  id="dia_fr7"   title="7. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
-        <div class="easyui-datagrid"   id="dg_fr7"   data-options="  
-                url:'<?=base_url()?>index.php/welcome/json_tr7/' + $('#id_history_patient_fr7').textbox('getValue') ,
+            $('#dg_fr7').datagrid({
+                 url:'<?=base_url()?>index.php/welcome/json_tr7/' + $('#id_history_patient_fr7').textbox('getValue') ,
                 singleSelect:true,
                 rownumbers:true,
                 columns:[[   
@@ -3510,7 +3507,14 @@
                      
                      
                 ]
-             "  ></div>
+            }); 
+                   
+           " >ดูข้อมูล</a>
+        
+    </div>
+    
+    <div class="easyui-dialog"  id="dia_fr7"   title="7. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
+        <div class="easyui-datagrid"   id="dg_fr7"  ></div>
     </div>
     
     
@@ -4957,7 +4961,7 @@
 
 
 
-<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:600px;height:700px;padding:5px;">
+<div id="dia_treat4B" class="easyui-window" title=" 4. Interceptive orthodontic treatment  " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
 
     <!--
     <div style="margin:0px 0 0px 0;"></div>
@@ -5139,7 +5143,7 @@
              ]
              "  
              
-             title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 400px;"   >
+             title=" แสดงข้อมูล Interceptive orthodontic treatment "  style="width:600px;height: 200px;"   >
             <div  class="easyui-datagrid"  id="dg_fr4"       style="width:590px;height: 380px;" >   </div>
   
         </div>
@@ -5399,17 +5403,11 @@
          <div class="easyui-panel"  style="padding: 5px;" >
              <a href="javascript:void(0)" iconCls="icon-print"  class="easyui-linkbutton"  onclick="
                 $('#dia_fr11_1').dialog('open'); 
-                
-                "  style="width: 100px;height: 40px;"  >ดูข้อมูล</a>
-         </div>
-         <div class="easyui-dialog"  id="dia_fr11_1"  title="Endontic treartment"  style="width:600px;height: 400px;"  
-              data-options=" closed:true,buttons:[ { text:'ปิด (Close)',iconCls:'icon-cancel', handler:function(){ $('#dia_fr11_1').dialog('close'); }  } ]  "  >
-             <div class="easyui-datagrid"  id="dg_fr11_1" 
-                  data-options="   
-                  singleSelect:true,
+                $('#dg_fr11_1').datagrid({
+                                      singleSelect:true,
                   rownumbers:true,
                   
-                  url:'<?=base_url()?>index.php/welcome/json_tr11_1',
+                  url:'<?=base_url()?>index.php/welcome/json_tr11_1/'  +   $('#id_history_patient_fr11_2').textbox('getValue') ,
                  
                   columns:[[
                   { title:'Tooth',  field:'tooth', align:'center'  },
@@ -5486,8 +5484,14 @@
                                      },
                                      
                   ]
-                  "
-                  ></div>
+                    
+                }); 
+                
+                "  style="width: 100px;height: 40px;"  >ดูข้อมูล</a>
+         </div>
+         <div class="easyui-dialog"  id="dia_fr11_1"  title="Endontic treartment"  style="width:600px;height: 400px;"  
+              data-options=" closed:true,buttons:[ { text:'ปิด (Close)',iconCls:'icon-cancel', handler:function(){ $('#dia_fr11_1').dialog('close'); }  } ]  "  >
+             <div class="easyui-datagrid"  id="dg_fr11_1"    ></div>
          </div>
          
 <!-------------------- begin ---------------------->     
@@ -5615,7 +5619,7 @@
                 buttons:[ { text:'ปิด (Close)', iconCls:'icon-cancel', handler:function(){  $('#dia_fr11_2').dialog('close');  } }  ]
               "  style="width: 600px;height: 500px;" >
              <div  class="easyui-datagrid"  id="dg_fr11_2" data-options="
-                   url:'<?=base_url()?>index.php/welcome/json_tr11_2',
+                   url:'<?=base_url()?>index.php/welcome/json_tr11_2/' +   $('#id_history_patient_fr11_2').textbox('getValue')   ,
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
