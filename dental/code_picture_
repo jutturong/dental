@@ -1,72 +1,17 @@
- {  text:'Before',  iconCls:'icon-large-picture', handler:function()
-                                                {
-                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
-                                                       var  file1=row.filename1;
-                                                       var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
-                                                }  
-                                          },
-                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
-                                              {
-                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
-                                                       var  file1=row.filename2;
-                                                       var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
-                                               }  
-                                      },
-                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
-                                        {
-                                                       var  row=$('#dg_fr10_6').datagrid('getSelected');
-                                                       var  file1=row.filename3;
-                                                       var  url='<?=base_url()?>upload/' + file1;
-                                                       window.open(url);
-                                        }  
-                                     },
+                <tr>
+                    <td>
+                         Procedure : 
+                    </td>
+                    <td>
+                        <input type="checkbox"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
+                        <input  type="checkbox"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
+                        <input  type="checkbox"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
+                        <input  type="checkbox"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
+                        <br>
+                        <input   type="checkbox" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
+                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
+                    </td>
+                </tr>
 
-
-
-            if( file1.length > 0 )
-                                                         {
-                                                            window.open(url);     
-                                                         }
-
-//-----------------------------------
-
-  var id=$('#id_history_patient').textbox('getValue');
-
-      $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
- $id=$this->uri->segment(3);
-
-   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
-
-  var id=$('#id_history_patient_fr4').textbox('getValue');
-    url:'<?=base_url()?>index.php/welcome/json_fr4/'  + id  ,
-  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
-  $this->db->order_by("begin_date","desc");
- $('#id_history_patient_fr8').textbox('getValue') ,
-
-
-//-------------------------------------
- 1793   http://127.0.0.1/dental/index.php/welcome/json_tr9_2
-
-//--------------------------------------------------------------
-
-http://127.0.0.1/dental/index.php/welcome/json_tr10/1/21
-              $id_call=trim($this->uri->segment(3));
-                $id=trim($this->uri->segment(4));
-                
-              $tb="tb_othersurgery";
-            $tbj1="tb_history_patient";
-                $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
-                $this->db->order_by("begin_date","asc");
-                  //  $q=$this->db->get_where($tb,array("id_tab"=>$id_call,"id_history_patient"=>$id));
-                      $q=$this->db->get_where($tb,array( "id_tab"=>$id_call,$tb.".id_history_patient"=>$id ),1);
-                    foreach($q->result() as $row)
-                    {
-                          $rows[]=$row;
-                    }
-                    echo  json_encode($rows);
-
-//
-      url:'<?=base_url()?>index.php/welcome/json_tr10/1/'  +      $('#id_history_patient_fr10_1').textbox('getValue')  ,
-
+##-------------------------------------------------------
+ url:'<?=base_url()?>index.php/welcome/inst_tr1',

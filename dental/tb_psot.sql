@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2016 at 10:58 PM
--- Server version: 5.5.49-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.17
+-- Generation Time: Sep 23, 2016 at 04:19 PM
+-- Server version: 5.5.50-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,22 +34,32 @@ CREATE TABLE IF NOT EXISTS `tb_psot` (
   `begin_date` date NOT NULL,
   `end_date` date NOT NULL,
   `procedure` int(5) NOT NULL,
+  `nasal` int(5) NOT NULL,
+  `alveolar` int(5) NOT NULL,
+  `simple` int(5) NOT NULL,
+  `other_procedure` int(5) NOT NULL,
   `otherprocedure` varchar(100) COLLATE utf16_bin NOT NULL,
   `file1` text COLLATE utf16_bin NOT NULL,
   `file2` text COLLATE utf16_bin NOT NULL,
-  `file3` int(11) NOT NULL,
+  `file3` text COLLATE utf16_bin NOT NULL,
   `cast` int(5) NOT NULL,
   PRIMARY KEY (`id_psot`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `tb_psot`
 --
 
-INSERT INTO `tb_psot` (`id_psot`, `id_history_patient`, `doctor`, `joindoctor`, `begin_date`, `end_date`, `procedure`, `otherprocedure`, `file1`, `file2`, `file3`, `cast`) VALUES
-(1, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(2, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1),
-(3, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '1993-02-09', '2011-02-08', 5, 'ระบุ', '641603.jpg', '641604.jpg', 641607, 1);
+INSERT INTO `tb_psot` (`id_psot`, `id_history_patient`, `doctor`, `joindoctor`, `begin_date`, `end_date`, `procedure`, `nasal`, `alveolar`, `simple`, `other_procedure`, `otherprocedure`, `file1`, `file2`, `file3`, `cast`) VALUES
+(5, 21, 'นพ.ปราโมทย์  คำชะนินท์', 'พญ.อินทญา  คำชะนินท์', '2014-02-04', '2014-02-05', 5, 0, 0, 0, 0, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
+(6, 21, '2541', '8596', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, '', '', '', '', 0),
+(7, 21, '2541', '8596', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, '', '', '', '', 0),
+(8, 21, '2541', '8596', '2016-09-07', '2016-09-28', 0, 1, 1, 1, 1, '', '648498.jpg', '648501.jpg', '648588.jpg', 1),
+(9, 21, '2541', '8596', '0000-00-00', '0000-00-00', 0, 1, 1, 1, 1, '', '', '', '', 1),
+(10, 21, '2541', '8596', '0000-00-00', '0000-00-00', 0, 1, 1, 1, 1, '', '', '', '', 1),
+(11, 21, '2541', '8596', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 1, '', '', '', '', 1),
+(12, 21, '2541', '8596', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 1, '', '', '', '', 1),
+(13, 21, '2541', '8596', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 1, '', '', '', '', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

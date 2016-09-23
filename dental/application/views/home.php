@@ -116,9 +116,7 @@
                                              $('#age1_fr11_1').textbox('setValue',calage);
                                              $('#age1_fr11_2').textbox('setValue',calage);
                                          
-                                         
-                                         
-                                           
+ 
                                        }
                                   
                                   //-----1. Pre-surgical orthopedics therapy (PSOT)--------- 
@@ -220,8 +218,7 @@
                                       
                                       //-------------- วัน-เดือน-ปี เกิด-------------------
                                       
-                                      
-                                      
+
                                       
                                      showpopup2();                     
                                }

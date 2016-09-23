@@ -337,9 +337,9 @@ $this->db->insert('mytable', $data);
             $id=$this->uri->segment(3);
             //$tb="tb_history_patient";
             $tb="tb_psot";
-            $this->db->order_by("id_history_patient","DESC");
+            $this->db->order_by("id_psot","desc");
            //  $query=$this->db->get($tb,10);
-           $query=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
+           $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
            //  $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {
@@ -510,8 +510,24 @@ $this->db->delete($tables);
                // echo "<br>";
                 
 
-              $procedure_fr1=trim($this->input->get_post("procedure_fr1"));  //Procedure : 
+              $procedure_fr1=trim($this->input->get_post("strapping"));  //Procedure : 
             // echo "<br>";
+              
+              /*
+                                      <input type="checkbox"  name="strapping"  id="strapping"  value="1" />  1.Strapping  
+                        <input  type="checkbox"  name="nasal"   id="nasal"   value="1"  />  2.Nasal Molding 
+                        <input  type="checkbox"  name="alveolar"    id="alveolar"  value="1" />  3.Alveolar  Molding  
+                        <input  type="checkbox"  name="simple"   id="simple" value="1" /> 4. Simple Obturator 
+                        <br>
+                        <input   type="checkbox" name="other_procedure"  id="other_procedure"  value="1" />  5.อื่นๆ 
+                   */
+              
+              
+               $nasal=trim($this->input->get_post("nasal_fr1"));
+               $alveolar=trim($this->input->get_post("alveolar"));
+               $simple=trim($this->input->get_post("simple"));
+                $other_procedure=trim($this->input->get_post("other_procedure"));                             
+                                              
               
                $otherprocedure_fr1=trim($this->input->get_post("otherprocedure_fr1"));  // 5.อื่นๆ   Procedure : 
               //echo "<br>";
@@ -588,7 +604,23 @@ $this->db->delete($tables);
                           'begin_date'=>$conv_date_fr1,  #//วัน/เดือน/ปี ที่เริ่มทำการรักษา :
                           'end_date'=> $conv_date2_fr1,   #วัน/เดือน/ปี ที่สิ้นสุดการรักษา : 
                           'procedure'=>$procedure_fr1, #Procedure : 
-                          'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          
+                          
+                         
+                          /*
+                                 $nasal=trim($this->input->get_post("nasal"));
+               $alveolar=trim($this->input->get_post("alveolar"));
+               $simple=trim($this->input->get_post("simple"));
+                $other_procedure=trim($this->input->get_post("other_procedure"));    
+                           */
+                          
+                          "nasal"=> $nasal,
+                          "alveolar"=> $alveolar,
+                          "simple"=>$simple,
+                          "other_procedure"=> $other_procedure,
+                          
+                           'otherprocedure'=>$otherprocedure_fr1,   #5.อื่นๆ   Procedure : 
+                          
                           'file1'=>$file1_fr1 ,   #รูปถ่ายก่อนการรักษา (Before) : 
                           'file2'=>$file2_fr1,  #รูปถ่ายระหว่างการรักษา (During)
                           'file3'=>$file3_fr1,  #รูปถ่ายหลังการรักษา (After) :
@@ -610,8 +642,8 @@ $this->db->delete($tables);
              // `tb_history_patient` 
              $tbj1="tb_history_patient";
              
-             $this->db->order_by("begin_date","desc");
-             $this->db->join($tbj1,$tb1.".id_history_patient=".$tbj1.".id_history_patient","left");
+             $this->db->order_by("id_psot","desc");
+           //  $this->db->join($tbj1,$tb1.".id_history_patient=".$tbj1.".id_history_patient","left");
              $q=$this->db->get($tb1,1);
              foreach($q->result() as $row)
              { $rows[]=$row;  }

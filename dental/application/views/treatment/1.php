@@ -2452,7 +2452,7 @@
                   //alert(id);
                    
                     $('#dg_psot').datagrid({
-                        url:'<?=base_url()?>index.php/welcome/json_fr1/' + id ,
+                        url:'<?=base_url()?>index.php/welcome/json_fr1/' +    $('#id_history_patient').textbox('getValue')  ,
                         rownumbers:true,
                         singleSelect:true,
                         columns:[[
@@ -2460,9 +2460,16 @@
                                 {  field:'joindoctor'  , title:'ทันตแพทย์ผู้ร่วมทำการรักษา' , align:'center'  },
                                 {  field:'begin_date', title:'เริ่มทำการรักษา' ,  align:'center'    },
                                 {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
-                                {  field:'procedure', title:'Procedurev' ,  align:'center'    },
+                                
+                                {  field:'procedure', title:'1.Strapping' ,  align:'center'    },
+                                {  field:'nasa', title:'2.Nasal Molding ' ,  align:'center'    },
+                                {  field:'alveolar', title:'3.Alveolar Molding' ,  align:'center'    },
+                                {  field:'simple', title:'4.Simple Obturator' ,  align:'center'    },
+                                {  field:'other_procedure', title:'.5.อื่นๆ' ,  align:'center'    },
+                                 
                                 {  field:'otherprocedure', title:' Procedurev อื่นๆ ระบุ ' ,  align:'center'    },
                               //  {  field:'otherprocedure', title:'Procedurev' ,  align:'center'    },
+                              {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
                                 {  field:'cast', title:'Dental Cast' ,  align:'center'    },
                                 
                         ]],
@@ -2617,12 +2624,12 @@
                          Procedure : 
                     </td>
                     <td>
-                        <input type="checkbox"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
-                        <input  type="checkbox"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
-                        <input  type="checkbox"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
-                        <input  type="checkbox"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
+                        <input type="checkbox"  name="strapping"  id="strapping"  value="1" />  1.Strapping  
+                        <input  type="checkbox"  name="nasal_fr1"   id="nasal_fr1"   value="1"  />  2.Nasal Molding 
+                        <input  type="checkbox"  name="alveolar"    id="alveolar"  value="1" />  3.Alveolar  Molding  
+                        <input  type="checkbox"  name="simple"   id="simple" value="1" /> 4. Simple Obturator 
                         <br>
-                        <input   type="checkbox" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
+                        <input   type="checkbox" name="other_procedure"  id="other_procedure"  value="1" />  5.อื่นๆ 
                         <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
                     </td>
                 </tr>
