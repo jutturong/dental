@@ -583,11 +583,15 @@
          
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_1" name="date_fr10_1"  style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_1" name="date_fr10_1"  readonly="true"  style="widht:200px;height: 30px;"  />
             
-            <a href="javascript:void(0)" id="cal1_fr10_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-               <input class="easyui-textbox"  id="age1_fr10_1"  style="width: 50px;height: 40px;"    />
-
+           <!--
+            <a href="javascript:void(0)" id="cal1_fr10_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>  
+            -->
+          
+            <label>อายุ </label>
+            <input class="easyui-textbox"  id="age1_fr10_1"  readonly="true" style="width: 50px;height: 40px;"    />
+            <label>ปี </label> 
             
             
         </label>
@@ -1754,8 +1758,13 @@
         <label>
             วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox"  id="date_fr9"  name="date_fr9"  style="width:200px;height: 40px;"  />
             
+            <!--
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"   id="age1_fr9" style="width: 50px;height: 40px;"    /> 
+            -->
+            
+            <label>อายุ </label>
+            <input class="easyui-textbox"  readonly="true"  id="age1_fr9" style="width: 50px;height: 40px;"    /> 
+              <label>ปี </label>
             
         </label>
     </div>
@@ -2024,18 +2033,30 @@
         <label>
             วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datetimebox" id="date_fr9_2"   name="date_fr9_2" style="width:200px;height: 40px;"  />
             
+            <!--
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-             <input class="easyui-textbox"  id="age1_fr9_2"   style="width: 50px;height: 40px;"    /> 
+            -->
             
+            <label>อายุ </label>
+             <input class="easyui-textbox"  id="age1_fr9_2"  readonly="true"  style="width: 50px;height: 40px;"    /> 
+              <label>ปี </label>
+              
+              
         </label>
     </div>
    
              <div style="padding: 10px 5px;">
         <label>
             วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datetimebox" id="date2_fr9_2"  name="date2_fr9_2"  style="width:200px;height: 40px;"  />
-            
+          
+            <!--
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal2_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"  id="age2_fr9_2"   style="width: 50px;height: 40px;"    /> 
+            -->
+            
+            <label>อายุ </label>
+            <input class="easyui-textbox"  id="age2_fr9_2"  readonly="true"  style="width: 50px;height: 40px;"    /> 
+            <label>ปี </label>
+            
             
         </label>
     </div>
@@ -5504,10 +5525,13 @@
             วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox"  id="date_fr11_1"  name="date_fr11_1"  style="widht:200px;height: 30px;"  />
             
             
-            
+            <!--
             <a href="javascript:void(0)"  id="cal1_fr11_1"  name="cal1_fr11_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            <input class="easyui-textbox"  id="age1_fr11_1" name="age1_fr11_1" style="width: 50px;height: 40px;"    />
+            -->
             
+            <label>อายุ </label>
+            <input class="easyui-textbox"  id="age1_fr11_1" name="age1_fr11_1" style="width: 50px;height: 40px;"    />
+              <label>ปี </label>
             
         </label>
     </div> 
@@ -5691,9 +5715,13 @@
         <label>
             วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr11_2"  name="date_fr11_2"   style="widht:200px;height: 30px;"  />
             
+            <!--
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr11_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
+            -->
+            
+            <label>อายุ</label>
             <input class="easyui-textbox"  id="age1_fr11_2"  style="width: 50px;height: 40px;"    />
-
+           <label>ปี</label>
             
         </label>
     </div> 

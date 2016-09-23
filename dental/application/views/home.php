@@ -106,6 +106,18 @@
                                             $('#age1_fr9').textbox('setValue',calage); 
                                             $('#age1_fr9_2').textbox('setValue',calage);
                                             $('#age2_fr9_2').textbox('setValue',calage);
+                                            
+                                             //-------------fr10----------------------------------------- 
+                                             $('#age1_fr10_1').textbox('setValue',calage);
+                                         //    $('#age1_fr10_2').textbox('setValue',calage);
+                                         //age1_fr10_1
+                                          
+                                            //-------------fr1----------------------------------------- 
+                                             $('#age1_fr11_1').textbox('setValue',calage);
+                                             $('#age1_fr11_2').textbox('setValue',calage);
+                                         
+                                         
+                                         
                                            
                                        }
                                   
