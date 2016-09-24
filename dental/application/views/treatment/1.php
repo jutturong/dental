@@ -2462,7 +2462,7 @@
                                 {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
                                 
                                 {  field:'procedure', title:'1.Strapping' ,  align:'center'    },
-                                {  field:'nasa', title:'2.Nasal Molding ' ,  align:'center'    },
+                                {  field:'nasal', title:'2.Nasal Molding ' ,  align:'center'    },
                                 {  field:'alveolar', title:'3.Alveolar Molding' ,  align:'center'    },
                                 {  field:'simple', title:'4.Simple Obturator' ,  align:'center'    },
                                 {  field:'other_procedure', title:'.5.อื่นๆ' ,  align:'center'    },
@@ -2630,7 +2630,7 @@
                         <input  type="checkbox"  name="simple"   id="simple" value="1" /> 4. Simple Obturator 
                         <br>
                         <input   type="checkbox" name="other_procedure"  id="other_procedure"  value="1" />  5.อื่นๆ 
-                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
+                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"      /> 
                     </td>
                 </tr>
                 
@@ -2723,9 +2723,10 @@
                                            
                                              if( data == 1 )
                                              {
+                                                  $('#dg_psot').datagrid('reload');       
                                                   $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                                   $('#dia_psot').dialog('open');
-                                                  $('#dg_psot').datagrid('reload');                                             
+                                                                                      
                                              }
                                               else if( data==0)
                                               {

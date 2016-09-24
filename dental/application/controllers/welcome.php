@@ -337,9 +337,9 @@ $this->db->insert('mytable', $data);
             $id=$this->uri->segment(3);
             //$tb="tb_history_patient";
             $tb="tb_psot";
-            $this->db->order_by("id_psot","desc");
+            $this->db->order_by("id_psot","DESC");
            //  $query=$this->db->get($tb,10);
-           $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+           $query=$this->db->get_where($tb,array("id_history_patient"=>$id),5);
            //  $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {

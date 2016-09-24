@@ -71,14 +71,14 @@
                                      var  br=row.birthdate;
                                       //alert(birthdate);
                                        var ex1=br.split("-");
-                                      // alert(ex1[0]);
+                                       //alert(ex1[0]);
                                        
                                        var  d=new Date();
                                        var  n=d.getFullYear();
                                       // alert(n);
                                        
                                        //--------- คำนวณอายุ-------------------
-                                       if(  n >=  ex1[0]  )
+                                       if(  n >=  ex1[0]   &&  ex1[0] > 0  )
                                        {
                                             var  calage= n - ex1[0];
                                            // alert(  calage );
