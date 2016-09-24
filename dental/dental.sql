@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 24, 2016 at 08:21 AM
+-- Generation Time: Sep 24, 2016 at 09:52 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.19
 
@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `tb_history_patient` (
   `sex` int(2) NOT NULL,
   `tel` varchar(15) NOT NULL,
   PRIMARY KEY (`id_history_patient`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `tb_history_patient`

@@ -545,7 +545,7 @@ otherdevelopmentallevel
                    -->
 
 
-                   <a href="#"  onclick="$('#dia_search').window('open');"  class="easyui-linkbutton" data-options="iconCls:'icon-large-picture',size:'large' " style="width:100px"> ค้นหา </a>
+                   <a href="#"  onclick="  $('#dia_search').dialog('open');  $('#txt_id').textbox('setValue','');   "  class="easyui-linkbutton" data-options="iconCls:'icon-large-picture',size:'large' " style="width:100px"> ค้นหา </a>
 
                    <a href="javascript:void(0)" class="easyui-linkbutton"  data-options="  iconCls:'icon-man' , onClick:function(){   openpt('เพิ่มประวัติผุ้ป่วย');    }  "   style="width:140px;height: 45px; "  >เพิ่มประวัติผู้ป่วย</a>
 
@@ -635,7 +635,8 @@ otherdevelopmentallevel
 
                          <div title=" Main System   (หน้าหลักโปรแกรม)  " style="padding:10px">
                              <table id="dg1"  name="dg1" class="easyui-datagrid" title="แสดงประวัติผู้ป่วย" style="width:1100px;height:300px"
-            data-options="singleSelect:true,
+            data-options="
+                                  singleSelect:true,
                                   collapsible:true,
                                   url:'<?=base_url()?>index.php/welcome/json_tb1/',
                                   method:'post',

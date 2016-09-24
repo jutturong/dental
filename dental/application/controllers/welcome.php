@@ -3034,6 +3034,228 @@ $this->db->delete($tables);
               echo  json_encode($rows);
              
         }
+        #--------------- Search รายการค้นหาหลัก------------------------
+        // http://127.0.0.1/dental/index.php/welcome/auto_name
+        function auto_name()
+        {
+                //   $main=trim($this->uri->segment(3));
+                  //cmb_search
+              //  $main=trim($this->input->get_post("cmb_search"));
+               // $txt=trim($this->uri->segment());
+                    $txt=trim($this->input->get_post("q"));
+                    $tb="tb_history_patient";
+                    $query=$this->db->get($tb,3);
+                    $this->db->like("firstname",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                         echo json_encode($rows);
+                   
+                    /*
+                
+               //$this->db->get($tb);
+                     
+               if(  $main  == 1   )  //ชื่อ
+               {
+                      //echo  $main;
+
+                        $query=$this->db->get($tb);
+                        $this->db->like("firstname",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                         echo json_encode($rows);
+               }
+               elseif(  $main  == 2 ) //นามสกุล
+               {
+                     //  echo  $main;
+               }
+               elseif(  $main  == 3 ) //เลขบัตรประชาชน
+               {
+                     //  echo  $main;
+               }
+               elseif(  $main  == 4 ) //จังหวัด
+               {
+                      // echo  $main;
+               }
+                elseif(  $main  == 5 ) //DN
+               {
+                     //  echo  $main;
+               }
+                elseif(  $main  == 6 ) //ortho No
+               {
+                      // echo  $main;
+               }
+                elseif(  $main  == 7 ) //HN
+               {
+                      // echo  $main;
+               }
+                elseif(  $main  == 8 ) //CN Series
+               {
+                     //   echo  $main;
+               }
+                elseif(  $main  == 9 ) //Diagnosis
+               {
+                      // echo  $main;
+               }
+                 elseif(  $main  == 10 ) //แพทย์เจ้าของไข้
+               {
+                      // echo  $main;
+               }
+                elseif(  $main  == 11 ) //แพทย์เจ้าของไข้
+               {
+                       // echo  $main;
+               }
+               */
+
+        }
+        
+        // http://127.0.0.1/dental/index.php/welcome/auto_lastname
+        function auto_lastname()
+        {
+                    $txt=trim($this->input->get_post("q"));
+                    $tb="tb_history_patient";
+                    $query=$this->db->get($tb,3);
+                    $this->db->like("lastname",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                    echo json_encode($rows);
+            
+        }
+
+        // http://127.0.0.1/dental/index.php/welcome/auto_seriesnumber
+        function auto_seriesnumber()
+        {
+                    $txt=trim($this->input->get_post("q"));
+                    $tb="tb_history_patient";
+                    $query=$this->db->get($tb,3);
+                    $this->db->like("seriesnumber",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                    echo json_encode($rows);
+            
+        }
+        
+                // http://127.0.0.1/dental/index.php/welcome/auto_address
+        function auto_address()
+        {
+                    $txt=trim($this->input->get_post("q"));
+                    $tb="tb_history_patient";
+                    $query=$this->db->get($tb,3);
+                    $this->db->like("address",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                    echo json_encode($rows);
+            
+        }
+        //ค้นหาจาก DN :
+        // http://127.0.0.1/dental/index.php/welcome/auto_DN
+        function auto_DN()
+        {
+                    $txt=trim($this->input->get_post("q"));
+                    $tb="tb_history_patient";
+                    $query=$this->db->get($tb,3);
+                    $this->db->like("DN",$txt);
+                        foreach($query->result() as $row )
+                        {
+                          $rows[]=$row;
+                        }
+                    echo json_encode($rows);
+            
+        }
+        
+            //ค้นหาจาก Ortho No     Ortho
+            // http://127.0.0.1/dental/index.php/welcome/auto_ortho
+                function auto_ortho()
+                {
+                            $txt=trim($this->input->get_post("q"));
+                            $tb="tb_history_patient";
+                            $query=$this->db->get($tb,3);
+                            $this->db->like("othnumber",$txt);
+                                foreach($query->result() as $row )
+                                {
+                                  $rows[]=$row;
+                                }
+                            echo json_encode($rows);
+
+                }
+                
+            //ค้นหาจาก Ortho No     Ortho
+            // http://127.0.0.1/dental/index.php/welcome/auto_ortho
+                function auto_hn()
+                {
+                            $txt=trim($this->input->get_post("q"));
+                            $tb="tb_history_patient";
+                            $query=$this->db->get($tb,3);
+                            $this->db->like("HN",$txt);
+                                foreach($query->result() as $row )
+                                {
+                                  $rows[]=$row;
+                                }
+                            echo json_encode($rows);
+
+                }
+                
+              //ค้นหาจาก CN  
+            // http://127.0.0.1/dental/index.php/welcome/auto_cn
+                function auto_cn()
+                {
+                            $txt=trim($this->input->get_post("q"));
+                            $tb="tb_history_patient";
+                            $query=$this->db->get($tb,3);
+                            $this->db->like("CN",$txt);
+                                foreach($query->result() as $row )
+                                {
+                                  $rows[]=$row;
+                                }
+                            echo json_encode($rows);
+
+                }
+                
+                
+            // http://127.0.0.1/dental/index.php/welcome/auto_doctor
+                function auto_doctor()
+                {
+                            $txt=trim($this->input->get_post("q"));
+                            $tb="tb_history_patient";
+                            $query=$this->db->get($tb,3);
+                            $this->db->like("doctor",$txt);
+                                foreach($query->result() as $row )
+                                {
+                                  $rows[]=$row;
+                                }
+                            echo json_encode($rows);
+
+                }
+                
+                
+              #  http://127.0.0.1/dental/index.php/welcome/json_patient
+                //- เรียก FROM `tb_history_patient`  จาก id
+               function  json_patient()
+               {
+                     $id=trim($this->input->get_post("txt_id"));
+                     if( empty($id) )
+                     {
+                         $id=trim($this->uri->segment(3));
+                     }
+                     
+                     $tb="tb_history_patient";
+                   //  $id=21;
+                     $q=$this->db->get_where($tb,array("id_history_patient"=>$id));
+                     foreach($q->result() as $row )
+                     {
+                          $rows[]=$row;
+                     }
+                      echo  json_encode($rows);
+               }
 }
 
 /* End of file welcome.php */
