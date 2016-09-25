@@ -26,11 +26,14 @@
         <div class="easyui-layout" data-options="fit:true">
             <div data-options="region:'east',split:true"  style="width:400px">
                 
+                <div style="padding: 5px">
+                    <input class="easyui-textbox"  style="width:30px;height: 40px;"  id="id_main"  readonly="true"  />
+                </div>
                 
                 <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 1. Pre-surgical orthopedics therapy (PSOT) "  id="dg_view_fr1"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr1',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr1/' + $('#id_main').textbox('getValue')  ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr1').datagrid('reload');  }  }  ] ,
@@ -47,7 +50,7 @@
                      <!--    	4. Interceptive orthodontic treatment    -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 4. Interceptive orthodontic treatment  "  id="dg_view_fr4"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr4',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr4/' + $('#id_main').textbox('getValue')   ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr4').datagrid('reload');  }  }  ] ,
@@ -64,7 +67,7 @@
                 <!--  6. Bone graft surgery     -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  6. Bone graft surgery  "  id="dg_view_fr6"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr6',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr6/'  + $('#id_main').textbox('getValue')    ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr6').datagrid('reload');  }  }  ] ,
@@ -82,7 +85,7 @@
                                    <!--  7. Growth modification      -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 7. Growth modification   "  id="dg_view_fr7"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr7',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr7/'  + $('#id_main').textbox('getValue')   ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr7').datagrid('reload');  }  }  ] ,
@@ -99,7 +102,7 @@
                 <!--   	8. Corrective Orthodontic Treatment      -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  8. Corrective Orthodontic Treatment    "  id="dg_view_fr8"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr8',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr8/'  + $('#id_main').textbox('getValue')  ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr8').datagrid('reload');  }  }  ] ,
@@ -117,7 +120,7 @@
                 <!--   9. Orthognathic surgery    1    -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9.Orthognathic surgery(Main)   "  id="dg_view_fr9_1"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr9',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr9/'  + $('#id_main').textbox('getValue')   ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr9_1').datagrid('reload');  }  }  ] ,
@@ -135,7 +138,7 @@
                 <!--   9. Distraction  -->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9. Distraction    "  id="dg_view_fr9_2"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr9_2',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr9_2/'   + $('#id_main').textbox('getValue')   ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr9_2').datagrid('reload');  }  }  ] ,
@@ -152,7 +155,7 @@
               <!---------------10. Other surgery    1 ----------------->
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  10.Vestibuloplasty   "  id="dg_view_fr10_1"
                      data-options="
-                        url:'<?=base_url()?>index.php/welcome/showjson_fr10_1',
+                        url:'<?=base_url()?>index.php/welcome/showjson_fr10_1/'   +  $('#id_main').textbox('getValue')   ,
                         singleSelect:true,
                         rownumbers:true,
                         toolbar:[ { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_view_fr10_1').datagrid('reload');  }  }  ] ,

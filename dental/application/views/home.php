@@ -220,7 +220,20 @@
                                       
 
                                       
-                                     showpopup2();                     
+                                   //  showpopup2(id);           
+                                   
+                                      $('#diag3').dialog('open');
+                                      $('#id_main').textbox('setValue',id);
+                                     // $('#dg_view_fr1').datagrid('reload');
+                                     $('#dg_view_fr1').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr1/' + id  });
+                                     $('#dg_view_fr4').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr4/' + id  }); 
+                                     $('#dg_view_fr6').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr6/' + id  });  
+                                     $('#dg_view_fr7').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr7/' + id  });  
+                                     $('#dg_view_fr8').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr8/' + id  });    
+                                     $('#dg_view_fr9_1').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr9/' + id  });    
+                                    $('#dg_view_fr9_2').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr9_2/' + id  });      
+                                   $('#dg_view_fr10_1').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr10_1/' + id  });   
+                                      
                                }
 
                         }

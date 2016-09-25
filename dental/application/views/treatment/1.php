@@ -476,7 +476,9 @@
                         <a href="javascript:void(0)"  iconCls="icon-print"  
                            onclick="
                                 $('#dia_fr10_1').dialog('open');
-                                $('#dg_fr10_1').datagrid('reload');
+                                $('#dg_fr10_1').datagrid('reload');                           
+                                //  url:'<?=base_url()?>index.php/welcome/json_tr10/1/'  +      $('#id_history_patient_fr10_1').textbox('getValue')  ,
+                                 $('#dg_fr10_1').datagrid({  url:'<?=base_url()?>index.php/welcome/json_tr10/1/'  +      $('#id_history_patient_fr10_1').textbox('getValue')  });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -672,6 +674,7 @@
                            onclick="
                                 $('#dia_fr10_2').dialog('open');
                                 $('#dg_fr10_2').datagrid('reload');
+                                $('#dg_fr10_2').datagrid({   url:'<?=base_url()?>index.php/welcome/json_tr10/2/' +   $('#id_history_patient_fr10_2').textbox('getValue')   });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -859,6 +862,7 @@
                            onclick="
                                 $('#dia_fr10_3').dialog('open');
                                 $('#dg_fr10_3').datagrid('reload');
+                                 $('#dg_fr10_3').datagrid({    url:'<?=base_url()?>index.php/welcome/json_tr10/3/'  +  $('#id_history_patient_fr10_3').textbox('getValue')  });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -1046,6 +1050,7 @@
                            onclick="
                                 $('#dia_fr10_4').dialog('open');
                                 $('#dg_fr10_4').datagrid('reload');
+                                   $('#dg_fr10_4').datagrid( {   url:'<?=base_url()?>index.php/welcome/json_tr10/4/'  + $('#id_history_patient_fr10_4').textbox('getValue')   });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -1231,6 +1236,7 @@
                            onclick="
                                 $('#dia_fr10_5').dialog('open');
                                 $('#dg_fr10_5').datagrid('reload');
+                                   $('#dg_fr10_5').datagrid({     url:'<?=base_url()?>index.php/welcome/json_tr10/5/' +   $('#id_history_patient_fr10_5').textbox('getValue')  });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -1415,6 +1421,7 @@
                            onclick="
                                 $('#dia_fr10_6').dialog('open');
                                 $('#dg_fr10_6').datagrid('reload');
+                                   $('#dg_fr10_6').datagrid({   url:'<?=base_url()?>index.php/welcome/json_tr10/6/' +   $('#id_history_patient_fr10_6').textbox('getValue')  });
                            "
                            class="easyui-linkbutton"  style="width: 100px;height: 40px;" >ดูข้อมูล</a>
                     </div>
@@ -1623,7 +1630,7 @@
             <div class="easyui-panel" style="padding:3px;"  >
                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;" iconCls="icon-print"  onclick="
                          $('#preview_fr9').dialog('open');
-                         $('#dg_fr9').datagrid('reload');
+                         //$('#dg_fr9').datagrid('reload');
                          // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
                            // $('#preview_fr9').datagrid('reload');
                            // #   http://127.0.0.1/dental/index.php/welcome/json_tr9
@@ -1922,8 +1929,9 @@
             <div class="easyui-panel"  style="padding: 5px;">
                 <a href="javascript:void(0)"   class="easyui-linkbutton"   iconCls="icon-print"   style="width: 100px;height: 40px;"  onclick="  
                         $('#dia_fr9_b').dialog('open');
-                        $('#dg_fr9_2').datagrid('reload');
-                   
+                       // $('#dg_fr9_2').datagrid('reload');
+                          // url:'<?=base_url()?>index.php/welcome/json_tr9_2/'  +      $('#id_history_patient_fr9_2').textbox('getValue')  ,
+                         $('#dg_fr9_2').datagrid({  url:'<?=base_url()?>index.php/welcome/json_tr9_2/'  +      $('#id_history_patient_fr9_2').textbox('getValue')   });  
                    "  >ดูข้อมูล</a>
             </div>
             <div class="easyui-dialog"   id="dia_fr9_b"   data-options=" buttons:[ { text:'ปิด (Close)',iconCls:'icon-cancel',  handler:function(){ $('#dia_fr9_b').dialog('close');  }  } ]   "   style="width: 600px;height: 300px;"  closed="true"  title=" Distraction "   >
@@ -3766,6 +3774,8 @@
         <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"  iconCls="icon-print"  
            onclick="
                  $('#dia_fr8').dialog('open');
+                 //  url:'<?=base_url()?>index.php/welcome/json_tr8/' + $('#id_history_patient_fr8').textbox('getValue') ,
+                 $('#dg_fr8').datagrid({ url:'<?=base_url()?>index.php/welcome/json_tr8/' + $('#id_history_patient_fr8').textbox('getValue') });
            "
            
            >ดูข้อมูล</a>
@@ -5620,6 +5630,7 @@
              <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print"  style="width:100px;height: 40px;"  onclick="
                     $('#dia_fr11_2').dialog('open');
                     $('#dg_fr11_2').datagrid('reload');
+                     $('#dg_fr11_2').datagrid({   url:'<?=base_url()?>index.php/welcome/json_tr11_2/' +   $('#id_history_patient_fr11_2').textbox('getValue')   });
                 "  >ดูข้อมูล</a>
              
          </div> 

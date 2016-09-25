@@ -1845,7 +1845,7 @@ $this->db->delete($tables);
             //    $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
                 //    $q=$this->db->get($tb);
                  $this->db->order_by("id_distraction","desc");
-                 $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
+                 $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),3);
             //    $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
                 // $this->db->order_by("id_distraction","desc");
               //   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),2);
@@ -2827,11 +2827,12 @@ $this->db->delete($tables);
               //FROM `tb_psot` 
              //	id_history_patient
              $tb_m="tb_history_patient";
-             
+             $id=trim($this->uri->segment(3));
              $tbj1="tb_psot";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".id_psot","desc");     
-             $q=$this->db->get($tbj1,3);
+             $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
+          //   $q=$this->db->get($tbj1,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2841,7 +2842,7 @@ $this->db->delete($tables);
         }
         
         #---- 4. Interceptive orthodontic treatment ----------------------------
-        #http://127.0.0.1/dental/index.php/welcome/showjson_fr1()
+        #http://127.0.0.1/dental/index.php/welcome/showjson_fr4/26
         function showjson_fr4()
         {
               //FROM `tb_psot` 
@@ -2851,11 +2852,12 @@ $this->db->delete($tables);
              
         
                $tbj1="tb_interceptive"; 
-               
+               $id=trim($this->uri->segment(3));
                
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+          //   $q=$this->db->get($tbj1,3);
+              $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2874,11 +2876,12 @@ $this->db->delete($tables);
             // $tb_m="tb_othersurgery";
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
-             
+              $id=trim($this->uri->segment(3));
              $tbj1="tb_othersurgery";  //$tb="tb_othersurgery";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+         //    $q=$this->db->get($tbj1,3);
+              $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2897,11 +2900,12 @@ $this->db->delete($tables);
             // $tb_m="tb_othersurgery";
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
-             
+              $id=trim($this->uri->segment(3));
              $tbj1="tb_growth";  //$tb="tb_othersurgery";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+            // $q=$this->db->get($tbj1,3);
+             $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2920,11 +2924,12 @@ $this->db->delete($tables);
             // $tb_m="tb_othersurgery";
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
-             
+             $id=trim($this->uri->segment(3));
              $tbj1="tb_corrective";  //$tb="tb_othersurgery";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+            // $q=$this->db->get($tbj1,3);
+               $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2943,11 +2948,12 @@ $this->db->delete($tables);
             // $tb_m="tb_othersurgery";
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
-             
+              $id=trim($this->uri->segment(3));
              $tbj1="tb_othersurgery";  //$tb="tb_othersurgery";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+            // $q=$this->db->get($tbj1,3);
+              $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2966,11 +2972,12 @@ $this->db->delete($tables);
             // $tb_m="tb_othersurgery";
               // $tb_m="tb_othersurgery";
              $tb_m="tb_history_patient";
-             
+              $id=trim($this->uri->segment(3));
              $tbj1="tb_distraction";  //$tb="tb_othersurgery";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+            // $q=$this->db->get($tbj1,3);
+              $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
@@ -2992,10 +2999,11 @@ $this->db->delete($tables);
              
              //$tbj1="tb_distraction";  //$tb="tb_othersurgery";
               $tbj1="tb_othersurgery";
-             
+             $id=trim($this->uri->segment(3));
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","inner");
              $this->db->order_by( $tbj1.".begin_date","desc");     
-             $q=$this->db->get($tbj1,3);
+            // $q=$this->db->get($tbj1,3);
+              $q=$this->db->get_where($tbj1,array($tbj1.".id_history_patient"=>$id  ) ,3);
              foreach($q->result() as $row)
              {
                   $rows[]=$row;
