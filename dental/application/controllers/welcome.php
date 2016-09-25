@@ -1019,26 +1019,21 @@ $this->db->delete($tables);
                                    echo 0;
                                }
         }
-       #   http://127.0.0.1/dental/index.php/welcome/json_fr6/21 
+       #   http://127.0.0.1/dental/index.php/welcome/json_fr6/23 
         function  json_fr6() //6. Bone graft surgery 
         {
+            //`tb_bonegraft`
                 $tb="tb_bonegraft";
                 $tbj1="tb_history_patient";
                 
                $id=$this->uri->segment(3);
-                
-                
-              //  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
-             //   $q=$this->db->get($tb);
-                $this->db->order_by("id_bonegraft","desc");
-                $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
-                
-                
-                foreach($q->result() as $row)
-                {
-                    $rows[]=$row;
-                }
-                echo json_encode($rows);
+               $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id));
+              foreach($q->result() as $row)
+              {
+                  $rows[]=$row;
+              }
+              echo   json_encode($rows);
         }
         #   http://127.0.0.1/dental/index.php/welcome/del_fr6/4
         function  del_fr6()
@@ -2835,7 +2830,7 @@ $this->db->delete($tables);
              
              $tbj1="tb_psot";
              $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
-             $this->db->order_by( $tbj1.".begin_date","desc");     
+             $this->db->order_by( $tbj1.".id_psot","desc");     
              $q=$this->db->get($tbj1,3);
              foreach($q->result() as $row)
              {
@@ -2998,7 +2993,7 @@ $this->db->delete($tables);
              //$tbj1="tb_distraction";  //$tb="tb_othersurgery";
               $tbj1="tb_othersurgery";
              
-             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","left");
+             $this->db->join($tb_m,$tbj1.".id_history_patient=".$tb_m.".id_history_patient","inner");
              $this->db->order_by( $tbj1.".begin_date","desc");     
              $q=$this->db->get($tbj1,3);
              foreach($q->result() as $row)
@@ -3290,6 +3285,182 @@ $this->db->delete($tables);
                            $rows[]=$row;
                       }
                       echo  json_encode($rows);   
+               }
+                   #  http://127.0.0.1/dental/index.php/welcome/export_excel1
+               function export_excel1() 
+               {
+                   
+                   $strExcelFileName="ประวัติผู้ป่วย.xls";
+                   header("Content-Type: application/x-msexcel; name=\"$strExcelFileName\"");
+                   header("Content-Disposition: inline; filename=\"$strExcelFileName\"");
+                   header("Pragma:no-cache");
+
+                   
+
+                    $tb="tb_history_patient";
+                    $q=$this->db->get($tb);
+                    
+                    echo "<table>";
+                   
+                    /*
+                    echo  "<tr>";
+                    
+                    echo "<td>";
+                    echo "HN";                  
+                    echo "</td>";
+                       echo "<td>";
+                    echo "DN";                  
+                    echo "</td>";
+                     echo "<td>";
+                    echo "othnumber";                  
+                    echo "</td>";
+                    
+                    
+                    echo "</tr>";
+                     * 
+                     * 
+                     * 
+                     */
+                    
+                    
+                    foreach($q->result() as $row )
+                    {
+                        //$rows[]=$row;
+                        echo "<tr>";
+                        
+                          echo "<td>";
+                              echo $row->HN;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->DN;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->othnumber;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->CN;
+                          echo "</td>";
+                              echo "<td>";
+                              echo $row->seriesnumber;
+                          echo "</td>";
+                           echo "<td>";
+                              echo $row->firstname;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->lastname;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->filename;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->lastname;
+                          echo "</td>";
+                             echo "</td>";
+                            echo "<td>";
+                              echo $row->birthdate;
+                          echo "</td>";
+                           echo "<td>";
+                              echo $row->address;
+                          echo "</td>";
+                           echo "<td>";
+                              echo $row->nationality;
+                          echo "</td>";
+                                echo "<td>";
+                              echo $row->race;
+                          echo "</td>";
+                           echo "<td>";
+                              echo $row->religion;
+                          echo "</td>";
+                       echo "<td>";
+                              echo $row->namefather;
+                          echo "</td>";    
+                           echo "<td>";
+                              echo $row->fatherlastname;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->career;
+                          echo "</td>";    
+                             echo "<td>";
+                              echo $row->birthdatefahter;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->birthdatefahter;
+                          echo "</td>";    
+                          echo "<td>";
+                              echo $row->age1;
+                          echo "</td>";     
+                           echo "<td>";
+                              echo $row->disease;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->mothername;
+                          echo "</td>";  
+                          echo "<td>";
+                              echo $row->motherlastname;
+                          echo "</td>";  
+                          echo "<td>";
+                              echo $row->mothercareer;
+                          echo "</td>"; 
+                           echo "<td>";
+                              echo $row->birthdatemother;
+                          echo "</td>"; 
+                            echo "<td>";
+                              echo $row->diseasemother;
+                          echo "</td>"; 
+                           echo "<td>";
+                              echo $row->spousename;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->spouselastname;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->benefits;
+                          echo "</td>";  
+                             echo "<td>";
+                              echo $row->otherbenefits;
+                          echo "</td>";  
+                             echo "<td>";
+                              echo $row->numberbenefits;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->evertreat;
+                          echo "</td>";    
+                            echo "<td>";
+                              echo $row->otherevertreat;
+                          echo "</td>";    
+                          echo "<td>";
+                              echo $row->treatmentfacility;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->doctor;
+                          echo "</td>";    
+                          
+                             echo "<td>";
+                              echo $row->developmentallevel;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->otherdevelopmentallevel;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->daterecord;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->sex;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->tel;
+                          echo "</td>"; 
+                          
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    
+                    //echo  json_encode($rows);
+                    
                }
 }
 

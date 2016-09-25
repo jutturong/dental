@@ -273,25 +273,48 @@
                                 //alert(id);
                                 if( id > 0 )
                                 {
+        
+                                         $.messager.confirm("ต้องการลบข้อมูล","คุณต้องการลบข้อมูลหรือไม่", function(r)
+                                            {
+                                                 
+                                                   
                                     var  url="<?=base_url()?>index.php/welcome/delete_tb1/" +  id ;
                                       $.post(url,function(result){
                                            // alert(result);
                                             if( result == 1  )
                                             {
+                                                //dia1
+                                                //dg1
+                                                   //$('#dg1').datagrid('reload');
+                                                   $('#dg1').datagrid('reload');
                                                 $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
-                                                $('#dg1').datagrid('reload');
+                                             
                                             }
                                             else if( result == 0 )
                                             {
+                                                  //$('#dg1').datagrid('reload');
+                                                  $('#dg1').datagrid('reload');
                                                  $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
-                                            }
-                                           
-                                            
+                                                  
+                                            }                                    
                                       });
+                                      
+                                         
+                                         
+                                            });
+                                      
                                 }
                             }
                         } 
                     },
+                    {
+                       text:'Export Excel',
+                       iconCls:'icon-print',
+                       handler:function()
+                       {
+                           window.open("<?=base_url()?>index.php/welcome/export_excel1/");
+                       }
+                    }
                                  ]
         </script>
 
