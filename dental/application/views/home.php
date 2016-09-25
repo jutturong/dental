@@ -647,12 +647,13 @@ otherdevelopmentallevel
                                         { field:'lastname',title:'นามสกุล' },
                                         { field:'HN',title:'HN' ,align:'center' },
                                         { field:'DN' , title:'DN' , align:'center' },
+                                        { field:'sex', title:'เพศ', align:'center'   },
                                         { field:'othnumber',   title:'Ortho No',   align:'center' },
-                                        { field:'CN',   title:'CN No',   align:'center' },
-                                        { field:'CN',   title:'CN No',   align:'center' },
+                                        { field:'CN',   title:'เลข สปสช. ',   align:'center' },
+                                   //     { field:'CN',   title:'CN No',   align:'center' },
                                         { field:'seriesnumber',   title:'เลขบัตรประชาชน ',   align:'center' },
                                         { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },  
-                                        
+                                        { field:'tel',   title:'เบอร์โทรศัพท์',   align:'left' },  
                                         
                                         
                                        
