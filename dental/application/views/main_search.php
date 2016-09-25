@@ -398,34 +398,132 @@
                 <tr>
                            <td>
                                   Diagnosis :
+                                  <input class="easyui-combobox"   style="width:200px;height: 40px;"
+                                         data-options="
+                                              textField:'text',
+                                              valueField:'value',
+                                              data:[
+                                                 {
+                                                     'text':'Complete bilateral cleft lip'  ,
+                                                     'value': 'Complete bilateral cleft lip'  ,
+                                                 },
+                                                 {
+                                                       'text':'Complete right unilateral cleft lip'  ,
+                                                       'value':'Complete right unilateral cleft lip'  ,
+                                                 },
+                                                  {
+                                                       'text':'Complete left unilateral cleft lip'  ,
+                                                       'value':'Complete left unilateral cleft lip'  ,
+                                                 },
+                                                 {
+                                                       'text':'Incomplete bilateral cleft lip'  ,
+                                                       'value':'Incomplete bilateral cleft lip'  ,
+                                                 },
+                                                  {
+                                                       'text':'Incomplete right cleft lip'  ,
+                                                       'value':'Incomplete right cleft lip'  ,
+                                                 },
+                                                {
+                                                       'text':'Incomplete left cleft lip'  ,
+                                                       'value':'Incomplete left cleft lip'  ,
+                                                 },
+                                              ],
+                                              /*
+                                              onSelect:function(rec)
+                                              {
+                                                    var  va=$('#cb_diagnosis').combobox('getValue');
+                                                    //alert(va);
+                                                    var  url='<?=base_url()?>index.php/welcome/search_diagnosis';
+                                                   // $('#dg1').datagrid('loadData',
+                                              }
+                                              */
+                                              
+                                         "
+                                         
+                                         id="cb_diagnosis" name="cb_diagnosis" >
+                                  
+                                  
+                                  <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-search"  style="width: 100px;height: 40px;"   onclick="
+                         $('#fr_main_search').form('submit',{
+                               url:'<?=base_url()?>index.php/welcome/search_diagnosis',
+                             success:function(data)
+                                 {
+                                             // alert(data);
+                                              //$('#dg1').datagird({
+                                                //  url:data,
+                                                  
+                                                  
+                                  });
+                                             
+                                             
+                                     
+                                 }
+                             
+                         });
+                   
+                   "   >Search</a>
+                                  
+                                  
+                                  
                             </td>
+                            
+                            
+                
+                            
                 </tr>
                 
                 <!-----------------  แพทย์เจ้าของไข้  ----------------->          
                 <tr>
                            <td>
                                    แพทย์เจ้าของไข้ :
-                                   <input class="easyui-combogrid" style="width:200px;height: 40px;" data-options="
-                                                 //   iconCls:'icon-man',  
-                                                    url:'<?=base_url()?>index.php/welcome/auto_doctor/' ,
-                                                    method:'post',
-                                                    idField:'id_history_patient',
-                                                    textField:'firstname'  ,
-                                                    mode:'remote',
-                                                    fitColumns:true,
-                                                    columns:[[
-                                                        {  field:'firstname', title:'ชื่อ' ,   } ,
-                                                        {  field:'lastname', title:'นามสกุล' ,   },
-                                                        {  field:'doctor', title:'แพทย์เจ้าของไข้' ,   },
-                                                    ]],
-                                                     onSelect:function()
-                                                    {
-                                                         var  id=$('#cb_doctor').combogrid('getValue');
-                                                         $('#txt_id').textbox('setValue',id);
-                                                         var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
-                                                         load_dg1(url);
-                                                    }
-                                                    "    id="cb_doctor"  name="cb_doctor"  />
+                                   <input class="easyui-combobox"   style="width:200px;height: 40px;"
+                                         data-options="
+                                              textField:'text',
+                                              valueField:'value',
+                                              data:[
+                                                 {
+                                                     'text':'ทพ.ชุติมาพร'  ,
+                                                     'value': 'ทพ.ชุติมาพร'  ,
+                                                 },
+                                                 {
+                                                     'text':'ทพ.มณเฑียร'  ,
+                                                     'value': 'ทพ.มณเฑียร'  ,
+                                                 },
+                                                 {
+                                                     'text':'ทพ.พูนศักดิ์'  ,
+                                                     'value': 'ทพ.พูนศักดิ์'  ,
+                                                 },
+                                                 {
+                                                     'text':'ทพ.ทัศนีย์'  ,
+                                                     'value': 'ทพ.ทัศนีย์'  ,
+                                                 },
+                                              ],
+                                              
+                                              /*
+                                              onSelect:function(rec)
+                                              {
+                                                    var  va=$('#cb_doctor').combobox('getValue');
+                                                    alert(va);
+                                              }
+                                              */
+                                              
+                                              
+                                         "
+                                         
+                                         id="cb_doctor" name="cb_doctor" >
+                                   
+                                    <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-search"  style="width: 100px;height: 40px;"   onclick="
+                         $('#fr_main_search').form('submit',{
+                               url:'<?=base_url()?>index.php/welcome/search_doctor',
+                             success:function(data)
+                                 {
+                                       alert(data);
+                                     
+                                 }
+                             
+                         });
+                   
+                   "   >Search</a>
                                    
                             </td>
                 </tr>

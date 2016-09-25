@@ -3256,6 +3256,41 @@ $this->db->delete($tables);
                      }
                       echo  json_encode($rows);
                }
+               
+                # ค้นหาจาก Diagnosis  =>  FROM `tb_diagnosis`  
+               #  http://127.0.0.1/dental/index.php/welcome/search_diagnosis
+               function  search_diagnosis()
+               {
+                      $tb="tb_diagnosis";
+                      $tbj1="tb_history_patient";
+                      //	id_history_patient
+                      //FROM `tb_history_patient` 
+                      $cb_diagnosis=trim($this->input->get_post("cb_diagnosis"));
+                       $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+                      $q=$this->db->get($tb,3);
+                       $this->db->like("result_analysis",$cb_diagnosis);
+                      foreach($q->result() as $row)
+                      {
+                           $rows[]=$row;
+                      }
+                      echo  json_encode($rows);
+               }
+               #  ค้นหาจาก   แพทย์เจ้าของไข้
+               #  http://127.0.0.1/dental/index.php/welcome/search_doctor
+               function  search_doctor()
+               {
+                     //doctor
+                     // `tb_history_patient` 
+                     $tb="tb_history_patient";
+                     $cb_doctor=trim($this->input->get_post("cb_doctor"));
+                      $q=$this->db->get($tb,3);
+                      $this->db->like("doctor",$cb_doctor);
+                      foreach($q->result() as $row)
+                      {
+                           $rows[]=$row;
+                      }
+                      echo  json_encode($rows);   
+               }
 }
 
 /* End of file welcome.php */
