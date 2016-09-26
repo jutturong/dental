@@ -19,11 +19,7 @@
                                         { field:'CN',   title:'CN No',   align:'center' },
                                         { field:'CN',   title:'CN No',   align:'center' },
                                         { field:'seriesnumber',   title:'เลขบัตรประชาชน ',   align:'center' },
-                                        { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },  
-                                        
-                                        
-                                        
-                                       
+                                        { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },    
                                   ]],
                   })
                   
@@ -58,8 +54,8 @@
         -->
         
         
-               <!-- <form id="fr_main_search" method="post"   > -->
-                <form id="fr_main_search"   method="post"  enctype="multipart/form-data"  novalidate="novalidate" >
+               <!-- <form id="fr_main_search" method="post"   enctype="multipart/form-data" > -->
+                <form id="fr_main_search"   method="post"   novalidate="novalidate"   >
             <table cellpadding="5">
                 
                 <tr>
@@ -427,39 +423,88 @@
                                                        'text':'Incomplete left cleft lip'  ,
                                                        'value':'Incomplete left cleft lip'  ,
                                                  },
-                                              ],
-                                              /*
+                                              ],                                    
                                               onSelect:function(rec)
                                               {
                                                     var  va=$('#cb_diagnosis').combobox('getValue');
                                                     //alert(va);
                                                     var  url='<?=base_url()?>index.php/welcome/search_diagnosis';
                                                    // $('#dg1').datagrid('loadData',
-                                              }
-                                              */
-                                              
+                                              }        
                                          "
                                          
                                          id="cb_diagnosis" name="cb_diagnosis" >
                                   
                                   
                                   <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-search"  style="width: 100px;height: 40px;"   onclick="
-                         $('#fr_main_search').form('submit',{
-                               url:'<?=base_url()?>index.php/welcome/search_diagnosis',
-                             success:function(data)
-                                 {
-                                             // alert(data);
-                                              //$('#dg1').datagird({
-                                                //  url:data,
-                                                  
-                                                  
-                                  });
-                                             
-                                             
-                                     
-                                 }
-                             
+    
+    $.post('<?=base_url()?>index.php/welcome/search_diagnosis/',{ cb_diagnosis: $('#cb_diagnosis').combobox('getValue')  },
+          function(data)
+          {
+              //alert(data);
+              /*
+               $.each(data,function(v,k)
+               {   
+                      alert(k.firstname);   
+               });
+        */
+       
+       //dia_sr_daiag
+       //dg_sr_diag
+              $('#dia_sr_daiag').dialog('open');
+              $('#dg_sr_daiag').datagrid(data);
+       
+          },'json'
+    );
+    
+   /* 
+   $.ajax({ 
+      type:'POST',
+      data:$('#fr_main_search').serialize(),
+      url:'<?=base_url()?>index.php/welcome/search_diagnosis/' ,
+      dataType:'json',
+      contentType:'application/json',
+      success:function(data)
+        {
+            
+              $.each(data,function(a,b)
+                {
+                   
+                      $('#dg1').datagrid('load',{
+                          firstname : b.firstname,
+                      });    
+                })
+          
+        }
+    });
+   */
+  
+   /* 
+    $('#fr_main_search').form('submit',{
+                               url:'<?=base_url()?>index.php/welcome/search_diagnosis/'  ,
+                              dataType:'json',
+                               contentType:'application/json',
+                              success:function(data)
+                              {
+                                  alert(data);
+                              }
                          });
+  */
+
+/*
+     $.post('<?=base_url()?>index.php/welcome/search_diagnosis', 
+     $('#fr_main_search').serialize(),function(data)
+     {  
+           //alert(data); 
+        // $.each(data,function(a,b){ alert(a);  });
+          $('#dg1').datagrid({ url:data });
+     } );
+     */
+        
+        //var  send=$.post('<?=base_url()?>index.php/welcome/search_diagnosis', 
+      //  $('#dg1').datagrid({ url: '<?=base_url()?>index.php/welcome/search_diagnosis' });
+        
+                        
                    
                    "   >Search</a>
                                   
@@ -517,9 +562,13 @@
                                url:'<?=base_url()?>index.php/welcome/search_doctor',
                              success:function(data)
                                  {
-                                       alert(data);
-                                     
+                                       //alert(data);
+                                       // dia_sr_daiag
+                                     //  var  result=eval('(' + data + ')');
+                                      // alert(data.facialcleft);
+                                     // $.each(data,function(a,b){ alert(a); });
                                  }
+                                 
                              
                          });
                    
@@ -607,3 +656,14 @@
     </div>
 </div>
 <!-- เพิ่มเติมการค้นหา teatemtn -->
+   
+<!-- dialog ในการ search  Diagnosis -->
+<div class="easyui-dialog" id="dia_sr_daiag"  data-options="
+     closed:true,
+     
+     "  style="width:500px;height: 400px;"  title=" การดึงข้อมูล Diagnosis " >
+    <div class="easyui-datalist"  id="dg_sr_diag"   >
+        
+    </div>
+</div>
+<!-- dialog ในการ search  Diagnosis -->

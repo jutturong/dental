@@ -2138,7 +2138,7 @@ $this->db->delete($tables);
             $id=trim($this->uri->segment(3));
              //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
             $this->db->order_by("id_prosthodontic","desc");
-        $q=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
+           $q=$this->db->get_where($tb,array("id_history_patient"=>$id),1);
                   //  $q=$this->db->get($tb,3);
                     foreach($q->result() as $row)
                     {
@@ -3268,10 +3268,19 @@ $this->db->delete($tables);
                       $tbj1="tb_history_patient";
                       //	id_history_patient
                       //FROM `tb_history_patient` 
+                      
                       $cb_diagnosis=trim($this->input->get_post("cb_diagnosis"));
-                       $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
-                      $q=$this->db->get($tb,3);
-                       $this->db->like("result_analysis",$cb_diagnosis);
+                      /*
+                      if( $cb_diagnosis == "" )
+                      {
+                           $cb_diagnosis=trim($this->uri->segment(3));
+                      }
+                      */
+                      
+                     //echo   $cb_diagnosis=trim($this->uri->segment(3));
+                       $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");                 
+                       $q=$this->db->get($tb,3);
+                        $this->db->like("result_analysis",$cb_diagnosis);
                       foreach($q->result() as $row)
                       {
                            $rows[]=$row;
