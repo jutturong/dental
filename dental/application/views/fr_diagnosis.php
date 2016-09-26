@@ -1,3 +1,5 @@
+
+
 <script type="text/javascript">
 
       function dia1()
@@ -443,7 +445,9 @@
     });
 </script>
 
-<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:600px;height:550px;padding:5px;">
+
+
+<div id="diag1" class="easyui-window" title=" เพิ่มข้อมูล Diagnosis , ความผิดปกติแต่กำเนิดร่วมกับปากแหว่งเพดานโหว่ " data-options="modal:true,closed:true" style="width:650px;height:550px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     <div class="easyui-tabs" >
@@ -453,7 +457,13 @@
 
               
               <div class="easyui-panel"  style="padding: 5px;width: 600px;"   >
+                  
+                  
+                  <!--
                   <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;"   iconCls='icon-man'   onclick=" 
+                      
+                      
+                      /*
                       $('#dg_diagnosis').dialog('open');  
                        $('#grid_diagnosis').datagrid({
                            
@@ -501,8 +511,69 @@
                            
                        });                  
                      
-                     
+                     */
+                        
+                        
                      " >เรียกดูข้อมูล</a>
+                   -->
+                   
+                  
+                  <!--
+                          $('#dg_diagnosis').dialog('open');  
+                       $('#grid_diagnosis').datagrid({
+                  -->
+                  
+                  <div style="padding: 5px;"  class="easyui-panel"  >
+                              <div class="easyui-datagrid"  id="grid_diagnosis"  data-options="
+                                   url:'<?=base_url()?>index.php/welcome/json_tb2/' +    $('#id_history_patient_diag').textbox('getValue')  ,
+         singleSelect:true,
+         columns:[[
+         
+           { field:'firstname',title:'ชื่อ' ,align:'center' },
+           { field:'lastname', title:'นามสกุล', align:'center' },
+           {    field:'result_analysis' , title:'   การวิเคราะห์ผล '  , align:'center'  },
+           {  field:'facialcleft', title:'Facial cleft', align:'center'  },
+           {  field:'otherfacialcleft',title:'ระบุ Facial cleft ',align:'center' },
+           
+         ]],
+         toolbar:[
+            { text:'Reload',iconCls:'icon-reload', handler:function(){ $('#grid_diagnosis').datagrid('reload');  }  },
+            { text:'Delete', iconCls:'icon-remove', handler:function()
+                  {     
+                      //http://127.0.0.1/dental/index.php/welcome/del_tb2/7
+                      var    row=$('#grid_diagnosis').datagrid('getSelected');
+                      if(row)
+                      {
+                            var  id=row.id_diagnosis;
+                            //alert(id);
+                            var url='<?=base_url()?>index.php/welcome/del_tb2/'  + id; 
+                            $.post(url,function(data)
+                                {
+                                       //alert(data);
+                                       if( data == 1 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }else if( data == 0 )
+                                       {
+                                            $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลผิดพลาด');
+                                            $('#grid_diagnosis').datagrid('reload');
+                                       }
+                                     
+                                });
+                      }
+                  
+                  }  
+             }
+         ]
+                                   "  >
+                              </div>
+                      
+                      
+                      
+                  </div>
+                  
+                  
               </div>
 
 
@@ -913,11 +984,13 @@
 
 
 <!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->
+<!--
 <div class="easyui-dialog"   id="dg_diagnosis"  data-options=" closed:true  "  title="Diagnosis"  iconCls="icon-man"  style="width:500px;height: 400px;"  >
-     <!--  http://127.0.0.1/dental/index.php/welcome/json_tb2 -->
+     
     <div class="easyui-datagrid"  id="grid_diagnosis"  ></div>
         
         
     
 </div>
+-->
 <!--  datagrid  Diagnosis ผู้้้ป่วย json_table -->

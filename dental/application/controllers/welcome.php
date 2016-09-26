@@ -3318,28 +3318,7 @@ $this->db->delete($tables);
                     $q=$this->db->get($tb);
                     
                     echo "<table>";
-                   
-                    /*
-                    echo  "<tr>";
-                    
-                    echo "<td>";
-                    echo "HN";                  
-                    echo "</td>";
-                       echo "<td>";
-                    echo "DN";                  
-                    echo "</td>";
-                     echo "<td>";
-                    echo "othnumber";                  
-                    echo "</td>";
-                    
-                    
-                    echo "</tr>";
-                     * 
-                     * 
-                     * 
-                     */
-                    
-                    
+
                     foreach($q->result() as $row )
                     {
                         //$rows[]=$row;
@@ -3479,6 +3458,27 @@ $this->db->delete($tables);
                     //echo  json_encode($rows);
                     
                }
+          
+         #  http://127.0.0.1/dental/index.php/welcome/call_history_patient
+         function  call_history_patient()
+         {
+                 //  $id_history_patient=$this->input->get_post("id_history_patient");
+                //  FROM `tb_history_patient` 
+                    $tb="tb_history_patient";
+                    
+                     $id=$this->input->get_post("id_history_patient");
+                    // $id=23;
+                     if( $id > 0 )
+                     {
+                           $q = $this->db->get_where($tb,array("id_history_patient"=>$id));
+                           foreach($q->result() as $row)
+                           {
+                                $rows[]=$row;
+                           }
+                           echo  json_encode($rows);
+                           
+                     }
+         }
 }
 
 /* End of file welcome.php */

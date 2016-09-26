@@ -12,14 +12,87 @@
         <script type="text/javascript">
               var toolbar= [
 
-
+                       
                        {
-                        text: ' เรียกดูประวัติผู้ป่วย  ',
+                        text: ' เรียกดูประวัติผู้ป่วย',
                         iconCls: ' icon-large-chart   ',
 
                         handler:function(){
                              //alert('t');
-                               openpt('เรียกดูประวัติผู้ป่วย');
+                               //openpt('เรียกดูประวัติผู้ป่วย');
+                               var  row=$('#dg1').datagrid('getSelected');
+                               if(row)
+                               {
+                                     id=row.id_history_patient;
+                                   
+                                     // alert(id);
+                                       //  //openpt('เรียกดูประวัติผู้ป่วย');
+                                       //-------------------------------------------------
+                                       /*
+                                                                                function openpt(title) //ฟอร์มบันทึก ประวัติผู้ป่วย
+                                                   {
+                                                       $(function()
+                                                       {
+                                                             //alert('t');
+                                                             $("#dia1").dialog({
+                                                                // title:"เพิ่มข้อมูลประวัติของผู้ป่วย",
+                                                                 title: title ,
+                                                                 width:600,
+                                                                 height:550,
+                                                                 closed:false,
+                                                                 cache:false,
+
+                                                                 modal:true,
+
+                                                             });
+                                                       });
+                                                   }
+                                        */
+                                       //-----------------------------------------------------
+                                       $("#dia1_view").dialog({
+                                                                 title:"เรียกดูประวัติของผู้ป่วย",
+                                                               //  title: title ,
+                                                                 width:600,
+                                                                 height:550,
+                                                                 closed:false,
+                                                                 cache:false,
+
+                                                                 modal:true,
+
+                                                             });
+                                                             
+                                                             
+                                                             //------------ แสดงการบันทึกข้อมูล-------------------
+                                                             if( id > 0 )
+                                                             {
+                                                                   //call_history_patient
+                                                                   
+                                                                   /*
+                                                                   var  url='<?=base_url()?>index.php/welcome/call_history_patient/' + id;
+                                                                   $.post(url,{ id_history_patient:id },function(data)
+                                                                      {
+                                                                             //alert(data);
+                                                                              $.each(data,function(index,key)
+                                                                                {
+                                                                                     
+                                                                                        var  HN=key.HN;
+                                                                                        // alert( HN );
+                                                                                        //    fr_view_patient
+                                                                                       //HN_view   
+                                                                                       $('#HN_view').textbox('setValue',HN);
+                                                                                     //  var  DN=key.DN
+  
+                                                                                });
+                                                                                
+                                                                                      
+                                                                      },'json'); 
+                                                                  */
+                                                                    view_patient(id);   
+                                                                 
+                                                             }
+                            
+                                       
+                               }
                         }
 
                     }
@@ -47,6 +120,9 @@
                                       $('#diag1').window('open');  //file-> fr_diagnosis.php
                                       $('#id_history_patient_diag').textbox('setValue',id);
                                       $('#name_lastname_diag').textbox('setValue',firstname+'  '+lastname);
+                                      
+                                      
+                                       $('#grid_diagnosis').datagrid(  {   url:'<?=base_url()?>index.php/welcome/json_tb2/' +   id   }  );
 
                                      // btnclr();
                                       
@@ -240,6 +316,8 @@
 
                     },
 
+
+
                     /*
                     {
                            text:' เพิ่มประวัติผู้ป่วย ',
@@ -252,6 +330,7 @@
                     */
 
 
+/*
                     {
                         text:' แก้ไขประวัติผู้ป่วย ',
                         iconCls:'icon-edit',
@@ -264,6 +343,9 @@
                             }
                         }
                     },
+  */
+  
+                    
                     {
                         text:'Reload',
                         iconCls:'icon-reload',
@@ -320,6 +402,8 @@
                             }
                         } 
                     },
+                    
+                    /*
                     {
                        text:'Export Excel',
                        iconCls:'icon-print',
@@ -328,6 +412,8 @@
                            window.open("<?=base_url()?>index.php/welcome/export_excel1/");
                        }
                     }
+                    */
+                    
                                  ]
         </script>
 
@@ -794,8 +880,8 @@ otherdevelopmentallevel
                 <tr>
                     <td>เพศ :</td>
                     <td>   
-                            <input  type="radio"  value="1"  name="sex"  id="sex_m" /> ชาย 
-                           <input type="radio"   name="sex" value="2"   id="sex_w"> หญิง
+                            <input  type="radio"  value="1"  name="sex_view"  id="sex_m_view" /> ชาย 
+                           <input type="radio"   name="sex_view" value="2"   id="sex_w_view"> หญิง
                     </td>
                 </tr>
 
@@ -1315,9 +1401,691 @@ otherdevelopmentallevel
 
 
 
+  <script type="text/javascript" >
+     function  view_patient(id)
+     {
+         
+                                                                            var  url='<?=base_url()?>index.php/welcome/call_history_patient/' + id;
+                                                                   $.post(url,{ id_history_patient:id },function(data)
+                                                                      {
+                                                                             //alert(data);
+                                                                              $.each(data,function(index,key)
+                                                                                {
+                                                                                     
+                                                                                        var  HN=key.HN;
+                                                                                        // alert( HN );
+                                                                                        //    fr_view_patient
+                                                                                       //HN_view   
+                                                                                       $('#HN_view').textbox('setValue',HN);
+                                                                                     //  var  DN=key.DN
+                                                                                     
+                                                                                       $('#DN_view').textbox('setValue',key.DN);
+                                                                                       //key.	othnumber;
+                                                                                       $('#othnumber_view').textbox('setValue',key.othnumber);
+                                                                                       $('#CN_view').textbox('setValue',key.CN);
+                                                                                       
+                                                                                       $('#seriesnumber_view').textbox('setValue',key.seriesnumber);
+                                                                                        $('#firstname_view').textbox('setValue',key.firstname);
+                                                                                        $('#lastname_view').textbox('setValue',key.lastname);  
+                                                                                        
+                                                                                        
+                                                                                         //alert( key.sex);
+                                                                                          
+                                                                                        
+                                                                                          var  sex = key.sex;
+                                                                                           
+                                                                                           
+                                                                                          if(  sex == 1  )
+                                                                                          {
+                                                                                                  //sex_w_view
+                                                                                                   //alert(sex);
+                                                                                                   //sex_m_view
+                                                                                               // $('#sex_m_view').attr('checked',true);
+                                                                                                $('#txt_sex_view').textbox('setValue','ชาย');
+                                                                                          }else if( sex == 2 )
+                                                                                          {
+                                                                                              // alert(sex);
+                                                                                               //  $('#sex_w_view').attr('checked',true);
+                                                                                                 $('#txt_sex_view').textbox('setValue','หญิง');
+                                                                                          }
+                                                                                          
+                                                                                          
+                                                                                          //file1
+                                                                                          var  file1= key.filename;
+                                                                                          //alert( file1 );
+                                                                                            
+                                                                                          if( file1 !=  ''  )
+                                                                                          {
+                                                                                             // $('#file1').attr('')
+                                                                                             //  $('#img_view').attr('src','<?=base_url()?>upload/632244.jpg');
+                                                                                                $('#img_view').attr('src','<?=base_url()?>upload/' +  file1  );
+                                                                                          }
+                                                                                          
+                                                                                          
+                                                                                           $('#birthdate_view').textbox('setValue',key.birthdate);
+                                                                                           
+                                                                                        
+                                                                                        $('#tel_view').numberbox('setValue',key.tel);
+                                                                                        
+                                                                                        $('#address_view').textbox('setValue',key.address);
+                                                                                        
+                                                                                        $('#nationality_view').textbox('setValue',key.nationality);
+                                                                                        
+                                                                                        $('#race_view').textbox('setValue',key.race);
+                                                                                        
+                                                                                        $('#religion_view').textbox('setValue',key.religion);
+                                                                                        
+                                                                                        $('#namefather_view').textbox('setValue',key.namefather);
+                                                                                        
+                                                                                        $('#fatherlastname_view').textbox('setValue',key.fatherlastname);
+                                                                                        
+                                                                                        $('#career_view').textbox('setValue',key.career);
+                                                                                        
+                                                                                        $('#birthdatefahter_view').textbox('setValue',key.birthdatefahter);
+                                                                                        
+                                                                                        $('#disease_view').textbox('setValue',key.disease);
+                                                                                        
+                                                                                     //   $('#disease_view').textbox('setValue',key.disease);
+                                                                                     
+                                                                                        $('#mothername_view').textbox('setValue',key.mothername);
+                                                                                        
+                                                                                        $('#motherlastname_view').textbox('setValue',key.motherlastname);
+                                                                                        
+                                                                                        $('#mothercareer_view').textbox('setValue',key.mothercareer);
+                                                                                        
+                                                                                        $('#birthdatemother_view').textbox('setValue',key.birthdatemother);
+                                                                                        
+                                                                                        $('#diseasemother_view').textbox('setValue',key.diseasemother);
+                                                                                        
+                                                                                        //$('#diseasemother_view').textbox('setValue',key.diseasemother);
+                                                                                        
+                                                                                        $('#spousename_view').textbox('setValue',key.spousename);
+                                                                                        
+                                                                                        $('#spouselastname_view').textbox('setValue',key.spouselastname);
+                                                                                        
+                                                                                        
+                                                                                      //  $('#otherbenefits')
+                                                                                      
+                                                                                      $('#otherbenefits_view').textbox('setValue',key.otherbenefits);
+                                                                                      
+                                                                                     // $('#numberbenefits')
+                                                                                      
+                                                                                        $('#numberbenefits_view').textbox('setValue',key.numberbenefits);
+                                                                                        
+                                                                                        $('#treatmentfacility_view').textbox('setValue',key.treatmentfacility);
+                                                                                        
+                                                                                        $('#otherdevelopmentallevel_view').textbox('setValue',key.otherdevelopmentallevel);
+                                                                                        
+                                                                                        
+                                                                                });
+                                                                                
+                                                                                      
+                                                                      },'json'); 
+                                                                      
+     }
+  </script>
+
+<!----  แสดงประวัติผู้ป่วย  หลังการบันทึก -->
+    <div id="dia1_view" class="easyui-window" title="" data-options="modal:true,closed:true,iconCls:'icon-man'" style="width:500px;height:200px;padding:10px;">
+    <div style="margin:10px 0 10px 0;"></div>
+    <div class="easyui-tabs" style="width:600px;height:500px">
+        <div title="ประวัติทั่วไป" style="padding:10px">
+
+
+            <form id="fr_view_patient" method="post"  enctype="multipart/form-data"  novalidate="novalidate">
+            <table cellpadding="5">
+
+                 <tr>
+                    <td>HN   :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="HN_view"  id="HN_view" data-options="required:false" style="max-width: 90px  "  readonly="true" ></input>
+
+                    DN   :
+                    <input class="easyui-textbox" type="text" name="DN_view" id="DN_view"  style="max-width: 90px  "  readonly="true" ></input>
+
+                    Ortho No :
+                    <input class="easyui-textbox" type="text" name="othnumber_view"  id="othnumber_view"  style="max-width: 90px  " readonly="true" ></input>
 
 
 
+
+                    </td>
+
+
+
+                 </tr>
+
+                 <tr>
+                     <td>
+                              เลข สปสช. :
+                     </td>
+                     <td>
+                         <input class="easyui-textbox" type="text" name="CN_view" id="CN_view"  style="max-width: 90px  "></input>
+                     </td>
+                 </tr>
+
+
+
+                 <tr>
+                     <td>
+                         เลขบัตรประชาชน :
+                     </td>
+                     <td>
+                         <input  class="easyui-textbox"  style="width: 200px;height: 30px;"  id="seriesnumber_view" name="seriesnumber_view"    />
+                     </td>
+
+                 </tr>
+
+
+                <tr>
+                    <td>ชื่อ - นามสกุล :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="firstname_view" id="firstname_view"    style="width:100px;height: 30px;"  ></input>
+
+                        <input class="easyui-textbox" type="text" name="lastname_view" id="lastname_view"   style="width:200px;height: 30px;" ></input>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>เพศ :</td>
+                    <td> 
+                        <!--
+                        <input  type="radio"  value="1"  name="sex_view"  id="sex_m_view"  checked="false" /> ชาย 
+                           <input type="radio"   name="sex_view" value="2"   id="sex_w_view"  checked="false"  > หญิง
+                           -->
+                           <input class="easyui-textbox"  id="txt_sex_view"   style="width:100px;height: 40px;align:'center'  "  readonly="true"  />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>รูปถ่าย :</td>
+                    <td>
+                        
+                        <!--
+                        <input name="file1" id="file1"   class="f1 easyui-filebox"></input>
+                        <br>
+                         -->
+                         
+                        <input type="image"   id="img_view"  width="350"  height="350"   />
+                    
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>วัน/เดือน/ปี เกิด :</td>
+                    <td>
+                        
+                        <input class="easyui-textbox"  style="width:200px" id="birthdate_view" name="birthdate_view"    >
+                    
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td> เบอร์โทรศัพท์ :</td>
+                    <td> <input   class="easyui-numberbox"   name="tel_view"  id="tel_view" style="width:150px;  height: 30px;"   readonly="true" ></td>
+                </tr>
+
+                <tr>
+                    <td>ที่อยู่ :</td>
+                    <td><input class="easyui-textbox" type="text" name="address_view" id="address_view"  style="width: 300px;height: 30px;"  readonly="true" ></input></td>
+                </tr>
+
+                <tr>
+                    <td>
+                       สัญชาติ :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="nationality_view"  id="nationality_view"  style="width:100px;height: 30px;"  readonly="true" ></input>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                       เชื้อชาติ :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox"  name="race_view"  id="race_view" style="width:100px;height: 30px;"   readonly="true" ></input>
+
+                    </td>
+
+                </tr>
+
+
+                 <tr>
+                    <td>ศาสนา :</td>
+                    <td><input class="easyui-textbox"  name="religion_view" id="religion_view"  style="width:100px;height: 30px;"   readonly="true" ></input></td>
+                </tr>
+
+
+               <tr>
+                    <td>ชื่อบิดา - นามสกุล :</td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="namefather_view"  id="namefather_view" style="width:150px;height: 30px;"  readonly="true"  />
+                        <input class="easyui-textbox" type="text" name="fatherlastname_view" id="fatherlastname_view"  style="width:200px;height: 30px;"  readonly="true" />
+
+                    </td>
+
+
+
+                </tr>
+
+
+                <tr>
+                    <td>อาชีพ :</td>
+                    <td><input class="easyui-textbox" type="text" name="career_view"  id="career_view"  readonly="true"  style="width: 200px;height: 30px;"  ></input></td>
+                </tr>
+
+
+                <tr>
+                    <td>วัน/เดือน/ปี เกิด :</td>
+                    <td>
+                        <input class="easyui-textbox"    id="birthdatefahter_view"  name="birthdatefahter_view"  style="width: 100px;height: 30px;"  readonly="true"  >
+
+                        <!--
+                        <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear1"  name="calYear1">คำนวณอายุ</a>
+                        <input class="easyui-textbox"  id="age1"  name="age1"  style="width:50px; height: 30px;"  > ปี
+                        -->
+
+                    </td>
+
+
+
+                </tr>
+
+
+                 <tr>
+                    <td>โรคประจำตัว :</td>
+                    <td><input class="easyui-textbox"  name="disease_view" id="disease_view" readonly="true"  ></input></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>ชื่อมารดา - นามสกุล </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="mothername_view"  id="mothername_view"  readonly="true"  style="width: 150px;height: 30px;" ></input>
+                        <input class="easyui-textbox" type="text" name="motherlastname_view"  id="motherlastname_view"  style="width: 200px;height: 30px;"    ></input>
+
+                    </td>
+
+
+
+                </tr>
+
+
+
+                <tr>
+                    <td>อาชีพ :</td>
+                    <td><input class="easyui-textbox" type="text" name="mothercareer_view" id="mothercareer_view"   ></input></td>
+                </tr>
+
+                 <tr>
+                    <td>วัน/เดือน/ปี เกิด :</td>
+                    <td>
+                        
+                        <!--
+                        <input class="easyui-textbox"  style="width:200px"  name="birthdatemother"  id="birthdatemother" />
+                        -->
+                        
+                        
+                         <input class="easyui-textbox"  style="width:200px"  name="birthdatemother_view"  id="birthdatemother_view" />
+                        
+                        
+                       <!--
+                        <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear2" name="calYear2" >คำนวณอายุ</a>
+                        -->
+                        
+                     <!--   <input class="easyui-textbox"  style="width:50px; height: 30px;" readonly="true"  id="age2" name="age2" > ปี  -->
+                          
+                    </td>
+                </tr>
+
+
+
+                 <tr>
+                    <td>โรคประจำตัว :</td>
+                    <td><input class="easyui-textbox" type="text" name="diseasemother_view" id="diseasemother_view"   ></input></td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        ชื่อ สามี/ภรรยา  - นามสกุล :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="spousename_view"  id="spousename_view"  style="width:100px;height: 30px;"  ></input>
+                        <input class="easyui-textbox" type="text"   name="spouselastname_view"  id="spouselastname_view"    style="width:100px;height: 30px;"   ></input>
+                    </td>
+                </tr>
+
+
+
+
+
+
+                  <tr>
+                    <td>สวัสดิการการรักษา :</td>
+                    <td>
+                        <select class="easyui-combobox"  id="benefits"  name="benefits"  data-options="
+                                onSelect:function(rec){
+                                   if( $('#benefits').combobox('getValue') == 5 )
+                                   {
+                                        $('#otherbenefits').textbox('clear');     
+                                        $('#otherbenefits').textbox('setValue','ระบุสวัสดิการการรักษา');
+                                        $('#otherbenefits').textbox('readonly',false);    
+                                   }
+                                   else
+                                   {
+                                         $('#otherbenefits').textbox('setValue','');
+                                      //   $('#otherbenefits').textbox('readonly',false);
+                                   }
+                                }
+                                ">
+                            <option value="1">ประกันสังคม</option>
+                            <option value="2">บัตรทอง</option>
+                            <option value="3">จ่ายตรงข้าราชการ</option>
+                            <option value="4">เงินสด</option>
+                            <option value="5">อื่นๆ </option>
+
+                        </select>
+
+                        <input class="easyui-textbox"  style="width: 200px;height: 30px;"    id="otherbenefits_view" name="otherbenefits_view"  readonly="true"   />
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                      <td>หมายเลข :</td>
+                      <td> <input class="easyui-textbox"  style="width:200px;height: 30px;"   id="numberbenefits_view"  name="numberbenefits_view"     />  </td>
+                </tr>
+
+
+             <tr>
+            <td>
+               เคยได้รับการรักษามาก่อน :
+            </td>
+            <td>
+                <input type="radio" name="evertreat"  id="evertreat1" value="1"    /> ไม่ทราบ
+                <input type="radio" name="evertreat"  id="evertreat2"  value="2"   /> ไม่เคย
+                <input type="radio" name="evertreat"  id="evertreat3"   value="3" /> เคย ระบุ : <input class="easyui-textbox"  name="otherevertreat"   id="otherevertreat"   style="width:150px;height: 30px;"   />
+                
+
+            </td>
+           </tr>
+
+
+           <tr>
+               <td>
+                   สถานที่ที่ได้รับการรักษามาก่อน :
+               </td>
+               <td>
+                   <input class="easyui-textbox" type="text" name="treatmentfacility_view"   id="treatmentfacility_view" style="width:170px;height: 30px;"    />
+               </td>
+           </tr>
+
+
+           <tr>
+               <td>
+                   แพทย์เจ้าของคนไข้ :
+               </td>
+               <td>
+                   
+                   
+                   <input class="easyui-textbox" type="text" name="doctor" id="doctor"  id="doctor"   ></input>
+                   
+                   
+               </td>
+           </tr>
+
+
+               <tr>
+                   <td>ระดับพัฒนาการผู้ป่วย :  </td>
+                   <td>
+                       <input type="radio" name="developmentallevel" value="1"  id="developmentallevel1"   class="easyui-validatebox" > 
+                       ปกติ <input type="radio" name="developmentallevel_text"   id="developmentallevel2"   value="2"  class="easyui-validatebox" required="true" checked="true">
+                       ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม 
+                       <input class="easyui-textbox"  id="otherdevelopmentallevel_view"  name="otherdevelopmentallevel_view"  style="width: 150px;height: 30px;"  readonly="true" />
+                   </td>
+               </tr>
+
+               <tr>
+                   <td colspan="2">
+                      <?=nbs(50)?>
+                       
+                   <!--    
+          <a href="javascript:void(0)" class="easyui-linkbutton"
+           iconCls="icon-man"
+           style="width:100px;height:40px;"
+            onClick="
+               $('#fr_add_patient').form('submit',{
+                   url:'<?=base_url()?>index.php/welcome/insert_patient/',
+                   success:function(data)
+                   {
+                          //alert(data);
+                          
+                          if( data == '1' )
+                          {
+                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');                     
+                                    $('#dia1').dialog('close');
+                                    $('#dg1').datagrid('reload');
+                          }else if( data == '0' )
+                          {
+                                   $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลล้มเหลว');
+                          }
+                          
+                         
+                   }
+               });
+
+              "  >  บันทึกข้อมูล </a>
+                       <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-remove"  onclick="  $('#dia1').dialog('close');   "  > ปิด (Close) </a>     
+                       -->
+                       
+                       
+                       <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"   iconCls='icon-edit'    >แก้ไข</a>
+                       
+
+                   </td>
+               </tr>
+
+            </table>
+
+                 </form>
+
+
+
+
+        </div>
+        <div title="ประวัติการตั้งครรภ์" style="padding:10px">
+
+
+
+    <div style="margin:20px 0;"></div>
+
+    <table cellpadding="5">
+        <tr>
+            <td>
+                ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+            <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+
+            </td>
+        </tr>
+
+          <tr>
+            <td>
+                สูบบุหรี่ในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> มวลต่อวัน
+
+
+                  <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+
+
+
+            </td>
+        </tr>
+
+                  <tr>
+            <td>
+                ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> ซีซีต่อวัน
+
+
+                  <?=nbs(5)?>
+            ไม่ทราบ
+            <input  type="radio"  />
+            จำไม่ได้
+              <input  type="radio"  />
+
+
+
+            </td>
+        </tr>
+
+    </table>
+
+
+
+        </div>
+
+
+        <div title="ประวัติการคลอด" data-options="closable:false" style="padding:10px">
+            <table cellpadding="5">
+                <tr>
+                    <td>
+                        อายุครรภ์ :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        วิธีคลอด :
+                    </td>
+                    <td>
+
+                        <!--
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                          -->
+
+                          <input type="radio"> ธรรมชาติ
+                          <input type="radio"> ผ่าตัด
+                          <input type="radio"> อื่นๆ
+                          <input class="easyui-textbox"  style="width:200px;height: 30px;"   />
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        น้ำหนักแรกคลอด :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ส่วนสูงแรกคลอด :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ปัญหาแรกคลอด :
+                    </td>
+                    <td>
+                        <input type="radio" /> ไม่มี  <input type="radio" /> มี
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                    </td>
+                </tr>
+
+                <!--
+                 <tr>
+                    <td>
+                        อื่นๆ :
+                    </td>
+                    <td>
+                        <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
+                    </td>
+                </tr>
+                -->
+
+            </table>
+        </div>
+
+
+           <div title="ประวัติครอบครัว" data-options="iconCls:'icon-save',closable:false" style="padding:10px">
+                <table cellpadding="5">
+
+                <tr>
+                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>
+
+                </tr>
+
+                <tr>
+                    <td>ญาติที่เกี่ยวพันทางสายเลือดมีภาวะปากแหว่งเพดานโหว่หรือไม่ : </td>
+                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
+                </tr>
+
+                <!--
+                <tr>
+                     <td>ระดับพัฒนาการผู้ป่วย : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ปกติ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ</td>
+                </tr>
+                -->
+
+                <tr>
+                    <td>อายุบิดาในขณะที่มีบุตร :</td>
+                    <td><input class="easyui-textbox" style="width:70px;height: 30px;"></td>
+                </tr>
+
+                            <tr>
+                    <td>อายุมารดาในขณะที่มีบุตร :</td>
+                    <td><input class="easyui-textbox" style="width:70px;height: 30px;"></td>
+                </tr>
+
+                <tr>
+                     <td></td>
+                    <td><input type="submit" value="Submit"></input></td>
+
+                </tr>
+
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+<!----  แสดงประวัติผู้ป่วย --->
 
 
     </body>

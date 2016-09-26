@@ -24,13 +24,18 @@
     
     
         <div class="easyui-layout" data-options="fit:true">
-            <div data-options="region:'east',split:true"  style="width:400px">
+            <div data-options="region:'east',split:true"  style="width:10px">
                 
+                
+                <!--
                 <div style="padding: 5px">
                     <input class="easyui-textbox"  style="width:30px;height: 40px;"  id="id_main"  readonly="true"  />
                 </div>
+                -->
+                
                 
                 <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
+                <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 1. Pre-surgical orthopedics therapy (PSOT) "  id="dg_view_fr1"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr1/' + $('#id_main').textbox('getValue')  ,
@@ -45,9 +50,11 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                <!--  1. Pre-surgical orthopedics therapy (PSOT)   -->
+                -->
+            
                 
                      <!--    	4. Interceptive orthodontic treatment    -->
+                     <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 4. Interceptive orthodontic treatment  "  id="dg_view_fr4"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr4/' + $('#id_main').textbox('getValue')   ,
@@ -62,9 +69,10 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                <!--   	4. Interceptive orthodontic treatment    -->
+                    -->
                 
                 <!--  6. Bone graft surgery     -->
+                <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  6. Bone graft surgery  "  id="dg_view_fr6"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr6/'  + $('#id_main').textbox('getValue')    ,
@@ -79,10 +87,11 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                 <!--  6. Bone graft surgery     -->
+                 -->
                  
                                
                                    <!--  7. Growth modification      -->
+                  <!--                 
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title=" 7. Growth modification   "  id="dg_view_fr7"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr7/'  + $('#id_main').textbox('getValue')   ,
@@ -97,9 +106,10 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                 <!--  7. Growth modification     -->
+                 -->
                  
                 <!--   	8. Corrective Orthodontic Treatment      -->
+                <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  8. Corrective Orthodontic Treatment    "  id="dg_view_fr8"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr8/'  + $('#id_main').textbox('getValue')  ,
@@ -114,10 +124,11 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                 <!--   	8. Corrective Orthodontic Treatment      -->
+                 -->
                  
                  
                 <!--   9. Orthognathic surgery    1    -->
+                <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9.Orthognathic surgery(Main)   "  id="dg_view_fr9_1"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr9/'  + $('#id_main').textbox('getValue')   ,
@@ -132,10 +143,11 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                  <!--   9. Orthognathic surgery    1    -->
+                  -->
                   
                   
                 <!--   9. Distraction  -->
+                <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  9. Distraction    "  id="dg_view_fr9_2"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr9_2/'   + $('#id_main').textbox('getValue')   ,
@@ -150,9 +162,10 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                  <!--  9. Distraction    -->
+                  -->
                   
               <!---------------10. Other surgery    1 ----------------->
+              <!--
                 <div class="easyui-datagrid"    iconCls="icon-large-picture"   title="  10.Vestibuloplasty   "  id="dg_view_fr10_1"
                      data-options="
                         url:'<?=base_url()?>index.php/welcome/showjson_fr10_1/'   +  $('#id_main').textbox('getValue')   ,
@@ -167,7 +180,7 @@
                      "
                      style="width: 400px;height: 200px;padding: 5px;"    >
                 </div>
-                 <!---------------10. Other surgery    1 ----------------->
+                -->
                   
                   
                  
@@ -234,7 +247,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat15')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  </td> -->
-                    <td>6. Bone graft surgery  </td>
+                    <td>5. Bone graft surgery  </td>
                 </tr>
                 
                 
@@ -244,7 +257,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12_7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
-                    <td>7. Growth modification  </td>
+                    <td>6. Growth modification  </td>
                 </tr>
                 
                 
@@ -254,7 +267,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
-                    <td>8.  Corrective Orthodontic Treatment  </td>
+                    <td>7.  Corrective Orthodontic Treatment  </td>
                 </tr>
                 
                 
@@ -264,7 +277,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia9')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!--  <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td> -->
-                     <td>9. Orthognathic surgery  </td>
+                     <td>8. Orthognathic surgery  </td>
                 </tr>
                 
                 
@@ -274,7 +287,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia10')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
-                    <td>10. Other surgery  </td>
+                    <td>9. Other surgery  </td>
                 </tr>
                 
                 
@@ -285,7 +298,7 @@
                         <a href="javaScript:void(0)" onclick="dialog3('#dia11')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
-                    <td>11. Other dental procedure  </td>
+                    <td>10. Other dental procedure  </td>
                 </tr>
                 
                 

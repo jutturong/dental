@@ -362,7 +362,7 @@
                 <!-----------------   CN   ----------------->          
                 <tr>
                            <td>
-                                  ค้นหาจาก CN :
+                                  ค้นหาจากเลขสปสช. :
                         
 
                                 <input class="easyui-combogrid" style="width:200px;height: 40px;" data-options="
