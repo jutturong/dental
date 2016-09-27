@@ -480,7 +480,25 @@
                       //date_fr1
                        var  strdate=$('#date_fr11_1').datebox('getValue')
                        var  date1=strdate.split(" ");
-                       
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr11_1').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr11_1').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      } 
+                      
                       
                         
                  });
@@ -496,9 +514,26 @@
                       //date_fr1
                        var  strdate=$('#date_fr11_2').datebox('getValue')
                        var  date1=strdate.split(" ");
+                                             var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr11_2').textbox('getValue');
                       
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr11_2').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      } 
                       
-                        
+
                  });
              });
 
@@ -823,6 +858,10 @@
                          <!-------------------- begin ---------------------->    
                          <form id="fr10_2"  method="post" enctype="multipart/form-data">           
                               <div style="padding: 10px 5px;">
+                                  
+                            <input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                            <input class="easyui-textbox"  id="y_fr10_2"   name="y_fr10_2"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                            
                 <label>
                     ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  />
                         <input class="easyui-textbox"  id="name_lastname_fr10_2"  name="name_lastname_fr10_2"  style="width:200px;height: 30px;" readonly="true"  />
@@ -1007,6 +1046,11 @@
        <!-------------------- begin ---------------------->    
        <form id="fr10_3"  method="post" enctype="multipart/form-data">    
              <div style="padding: 10px 5px;">
+                 
+                 <input class="easyui-textbox"  id="id_history_patient_fr10_3"   name="id_history_patient_fr10_3"  style="width:30px;height: 30px;"  readonly="true"  />
+                 <input class="easyui-textbox"  id="y_fr10_3"   name="y_fr10_3"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                 
+                 
                 <label>
                     ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_3"   name="id_history_patient_fr10_3"  style="width:30px;height: 30px;"  readonly="true"  />
                         <input class="easyui-textbox"  id="name_lastname_fr10_3"  name="name_lastname_fr10_3"  style="width:200px;height: 30px;" readonly="true"  />
@@ -1195,8 +1239,12 @@
       <!-------------------- begin ---------------------->    
       <form id="fr10_4"  method="post" enctype="multipart/form-data">  
              <div style="padding: 10px 5px;">
+                 
+                 <input class="easyui-textbox"  id="id_history_patient_fr10_4"   name="id_history_patient_fr10_4"  style="width:30px;height: 30px;"  readonly="true"  />
+                 <input class="easyui-textbox"  id="y_fr10_4"   name="y_fr10_4"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                 
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_4"   name="id_history_patient_fr10_4"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :   
                         <input class="easyui-textbox"  id="name_lastname_fr10_4"  name="name_lastname_fr10_4"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -1381,8 +1429,12 @@
      <!-------------------- begin ---------------------->   
      <form id="fr10_5"  method="post" enctype="multipart/form-data">  
                   <div style="padding: 10px 5px;">
+                      
+                       <input class="easyui-textbox"  id="id_history_patient_fr10_5"   name="id_history_patient_fr10_5"  style="width:30px;height: 30px;"  readonly="true"  />
+                       <input class="easyui-textbox"  id="y_fr10_5"   name="y_fr10_5"  style="width:50px;height: 30px;"  readonly="true"  />   
+                       
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_5"   name="id_history_patient_fr10_5"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :  
                         <input class="easyui-textbox"  id="name_lastname_fr10_5"  name="name_lastname_fr10_5"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -1565,8 +1617,12 @@
        <!-------------------- begin ----------------------> 
        <form id="fr10_6"  method="post"   enctype="multipart/form-data"  >  
                          <div style="padding: 10px 5px;">
+                             
+                    <input class="easyui-textbox"  id="id_history_patient_fr10_6"   name="id_history_patient_fr10_6"  style="width:30px;height: 30px;"  readonly="true"  />
+                    <input class="easyui-textbox"  id="y_fr10_6"   name="y_fr10_6"  style="width:50px;height: 30px;"  readonly="true"  />  
+                    
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_6"   name="id_history_patient_fr10_6"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :   
                         <input class="easyui-textbox"  id="name_lastname_fr10_6"  name="name_lastname_fr10_6"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -5494,7 +5550,7 @@
 
 
 
-<div id="dia11"  title="11. Other dental procedure  " style="width:800px;height: 600px;padding: 10px;" class="easyui-dialog"     data-options="
+<div id="dia11"  title="10. Other dental procedure  " style="width:800px;height: 600px;padding: 10px;" class="easyui-dialog"     data-options="
      
      closed:true,
      buttons:[
@@ -5607,8 +5663,11 @@
      
      <div style="padding: 10px 5px"  >
          
+          <input class="easyui-textbox"  id="id_history_patient_fr11_1"   name="id_history_patient_fr11_1"  style="width:30px;height: 30px;"  readonly="true"  />
+          <input class="easyui-textbox"  id="y_fr11_1"   name="y_fr11_1"  style="width:50px;height: 30px;"  readonly="true"  />  
+          
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr11_1"   name="id_history_patient_fr11_1"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :  
                         <input class="easyui-textbox"  id="name_lastname_fr11_1"  name="name_lastname_fr11_1"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -5637,9 +5696,9 @@
             วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox"  id="date_fr11_1"  name="date_fr11_1"  style="widht:200px;height: 30px;"  />
             
             
-            <!--
+            
             <a href="javascript:void(0)"  id="cal1_fr11_1"  name="cal1_fr11_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            -->
+            
             
             <label>อายุ </label>
             <input class="easyui-textbox"  id="age1_fr11_1" name="age1_fr11_1" style="width: 50px;height: 40px;"    />
@@ -5808,8 +5867,12 @@
 <form id="fr11_2"  method="post" enctype="multipart/form-data">
      <div style="padding: 10px 5px"  >
          
+           <input class="easyui-textbox"  id="id_history_patient_fr11_2"   name="id_history_patient_fr11_2"  style="width:30px;height: 30px;"  readonly="true"  />
+           <input class="easyui-textbox"  id="y_fr11_2"   name="y_fr11_2"  style="width:50px;height: 30px;"  readonly="true"  />  
+           
+           
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr11_2"   name="id_history_patient_fr11_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล : 
                         <input class="easyui-textbox"  id="name_lastname_fr11_2"  name="name_lastname_fr11_2"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -5828,9 +5891,9 @@
         <label>
             วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr11_2"  name="date_fr11_2"   style="widht:200px;height: 30px;"  />
             
-            <!--
+            
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr11_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            -->
+            
             
             <label>อายุ</label>
             <input class="easyui-textbox"  id="age1_fr11_2"  style="width: 50px;height: 40px;"    />

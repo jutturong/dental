@@ -207,14 +207,49 @@
                                          //age1_fr10_1
                                           $('#y_fr10_1').textbox('setValue',ex1[0]);   //3575
                                           //<input class="easyui-textbox"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />
-                                                      
-                                                      
-                                                      
+                                          
+                                          //<input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                                          $('#y_fr10_2').textbox('setValue',ex1[0]);          
+                                         //<input class="easyui-textbox"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />           
+                                          
+                                          
+                                          $('#y_fr10_3').textbox('setValue',ex1[0]);       
+                                         //<input class="easyui-textbox"  id="y_fr10_3"   name="y_fr10_3"  style="width:50px;height: 30px;"  readonly="true"  />    
+                                          
+                                          
+                                           // id="id_history_patient_fr10_4"  
+                                          $('#y_fr10_4').textbox('setValue',ex1[0]);    
+                                         //<input class="easyui-textbox"  id="y_fr10_4"   name="y_fr10_4"  style="width:50px;height: 30px;"  readonly="true"  />    
+                                  
+                                  
+                                           //id="id_history_patient_fr10_5"
+                                           $('#y_fr10_5').textbox('setValue',ex1[0]);    
+                                        //<input class="easyui-textbox"  id="y_fr10_5"   name="y_fr10_5"  style="width:50px;height: 30px;"  readonly="true"  />    
+                                        
+                                        
+                                        // id="id_history_patient_fr10_6" 
+                                         $('#y_fr10_6').textbox('setValue',ex1[0]);   
+                                        //<input class="easyui-textbox"  id="y_fr10_6"   name="y_fr10_6"  style="width:50px;height: 30px;"  readonly="true"  />  
+                                        
+                                
+                                         
+                                         
+                                        
                                             //-------------fr1----------------------------------------- 
-                                             $('#age1_fr11_1').textbox('setValue',calage);
-                                             $('#age1_fr11_2').textbox('setValue',calage);
+                                            // $('#age1_fr11_1').textbox('setValue',calage);
+                                            // $('#age1_fr11_2').textbox('setValue',calage);
+                                             
+                                             
+                                         //id="id_history_patient_fr11_1"
+                                         $('#y_fr11_1').textbox('setValue',ex1[0]);   
+                                         //<input class="easyui-textbox"  id="y_fr11_1"   name="y_fr11_1"  style="width:50px;height: 30px;"  readonly="true"  />  
                                          
  
+                                          $('#y_fr11_2').textbox('setValue',ex1[0]); 
+                                         //<input class="easyui-textbox"  id="y_fr11_2"   name="y_fr11_2"  style="width:50px;height: 30px;"  readonly="true"  />  
+                                           
+                                           
+                                           
                                        }
                                   
                                   //-----1. Pre-surgical orthopedics therapy (PSOT)--------- 
