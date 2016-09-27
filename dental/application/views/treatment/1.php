@@ -2609,6 +2609,8 @@
                                                   //alert(id);
                                                   if( id > 0 )
                                                   {
+                                                       $('#id_psot').textbox('setValue',id);
+                                                      
                                                       $.post('<?=base_url()?>index.php/welcome/edit_json1',{ id:id },function(data){
                                                              
                                                              //alert(data);
@@ -2635,7 +2637,44 @@
                                                                       var  end_date=key.end_date;
                                                                        $('#date2_fr1').textbox('setValue', end_date  );
                                                                        var  procedure=key.procedure;
-                                                                       alert(procedure);
+                                                                       //alert(procedure);
+                                                                      if( procedure == 1  )
+                                                                      {
+                                                                           $('#strapping').attr('checked',true);
+                                                                       }
+                                                                       
+                                                                       var  nasal=key.nasal;
+                                                                       //alert( nasal );
+                                                                       if( nasal == 1 )
+                                                                       {
+                                                                           $('#nasal_fr1').attr('checked',true);
+                                                                       }
+                                                                       
+                                                                       var  alveolar=key.alveolar;
+                                                                     //  alert( alveolar );
+                                                                       if( alveolar == 1 )
+                                                                       {
+                                                                            $('#alveolar').attr('checked',true);
+                                                                       }
+                                                                       
+                                                                       var  simple=key.simple;
+                                                                       //alert(  simple );
+                                                                       if( simple ==1 )
+                                                                       {
+                                                                             $('#simple').attr('checked',true);
+                                                                       }
+                                                                     
+                                                                       var  other_procedure=key.other_procedure;
+                                                                       //alert( other_procedure);
+                                                                       if(  other_procedure == 1 )
+                                                                       {
+                                                                            $('#other_procedure').attr('checked',true);
+                                                                       }
+                                                                      
+                                                                      var  otherprocedure=key.otherprocedure;
+                                                                     // alert( otherprocedure );
+                                                                      $('#otherprocedure_fr1').textbox('setValue',otherprocedure);
+                                                                       
                                                                    
                                                              });
                                                           
@@ -2744,6 +2783,7 @@
                     <td align="left">
                          <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
                          <input class="easyui-textbox"  id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
+                         <input class="easyui-textbox" id="id_psot"  style="width:30px;height: 30px;"  readonly="true"  />
                         ชื่อ - นามสกุล :
                     </td>
                     <td>
