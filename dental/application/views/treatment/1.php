@@ -2630,6 +2630,15 @@
                                                                      var  doctor=key.doctor;
                                                                    //  alert(doctor);
                                                                      $('#doctor_fr1').textbox('setValue', doctor );
+                                                                     
+                                                                     /*
+                                                                     $('#doctor_fr1').textbox({
+                                                                         iconCls:'icon-ok',
+                                                                         
+                                                                     });
+                                                                     */
+                                                                    
+                                                                      
                                                                      var  joindoctor=key.joindoctor;
                                                                      $('#joindoctor_fr1').textbox('setValue',joindoctor);
                                                                      var  begin_date=key.begin_date;
@@ -2674,7 +2683,29 @@
                                                                       var  otherprocedure=key.otherprocedure;
                                                                      // alert( otherprocedure );
                                                                       $('#otherprocedure_fr1').textbox('setValue',otherprocedure);
-                                                                       
+                                                                      
+                                                                      var   file1=key.file1;
+                                                                      //alert(  file1  );
+                                                                      var   file2=key.file2;
+                                                                     // alert(  file2  );
+                                                                      var   file3=key.file3;
+                                                                      //alert(  file3  );
+                                                                      
+                                                                   
+                                                                      var  cast=key.cast;
+                                                                     // alert(cast);
+                                                                     
+                                                                     if( cast == 1 )
+                                                                     {
+                                                                           //$('#')
+                                                                           $('#yes').attr('checked',true);
+                                                                     }
+                                                                     else if( cast == 2 )
+                                                                     {
+                                                                            $('#no').attr('checked',true);
+                                                                     }
+                                                                     
+                                                                     
                                                                    
                                                              });
                                                           
@@ -3053,7 +3084,7 @@
                 
                 <tr>
                     <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save/Update</a>
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">Close</a>
                     </td>
                   
@@ -3659,6 +3690,94 @@
                      
                 ]],
                 toolbar:[  
+                     { text:'View/Update' , iconCls:'icon-edit' , handler:function()
+                            { 
+                                  var  row=$('#dg_fr7').datagrid('getSelected');
+                                  var  id=row.id_growth;
+                                  //alert(id);
+                                    $('#id_growth').textbox('setValue',id);
+                                    if( id > 0  &&  row )
+                                    {
+                                           var  url=  '<?=base_url()?>index.php/welcome/edit_jons7';
+                                           $.post(url,{ id:id },function(data)
+                                              {
+                                                   
+                                                       $.each(data,function(i,k){
+                                                       $('#doctor_fr7').textbox('setValue',k.doctor);
+                                                        
+                                                       $('#date_fr7').datetimebox('setValue',k.begin_date);
+                                                       $('#date2_fr7').datetimebox('setValue',k.end_date);
+                                                       
+                                                       var  goslon=k.goslon;
+                                                       
+                                                        $('#goslon_fr7').combobox('setValue',goslon);
+                                                        
+                                                        var  incisor=k.	incisor;
+                                                        
+                                                        $('#Incisor_fr7').combobox('setValue',incisor);
+                                                        
+                                                       var  skeletal=k.skeletal;
+
+                                                           if(  skeletal == 1 )
+                                                           {
+                                                                 $('#skeletal1_fr7').attr('checked',true);
+                                                           }
+                                                           else   if(  skeletal == 2 )
+                                                           {
+                                                                 $('#skeletal2_fr7').attr('checked',true);
+                                                           }
+                                                               else   if(  skeletal == 3 )
+                                                           {
+                                                                 $('#skeletal3_fr7').attr('checked',true);
+                                                           }
+                                                     
+                                                     
+                                                     //facialmask
+                                                     
+                                                      var  typetool=k.typetool;
+                                                      //alert( typetool  );
+                                                 
+                                                 if(   typetool == 1  )
+                                                 {
+                                                       $('#facialmask').attr('checked',true);
+                                                 }
+                                                 
+                                                    
+                                                 
+                                                    var   other_typetool=k.other_typetool;
+                                                    $('#other_typetool_fr7').textbox('setValue',other_typetool);
+                                                 
+                                                 if( k.appliance == 1)
+                                                 {
+                                                       $('#appliance_fr7').attr('checked',true);
+                                                 }
+                                                  
+                                                  var  other_appliance=k.other_appliance;
+                                                  
+                                                   $('#other_appliance_fr7').textbox('setValue',other_appliance);
+                                                    
+                                     
+                                                  var  dentalcast=k.dentalcast;
+                                                  //alert( dentalcast  );
+                                                  
+                                                  if(  dentalcast == 1 ) 
+                                                  {
+                                                         $('#dentalcast1_fr7').attr('checked',true);
+                                                   }    
+                                                   else   if(  dentalcast == 2 ) 
+                                                  {
+                                                         $('#dentalcast2_fr7').attr('checked',true);
+                                                   } 
+                                                   
+                                                   
+                                                        
+                                                    });
+                                              },'json')
+                                        
+                                    }
+                                 
+                            }
+                    },
                      {  text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr7').datagrid('reload');  }  },
                      {  text:'Delete',iconCls:'icon-cancel', handler:function()
                             {    
@@ -3759,6 +3878,8 @@
                         
                               <input class="easyui-textbox"  id="id_history_patient_fr7"   name="id_history_patient_fr7"  style="width:30px;height: 30px;"  readonly="true"  />
                               <input class="easyui-textbox"  id="y_fr7"   name="y_fr7"  style="width:50px;height: 30px;"  readonly="true"  />
+                               <input class="easyui-textbox"  id="id_growth"   name="id_growth"  style="width:50px;height: 30px;"  readonly="true"  />
+                              
                               
                           ชื่อ - นามสกุล : 
                     </td>
@@ -3977,7 +4098,7 @@
                               });
                            
                            "
-                           >Save</a>
+                           >Save/Update</a>
                         <a href="javascript:void(0)" onclick=" $('#dia_treat12_7').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
@@ -4004,7 +4125,7 @@
            >ดูข้อมูล</a>
     </div>
     
-    <div class="easyui-dialog"  id="dia_fr8"   title="8. Corrective Orthodontic Treatment "  data-options="
+    <div class="easyui-dialog"  id="dia_fr8"   title="7. Corrective Orthodontic Treatment "  data-options="
          closed:true,
          buttons:[ {  text:'ปิด (Close)',iconCls:'icon-cancel' , handler:function(){ $('#dia_fr8').dialog('close');  }     } ]
          "  style="width: 500px;height: 400px;"  >
@@ -4024,6 +4145,110 @@
                 {  field:'dentalcast'  , align:'center'  , title:'Dental Cast'   },
                ]],
                toolbar:[
+                   {  text:'View/Update',  iconCls:'icon-man' ,  handler:function()
+                          {     
+                                   //alert('t');
+                                   
+                                    var  row=$('#dg_fr8').datagrid('getSelected');
+                                    var   id=row.id_corrective;
+                                    
+                                    
+                                    $('#id_corrective').textbox('setValue',id);
+                                    
+                                    var  url='<?=base_url()?>index.php/welcome/edit_json8';
+                                    $.post(url,{ id:id },function(data)
+                                       {
+                                              
+                                         
+                                           
+                                                /*
+                                                doctor_fr8
+                                                date_fr8
+                                                date2_fr8
+                                                goslon_fr8
+                                                           incisor1    
+                                                                   incisor2
+                                                                      incisor3 
+                                                                   incisor4
+                                                            skeletal1_fr8
+                                                                   skeletal2_fr8
+                                                                    skeletal3_fr8
+                                                tool_fr8
+                                                dentalcast_fr8
+                                                id_corrective
+                                                */
+                                                
+                                               
+                                                
+                                             $.each(data,function(i,k)
+                                              {
+                                                     $('#doctor_fr8').textbox('setValue',k.doctor);
+                                                     $('#date_fr8').datetimebox('setValue',k.begin_date);
+                                                     $('#date2_fr8').datetimebox('setValue',k.end_date);
+                                                     $('#goslon_fr8').combobox('setValue',k.goslon);
+                                                     
+                                                     var  incisor=k.incisor;
+                                                     if(  incisor == 1 )
+                                                     {
+                                                          $('#incisor1').attr('checked',true);    
+                                                     }
+                                                      else  if(  incisor == 2 )
+                                                     {
+                                                          $('#incisor2').attr('checked',true);    
+                                                     }
+                                                          else  if(  incisor == 3 )
+                                                     {
+                                                          $('#incisor3').attr('checked',true);    
+                                                     }
+                                                           else  if(  incisor == 4 )
+                                                     {
+                                                          $('#incisor4').attr('checked',true);    
+                                                     }
+                                                     
+                                                     var skeletal=k.skeletal;
+                                                     if(   skeletal  == 1  )
+                                                     {
+                                                           $('#skeletal1_fr8').attr('checked',true);
+                                                     }
+                                                     else    if(   skeletal  == 2  )
+                                                     {
+                                                           $('#skeletal2_fr8').attr('checked',true);
+                                                     }
+                                                      else    if(   skeletal  == 3  )
+                                                     {
+                                                           $('#skeletal3_fr8').attr('checked',true);
+                                                     }
+                                                     
+                                                     $('#tool_fr8').textbox('setValue',k.tool);
+                                                     
+                                                 
+                                                     
+                                                     
+                                                      var  dentalcast=k.dentalcast;
+                                                      
+                                                      if( dentalcast == 1 )
+                                                      {
+                                                               // id=dentalcast1_fr8
+                                                               $('#dentalcast1_fr8').attr('checked',true);
+                                                      }
+                                                      else if( dentalcast == 2 )
+                                                      {
+                                                             $('#dentalcast2_fr8').attr('checked',true);
+                                                      }
+                                                     
+                                                     
+                                              });
+                                                
+                                             
+                                                
+                                                
+                                                
+                                       },'json');
+                                    
+                                   
+                                   	
+                          }  
+                   },
                   { text:'Reload',iconCls:'icon-reload',handler:function(){ $('#dg_fr8').datagrid('reload');  } },
                   { text:'Delete',iconCls:'icon-cancel',handler:function(){
                                var  row=$('#dg_fr8').datagrid('getSelected');
@@ -4102,6 +4327,9 @@
                     <td>
                           <input class="easyui-textbox"  id="id_history_patient_fr8"   name="id_history_patient_fr8"  style="width:30px;height: 30px;"  readonly="true"  />
                            <input class="easyui-textbox"  id="y_fr8"   name="y_fr8"  style="width:50px;height: 30px;"  readonly="true"  />
+                           
+                            <input class="easyui-textbox"  id="id_corrective"   name="id_corrective"  style="width:50px;height: 30px;"  readonly="true"  />
+                           
                            
                           ชื่อ - นามสกุล : 
                     </td>
@@ -4302,7 +4530,7 @@
                                 });
                            "
                            
-                           >Save</a>
+                           >Save/Update</a>
                         <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
@@ -4528,6 +4756,105 @@
                         {  title:'Dental Cast  ',  field:'dentalcast'  },
                    ]],
                    toolbar:[ 
+                   { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
+                        {
+                               var   row= $('#dg_fr6').datagrid('getSelected');     
+                               var  id=row.id_bonegraft;
+                              // alert(id);
+                               $('#id_bonegraft').textbox('setValue',id);
+                               if( row )
+                               {
+                                     var  url='<?=base_url()?>index.php/welcome/edit_json6'; 
+                                     $.post(url,{ id:id },function(data)
+                                       {
+                                           //alert(data);
+                                            $.each(data,function(i,k)
+                                              {
+                                                    
+                                                    //--------------------------------------------------------
+                                                         $('#doctor_fr6').textbox('setValue',k.doctor);
+                                                         $('#date_fr6').datetimebox('setValue',k.date1);
+                                                         $('#technic').textbox('setValue',k.technic);
+                                                         
+                                                         var  dentalcast= k.dentalcast;
+                                                         
+                                                         if(  dentalcast == 1 )
+                                                         {   
+                                                                $('#dentalcast1_fr6').attr('checked',true);
+                                                         }
+                                                          else    if(  dentalcast == 2 )
+                                                         {   
+                                                                $('#dentalcast2_fr6').attr('checked',true);
+                                                         }
+                                                         
+                                                         
+                                                             
+                                                         //dentalcast1_fr6
+                                                         
+                                                         /*
+                                                          $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                          var  goslon=k.goslon;
+                                                          //alert(goslon);
+                                                           $('#goslon').combobox('setValue',goslon);
+                                                           var 	incisor=k.incisor;
+                                                           
+                                                           var   incisor=2;
+                                                           // alert(incisor);  
+                                                           //incisor1
+                                                                 if(  incisor == 1 )
+                                                                 {
+                                                                     $('#incisor1').attr('checked',true);
+                                                                 }
+                                                                 else if(   incisor == 2 )
+                                                                 {
+                                                                      $('#incisor2').attr('checked',true);
+                                                                 }
+                                                                  else if(   incisor  == 3)
+                                                                 {
+                                                                      $('#incisor3').attr('checked',true);
+                                                                 }
+                                                                  else if(  incisor  == 4)
+                                                                 {
+                                                                       $('#incisor4').attr('checked',true);
+                                                                 }
+                                                                 
+                                                                 var  skeletal=k.skeleta;
+                                                                 //alert( skeletal );
+                                                                 //  skeletal1
+                                                                 if(  skeletal == 1  )
+                                                                 {
+                                                                     $('#skeletal1').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 2 ) 
+                                                                 {
+                                                                     $('#skeletal2').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 3 ) 
+                                                                 {
+                                                                     $('#skeletal3').attr('checked',true);
+                                                                 }
+                                                                 
+                                                               var  dentalcast=k.dentalcast;
+                                                              // alert(dentalcast);
+                                                               if(  dentalcast == 1 )
+                                                               {
+                                                                     $('#dental_cast_yes').attr('checked',true);
+                                                               }
+                                                              else  if(  dentalcast == 2 )
+                                                               {
+                                                                     $('#dental_cast_no').attr('checked',true);
+                                                               }
+                                                            */
+                                                    
+                                                    //--------------------------------------------------------
+                                              });
+                                       },'json');
+                               }
+                               
+                               
+                               
+                        }  
+                    },
                    { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
                    {  text:'Delete',iconCls:'icon-remove',handler:function()
                          {   
@@ -4627,6 +4954,9 @@
                 <tr>
                       <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
                       <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
+                     <input class="easyui-textbox"  id="id_bonegraft"   name="id_bonegraft"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                      
+                      
                     <td>
                           ชื่อ - นามสกุล : 
                     </td>
@@ -4795,7 +5125,7 @@
                               })
                            "
                            
-                           >Save</a>
+                           >Save/Update</a>
                         <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
@@ -5299,6 +5629,91 @@
                      ]]
                      ,
                      toolbar:[
+                       { text:'ดูขั้อมูล/แก้ไขข้อมูล' , iconCls:'icon-man' , handler :function()
+                            { 
+                                    //alert('t');
+                                     var row=$('#dg_fr4').datagrid('getSelected');
+                                     if( row )
+                                     {
+                                          var  id=row.id_interceptive;
+                                          
+                                           $('#id_interceptive').textbox('setValue',id);
+                                          
+                                         // alert(id);
+                                          //$.post();
+                                          //http://127.0.0.1/dental/index.php/welcome/edit_json4
+                                          var  url='<?=base_url()?>index.php/welcome/edit_json4';
+                                          $.post(url,{id:id},function(data)
+                                            {
+                                                 // alert(data);
+                                                   $.each(data,function(v,k){
+                                                         //alert(k.doctor);
+                                                         $('#doctor_fr4').textbox('setValue',k.doctor);
+                                                         $('#date_fr4').datetimebox('setValue',k.begin_date);
+                                                          $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                          var  goslon=k.goslon;
+                                                          //alert(goslon);
+                                                           $('#goslon').combobox('setValue',goslon);
+                                                           var 	incisor=k.incisor;
+                                                           
+                                                           var   incisor=2;
+                                                           // alert(incisor);  
+                                                           //incisor1
+                                                                 if(  incisor == 1 )
+                                                                 {
+                                                                     $('#incisor1').attr('checked',true);
+                                                                 }
+                                                                 else if(   incisor == 2 )
+                                                                 {
+                                                                      $('#incisor2').attr('checked',true);
+                                                                 }
+                                                                  else if(   incisor  == 3)
+                                                                 {
+                                                                      $('#incisor3').attr('checked',true);
+                                                                 }
+                                                                  else if(  incisor  == 4)
+                                                                 {
+                                                                       $('#incisor4').attr('checked',true);
+                                                                 }
+                                                                 
+                                                                 var  skeletal=k.skeleta;
+                                                                 //alert( skeletal );
+                                                                 //  skeletal1
+                                                                 if(  skeletal == 1  )
+                                                                 {
+                                                                     $('#skeletal1').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 2 ) 
+                                                                 {
+                                                                     $('#skeletal2').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 3 ) 
+                                                                 {
+                                                                     $('#skeletal3').attr('checked',true);
+                                                                 }
+                                                                 
+                                                               var  dentalcast=k.dentalcast;
+                                                              // alert(dentalcast);
+                                                               if(  dentalcast == 1 )
+                                                               {
+                                                                     $('#dental_cast_yes').attr('checked',true);
+                                                               }
+                                                              else  if(  dentalcast == 2 )
+                                                               {
+                                                                     $('#dental_cast_no').attr('checked',true);
+                                                               }
+                                                            
+                                                                 
+                                                         
+                                                   });
+                                            },'json');
+                                          
+                                     }
+                                     
+                                         
+                            } 
+                        },
+                        
                        { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr4').datagrid('reload');  } },
                        {  text:'Delete',iconCls:'icon-remove', handler:function()
                                {
@@ -5400,6 +5815,8 @@
     <div style="padding:10px 5px;" >
         <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  />
         <input class="easyui-textbox"  id="y_fr4"   name="y_fr4"  style="width:50px;height: 30px;"  readonly="true"  />
+        <input class="easyui-textbox"  id="id_interceptive"   name="id_interceptive"  style="width:50px;height: 30px;"  readonly="true"  />
+        
         <label>
             
             ชื่อ - นามสกุล : 
@@ -5461,7 +5878,7 @@
     
       <div style="padding: 10px 5px;">
                     Incisor classification of malocclusion : 
-                    <input type="radio" name="incisor"   id="incisor1"  value="1" />  I
+                    <input type="radio"     name="incisor"   id="incisor1"  value="1" />  I
                     <input type="radio"   name="incisor" id="incisor2" value="2" />  II div 1
                     <input type="radio"   name="incisor" id="incisor3"  value="3" />  II div 2
                     <input type="radio"  name="incisor" id="incisor4" value="4"  />  III
@@ -5629,7 +6046,7 @@
                
            
            
-           " >Save</a>
+           " >Save/Update</a>
            <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 90px;height: 40px;" data-options=" iconCls:'icon-cancel'  "  onClick="  $('#dia_treat1').window('close');  "  >Close</a>
     </div>
     

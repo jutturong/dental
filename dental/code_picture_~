@@ -6,5 +6,8 @@
  $tb="tb_psot";  
 
 /*
-2617   dia_treat3
+   dia_treat3
 */
+
+4.   $tbj1="tb_history_patient";
+

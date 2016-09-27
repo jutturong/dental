@@ -850,7 +850,7 @@ $this->db->delete($tables);
                         $rows[]=$row;
                   }
                   echo  json_encode($rows);
-                  
+     
         }
         #   http://127.0.0.1/dental/index.php/welcome/del_fr4
         function del_fr4()
@@ -3496,6 +3496,101 @@ $this->db->delete($tables);
                  }
                  echo json_encode($rows);
          }
+         //  http://127.0.0.1/dental/index.php/welcome/edit_json4
+         function edit_json4()
+         {
+             
+             
+             /*
+                       $tb="tb_interceptive";  #4. Interceptive orthodontic treatment 
+                  $tbj1="tb_history_patient";
+                  $id=$this->uri->segment(3);
+                //  $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+                //  $q=$this->db->get($tb);
+                    $this->db->order_by("id_interceptive","desc");
+                   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
+                   
+                  foreach($q->result() as $row)
+                  {
+                        $rows[]=$row;
+                  }
+                  echo  json_encode($rows);
+     
+              */
+             
+                $tb="tb_interceptive"; 
+               $id=$this->input->get_post("id");
+               $q=$this->db->get_where($tb,array("id_interceptive"=>$id));
+                
+                
+                foreach($q->result() as $row)
+                    {
+                        $rows[]=$row;
+                    }
+                    echo   json_encode($rows);
+                
+                
+                
+             
+         }
+          #   http://127.0.0.1/dental/index.php/welcome/edit_json6 
+        function  edit_json6() //6. Bone graft surgery 
+        {
+            //`tb_bonegraft`
+                $tb="tb_bonegraft";
+                $tbj1="tb_history_patient";
+                
+              // $id=$this->uri->segment(3);
+                $id=$this->input->get_post("id");
+              // $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
+              $q= $this->db->get_where($tb,array($tb.".id_bonegraft"=>$id));
+              foreach($q->result() as $row)
+              {
+                  $rows[]=$row;
+              }
+              echo   json_encode($rows);
+        }
+          #   http://127.0.0.1/dental/index.php/welcome/edit_jons7
+        function edit_jons7() //7. Growth modification 
+        {
+             //  $id=$this->uri->segment(3);   
+               $id=trim($this->input->get_post("id"));
+              $tb="tb_growth"; 
+                      $tbj1="tb_history_patient";
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+                   // $q=$this->db->get($tb);
+                  // $this->db->order_by("id_growth","desc");
+                  $q=$this->db->get_where($tb,array($tb.".id_growth"=>$id));
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        }
+        
+       #   http://127.0.0.1/dental/index.php/welcome/edit_json8
+        function  edit_json8() //7. Growth modification 
+        {
+                      $tb="tb_corrective";
+                      $tbj1="tb_history_patient";
+                      
+                      // $id=$this->uri->segment(3);
+                       $id=$this->input->get_post("id");
+                       //$id=2;
+                       
+              //  $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+                  //  $q=$this->db->get($tb);
+              //  $this->db->order_by("id_corrective","desc");
+                 $q=$this->db->get_where($tb,array($tb.".id_corrective"=>$id));
+                 
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+                    
+                    
+        }
 }
 
 /* End of file welcome.php */
