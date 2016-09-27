@@ -141,7 +141,7 @@
                              {
                                     //alert(row);
                                     var  id=row.id_history_patient;  
-                                    var  	firstname=row.firstname;
+                                    var   firstname=row.firstname;
                                     var    lastname=row.lastname;
                                       
                                      var  br=row.birthdate;
@@ -160,34 +160,56 @@
                                            // alert(  calage );
                                            
                                            //----------- fr1------------------------------------------
-                                           $('#age1_fr1').textbox('setValue',calage);
-                                           $('#age2_fr1').textbox('setValue',calage);
+                                        //   $('#age1_fr1').textbox('setValue',calage);
+                                       //    $('#age2_fr1').textbox('setValue',calage);
+                                            $('#y_fr1').textbox('setValue',ex1[0]);
+                                            //<input class="easyui-textbox"  id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
+                                           
+                                           
                                            
                                            //------------ fr4-----------------------------------------
-                                           $('#age1_fr4').textbox('setValue',calage);
-                                           $('#age2_fr4').textbox('setValue',calage);
+                                          // $('#age1_fr4').textbox('setValue',calage);
+                                         //  $('#age2_fr4').textbox('setValue',calage);   91  5122
+                                          //<input class="easyui-textbox"  id="y_fr4"   name="y_fr4"  style="width:50px;height: 30px;"  readonly="true"  />   5192
+                                             $('#y_fr4').textbox('setValue',ex1[0]);  //5198
                                            
                                            //-------------fr6-----------------------------------------
-                                            $('#age1_fr6').textbox('setValue',calage);
+                                           // $('#age1_fr6').textbox('setValue',calage);
+                                          //  <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />  4428
+                                          //121
+                                          //4432
+                                           $('#y_fr6').textbox('setValue',ex1[0]);  //4432
                                             
                                             //-------------fr7-----------------------------------------
-                                            $('#age1_fr7').textbox('setValue',calage); 
-                                            $('#age2_fr7').textbox('setValue',calage); 
-                                              
+                                         //   $('#age1_fr7').textbox('setValue',calage); 
+                                         //   $('#age2_fr7').textbox('setValue',calage); 
+                                             //<input class="easyui-textbox"  id="y_fr7"   name="y_fr7"  style="width:50px;height: 30px;"  readonly="true"  />  //3575
+                                             $('#y_fr7').textbox('setValue',ex1[0]);   //3575
+                                             
                                               //-------------fr8-----------------------------------------
-                                            $('#age1_fr8').textbox('setValue',calage); 
-                                            $('#age2_fr8').textbox('setValue',calage); 
+                                          //  $('#age1_fr8').textbox('setValue',calage); 
+                                          //  $('#age2_fr8').textbox('setValue',calage); 
+                                            $('#y_fr8').textbox('setValue',ex1[0]);   //3575
+                                             //<input class="easyui-textbox"  id="y_fr8"   name="y_fr8"  style="width:50px;height: 30px;"  readonly="true"  />  //3575
                                             
                                              //-------------fr9-----------------------------------------
-                                            $('#age1_fr9').textbox('setValue',calage); 
-                                            $('#age1_fr9_2').textbox('setValue',calage);
-                                            $('#age2_fr9_2').textbox('setValue',calage);
-                                            
+                                        //    $('#age1_fr9').textbox('setValue',calage); 
+                                         //   $('#age1_fr9_2').textbox('setValue',calage);
+                                       //     $('#age2_fr9_2').textbox('setValue',calage);
+                                               $('#y_fr9').textbox('setValue',ex1[0]);   //3575
+                                             //<input class="easyui-textbox"  id="y_fr9"   name="y_fr9"  style="width:50px;height: 30px;"  readonly="true"  />  //3575
+                                               $('#y_fr9_2').textbox('setValue',ex1[0]);   //3575
+                                             //<input class="easyui-textbox"  id="y_fr9_2"   name="y_fr9_2"  style="width:50px;height: 30px;"  readonly="true"  />      
+                                                   
                                              //-------------fr10----------------------------------------- 
-                                             $('#age1_fr10_1').textbox('setValue',calage);
+                                         //    $('#age1_fr10_1').textbox('setValue',calage);
                                          //    $('#age1_fr10_2').textbox('setValue',calage);
                                          //age1_fr10_1
-                                          
+                                          $('#y_fr10_1').textbox('setValue',ex1[0]);   //3575
+                                          //<input class="easyui-textbox"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />
+                                                      
+                                                      
+                                                      
                                             //-------------fr1----------------------------------------- 
                                              $('#age1_fr11_1').textbox('setValue',calage);
                                              $('#age1_fr11_2').textbox('setValue',calage);
@@ -1157,27 +1179,28 @@ otherdevelopmentallevel
     <table cellpadding="5">
         <tr>
             <td>
-                ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+                1. ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true"> ใช่ <input class="easyui-textbox"   style="width: 100px;height: 30px;"  />   <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
             <?=nbs(5)?>
-            ไม่ทราบ
-            <input  type="radio"  />
-            จำไม่ได้
-              <input  type="radio"  />
+          
+            <input  type="radio"   name="tab2_1" />   ไม่ทราบ
+           
+              <input  type="radio"    name="tab2_1" />  จำไม่ได้
 
             </td>
         </tr>
 
           <tr>
             <td>
-                สูบบุหรี่ในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
-               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> มวลต่อวัน
+                2. สูบบุหรี่ในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true"> ใช่ <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"> มวลต่อวัน
+                <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+               <?=nbs(3)?>  </input> 
 
 
                   <?=nbs(5)?>
-            ไม่ทราบ
-            <input  type="radio"  />
-            จำไม่ได้
-              <input  type="radio"  />
+         
+            <input  type="radio"  name="tab2_2"  />    ไม่ทราบ
+            
+              <input  type="radio"  name="tab2_2"  />  จำไม่ได้
 
 
 
@@ -1186,15 +1209,15 @@ otherdevelopmentallevel
 
                   <tr>
             <td>
-                ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
-               <?=nbs(3)?>  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input> ซีซีต่อวัน
+                3. ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true"> ใช่  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input>  ซีซีต่อวัน <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
+               <?=nbs(3)?> 
 
 
                   <?=nbs(5)?>
-            ไม่ทราบ
-            <input  type="radio"  />
-            จำไม่ได้
-              <input  type="radio"  />
+           
+            <input  type="radio"  name="tab2_3"  />  ไม่ทราบ
+            
+              <input  type="radio"  name="tab2_3"  /> จำไม่ได้
 
 
 
@@ -1232,9 +1255,9 @@ otherdevelopmentallevel
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
                           -->
 
-                          <input type="radio"> ธรรมชาติ
-                          <input type="radio"> ผ่าตัด
-                          <input type="radio"> อื่นๆ
+                          <input type="radio"  name="tab3_1"  > ธรรมชาติ
+                          <input type="radio"   name="tab3_1" > ผ่าตัด
+                          <input type="radio"   name="tab3_1"  > อื่นๆ
                           <input class="easyui-textbox"  style="width:200px;height: 30px;"   />
 
                     </td>
@@ -1263,7 +1286,7 @@ otherdevelopmentallevel
                         ปัญหาแรกคลอด :
                     </td>
                     <td>
-                        <input type="radio" /> ไม่มี  <input type="radio" /> มี
+                        <input type="radio"  name="tab3_2"   /> ไม่มี  <input type="radio"  name="tab3_2"   /> มี
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
                     </td>
                 </tr>
@@ -1287,13 +1310,13 @@ otherdevelopmentallevel
                 <table cellpadding="5">
 
                 <tr>
-                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>
+                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>
 
                 </tr>
 
                 <tr>
                     <td>ญาติที่เกี่ยวพันทางสายเลือดมีภาวะปากแหว่งเพดานโหว่หรือไม่ : </td>
-                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
+                    <td> <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
                 </tr>
 
                 <!--

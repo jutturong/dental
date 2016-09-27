@@ -2,27 +2,30 @@
 <!--   วัน/เดือน/ปี ที่เริ่มทำการรักษา   ----------------->
 <script type="text/javascript">
             //-- คำนวณอายุของบิดา --
+            
              $(function(){
                  $('#cal1_fr1').bind('click',function(){
                       //date_fr1
                        var  strdate=$('#date_fr1').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr1').textbox('setValue',c);
-                       }
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr1').textbox('getValue');
                       
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                              $('#age1_fr1').textbox('setValue',ans1);
+                      }
+   
                         
                  });
              });
+    
 
 </script>
 
@@ -33,18 +36,20 @@
                       //date_fr1
                        var  strdate=$('#date2_fr1').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age2_fr1').textbox('setValue',c);
-                       }
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr1').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                             $('#age2_fr1').textbox('setValue',ans1);
+                      }
                       
                         
                  });
@@ -59,19 +64,21 @@
                       //date_fr1
                        var  strdate=$('#date_fr4').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr4').textbox('setValue',c);
-                       }
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr4').textbox('getValue');
                       
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                            $('#age1_fr4').textbox('setValue',ans1);
+                      }
                         
                  });
              });
@@ -85,18 +92,22 @@
                       //date_fr1
                        var  strdate=$('#date2_fr4').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age2_fr4').textbox('setValue',c);
-                       }
+                      var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr4').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                            $('#age2_fr4').textbox('setValue',ans1); 
+                      }
                       
                         
                  });
@@ -112,18 +123,22 @@
                       //date_fr1
                        var  strdate=$('#date_fr6').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr6').textbox('setValue',c);
-                       }
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr6').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                            $('#age1_fr6').textbox('setValue',ans1); 
+                      }
                       
                         
                  });
@@ -139,18 +154,23 @@
                       //date_fr1
                        var  strdate=$('#date_fr7').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr7').textbox('setValue',c);
-                       }
+                        var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr7').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                            $('#age1_fr7').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                       
                         
                  });
@@ -165,18 +185,24 @@
                       //date_fr1
                        var  strdate=$('#date2_fr7').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age2_fr7').textbox('setValue',c);
-                       }
+                        var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr7').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age2_fr7').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                       
                         
                  });
@@ -252,18 +278,26 @@
                       //date_fr1
                        var  strdate=$('#date_fr8').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr8').textbox('setValue',c);
-                       }
+                        
+                        var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr8').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr8').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
+                      
                       
                         
                  });
@@ -278,18 +312,25 @@
                       //date_fr1
                        var  strdate=$('#date2_fr8').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age2_fr8').textbox('setValue',c);
-                       }
+         
+                                 var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr8').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age2_fr8').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                       
                         
                  });
@@ -305,19 +346,26 @@
                       //date_fr1
                        var  strdate=$('#date_fr9').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr9').textbox('setValue',c);
-                       }
+                  
+                        
+                        var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr9').textbox('getValue');
                       
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr9').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                         
                  });
              });
@@ -331,18 +379,26 @@
                       //date_fr1
                        var  strdate=$('#date_fr9_2').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr9_2').textbox('setValue',c);
-                       }
+                         
+                        
+                        var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr9').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr9_2').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                       
                         
                  });
@@ -356,24 +412,65 @@
                       //date_fr1
                        var  strdate=$('#date2_fr9_2').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age2_fr9_2').textbox('setValue',c);
-                       }
+          
+            var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr9_2').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age2_fr9_2').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      }
                       
                         
                  });
              });
 
 </script>
+<!-- --------------------  	10. Other surgery  1 ------------------------->
+<script type="text/javascript">
+            //-- คำนวณอายุของบิดา --
+             $(function(){
+                 $('#cal1_fr10_1').bind('click',function(){
+                      //date_fr1
+                       var  strdate=$('#date_fr10_1').datebox('getValue')
+                       var  date1=strdate.split(" ");
+                       var  last1 = date1[0];
+                       var  last2 = last1.split("/");
+                       var  last3= last2[2];
+                      // alert(last3);
+                      var   Y= $('#y_fr10_1').textbox('getValue');
+                      
+                      if( last3 > 0 )
+                      {
+                             var  ans1=last3 - Y;
+                            //alert(ans1);
+                            //  $('#age2_fr1').textbox('setValue',c);
+                             // $('#age1_fr1').textbox('setValue',ans1);
+                            // $('#age2_fr1').textbox('setValue',ans1);
+                           // $('#age1_fr4').textbox('setValue',ans1);
+                           // $('#age1_fr7').textbox('setValue',ans1); 
+                                $('#age1_fr10_1').textbox('setValue',ans1); 
+                            // $('#age1_fr7').textbox('setValue',calage); 
+                      } 
+                      
+                      
+                        
+                 });
+             });
+
+</script>
+
 
 <!--------------11. Other dental procedure ----------------->
 <script type="text/javascript">
@@ -383,18 +480,7 @@
                       //date_fr1
                        var  strdate=$('#date_fr11_1').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr11_1').textbox('setValue',c);
-                       }
+                       
                       
                         
                  });
@@ -410,45 +496,7 @@
                       //date_fr1
                        var  strdate=$('#date_fr11_2').datebox('getValue')
                        var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr11_2').textbox('setValue',c);
-                       }
                       
-                        
-                 });
-             });
-
-</script>
-
-<!-- --------------------  	10. Other surgery  1 ------------------------->
-<script type="text/javascript">
-            //-- คำนวณอายุของบิดา --
-             $(function(){
-                 $('#cal1_fr10_1').bind('click',function(){
-                      //date_fr1
-                       var  strdate=$('#date_fr10_1').datebox('getValue')
-                       var  date1=strdate.split(" ");
-                        //alert( date1[0]  );
-                          var  bdyear=date1[0].split("/");
-                        //   alert( bdyear[2] );  //ปีเกิดปัจจุบัน
-                        var   d=new Date();
-                        var  curyear=d.getFullYear();
-                       // alert( curyear  ); //ปี พศ ปัจจุบัน
-                       if(   curyear  >=  bdyear[2]   )
-                       {
-                             var  c= curyear  -  bdyear[2];
-                             //alert( showAge );
-                             $('#age1_fr10_1').textbox('setValue',c);
-                       }
                       
                         
                  });
@@ -459,7 +507,9 @@
 
 
 
-<div id="dia10"  title="10. Other surgery " style="width:800px;height: 650px;padding: 5px;" class="easyui-dialog"     data-options="
+
+
+<div id="dia10"  title="9. Other surgery " style="width:800px;height: 650px;padding: 5px;" class="easyui-dialog"     data-options="
      closed:true,
      buttons:[
      //{  text:'Save', iconCls:'icon-save'   },
@@ -568,8 +618,13 @@
      <!-------------------- begin ---------------------->     
      <form id="fr10_1"  method="post" enctype="multipart/form-data" novalidate="novalidate">
      <div style="padding: 10px 5px;">
+           
+         <input class="easyui-textbox"  id="id_history_patient_fr10_1"   name="id_history_patient_fr10_1"  style="width:30px;height: 30px;"  readonly="true"  />
+         <input class="easyui-textbox"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />
+          
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_1"   name="id_history_patient_fr10_1"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล : 
+                      
                         <input class="easyui-textbox"  id="name_lastname_fr10_1"  name="name_lastname_fr10_1"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -585,11 +640,11 @@
          
      <div style="padding: 10px 5px"  >
         <label>
-            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_1" name="date_fr10_1"  readonly="true"  style="widht:200px;height: 30px;"  />
+            วัน/เดือน/ปี ที่ทำ  : <input class="easyui-datetimebox" id="date_fr10_1" name="date_fr10_1"    style="widht:200px;height: 30px;"  />
             
-           <!--
+           
             <a href="javascript:void(0)" id="cal1_fr10_1"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>  
-            -->
+            
           
             <label>อายุ </label>
             <input class="easyui-textbox"  id="age1_fr10_1"  readonly="true" style="width: 50px;height: 40px;"    />
@@ -1615,7 +1670,7 @@
 </div>
 
 
-<div id="dia9" title="9. Orthognathic surgery "    class="easyui-dialog" style="width:600px;height: 700px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
+<div id="dia9" title="8. Orthognathic surgery "    class="easyui-dialog" style="width:600px;height: 700px;left:10px;top: 10px;padding: 5px  5px  ;"  data-options="
      closed:true,
      
      ">
@@ -1750,8 +1805,10 @@
             <form id="fr9"  method="post" enctype="multipart/form-data">
             
                       <div style="padding: 10px 5px;">
+                          <input class="easyui-textbox"  id="y_fr9"   name="y_fr9"  style="width:50px;height: 30px;"  readonly="true"  />
+                          <input class="easyui-textbox"  id="id_history_patient_fr9"   name="id_history_patient_fr9"  style="width:30px;height: 30px;"  readonly="true"  />
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr9"   name="id_history_patient_fr9"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :   
                         <input class="easyui-textbox"  id="name_lastname_fr9"  name="name_lastname_fr9"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -1766,11 +1823,11 @@
     </div>
     <div style="padding: 10px 5px;">
         <label>
-            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datebox"  id="date_fr9"  name="date_fr9"  style="width:200px;height: 40px;"  />
+            วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datetimebox"  id="date_fr9"  name="date_fr9"  style="width:200px;height: 40px;"  />
             
-            <!--
+           
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            -->
+            
             
             <label>อายุ </label>
             <input class="easyui-textbox"  readonly="true"  id="age1_fr9" style="width: 50px;height: 40px;"    /> 
@@ -2026,8 +2083,10 @@
             <!---------------------- begin ------------------------------------------>
              <form id="fr9_2"  method="post" enctype="multipart/form-data">
                                 <div style="padding: 10px 5px;">
+                        <input class="easyui-textbox"  id="id_history_patient_fr9_2"   name="id_history_patient_fr9_2"  style="width:30px;height: 30px;"  readonly="true"  />             
+                        <input class="easyui-textbox"  id="y_fr9_2"   name="y_fr9_2"  style="width:50px;height: 30px;"  readonly="true"  />
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr9_2"   name="id_history_patient_fr9_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :  
                         <input class="easyui-textbox"  id="name_lastname_fr9_2"  name="name_lastname_fr9_2"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -2044,9 +2103,9 @@
         <label>
             วัน/เดือน/ปี ที่ทำการรักษา : <input class="easyui-datetimebox" id="date_fr9_2"   name="date_fr9_2" style="width:200px;height: 40px;"  />
             
-            <!--
+           
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal1_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            -->
+            
             
             <label>อายุ </label>
              <input class="easyui-textbox"  id="age1_fr9_2"  readonly="true"  style="width: 50px;height: 40px;"    /> 
@@ -2060,9 +2119,9 @@
         <label>
             วัน/เดือน/ปี ที่สิ้นสุดการรักษา : <input class="easyui-datetimebox" id="date2_fr9_2"  name="date2_fr9_2"  style="width:200px;height: 40px;"  />
           
-            <!--
+           
             <a href="javascript:void(0)"  class="easyui-linkbutton"  id="cal2_fr9_2"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-            -->
+            
             
             <label>อายุ </label>
             <input class="easyui-textbox"  id="age2_fr9_2"  readonly="true"  style="width: 50px;height: 40px;"    /> 
@@ -2578,11 +2637,13 @@
             <table>
                 
                  <tr>
-                    <td align="right">
+                    <td align="left">
+                         <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
+                         <input class="easyui-textbox"  id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
                         ชื่อ - นามสกุล :
                     </td>
                     <td>
-                        <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
+                       
                         <input class="easyui-textbox"  id="name_lastname"  name="name_lastname"  style="width:200px;height: 30px;" readonly="true"  />
                     </td>
                 </tr>
@@ -2605,11 +2666,19 @@
                 <tr>
                     <td>วัน/เดือน/ปี ที่เริ่มทำการรักษา :</td>
                     <td>
-                        <input name="date_fr1" id="date_fr1" class="easyui-datetimebox"></input>
+                        <input name="date_fr1" id="date_fr1" 
+                               
+                               
+                               class="easyui-datetimebox"></input>
                         
-                       <!-- <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "    style="widht:80px;height: 30px;"   id="cal1_fr1"      />คำนวณอายุ</a> -->
+                       <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  " 
+                          
+                          style="widht:80px;height: 30px;"   id="cal1_fr1"      />คำนวณอายุ</a>
                         <label>อายุ </label>
-                        <input class="easyui-textbox"  id="age1_fr1"  name="age1_fr1"  readonly="true"  style="width: 50px;height: 30px;"   />
+                        <input class="easyui-textbox"  id="age1_fr1"  name="age1_fr1"  readonly="true" 
+                             
+                               
+                               style="width: 50px;height: 30px;"   />
                          <label>ปี</label>
                     </td>
                 </tr>
@@ -2619,7 +2688,9 @@
                     <td>
                         <input    name="date2_fr1"   id="date2_fr1"   class="easyui-datetimebox"></input>
                         
-                   <!--  <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"    id="cal2_fr1"    />คำนวณอายุ</a> -->
+                       <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-man'  ,  "   style="widht:80px;height: 30px;"    id="cal2_fr1"    />คำนวณอายุ</a>
+                       
+                       
                    <label>อายุ </label>
                         <input class="easyui-textbox"  style="width: 50px;height: 30px;"   readonly="true"  id="age2_fr1"  name="age2_fr1"    />
                         <label>ปี</label>
@@ -3427,7 +3498,7 @@
 </div>
 
 
-<div id="dia_treat12_7" class="easyui-window" title=" 7. Growth modification  " data-options="modal:true,closed:true" style="width:750px;height:650px;">
+<div id="dia_treat12_7" class="easyui-window" title=" 6. Growth modification  " data-options="modal:true,closed:true" style="width:750px;height:650px;">
 
     
     <div class="easyui-panel" style="padding: 5px;" >
@@ -3529,7 +3600,7 @@
         
     </div>
     
-    <div class="easyui-dialog"  id="dia_fr7"   title="7. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
+    <div class="easyui-dialog"  id="dia_fr7"   title="6. Growth modification "   data-options="  closed:true,buttons:[ { text:'ปิด (Close)' ,iconCls:'icon-cancel', handler:function(){ $('#dia_fr7').dialog('close'); }  }  ]   "  >
         <div class="easyui-datagrid"   id="dg_fr7"  ></div>
     </div>
     
@@ -3541,10 +3612,14 @@
                     
                     <tr>
                     <td>
+                        
+                              <input class="easyui-textbox"  id="id_history_patient_fr7"   name="id_history_patient_fr7"  style="width:30px;height: 30px;"  readonly="true"  />
+                              <input class="easyui-textbox"  id="y_fr7"   name="y_fr7"  style="width:50px;height: 30px;"  readonly="true"  />
+                              
                           ชื่อ - นามสกุล : 
                     </td>
                     <td>
-                         <input class="easyui-textbox"  id="id_history_patient_fr7"   name="id_history_patient_fr7"  style="width:30px;height: 30px;"  readonly="true"  />
+                   
                         <input class="easyui-textbox"  id="name_lastname_fr7"  name="name_lastname_fr7"  style="width:200px;height: 30px;" readonly="true"  />
                     </td>
                 </tr>
@@ -3562,7 +3637,9 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr7" name="date_fr7"   />
                         
-                                                <!--  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "   id="cal1_fr7" >คำนวณอายุ</a> -->
+                                                  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "   id="cal1_fr7" >คำนวณอายุ</a> 
+                                                  
+                                                  
                                                 <label>อายุ</label>
             <input class="easyui-textbox"   style="width: 50px;height: 40px;"  id="age1_fr7"  readonly="true"  name="age1_fr7"  />
              <label>ปี</label>
@@ -3579,7 +3656,9 @@
                         <input class="easyui-datetimebox" id="date2_fr7"  name="date2_fr7"></input>
                         
                         
-                      <!--  <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "      id="cal2_fr7"  id="cal2_fr7"  >คำนวณอายุ</a> -->
+                          <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "      id="cal2_fr7"  id="cal2_fr7"  >คำนวณอายุ</a> 
+                          
+                          
                       <label>อายุ</label>
                       <input class="easyui-textbox"   style="width: 50px;height: 40px;"  readonly="true"  id="age2_fr7"   name="age2_fr7"  />
             <label>ปี</label>
@@ -3766,7 +3845,7 @@
     
 </div>
 
-<div id="dia_treat12" class="easyui-window" title=" 8. Corrective Orthodontic Treatment  " data-options="modal:true,closed:true" style="width:600px;height:540px;padding:5px;">
+<div id="dia_treat12" class="easyui-window" title=" 7. Corrective Orthodontic Treatment  " data-options="modal:true,closed:true" style="width:600px;height:540px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
         
@@ -3877,6 +3956,9 @@
                 
                 <tr>
                     <td>
+                          <input class="easyui-textbox"  id="id_history_patient_fr8"   name="id_history_patient_fr8"  style="width:30px;height: 30px;"  readonly="true"  />
+                           <input class="easyui-textbox"  id="y_fr8"   name="y_fr8"  style="width:50px;height: 30px;"  readonly="true"  />
+                           
                           ชื่อ - นามสกุล : 
                     </td>
                     <td>
@@ -3898,9 +3980,9 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr8" name="date_fr8" ></input>
                         
-                        <!--
+                        
                         <a href="javascript:void(0)"  id="cal1_fr8" name='cal1_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-                         -->                  
+                                       
                         
                          <label>อายุ</label>
                          <input class="easyui-textbox"   id="age1_fr8" readonly="true"   name="age1_fr8"    style="width: 50px;height: 40px;"    />
@@ -3921,9 +4003,9 @@
                     
                         <input class="easyui-datetimebox"  id="date2_fr8"  name="date2_fr8"></input>
                         
-                        <!--
+                        
                         <a href="javascript:void(0)"  id="cal2_fr8"  name='cal2_fr8'  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "    >คำนวณอายุ</a>
-                           -->                     
+                                             
                         <label>อายุ</label>
                         <input class="easyui-textbox"  id="age2_fr8"  readonly="true"  name="age2_fr8"  style="width: 50px;height: 40px;"    />
                         <label>ปี</label>
@@ -4277,7 +4359,7 @@
 
 
 
-<div id="dia_treat15" class="easyui-window" title=" 6. Bone graft surgery   " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
+<div id="dia_treat15" class="easyui-window" title=" 5. Bone graft surgery   " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     
@@ -4384,7 +4466,7 @@
            "
            >
             เรียกดูข้อมูล</a>
-        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="6. Bone graft surgery "  style="width:600px;height: 400px;"  >
+        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
             <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
                 
                  
@@ -4399,11 +4481,13 @@
                 
                 
                 <tr>
+                      <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
                     <td>
                           ชื่อ - นามสกุล : 
                     </td>
                     <td>
-                         <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
+                       
                         <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:200px;height: 30px;" readonly="true"  />
                     </td>
                 </tr>
@@ -4424,7 +4508,8 @@
                     
                         <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
                         
-                        <!--<a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> -->
+                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> 
+                           
                         <label>อายุ</label>
                         <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
                         <label>ปี</label>
@@ -5168,8 +5253,11 @@
         
     </div>        
    
-    <div style="padding:10px 5px;" > 
+    <div style="padding:10px 5px;" >
+        <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  />
+        <input class="easyui-textbox"  id="y_fr4"   name="y_fr4"  style="width:50px;height: 30px;"  readonly="true"  />
         <label>
+            
             ชื่อ - นามสกุล : 
             
                         <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  />
@@ -5190,7 +5278,8 @@
         <label>
             วัน/เดือน/ปี ที่เริ่มทำการรักษา :  <input class="easyui-datetimebox"  id="date_fr4"  name="date_fr4"  style="width:150px;height: 40px;"   />
 
-            <!-- <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  id="cal1_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> -->
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "  id="cal1_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> 
+                
             <label>อายุ </label>
             <input class="easyui-textbox"   style="width:50px;height: 30px;"   readonly="true"  id="age1_fr4"  name="age1_fr4"   />
             <label>ปี</label>
@@ -5204,7 +5293,8 @@
         <label>
             วัน/เดือน/ปี ที่สิ้นสุดการรักษา :  <input class="easyui-datetimebox"  id="date2_fr4" name="date2_fr4"  style="width:150px;height: 40px;"   />
             
-         <!--   <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "   id="cal2_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> -->
+            <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options="  iconCls:'icon-man' "   id="cal2_fr4"  style="width:100px;height: 30px;"  >คำนวณอายุ</a> 
+            
             <label>อายุ </label>
             <input class="easyui-textbox"   style="width:50px;height: 30px;" readonly="true"   id="age2_fr4"  name="age2_fr4" />
          <label>ปี</label>
