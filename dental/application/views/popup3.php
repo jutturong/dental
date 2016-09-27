@@ -17,7 +17,7 @@
      closed:true,
      buttons:[ { text:'ปิด (Close)', iconCls:'icon-cancel', handler:function(){  $('#diag3').dialog('close'); }   } ]
      " 
-     style="width:700px;height:550px;padding:5px;">
+     style="width:400px;height:550px;padding:5px;">
 
     <div style="margin:0px 0 0px 0;"></div>
     

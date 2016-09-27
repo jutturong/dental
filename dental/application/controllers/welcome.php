@@ -3479,6 +3479,23 @@ $this->db->delete($tables);
                            
                      }
          }
+         
+         //  FROM `tb_psot` 
+         //  http://127.0.0.1/dental/index.php/welcome/edit_json1
+         function edit_json1()
+         {
+                 $tb="tb_psot";
+                 $id=$this->input->get_post("id");
+                // $id=18;
+                 $tbj1="tb_history_patient";     //FROM `tb_history_patient`
+                 //$this->db->join( $tbj1  , $tb.".id_history_patient=".$tbj1.".id_history_patient"  ,"left");
+                 $q=$this->db->get_where($tb,array("id_psot"=>$id));
+                 foreach($q->result()as $row)
+                 {
+                      $rows[]=$row;    
+                 }
+                 echo json_encode($rows);
+         }
 }
 
 /* End of file welcome.php */

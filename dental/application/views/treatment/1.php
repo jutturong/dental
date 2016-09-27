@@ -2597,6 +2597,54 @@
                                 
                         ]],
                          toolbar:[
+                             {  text:'ดูข้อมูลส่วนบุคคคล' , iconCls:'icon-man', handler:function()
+                                    {
+                                            var  row=$('#dg_psot').datagrid('getSelected');
+                                            if( row )
+                                            {
+                                                  //alert('t');
+                                                  //var  id=row.id_history_patient;
+                                                  var  id=row.id_psot;
+                                                  
+                                                  //alert(id);
+                                                  if( id > 0 )
+                                                  {
+                                                      $.post('<?=base_url()?>index.php/welcome/edit_json1',{ id:id },function(data){
+                                                             
+                                                             //alert(data);
+                                                             $.each(data,function(i,key)
+                                                             {
+                                                                   
+                                                                  
+                                                                   // $('#dia_pso').dialog({ position:['center','center+100']  });
+                                                                   
+                                                                     //  $('#dia_treat3').dai
+                                                                     
+                                                                //     var  lastname=key.lastname;
+                                                                //     var  firstname=key.firstname;
+                                                                     
+                                                                  //   $('#name_lastname').textbox('setValue', firstname  +  '  ' + key.lastname);
+                                                                     
+                                                                     var  doctor=key.doctor;
+                                                                   //  alert(doctor);
+                                                                     $('#doctor_fr1').textbox('setValue', doctor );
+                                                                     var  joindoctor=key.joindoctor;
+                                                                     $('#joindoctor_fr1').textbox('setValue',joindoctor);
+                                                                     var  begin_date=key.begin_date;
+                                                                      $('#date_fr1').textbox('setValue', begin_date );
+                                                                      var  end_date=key.end_date;
+                                                                       $('#date2_fr1').textbox('setValue', end_date  );
+                                                                       var  procedure=key.procedure;
+                                                                       alert(procedure);
+                                                                   
+                                                             });
+                                                          
+                                                      },'json');
+                                                  }
+                                            }
+                                    }  
+                              }, 
+                     
                             { text:'Reload',iconCls:'icon-reload',handler:function(){   $('#dg_psot').datagrid('reload');   }   },
                           
                             { text:'Delete' , iconCls:'icon-remove' ,handler:function()

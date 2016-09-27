@@ -1,17 +1,10 @@
-                <tr>
-                    <td>
-                         Procedure : 
-                    </td>
-                    <td>
-                        <input type="checkbox"  name="procedure_fr1"  id="procedure1_fr1"  value="1" />  1.Strapping  
-                        <input  type="checkbox"  name="procedure_fr1"   id="procedure2_fr1"   value="2"  />  2.Nasal Molding 
-                        <input  type="checkbox"  name="procedure_fr1"    id="procedure3_fr1"  value="3" />  3.Alveolar  Molding  
-                        <input  type="checkbox"  name="procedure_fr1"   id="procedure4_fr1" value="4" /> 4. Simple Obturator 
-                        <br>
-                        <input   type="checkbox" name="procedure_fr1"  id="procedure5_fr1"  value="5" />  5.อื่นๆ 
-                        <input class="easyui-textbox"   name="otherprocedure_fr1"  id="otherprocedure_fr1"   data-options=" mutilne:true, "  style="width:300px;height: 20px"  readonly="true"     /> 
-                    </td>
-                </tr>
+ 
 
-##-------------------------------------------------------
- url:'<?=base_url()?>index.php/welcome/inst_tr1',
+1.
+  url:'<?=base_url()?>index.php/welcome/json_fr1/' +    $('#id_history_patient').textbox('getValue')  ,
+
+ $tb="tb_psot";  
+
+/*
+   dia_treat3
+*/
