@@ -3591,6 +3591,118 @@ $this->db->delete($tables);
                     
                     
         }
+        
+        #   http://127.0.0.1/dental/index.php/welcome/edit_json9/
+        function  edit_json9()
+        {
+            $tb="tb_orthognathic";
+            //tb_orthognathic
+            $tbj1="tb_history_patient";
+            
+           // $id=$this->uri->segment(3);
+            
+               $id_orthognathic=$this->input->get_post("id");
+               $id_orthognathic=11;
+            
+            //    $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+                    //$q=$this->db->get($tb);
+                 //$this->db->order_by("id_orthognathic","desc");
+                 $q=$this->db->get_where($tb,array("id_orthognathic"=>$id_orthognathic)); //id_history_patient
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        }
+        
+       #   http://127.0.0.1/dental/index.php/welcome/edit_json9_2
+        function edit_json9_2()
+        {
+            // $id=$this->uri->segment(3);
+             $id=trim($this->input->get_post("id"));
+             //id_distraction
+            // $id=9;
+            $tb="tb_distraction";     
+            $tbj1="tb_history_patient";
+            //    $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+                //    $q=$this->db->get($tb);
+                 $this->db->order_by("id_distraction","desc");
+                 $q=$this->db->get_where($tb,array($tb.".id_distraction"=>$id));
+            //    $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),1);
+                // $this->db->order_by("id_distraction","desc");
+              //   $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id),2);
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
+        
+      #   http://127.0.0.1/dental/index.php/welcome/edit_json_tr11_1
+       function edit_json_tr11_1()
+        {
+           $id=trim($this->uri->segment(3));
+           $id=trim($this->input->get_post("id"));
+           //$id=5;
+           //id_dentalprocedure
+           
+           $tb="tb_dentalprocedure";       
+            $tbj1="tb_history_patient";
+               // $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+               //  $this->db->order_by("id_dentalprocedure","desc");
+                  //  $q=$this->db->get($tb);
+                    $q=$this->db->get_where($tb,array("id_dentalprocedure"=>$id));
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
+        
+       #   http://127.0.0.1/dental/index.php/welcome/edit_json_tr11_2
+       function edit_json_tr11_2()
+        {
+             $tb="tb_prosthodontic";   
+            $tbj1="tb_history_patient";
+            
+            //$id=trim($this->uri->segment(3));
+            $id=trim($this->input->get_post("id"));
+            //$id=15;
+            
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","left");
+            $this->db->order_by("id_prosthodontic","desc");
+           $q=$this->db->get_where($tb,array("id_prosthodontic"=>$id));
+                  //  $q=$this->db->get($tb,3);
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
+        
+        #http://127.0.0.1/dental/index.php/welcome/edit_json_tr10/1
+       function edit_json_tr10()
+        {
+              $id_call=trim($this->uri->segment(3));
+              //  $id=trim($this->uri->segment(4));
+              $id=trim($this->input->get_post("id"));
+              //$id=24;
+               
+                 $tb="tb_othersurgery";
+             // $tbj1="tb_history_patient";
+             //   $this->db->join($tbj1,$tbj1.".id_history_patient=".$tb.".id_history_patient","right");
+                //$this->db->order_by("id_othersurgery","desc");
+                  //  $q=$this->db->get_where($tb,array("id_tab"=>$id_call,"id_history_patient"=>$id));
+                    //  $q=$this->db->get_where($tb,array( "id_tab"=>$id_call,$tb.".id_othersurgery"=>$id ),1);
+                     //  $q=$this->db->get_where($tb,array( "id_tab"=>$id_call,  "id_othersurgery"=>$id ));
+                 
+                    $q=$this->db->get_where($tb,array( "id_tab"=>$id_call , "id_othersurgery"=>$id  ));
+                    foreach($q->result() as $row)
+                    {
+                          $rows[]=$row;
+                    }
+                    echo  json_encode($rows);
+        } 
 }
 
 /* End of file welcome.php */
