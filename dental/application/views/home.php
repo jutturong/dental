@@ -367,6 +367,27 @@
                                      $('#dg_view_fr9_1').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr9/' + id  });    
                                     $('#dg_view_fr9_2').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr9_2/' + id  });      
                                    $('#dg_view_fr10_1').datagrid({  url:'<?=base_url()?>index.php/welcome/showjson_fr10_1/' + id  });   
+                                   
+                                   
+                                   //-------------- checkbox treatment------------------
+                                   var  url='<?=base_url()?>index.php/welcome/check_treatment';
+                                  // var  id1=id;
+                                  var tb1="tb_psot";   //FROM `tb_psot` 
+                                  var  f1 =  "id_history_patient";  
+                                   $.post(url,{id:id,f:f1,tb:tb1},function(data)
+                                     {
+                                           alert(data) ;
+                                           
+                                             if(data == 1)
+                                             {
+                                                 // $('#ck')
+                                                  // id="ck_fr1" 
+                                                  alert(data);
+                                                   $('#ck_fr1').attr('checked',true);
+                                             }
+        
+       
+                                     });
                                       
                                }
 

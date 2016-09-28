@@ -3703,6 +3703,17 @@ $this->db->delete($tables);
                     }
                     echo  json_encode($rows);
         } 
+        #http://127.0.0.1/dental/index.php/welcome/check_treatment
+        function check_treatment()
+        {
+              $tb=$this->input->get_post("tb");
+              $id=$this->input->get_post("id");
+              $f=$this->input->get_post("f");
+              $q= $this->db->get_where($tb,array($f=>$id));
+              echo  $num = $q->num_rows();
+              //echo json_encode({"su"});
+              
+        }
 }
 
 /* End of file welcome.php */
