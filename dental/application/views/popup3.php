@@ -195,11 +195,9 @@
                                      
                 <tr>
                     <td> 
-                        <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat3')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                       -->
-                        <input type="checkbox"  id="ck_fr1"   readonly="true" />
+
+                     <a href="javaScript:void(0)" onclick="dialog3('#dia_treat3')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr1" ></a>
+
                     </td>
                     <td>1. Pre-surgical orthopedics therapy (PSOT)  </td>
                 </tr>
@@ -207,10 +205,10 @@
                 <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat2_mo')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                        -->
-                        <input type="checkbox"  id="ck_fr2"    readonly="true" />
+                
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat2_mo')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "   id="ck_fr2"  ></a>
+                        
+                        
                     </td>
                   <!--  <td>2. การผ่าตัดซ่อมแซมริมฝีปาก จมูก และพื้ันจมูก  </td> -->
                     <td>2. Lip nasal and nasal floor repair </td>
@@ -220,9 +218,11 @@
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                         <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                          -->
-                          <input type="checkbox"  id="ck_fr3"   readonly="true"  />
+                        <input type="checkbox"  id="ck_fr3"   readonly="true"  />
+                        -->
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "   id="ck_fr3" ></a>
+                          
+                      
                     </td>
                     <!-- <td>3. การผ่าตัดแก้ไขเพดานอ่อน  </td> -->
                     <td>3. Palate repair  </td>
@@ -231,10 +231,13 @@
                  <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                       <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat4B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                        -->
-                        <input type="checkbox"  id="ck_fr4"   readonly="true"  />
+                        <!--
+                           <input type="checkbox"  id="ck_fr4"   readonly="true"  />
+                           -->
+                           
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat4B')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "   id="ck_fr4" ></a>
+                        
+                    
                     </td>
                     <!-- <td>4. การผ่าตัดแก้ไขเพดานแข็ง  </td> -->
                     <td>4. Interceptive orthodontic treatment  </td>
@@ -256,10 +259,13 @@
                             <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                    <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat15')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                       -->
-                       <input type="checkbox"  id="ck_fr5"   readonly="true" />
+                        <!--
+                        <input type="checkbox"  id="ck_fr5"   readonly="true" />
+                        -->
+                        
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat15')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr5"></a>
+                       
+                     
                     </td>
                    <!-- <td>6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  </td> -->
                     <td>5. Bone graft surgery  </td>
@@ -270,9 +276,12 @@
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12_7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                        -->
-                        <input type="checkbox"  id="ck_fr6"   readonly="true"  />
+                           <input type="checkbox"  id="ck_fr6"   readonly="true"  />
+                          -->
+                          
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12_7')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "   id="ck_fr6" ></a>
+                        
+                     
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
                     <td>6. Growth modification  </td>
@@ -283,9 +292,12 @@
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                     <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                    -->
-                    <input type="checkbox"  id="ck_fr7"   readonly="true"  />
+                                <input type="checkbox"  id="ck_fr7"   readonly="true"  />
+                        -->
+                        
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia_treat12')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr7"></a>
+                    
+            
                     </td>
                    <!-- <td>7. การรักษาทางทันตกรรมจัดฟัน  </td> -->
                     <td>7.  Corrective Orthodontic Treatment  </td>
@@ -295,10 +307,13 @@
                  <tr>
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
-                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia9')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                        -->
-                        <input type="checkbox"  id="ck_fr8"    readonly="true" />
+                       <!--
+                         <input type="checkbox"  id="ck_fr8"    readonly="true" />
+                         -->
+                         
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia9')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr8"></a>
+                        
+                       
                     </td>
                    <!--  <td>8. ทันตกรรมหัตถการทำฟันปลอมชั่วคราวในกรณีที่จำเป็น  </td> -->
                      <td>8. Orthognathic surgery  </td>
@@ -309,10 +324,13 @@
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia10')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                       -->
+                           <input type="checkbox"  id="ck_fr9"   readonly="true"  />
+                         -->
+                         
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia10')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr9"></a>
                        
-                       <input type="checkbox"  id="ck_fr9"   readonly="true"  />
+                       
+                    
                     
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
@@ -325,9 +343,12 @@
                     <td> 
                         <!--<input type="checkbox" onchange="dialog3()" name="vehicle" value="Bike">--> 
                        <!--
-                        <a href="javaScript:void(0)" onclick="dialog3('#dia11')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  " ></a>
-                       -->
-                       <input type="checkbox"  id="ck_fr10"  readonly="true"  />
+                         <input type="checkbox"  id="ck_fr10"  readonly="true"  />
+                         -->
+                         
+                        <a href="javaScript:void(0)" onclick="dialog3('#dia11')" class="easyui-linkbutton" data-options="iconCls:'icon-large-picture'  "  id="ck_fr10"></a>
+                       
+                      
                     </td>
                    <!-- <td>9. แก้ไขความผิดปกติของการสบฟันและขากรรไกรด้วยวิธีศัลยกรรมขากรรไกร  </td> -->
                     <td>10. Other dental procedure  </td>

@@ -16,7 +16,7 @@
                        
                        {
                         text: ' เรียกดูประวัติผู้ป่วย',
-                        iconCls: ' icon-large-chart   ',
+                        iconCls: 'icon-large-chart',
 
                         handler:function(){
                              //alert('t');
@@ -371,23 +371,141 @@
                                    
                                    //-------------- checkbox treatment------------------
                                    var  url='<?=base_url()?>index.php/welcome/check_treatment';
-                                  // var  id1=id;
-                                  var tb1="tb_psot";   //FROM `tb_psot` 
-                                  var  f1 =  "id_history_patient";  
-                                   $.post(url,{id:id,f:f1,tb:tb1},function(data)
+                                   var  f =  "id_history_patient";  
+                                 
+                           
+                                 /*  
+                                  // $tb="tb_psot";
+                                  // "id_history_patient"
+                                   $.post('<?=base_url()?>index.php/welcome/check_treatment_fr1',{  id:id  },function(data)
                                      {
-                                           alert(data) ;
-                                           
-                                             if(data == 1)
-                                             {
-                                                 // $('#ck')
-                                                  // id="ck_fr1" 
-                                                  alert(data);
-                                                   $('#ck_fr1').attr('checked',true);
-                                             }
-        
-       
-                                     });
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr1').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr1').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                            });       
+                                     },'json');
+                                 */    
+                                 
+                                 
+                               
+                                 
+                                 //    var   tb8="tb_corrective";
+                                 //   var   tb9="tb_corrective"; 
+                                 //    var  tb10="tb_othersurgery";
+
+                                    /*
+                                     #http://127.0.0.1/dental/index.php/welcome/check_treatment
+                 $tb=$this->input->get_post("tb");
+              $id=$this->input->get_post("id");
+              $f=$this->input->get_post("f");
+                                     */ 
+                             
+                                      var url='<?=base_url()?>index.php/welcome/check_treatment';
+                                      
+                                      //---------------1---------------------
+                                     $.post(url,{ tb:'tb_psot' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr1').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr1').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');
+                                      
+                                      
+                                       //  var   tb4="tb_interceptive"; 
+                                      //-----------------4---------------------------
+                                       $.post(url,{ tb:'tb_interceptive' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr4').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr4').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');
+                                      
+    
+                                    //  var tb6="tb_othersurgery";  //$tb="tb_othersurgery";
+                                    //-----------------5---------------------------
+                                       $.post(url,{ tb:'tb_interceptive' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr5').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr5').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');
+                                      
+                                      
+                                     //   //   var  tb7="tb_growth";
+                                    //-----------------6---------------------------
+                                       $.post(url,{ tb:'tb_growth' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr6').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr6').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');   
+                                      
                                       
                                }
 

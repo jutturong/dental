@@ -3710,10 +3710,25 @@ $this->db->delete($tables);
               $id=$this->input->get_post("id");
               $f=$this->input->get_post("f");
               $q= $this->db->get_where($tb,array($f=>$id));
-              echo  $num = $q->num_rows();
+              $num=$q->num_rows(); 
               //echo json_encode({"su"});
-              
+              echo json_encode(array("success"=>$num));  
         }
+        
+        #http://127.0.0.1/dental/index.php/welcome/check_treatment_fr1
+         function check_treatment_fr1()
+        {
+               //  FROM `tb_psot` 
+              $tb="tb_psot";
+               $id=trim($this->input->get_post("id"));
+              //$id=24    //กานต์ธิดา 	ยอดยิ่ง
+              $q=$this->db->get_where($tb,array("id_history_patient"=>$id));
+              $num=$q->num_rows(); 
+              //$ar1=array("num"=>$num);
+              //echo  json_conde($ar1);
+              echo json_encode(array("success"=>$num));  
+        }
+    
 }
 
 /* End of file welcome.php */
