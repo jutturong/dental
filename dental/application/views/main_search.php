@@ -172,6 +172,11 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                         
+                                                         var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
                                                     }
                                                    
                                                     "    id="cb_name"  name="cb_name"  />
@@ -200,6 +205,9 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                         var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
                                                     }
                                                     "    id="cb_lastname"  name="cb_lastname"  />
                                 
@@ -230,6 +238,9 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                           var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
                                                     }
                                                     "    id="cb_seriesnumber"  name="cb_seriesnumber"  />
                                 
@@ -260,6 +271,11 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                           var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
+                                                         
                                                     }
                                                     "    id="cb_address"  name="cb_address"  />
                                 
@@ -291,6 +307,11 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                         var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
+                                                         
                                                     }
                                                     "    id="cb_dn"  name="cb_dn"  />
                                 
@@ -322,6 +343,11 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                          var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
+                                                         
                                                     }
                                                     "    id="cb_ortho"  name="cb_ortho"  />
                                 
@@ -353,6 +379,10 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                           var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
                                                     }
                                                     "    id="cb_hn"  name="cb_hn"  />
                                 
@@ -384,6 +414,12 @@
                                                          $('#txt_id').textbox('setValue',id);
                                                          var url='<?=base_url()?>index.php/welcome/json_patient/'  + $('#txt_id').textbox('getValue');
                                                          load_dg1(url);
+                                                         
+                                                         
+                                                         var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
+                                                         
                                                     }
                                                     "    id="cb_cn"  name="cb_cn"  />
                                 
@@ -430,6 +466,14 @@
                                                     //alert(va);
                                                     var  url='<?=base_url()?>index.php/welcome/search_diagnosis';
                                                    // $('#dg1').datagrid('loadData',
+                                                   
+                                                     var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                     window.open(url2);
+                                                         
+                                                     
+                                                         var url2='<?=base_url()?>index.php/welcome/json_patient_ex/'  + $('#txt_id').textbox('getValue');
+                                                         window.open(url2);
+                                                         
                                               }        
                                          "
                                          

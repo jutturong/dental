@@ -1779,7 +1779,7 @@
     
     
     <div class="easyui-tabs" style="width:700px;" >
-        <div title=" Orthognathic surgery ( Main ) " style="padding:10px">
+        <div title=" Orthognathic surgery" style="padding:10px">
             
             <div class="easyui-panel" style="padding:3px;"  >
                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width:100px;height: 40px;" iconCls="icon-print"  onclick="

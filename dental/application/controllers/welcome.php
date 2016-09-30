@@ -3244,6 +3244,8 @@ $this->db->delete($tables);
                 //- เรียก FROM `tb_history_patient`  จาก id
                function  json_patient()
                {
+                   
+                   
                      $id=trim($this->input->get_post("txt_id"));
                      if( empty($id) )
                      {
@@ -3258,6 +3260,301 @@ $this->db->delete($tables);
                           $rows[]=$row;
                      }
                       echo  json_encode($rows);
+               }
+               
+                 function  json_patient_ex()
+               {
+                   
+                   
+                   
+                   $strExcelFileName="ประวัติผู้ป่วย.xls";
+                   //<meta charset="UTF-8">
+                  
+                   header("Content-Type: application/x-msexcel; charset=utf-8; name=\"$strExcelFileName\"");
+                   //content="text/html; charset=utf-8"
+                  // header("Content-Type: text/html; charset=utf-8; name=\"$strExcelFileName\"");
+                   header("Content-Disposition: inline; filename=\"$strExcelFileName\"");
+                   header("Pragma:no-cache");
+                    
+                    
+                     
+                   /*
+                     $id=trim($this->input->get_post("txt_id"));
+                     if( empty($id) )
+                     {
+                         $id=trim($this->uri->segment(3));
+                     }
+                     */
+                   
+                     $id=trim($this->uri->segment(3));
+                     
+                      
+                     $tb="tb_history_patient";
+                     $tb1="tb_diagnosis";
+                     $this->db->join($tb1,$tb.".id_history_patient=".$tb1.".id_history_patient" , "left");
+                     $q=$this->db->get_where($tb,array($tb.".id_history_patient"=>$id));
+                     
+                     echo "<table   border='1'  >";
+                     
+                     echo "<tr>";
+                     
+                     
+                     echo "<td>";
+                     
+                     echo "ชื่อ";
+                     
+                     echo "</td>";
+                     
+                      echo "<td>";
+                     
+                     echo "นามสกุล";
+                     
+                     echo "</td>";
+                     
+                     
+                     echo "<td>";
+                     
+                     echo "HN";
+                     
+                     echo "</td>"; 
+                     
+                     
+                      echo "<td>";
+                     
+                     echo "DN";
+                     
+                     echo "</td>"; 
+                     
+                     
+                           echo "<td>";
+                      echo "othnumber";
+                          echo "</td>";
+                          
+                          
+                          echo "<td>";
+                              echo  "CN";
+                          echo "</td>";
+                          
+                          
+                       /*   
+                          echo "<td>";
+                              echo  "seriesnumber";
+                          echo "</td>";
+                        */
+                          
+                          
+                                   echo "<td>";
+                              echo  "tel";
+                          echo "</td>"; 
+                          
+                                            echo "<td>";
+                              echo  " ที่อยู่ ";
+                          echo "</td>";
+                          
+                          
+                          
+                           echo "<td>";
+                              echo  " Diagnosis ";
+                          echo "</td>";
+                     
+                     
+                     echo "</tr>";
+                     
+                     foreach($q->result() as $row )
+                     {
+                         // $rows[]=$row;
+                         
+                          //$rows[]=$row;
+                        echo "<tr>";
+                        
+                        
+         
+                      
+           
+                  
+                
+                          
+                          
+                          
+                           echo "<td>";
+                              echo $row->firstname;
+                          echo "</td>";
+                            echo "<td>";
+                              echo $row->lastname;
+                          echo "</td>";
+                          
+                                           echo "<td>";
+                              echo $row->HN;
+                          echo "</td>";
+                          
+                                echo "<td>";
+                              echo $row->DN;
+                          echo "</td>";
+                          
+                          
+                                           echo "<td>";
+                              echo $row->othnumber;
+                          echo "</td>";
+                          
+                                    echo "<td>";
+                              echo $row->CN;
+                          echo "</td>";
+                          
+                          
+                          /*
+                                        echo "<td>";
+                              echo $row->seriesnumber;
+                          echo "</td>";
+                           * 
+                           */
+                          
+                          
+                          
+                          /*
+                            echo "<td>";
+                              echo $row->filename;
+                          echo "</td>";
+                          */
+                          
+                          
+           
+                         echo "<td>";
+                              echo $row->tel;
+                          echo "</td>"; 
+                          
+                          
+                        /*
+                            echo "<td>";
+                              echo $row->birthdate;
+                          echo "</td>";
+                          */
+                          
+                          
+                           echo "<td>";
+                              echo $row->address;
+                          echo "</td>";
+                          
+                          
+                
+                          
+                          /*
+                           echo "<td>";
+                              echo $row->nationality;
+                          echo "</td>";
+                          */
+                          
+                          
+              
+                          
+                          
+                          /*
+                                echo "<td>";
+                              echo $row->race;
+                          echo "</td>";
+                           echo "<td>";
+                              echo $row->religion;
+                          echo "</td>";
+                       echo "<td>";
+                              echo $row->namefather;
+                          echo "</td>";    
+                           echo "<td>";
+                              echo $row->fatherlastname;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->career;
+                          echo "</td>";    
+                             echo "<td>";
+                              echo $row->birthdatefahter;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->birthdatefahter;
+                          echo "</td>";    
+                          echo "<td>";
+                              echo $row->age1;
+                          echo "</td>";     
+                           echo "<td>";
+                              echo $row->disease;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->mothername;
+                          echo "</td>";  
+                          echo "<td>";
+                              echo $row->motherlastname;
+                          echo "</td>";  
+                          echo "<td>";
+                              echo $row->mothercareer;
+                          echo "</td>"; 
+                           echo "<td>";
+                              echo $row->birthdatemother;
+                          echo "</td>"; 
+                            echo "<td>";
+                              echo $row->diseasemother;
+                          echo "</td>"; 
+                           echo "<td>";
+                              echo $row->spousename;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->spouselastname;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->benefits;
+                          echo "</td>";  
+                             echo "<td>";
+                              echo $row->otherbenefits;
+                          echo "</td>";  
+                             echo "<td>";
+                              echo $row->numberbenefits;
+                          echo "</td>";  
+                           echo "<td>";
+                              echo $row->evertreat;
+                          echo "</td>";    
+                            echo "<td>";
+                              echo $row->otherevertreat;
+                          echo "</td>";    
+                          echo "<td>";
+                              echo $row->treatmentfacility;
+                          echo "</td>";    
+                              echo "<td>";
+                              echo $row->doctor;
+                          echo "</td>";    
+                          
+                             echo "<td>";
+                              echo $row->developmentallevel;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->otherdevelopmentallevel;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->daterecord;
+                          echo "</td>";  
+                          
+                            echo "<td>";
+                              echo $row->sex;
+                          echo "</td>";  
+                          
+               
+                          
+                          echo "<td>";
+                          echo $row->result_analysis;
+                          echo "</td>"; 
+                          */
+                          
+                          
+                           echo "<td>";
+                           echo $row->result_analysis;
+                           echo "</td>";
+                           
+                           
+                          
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                    
+                     
+                      
+                      //echo  json_encode($rows);
                }
                
                 # ค้นหาจาก Diagnosis  =>  FROM `tb_diagnosis`  

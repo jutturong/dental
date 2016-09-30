@@ -168,14 +168,14 @@
                        // 1.1  + 2.1 || 2.2 + 3.1+ 4.1
                       if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
                      {
-                                 var  ans1="Complete left unilateral cleft lip with alveolus complete hard palate cleft";
+                                 var  ans1="Complete left unilateral cleft lip with alveolus and  complete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
                         // 1.1  + 2.1 || 2.2 + 3.2
                      else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&    $('#hardpalate_incomplete').is(":checked")      )
                      {
-                                 var  ans1="Complete left unilateral cleft lip with alveolus Incomplete hard palate cleft";
+                                 var  ans1="Complete left unilateral cleft lip with alveolus and Incomplete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -183,7 +183,7 @@
                               // 1.1  + 2.1 || 2.2 + 3.3
                      else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&   $('#hardpalate_submucous').is(":checked")   )
                      {
-                                 var  ans1="Complete left unilateral cleft lip with alveolus Submucous cleft";
+                                 var  ans1="Complete left unilateral cleft lip with alveolus  and Submucous cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -191,7 +191,7 @@
                              // 1.1  + 2.1 || 2.2 + 4.2
                      else   if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&     $('#softpalate_bifid_uvula').is(":checked")       )
                      {
-                                 var  ans1="Complete left unilateral cleft lip with alveolus Bifid uvala";
+                                 var  ans1="Complete left unilateral cleft lip with alveolus and Bifid uvala";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -200,28 +200,28 @@
                        // 1.2  + 2.1 || 2.2 + 3.1+ 4.1
                     else  if(    $('#comp_right').is(":checked")     &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
                      {
-                                 var  ans1="Complete right unilateral cleft lip with alveolus complete hard palate cleft";
+                                 var  ans1="Complete right unilateral cleft lip with alveolus and complete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
                    // 1.2  + 2.1 || 2.2 + 3.2
                     else  if(    $('#comp_right').is(":checked")     &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&    $('#hardpalate_incomplete').is(":checked")      )
                      {
-                                 var  ans1="Complete right unilateral cleft lip with alveolus Incomplete hard palate cleft";
+                                 var  ans1="Complete right unilateral cleft lip with alveolus and Incomplete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
                      // 1.2  + 2.1 || 2.2 + 3.3
                     else  if(    $('#comp_right').is(":checked")     &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&    $('#hardpalate_submucous').is(":checked")      )
                      {
-                                 var  ans1="Complete right unilateral cleft lip with alveolus Submucous cleft";
+                                 var  ans1="Complete right unilateral cleft lip with alveolus and Submucous cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
                      // 1.2  + 2.1 || 2.2 + 4.2
                     else  if(    $('#comp_right').is(":checked")     &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&     $('#softpalate_bifid_uvula').is(":checked")      )
                      {
-                                 var  ans1="Complete right unilateral cleft lip with alveolus Bifid uvala";
+                                 var  ans1="Complete right unilateral cleft lip with alveolus and Bifid uvala";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -230,28 +230,28 @@
                     // 1.3  + 2.3 + 3.1||4.1  
                     else  if(    $('#comp_both').is(":checked")     &&  $('#completed_both').is(":checked")   &&  (  $('#hardpalate_complete').is(":checked")  ||   $('#softpalate_cleft').is(":checked")     )   )
                      {
-                                 var  ans1="Complete Bilateral cleft lip with alveolau complete hard palate cleft";
+                                 var  ans1="Complete Bilateral cleft lip with alveolus and complete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      } 
                      // 1.3  + 2.3 + 3.2
                          else  if(    $('#comp_both').is(":checked")     &&  $('#completed_both').is(":checked")   &&    $('#hardpalate_incomplete').is(":checked")     )
                      {
-                                 var  ans1="Complete Bilateral cleft lip with alveolau Incomplete hard palate cleft";
+                                 var  ans1="Complete Bilateral cleft lip with alveolus and  Incomplete hard palate cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      } 
                      // 1.3+2.3 + 3.3
                        else  if(    $('#comp_both').is(":checked")     &&  $('#completed_both').is(":checked")   &&   $('#hardpalate_submucous').is(":checked")     )
                      {
-                                 var  ans1="Complete Bilateral cleft lip with alveolau Submucous cleft";
+                                 var  ans1="Complete Bilateral cleft lip with alveolus and  Submucous cleft";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      } 
                        // 1.3+2.3 + 4.2
                        else  if(    $('#comp_both').is(":checked")     &&  $('#completed_both').is(":checked")   &&    $('#softpalate_bifid_uvula').is(":checked")    )
                      {
-                                 var  ans1="Complete Bilateral cleft lip with alveolau Bifid uvula";
+                                 var  ans1="Complete Bilateral cleft lip with alveolus and  Bifid uvula";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      } 

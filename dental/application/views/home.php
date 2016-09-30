@@ -399,7 +399,7 @@
                                  
                                
                                  
-                                 //    var   tb8="tb_corrective";
+                            
                                  //   var   tb9="tb_corrective"; 
                                  //    var  tb10="tb_othersurgery";
 
@@ -507,6 +507,124 @@
                                       } ,'json');   
                                       
                                       
+                                   //   $tb="tb_growth";   //7. Growth modification 
+                                    //-----------------7--------------------------
+                                       $.post(url,{ tb:'tb_growth' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr7').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr7').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');   
+                                      
+                                    //   var   tb8="tb_corrective";
+                                    //-----------------7--------------------------
+                                       $.post(url,{ tb:'tb_corrective' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr8').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr8').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');   
+                                      
+                                      
+                                 //-------------9   $tb="tb_othersurgery";
+                                     $.post(url,{ tb:'tb_othersurgery' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr9').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr9').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');    
+                                      
+                                 
+                                  //------------10.1 $tb="tb_dentalprocedure";   
+                                   $.post(url,{ tb:'tb_dentalprocedure' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr10').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr10').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json');   
+                                  //-------------10.2  $tb="tb_prosthodontic";  
+                                               $.post(url,{ tb:'tb_prosthodontic' ,  id:id   , f:'id_history_patient'  },function(data)
+                                      {
+                                          
+                                           $.each(data,function(i,k)
+                                            {
+                                                  //alert(i + ""  + k);
+                                                  var  num=k;
+                                                  if( k > 0 )
+                                                  {
+                                                       //$('#ck_fr1').attr('checked',true);
+                                                       $('#ck_fr10').linkbutton({ iconCls:'icon-ok' });
+                                                       // data-options="iconCls:'icon-large-picture'  "
+                                                  }  
+                                                  else{
+                                                       $('#ck_fr10').linkbutton({ iconCls:'icon-large-picture' });
+                                                  }
+                                                  
+                                              });       
+                                          
+                                      } ,'json'); 
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
                                }
 
                         }
@@ -548,7 +666,8 @@
                         iconCls:'icon-reload',
                         handler:function()
                         {
-                            $('#dg1').datagrid('reload');
+                           // $('#dg1').datagrid('reload');
+                              $('#dg1').datagrid({url:'<?=base_url()?>index.php/welcome/json_tb1/'});
                         }
                     }
                     ,
@@ -1154,9 +1273,12 @@ otherdevelopmentallevel
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
                         <input class="easyui-datetimebox"  style="width:200px"  id="birthdatefahter"  name="birthdatefahter">
-
+                        
+<!--
                         <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear1"  name="calYear1">คำนวณอายุ</a>
                         <input class="easyui-textbox"  id="age1"  name="age1"  style="width:50px; height: 30px;"  > ปี
+    -->                    
+                        
 
                     </td>
 
@@ -1196,8 +1318,10 @@ otherdevelopmentallevel
                     <td>
                         <input class="easyui-datetimebox"  style="width:200px"  name="birthdatemother"  id="birthdatemother" />
 
+                        <!--
                         <a href="javascript:void()"  class="easyui-linkbutton" data-options=" iconCls:'icon-man' "  id="calYear2" name="calYear2" >คำนวณอายุ</a>
                         <input class="easyui-textbox"  style="width:50px; height: 30px;" readonly="true"  id="age2" name="age2" > ปี
+                        -->
                           
                     </td>
                 </tr>
@@ -1354,28 +1478,29 @@ otherdevelopmentallevel
     <table cellpadding="5">
         <tr>
             <td>
-                1. ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true"> ใช่ <input class="easyui-textbox"   style="width: 100px;height: 30px;"  />   <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
-            <?=nbs(5)?>
-          
-            <input  type="radio"   name="tab2_1" />   ไม่ทราบ
-           
-              <input  type="radio"    name="tab2_1" />  จำไม่ได้
+                1. ยาที่ใช้ในระยะครรภ์ 3 เดือน ยาสตรีปรับประจำเดือน ไม่รวมวิตามิน : 
+                <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true"> ใช่ ระบุ <input class="easyui-textbox"   style="width: 50px;height: 30px;"  />   
+                <br>
+               <!-- <input type="Radio" name="tab2_1" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่  -->
+                <input  type="radio"    name="tab2_1" />  จำไม่ได้
+               <input  type="radio"   name="tab2_1" />   ไม่ใช่
 
             </td>
         </tr>
 
           <tr>
             <td>
-                2. สูบบุหรี่ในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true"> ใช่ <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"> มวลต่อวัน
-                <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
-               <?=nbs(3)?>  </input> 
-
-
-                  <?=nbs(5)?>
-         
-            <input  type="radio"  name="tab2_2"  />    ไม่ทราบ
+                2. สูบบุหรี่หรืออยู่ใกล้ชิดผู้สูบบุหร่ีในระยะครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true"> ใช่ ระบุ <input class="easyui-textbox" type="text" name="subject"   style="width:50px"> มวลต่อวัน
+               
+                <!-- <input type="Radio" name="tab2_2" value="1"  class="easyui-validatebox" required="true" checked="true"/> ไม่ -->
             
-              <input  type="radio"  name="tab2_2"  />  จำไม่ได้
+                <br>
+                    <input  type="radio"  name="tab2_2"  />  จำไม่ได้
+               
+         
+                    <input  type="radio"  name="tab2_2"  />    ไม่ใช่
+            
+             
 
 
 
@@ -1384,15 +1509,19 @@ otherdevelopmentallevel
 
                   <tr>
             <td>
-                3. ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true"> ใช่  <input class="easyui-textbox" type="text" name="subject" data-options="required:true"  style="width:50px"></input>  ซีซีต่อวัน <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่
-               <?=nbs(3)?> 
+                3. ดื่มเครื่องดื่มแอลกอฮอล์ในระยะตั้งครรภ์ 3 เดือนแรก : <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true"> ใช่  ระบุ <input class="easyui-textbox" type="text" name="subject"   style="width:50px"></input>  ซีซีต่อวัน 
+                
+                <br>
+                
+              <!--  <input type="Radio" name="tab2_3" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่  -->
+         
 
-
-                  <?=nbs(5)?>
-           
-            <input  type="radio"  name="tab2_3"  />  ไม่ทราบ
-            
               <input  type="radio"  name="tab2_3"  /> จำไม่ได้
+       
+           
+            <input  type="radio"  name="tab2_3"  />  ไม่ใช่
+            
+             
 
 
 
@@ -1879,6 +2008,8 @@ otherdevelopmentallevel
                 <tr>
                     <td>วัน/เดือน/ปี เกิด :</td>
                     <td>
+                        
+                        
                         <input class="easyui-textbox"    id="birthdatefahter_view"  name="birthdatefahter_view"  style="width: 100px;height: 30px;"  readonly="true"  >
 
                         <!--
