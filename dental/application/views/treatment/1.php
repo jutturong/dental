@@ -756,7 +756,14 @@
                     <td>Complication :</td>
                     <td>
                     
+                        <!--
                         <input class="easyui-textbox"  id="complication_fr10" name="complication_fr10" ></input>
+                        -->
+                         <input type="radio"  id="complication_fr10_y"  name="complication_fr10"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr10_y" name="other_complication_fr10_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr10_n"  name="complication_fr10"  value="2" />ไม่มี
+                        
+                        
                     </td>
     </tr>
     
@@ -956,7 +963,16 @@
                     <td>Complication :</td>
                     <td>
                     
+                        <!--
                         <input class="easyui-textbox"  id="complication_fr10_2" name="complication_fr10_2" ></input>
+                      -->
+                      
+                       <input type="radio"  id="complication_fr10_2_y"  name="complication_fr10_2"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr10_2_y" name="other_complication_fr10_2_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr10_2_n"  name="complication_fr10_2"  value="2" />ไม่มี
+                        
+                        
+                    
                     </td>
     </tr>
     
@@ -2146,7 +2162,16 @@
                     <td>Complication :</td>
                     <td>
                     
+                        <!--
                         <input class="easyui-textbox"  id="complication_fr9" name="complication_fr9" ></input>
+                        -->
+                        
+                         <input type="radio"  id="complication_fr9_y"  name="complication_fr9"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr9_y" name="other_complication_fr9_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr9_n"  name="complication_fr9"  value="2" />ไม่มี
+                        
+                        
+                        
                     </td>
     </tr>
     
@@ -2534,7 +2559,17 @@
                     <td>Complication :</td>
                     <td>
                     
+                        <!--
                         <input class="easyui-textbox"  id="complication_fr9" name="complication_fr9_2" ></input>
+                        -->
+                        
+                          <input type="radio"  id="complication_fr9_y"  name="complication_fr9"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr9_y" name="other_complication_fr9_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr9_n"  name="complication_fr9"  value="2" />ไม่มี
+                        
+                        
+                        
+                        
                     </td>
     </tr>
     
@@ -5402,7 +5437,13 @@
                     <td>Complication :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                        
+                        <input type="radio"  id="complication_fr6_y"  name="complication_fr6"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr6_y" name="other_complication_fr6_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr6_n"  name="complication_fr6"  value="2" />ไม่มี
+                        
+                        
+                       
                     </td>
                 </tr>
                 
@@ -5835,7 +5876,11 @@
                     <td>Complication :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                       <input type="radio"  id="complication_fr6_2_y"  name="complication_fr6_2"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr6_2_y" name="other_complication_fr6_2_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr6_2_n"  name="complication_fr6_2"  value="2" />ไม่มี
+                        
+                        
                     </td>
                 </tr>
                 
@@ -6266,7 +6311,13 @@
                     <td>Complication :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                      <input type="radio"  id="complication_fr6_3_y"  name="complication_fr6_3"  value="1" />มี
+                        <input class="easyui-textbox"  id="other_complication_fr6_3_y" name="other_complication_fr6_3_y"  style="width: 100;height: 30px;"  multiple=true    />
+                        <input type="radio"  id="complication_fr6_3_n"  name="complication_fr6_3"  value="2" />ไม่มี
+                        
+                        
+                        
+                        
                     </td>
                 </tr>
                 
