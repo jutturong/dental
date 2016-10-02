@@ -268,7 +268,8 @@
                      
                     </td>
                    <!-- <td>6. ผ่าตัดแก้ไขภาวะแหว่งของกระดูกสันเหงือกด้วยวิธีปลูกกระดูก  </td> -->
-                    <td>5. Bone graft surgery  </td>
+                    <!--<td>5. Bone graft surgery  </td> -->
+                      <td>5. Alveolar bone graft  </td>
                 </tr>
                 
                 

@@ -4025,6 +4025,28 @@ $this->db->delete($tables);
               //echo  json_conde($ar1);
               echo json_encode(array("success"=>$num));  
         }
+        
+        #---วิิิเคราะห์ผลจาก diagnosis ให้ไปปรากฏที่ form5
+        #http://127.0.0.1/dental/index.php/welcome/fr_diagnosis
+        function fr_diagnosis()
+        {
+              $id=trim($this->input->get_post("id"));
+             
+              if( $id > 0 )
+              {
+                  //`tb_diagnosis` 
+                  $tb="tb_diagnosis";
+                  $q=$this->db->get_where($tb,array("id_history_patient"=>$id));
+                  foreach($q->result() as $row)
+                  {
+                      $rows[]=$row;
+                  }
+                  echo json_encode($rows);
+                   // echo $id;  
+              }
+              
+              
+        }
     
 }
 

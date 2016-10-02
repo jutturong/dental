@@ -604,7 +604,20 @@
                                                                       var  doctor=k.doctor;
                                                                        //alert( doctor );
                                                                       $('#doctor_fr10_1').textbox('setValue',doctor);
-                                                                      $('#date_fr10_1').datetimebox('setValue',k.begin_date);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_1').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_1').textbox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
                                                                       
                                                                       $('#tool_tr10_1').textbox('setValue',k.tool);
                                                                       
@@ -738,25 +751,33 @@
             เครื่องมือที่ใช้  : <input class="easyui-textbox"   name="tool_tr10_1"    prompt="  ระบุเครื่องมือที่ใช้  " style="widht:250px;height: 40px;"  />
         </label>
     </div> 
+         
+             <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr10" name="complication_fr10" ></input>
+                    </td>
+    </tr>
     
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_1"   id="fileupload1_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_1"   id="fileupload1_fr10_1"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_1"   id="fileupload2_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_1"   id="fileupload2_fr10_1"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_1"   id="fileupload3_fr10_1"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_1"   id="fileupload3_fr10_1"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>       
 
@@ -931,24 +952,31 @@
         </label>
     </div> 
     
+                 <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr10_2" name="complication_fr10_2" ></input>
+                    </td>
+    </tr>
     
       <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_2"   id="fileupload1_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_2"   id="fileupload1_fr10_2"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_2"   id="fileupload2_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_2"   id="fileupload2_fr10_2"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_2"   id="fileupload3_fr10_2"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_2"   id="fileupload3_fr10_2"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>        
                          
@@ -1123,21 +1151,21 @@
     
       <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_3"   id="fileupload1_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_3"   id="fileupload1_fr10_3"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_3"   id="fileupload2_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_3"   id="fileupload2_fr10_3"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_3"   id="fileupload3_fr10_3"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_3"   id="fileupload3_fr10_3"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>    
        
@@ -1315,21 +1343,21 @@
     
     <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_4"   id="fileupload1_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_4"   id="fileupload1_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_4"   id="fileupload2_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_4"   id="fileupload2_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_4"   id="fileupload3_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_4"   id="fileupload3_fr10_4"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>    
           
@@ -1505,21 +1533,21 @@
     
      <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_5"   id="fileupload1_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_5"   id="fileupload1_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_5"   id="fileupload2_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_5"   id="fileupload2_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_5"   id="fileupload3_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_5"   id="fileupload3_fr10_5"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>    
          
@@ -1699,21 +1727,21 @@
     
    <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_6"   id="fileupload1_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) :  <input class="easyui-filebox"     name="fileupload1_fr10_6"   id="fileupload1_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_6"   id="fileupload2_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) :  <input class="easyui-filebox"     name="fileupload2_fr10_6"   id="fileupload2_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
            
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_6"   id="fileupload3_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr10_6"   id="fileupload3_fr10_6"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>           
        
@@ -1821,8 +1849,23 @@
                                                     {
                                                            $.each(data,function(i,k)
                                                             {
-                                                                   $('#doctor_fr9').textbox('setValue',k.doctor);
-                                                                   $('#date_fr9').datetimebox('setValue',k.begin_date);
+                                                                  
+                                                              
+                                                                      
+                                                                 //  $('#doctor_fr9').textbox('setValue',k.doctor);
+                                                                  
+        
+                                                                   // $('#date_fr9').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr9').textbox('setValue',conv_1);
+                                                                    }
+                                                                    
+                                                                   
                                                                    $('#goslon_fr9').combobox('setValue',k.goslon);
                                                                    $('#incisor_fr9').combobox('setValue',k.incisor);
                                                                    var  skeletal=k.skeletal;
@@ -2099,21 +2142,30 @@
         </label>
     </div>
     
+    <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr9" name="complication_fr9" ></input>
+                    </td>
+    </tr>
+    
+    
     <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox"     name="fileupload1_fr9"   id="fileupload1_fr9"     data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่าย,x-ray ก่อนการรักษา (Before) : <input class="easyui-filebox"     name="fileupload1_fr9"   id="fileupload1_fr9"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"     name="fileupload2_fr9"   id="fileupload2_fr9"    data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) : <input class="easyui-filebox"     name="fileupload2_fr9"   id="fileupload2_fr9"    data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr9"   id="fileupload3_fr9"     data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"     name="fileupload3_fr9"   id="fileupload3_fr9"     data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
@@ -2201,7 +2253,20 @@
                                                                 // var doctor=k.doctor;
                                                                 // alert(doctor);
                                                                  $('#doctor_fr9_2').textbox('setValue',k.doctor);
-                                                                 $('#date_fr9_2').datetimebox('setValue',k.begin_date);
+                                                                 
+                                                                 //$('#date_fr9_2').datetimebox('setValue',k.begin_date);
+                                                                  var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr9_2').textbox('setValue',conv_1);
+                                                                    }
+                                                                 
+                                                                 
+                                                                 
+                                                                 
                                                                  $('#date2_fr9_2').datetimebox('setValue',k.end_date);
                                                                  $('#goslon_fr9_2').combobox('setValue',k.goslon);
                                                                   var  incisor=k.incisor;
@@ -2463,21 +2528,31 @@
         </label>
     </div>
     
+    
+     
+    <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr9" name="complication_fr9_2" ></input>
+                    </td>
+    </tr>
+    
     <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox"  id="fileupload1_fr9_2"  name="fileupload1_fr9_2"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่าย,x-ray ก่อนการรักษา (Before) : <input class="easyui-filebox"  id="fileupload1_fr9_2"  name="fileupload1_fr9_2"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox"     id="fileupload2_fr9_2"  name="fileupload2_fr9_2"    data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) : <input class="easyui-filebox"     id="fileupload2_fr9_2"  name="fileupload2_fr9_2"    data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox"    id="fileupload3_fr9_2"  name="fileupload3_fr9_2"    data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox"    id="fileupload3_fr9_2"  name="fileupload3_fr9_2"    data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
@@ -2578,20 +2653,20 @@
     
  <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา (Before) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
        <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
     
        <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
      
@@ -2731,7 +2806,7 @@
                 </tr>
                 
                 <tr>
-                    <td>รูปถ่าย :</td>
+                    <td>รูปถ่าย ,x-ray :</td>
                     <td><input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%"></td>
                 </tr>
                 
@@ -2832,12 +2907,49 @@
                                                                       
                                                                      var  joindoctor=key.joindoctor;
                                                                      $('#joindoctor_fr1').textbox('setValue',joindoctor);
-                                                                     var  begin_date=key.begin_date;
-                                                                      $('#date_fr1').textbox('setValue', begin_date );
+                                                                     
+                                                                     
+                                                                     
+                                                                   //   var  begin_date=key.begin_date;
+                                                                    //  $('#date_fr1').textbox('setValue', begin_date );
+                                                                     var begin_date=key.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr1').textbox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+
                                                                       var  end_date=key.end_date;
-                                                                       $('#date2_fr1').textbox('setValue', end_date  );
+                                                                     //  $('#date2_fr1').textbox('setValue', end_date  );
+                                                                    //   var begin_date=k.begin_date;
+                                                                    if(    end_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1= end_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date2_fr1').textbox('setValue',conv_1);
+                                                                    } 
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
                                                                        var  procedure=key.procedure;
-                                                                       //alert(procedure);
+                                                                      
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                       
+                                                                      //alert(procedure);
                                                                       if( procedure == 1  )
                                                                       {
                                                                            $('#strapping').attr('checked',true);
@@ -3082,7 +3194,7 @@
            
                 <tr>
                     <td>
-                       รูปถ่ายก่อนการรักษา (Before) :   
+                       รูปถ่าย,x-ray ก่อนการรักษา (Before) :   
                     </td>
                     <td>
                         <input class="easyui-filebox"  id="file1_fr1"  name="file1_fr1"  />
@@ -3091,7 +3203,7 @@
                 
                                 <tr>
                     <td>
-                       รูปถ่ายระหว่างการรักษา (During) :   
+                       รูปถ่าย,x-ray ระหว่างการรักษา (During) :   
                     </td>
                     <td>
                         <input class="easyui-filebox"   id="file2_fr1"  name="file2_fr1"  />
@@ -3100,7 +3212,7 @@
                 
                                 <tr>
                     <td>
-                       รูปถ่ายหลังการรักษา (After) :   
+                       รูปถ่าย,x-ray หลังการรักษา (After) :   
                     </td>
                     <td>
                         <input class="easyui-filebox"    id="file3_fr1"  name="file3_fr1"    />
@@ -3896,8 +4008,35 @@
                                                        $.each(data,function(i,k){
                                                        $('#doctor_fr7').textbox('setValue',k.doctor);
                                                         
-                                                       $('#date_fr7').datetimebox('setValue',k.begin_date);
-                                                       $('#date2_fr7').datetimebox('setValue',k.end_date);
+                                                        
+                                                        
+                                                       //$('#date_fr7').datetimebox('setValue',k.begin_date);
+                                                                   var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr7').textbox('setValue',conv_1);
+                                                                    }
+                                                                    
+                                                                    
+                                                       
+                                                      // $('#date2_fr7').datetimebox('setValue',k.end_date);
+                                                                var end_date=k.end_date; 
+                                                             if(    end_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=end_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date2_fr7').textbox('setValue',conv_1);
+                                                                    }
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       
                                                        
                                                        var  goslon=k.goslon;
                                                        
@@ -4220,7 +4359,7 @@
  
   <tr>
      <td>
-         รูปถ่ายก่อนการรักษา (Before) :
+         รูปถ่าย,x-ray ก่อนการรักษา (Before) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload1_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
@@ -4229,7 +4368,7 @@
  
    <tr>
      <td>
-         รูปถ่ายระหว่างรักษา (During) :
+         รูปถ่าย,x-ray ระหว่างรักษา (During) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload2_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
@@ -4238,7 +4377,7 @@
  
     <tr>
      <td>
-         รูปถ่ายหลังรักษา (After) :
+         รูปถ่าย,x-ray หลังรักษา (After) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload3_fr7" data-options="prompt:'Choose another file...'" style="width:50%">
@@ -4374,8 +4513,38 @@
                                              $.each(data,function(i,k)
                                               {
                                                      $('#doctor_fr8').textbox('setValue',k.doctor);
-                                                     $('#date_fr8').datetimebox('setValue',k.begin_date);
-                                                     $('#date2_fr8').datetimebox('setValue',k.end_date);
+                                                     
+                                                     
+                                                    // $('#date_fr8').datetimebox('setValue',k.begin_date);
+                                                                var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr8').textbox('setValue',conv_1);
+                                                                    }
+                                                                    
+                                                                    
+                                                     
+                                                     
+                                                   //  $('#date2_fr8').datetimebox('setValue',k.end_date);
+                                                     var end_date=k.end_date; 
+                                                             if(    end_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=end_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date2_fr8').textbox('setValue',conv_1);
+                                                                    }
+                                                                    
+                                                                    
+                                                     
+                                                     
+                                                     
+                                                     
+                                                     
+                                                     
                                                      $('#goslon_fr8').combobox('setValue',k.goslon);
                                                      
                                                      var  incisor=k.incisor;
@@ -4655,7 +4824,7 @@
  
   <tr>
      <td>
-         รูปถ่ายก่อนการรักษา (Before) :
+         รูปถ่าย,x-ray ก่อนการรักษา (Before) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload1_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -4664,7 +4833,7 @@
  
    <tr>
      <td>
-         รูปถ่ายระหว่างรักษา (During) :
+         รูปถ่าย,x-ray ระหว่างรักษา (During) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload2_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -4673,7 +4842,7 @@
  
     <tr>
      <td>
-         รูปถ่ายหลังรักษา (After) :
+         รูปถ่าย,x-ray หลังรักษา (After) :
      </td>
      <td>
           <input class="easyui-filebox" name="fileupload3_fr8" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -4795,7 +4964,7 @@
                 
 
                 <tr>
-                    <td>รุปถ่าย (Before) :</td>
+                    <td>รุปถ่าย ,x-ray (Before) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
@@ -4803,7 +4972,7 @@
                 </tr>
                 
                      <tr>
-                    <td>รุปถ่าย (After) :</td>
+                    <td>รุปถ่าย ,x-ray (After) :</td>
                     <td>
                         <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
                         
@@ -4926,7 +5095,459 @@
 
     <div style="margin:0px 0 0px 0;"></div>
     
-    <div class="easyui-panel" style="padding: 3px;">
+    <div class="easyui-tabs"  >
+        <div title="Record 1"  style="padding: 3px;">
+     <!--------------------- begin -------------------------------------->       
+    
+             <div class="easyui-panel" style="padding: 3px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+           onclick="
+              // alert('t');
+                    
+                    $('#dia_fr6').dialog('open');
+                    var id =   $('#id_history_patient_fr6').textbox('getValue');
+                  //  alert(id);
+                   $('#dg_fr6').datagrid({
+                        url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                   singleSelect:true,
+                   rownumbers:true,
+                   columns:[[
+                       { field:'firstname', title:'ชื่อ', align:'center'  },
+                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                       { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
+                       { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
+                        { title:'เทคนิคที่ใช้ :',  field:'technic',  },
+                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                   ]],
+                   toolbar:[ 
+                   { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
+                        {
+                               var   row= $('#dg_fr6').datagrid('getSelected');     
+                               var  id=row.id_bonegraft;
+                              // alert(id);
+                               $('#id_bonegraft').textbox('setValue',id);
+                               if( row )
+                               {
+                                     var  url='<?=base_url()?>index.php/welcome/edit_json6'; 
+                                     $.post(url,{ id:id },function(data)
+                                       {
+                                           //alert(data);
+                                            $.each(data,function(i,k)
+                                              {
+                                                    
+                                                    //--------------------------------------------------------
+                                                         $('#doctor_fr6').textbox('setValue',k.doctor);
+                                                         
+                                                         
+                                                         
+                                                        // $('#date_fr6').datetimebox('setValue',k.date1);
+                                                         var begin_date=k.date1;
+                                                         if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr6').textbox('setValue',conv_1);
+                                                                    }
+                                                         
+                                                         
+                                                         $('#technic').textbox('setValue',k.technic);
+                                                         
+                                                         var  dentalcast= k.dentalcast;
+                                                         
+                                                         if(  dentalcast == 1 )
+                                                         {   
+                                                                $('#dentalcast1_fr6').attr('checked',true);
+                                                         }
+                                                          else    if(  dentalcast == 2 )
+                                                         {   
+                                                                $('#dentalcast2_fr6').attr('checked',true);
+                                                         }
+                                                         
+                                                         
+                                                             
+                                                         //dentalcast1_fr6
+                                                         
+                                                         /*
+                                                          $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                          var  goslon=k.goslon;
+                                                          //alert(goslon);
+                                                           $('#goslon').combobox('setValue',goslon);
+                                                           var 	incisor=k.incisor;
+                                                           
+                                                           var   incisor=2;
+                                                           // alert(incisor);  
+                                                           //incisor1
+                                                                 if(  incisor == 1 )
+                                                                 {
+                                                                     $('#incisor1').attr('checked',true);
+                                                                 }
+                                                                 else if(   incisor == 2 )
+                                                                 {
+                                                                      $('#incisor2').attr('checked',true);
+                                                                 }
+                                                                  else if(   incisor  == 3)
+                                                                 {
+                                                                      $('#incisor3').attr('checked',true);
+                                                                 }
+                                                                  else if(  incisor  == 4)
+                                                                 {
+                                                                       $('#incisor4').attr('checked',true);
+                                                                 }
+                                                                 
+                                                                 var  skeletal=k.skeleta;
+                                                                 //alert( skeletal );
+                                                                 //  skeletal1
+                                                                 if(  skeletal == 1  )
+                                                                 {
+                                                                     $('#skeletal1').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 2 ) 
+                                                                 {
+                                                                     $('#skeletal2').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 3 ) 
+                                                                 {
+                                                                     $('#skeletal3').attr('checked',true);
+                                                                 }
+                                                                 
+                                                               var  dentalcast=k.dentalcast;
+                                                              // alert(dentalcast);
+                                                               if(  dentalcast == 1 )
+                                                               {
+                                                                     $('#dental_cast_yes').attr('checked',true);
+                                                               }
+                                                              else  if(  dentalcast == 2 )
+                                                               {
+                                                                     $('#dental_cast_no').attr('checked',true);
+                                                               }
+                                                            */
+                                                    
+                                                    //--------------------------------------------------------
+                                              });
+                                       },'json');
+                               }
+                               
+                               
+                               
+                        }  
+                    },
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
+                   {  text:'Delete',iconCls:'icon-remove',handler:function()
+                         {   
+                              var  rows=$('#dg_fr6').datagrid('getSelected');
+                              if( rows )
+                              {
+                                     
+                                     var  id=rows.id_bonegraft;
+                                      //alert(id);
+                                      $.messager.confirm('สถานะการลบข้อมูล',' คุณต้องการลบข้อมูลหรือไม่ ', function(r){
+                                           if( r )
+                                             {
+                                                   //alert('t');
+                                                   //alert(id);
+                                                    var  url='<?=base_url()?>index.php/welcome/del_fr6/'   +  id;
+                                                    $.post(url,function(data){
+                                                            // alert(data);
+                                                              if( data == 1 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                                     $('#dg_fr6').datagrid('reload');
+                                                              }
+                                                              else if( data == 0 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลล้มเหลว');
+                                                              }
+                                                    });
+                                             }
+                                      } );
+                                          
+                                      
+                                     
+                                        
+                                   
+                              }
+                         } 
+                     },
+                     
+                      {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                        }  
+                                     },
+                     
+                   ]
+                       
+                   });
+                  
+           "
+           >
+            
+ 
+    
+            
+            
+            เรียกดูข้อมูล</a>
+        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+                
+                 
+                 ></div>
+        </div>
+           
+    </div>
+        
+    
+            <form id="fr6"  method="post" enctype="multipart/form-data">
+            <table>
+                
+                
+                <tr>
+                      <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
+                     <input class="easyui-textbox"  id="id_bonegraft"   name="id_bonegraft"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                      
+                      
+                    <td>
+                          ชื่อ - นามสกุล : 
+                    </td>
+                    <td>
+                       
+                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:150px;height: 30px;" readonly="true"  />
+                        
+                        
+                        <input class="easyui-textbox"   id="result_analysis_fr6"   name="result_analysis_fr6"  multiline=true   style="width:200px;height: 40px;" readonly="true"   />
+                        
+                    </td>
+                </tr>
+                
+                
+                
+                
+                
+                <tr>
+                    <td> แพทย์ผู้ทำการรักษา :</td>
+                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
+                </tr>
+                
+                
+              
+                
+                
+                <tr>
+                    <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
+                        
+                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> 
+                           
+                        <label>อายุ</label>
+                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <label>ปี</label>
+                        
+                    </td>
+                </tr>
+                
+                    <tr>
+                    <td>บริเวณที่ทำ :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="join_fr6" name="join_fr6" ></input>
+                    </td>
+                </tr>
+
+                
+                  <tr>
+                    <td>เทคนิคที่ใช้ :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="technic" name="technic" ></input>
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                    </td>
+                </tr>
+                
+                
+                    <tr>
+                    <td>
+        <label>
+           รูปถ่าย,x-ray ก่อนการรักษา (ฺBefore) : 
+            </label>
+                    </td>
+                    <td>
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
+                    </td>
+            </tr>               
+
+                
+                <tr>
+                    <td>
+        <label>
+           รูปถ่าย,x-ray ระหว่างการรักษา (ฺDuring) : 
+            </label>
+                    </td>
+                    <td>
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
+                    </td>
+            </tr>               
+                  
+            
+            
+            <tr>
+                <td>
+               <label>
+           รูปถ่าย,x-ray หลังการรักษา (ฺAfter) : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
+                </td>
+            </tr>
+ 
+                 <tr>
+                <td>
+               <label>
+           Op note : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote"   />
+                </td>
+            </tr>
+            
+            
+            
+                     <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                        <input  type="radio"  id="dentalcast1_fr6"  name="dentalcast_fr6" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6"  name="dentalcast_fr6" value="2"> No
+                        
+                    </td>
+                    
+                </tr>
+        
+              
+                
+                <!--
+                   <tr>
+                    <td>Angle's classification :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+                
+                  <tr>
+                    <td>Skeleton classification :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+                -->
+                
+                
+
+                
+                
+
+                
+<!--
+ <tr>
+     <td>
+         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+     </td>
+ </tr> 
+ 
+  <tr>
+     <td>
+         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+     </td>
+ </tr> 
+ -->
+                
+                <tr>
+                    <td colspan="2">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                           onclick="
+                              $('#fr6').form('submit',{
+                                  url:'<?=base_url()?>index.php/welcome/inst_fr6',
+                                  success: function(data)
+                                  {
+                                         //alert(data);
+                                         if( data == 1 )
+                                         {
+                                               $('#dia_fr6').dialog('open');
+                                               $('#dg_fr6').datagrid('reload');
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                         }
+                                         else{
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                         }
+                                  }
+                              })
+                           "
+                           
+                           >Save/Update</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
+                    </td>
+                  
+                </tr>
+      
+            </table>
+        </form>
+    
+     <!--------------------- end ----------------------------------------->
+        </div>
+        <div title="Record 2"  style="padding: 3px;">
+     <!--------------------- begin -------------------------------------->       
+    
+             <div class="easyui-panel" style="padding: 3px;">
         <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
            onclick="
               // alert('t');
@@ -5127,6 +5748,11 @@
                   
            "
            >
+            
+ 
+    
+            
+            
             เรียกดูข้อมูล</a>
         <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
             <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
@@ -5153,7 +5779,9 @@
                     </td>
                     <td>
                        
-                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:200px;height: 30px;" readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:150px;height: 30px;" readonly="true"  />
+                        
+                          <input class="easyui-textbox"   id="result_analysis_fr6_2"   name="result_analysis_fr6_2"  multiline=true   style="width:200px;height: 40px;" readonly="true"   />
                     </td>
                 </tr>
                 
@@ -5183,15 +5811,16 @@
                 </tr>
                 
                 
-                <!--
-                 <tr>
-                    <td>วัน/เดือน/ปี ที่่สิ้นสุดการรักษา :</td>
+
+                <tr>
+                    <td>บริเวณที่ทำ :</td>
                     <td>
                     
-                        <input class="easyui-datebox"></input>
+                        <input class="easyui-textbox"  id="join_fr6_2" name="join_fr6_2" ></input>
                     </td>
                 </tr>
-                -->
+                
+                
                 
                   <tr>
                     <td>เทคนิคที่ใช้ :</td>
@@ -5201,14 +5830,24 @@
                     </td>
                 </tr>
                 
+                
+                 <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                    </td>
+                </tr>
+                
+                
                     <tr>
                     <td>
         <label>
-           รูปถ่ายก่อนการรักษา (ฺBefore) : 
+           รูปถ่าย,x-ray ก่อนการรักษา (ฺBefore) : 
             </label>
                     </td>
                     <td>
-                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
                     </td>
             </tr>               
 
@@ -5216,11 +5855,11 @@
                 <tr>
                     <td>
         <label>
-           รูปถ่ายระหว่างการรักษา (ฺDuring) : 
+           รูปถ่าย,x-ray ระหว่างการรักษา (ฺDuring) : 
             </label>
                     </td>
                     <td>
-           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
                     </td>
             </tr>               
                   
@@ -5229,14 +5868,25 @@
             <tr>
                 <td>
                <label>
-           รูปถ่ายหลังการรักษา (ฺAfter) : 
+           รูปถ่าย,x-ray หลังการรักษา (ฺAfter) : 
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
                 </td>
             </tr>
  
+                 <tr>
+                <td>
+               <label>
+           Op note : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote"   />
+                </td>
+            </tr>
+            
             
             
                      <tr>
@@ -5325,7 +5975,440 @@
             </table>
         </form>
     
+     <!--------------------- end ----------------------------------------->
+        </div>
+         <div title="Record 3"  style="padding: 3px;">
+        <!--------------------- begin -------------------------------------->       
     
+             <div class="easyui-panel" style="padding: 3px;">
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+           onclick="
+              // alert('t');
+                    
+                    $('#dia_fr6').dialog('open');
+                    var id =   $('#id_history_patient_fr6').textbox('getValue');
+                  //  alert(id);
+                   $('#dg_fr6').datagrid({
+                        url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                   singleSelect:true,
+                   rownumbers:true,
+                   columns:[[
+                       { field:'firstname', title:'ชื่อ', align:'center'  },
+                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                       { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
+                       { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
+                        { title:'เทคนิคที่ใช้ :',  field:'technic',  },
+                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                   ]],
+                   toolbar:[ 
+                   { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
+                        {
+                               var   row= $('#dg_fr6').datagrid('getSelected');     
+                               var  id=row.id_bonegraft;
+                              // alert(id);
+                               $('#id_bonegraft').textbox('setValue',id);
+                               if( row )
+                               {
+                                     var  url='<?=base_url()?>index.php/welcome/edit_json6'; 
+                                     $.post(url,{ id:id },function(data)
+                                       {
+                                           //alert(data);
+                                            $.each(data,function(i,k)
+                                              {
+                                                    
+                                                    //--------------------------------------------------------
+                                                         $('#doctor_fr6').textbox('setValue',k.doctor);
+                                                         $('#date_fr6').datetimebox('setValue',k.date1);
+                                                         $('#technic').textbox('setValue',k.technic);
+                                                         
+                                                         var  dentalcast= k.dentalcast;
+                                                         
+                                                         if(  dentalcast == 1 )
+                                                         {   
+                                                                $('#dentalcast1_fr6').attr('checked',true);
+                                                         }
+                                                          else    if(  dentalcast == 2 )
+                                                         {   
+                                                                $('#dentalcast2_fr6').attr('checked',true);
+                                                         }
+                                                         
+                                                         
+                                                             
+                                                         //dentalcast1_fr6
+                                                         
+                                                         /*
+                                                          $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                          var  goslon=k.goslon;
+                                                          //alert(goslon);
+                                                           $('#goslon').combobox('setValue',goslon);
+                                                           var 	incisor=k.incisor;
+                                                           
+                                                           var   incisor=2;
+                                                           // alert(incisor);  
+                                                           //incisor1
+                                                                 if(  incisor == 1 )
+                                                                 {
+                                                                     $('#incisor1').attr('checked',true);
+                                                                 }
+                                                                 else if(   incisor == 2 )
+                                                                 {
+                                                                      $('#incisor2').attr('checked',true);
+                                                                 }
+                                                                  else if(   incisor  == 3)
+                                                                 {
+                                                                      $('#incisor3').attr('checked',true);
+                                                                 }
+                                                                  else if(  incisor  == 4)
+                                                                 {
+                                                                       $('#incisor4').attr('checked',true);
+                                                                 }
+                                                                 
+                                                                 var  skeletal=k.skeleta;
+                                                                 //alert( skeletal );
+                                                                 //  skeletal1
+                                                                 if(  skeletal == 1  )
+                                                                 {
+                                                                     $('#skeletal1').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 2 ) 
+                                                                 {
+                                                                     $('#skeletal2').attr('checked',true);
+                                                                 }
+                                                                 else if( skeletal == 3 ) 
+                                                                 {
+                                                                     $('#skeletal3').attr('checked',true);
+                                                                 }
+                                                                 
+                                                               var  dentalcast=k.dentalcast;
+                                                              // alert(dentalcast);
+                                                               if(  dentalcast == 1 )
+                                                               {
+                                                                     $('#dental_cast_yes').attr('checked',true);
+                                                               }
+                                                              else  if(  dentalcast == 2 )
+                                                               {
+                                                                     $('#dental_cast_no').attr('checked',true);
+                                                               }
+                                                            */
+                                                    
+                                                    //--------------------------------------------------------
+                                              });
+                                       },'json');
+                               }
+                               
+                               
+                               
+                        }  
+                    },
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
+                   {  text:'Delete',iconCls:'icon-remove',handler:function()
+                         {   
+                              var  rows=$('#dg_fr6').datagrid('getSelected');
+                              if( rows )
+                              {
+                                     
+                                     var  id=rows.id_bonegraft;
+                                      //alert(id);
+                                      $.messager.confirm('สถานะการลบข้อมูล',' คุณต้องการลบข้อมูลหรือไม่ ', function(r){
+                                           if( r )
+                                             {
+                                                   //alert('t');
+                                                   //alert(id);
+                                                    var  url='<?=base_url()?>index.php/welcome/del_fr6/'   +  id;
+                                                    $.post(url,function(data){
+                                                            // alert(data);
+                                                              if( data == 1 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
+                                                                     $('#dg_fr6').datagrid('reload');
+                                                              }
+                                                              else if( data == 0 )
+                                                              {
+                                                                     $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลล้มเหลว');
+                                                              }
+                                                    });
+                                             }
+                                      } );
+                                          
+                                      
+                                     
+                                        
+                                   
+                              }
+                         } 
+                     },
+                     
+                      {  text:'Before',  iconCls:'icon-large-picture', handler:function()
+                                                {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file1;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                                }  
+                                          },
+                                     {  text:'During',   iconCls:'icon-large-picture', handler:function()
+                                              {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file2;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                       //window.open(url);
+                                                          if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                               }  
+                                      },
+                                     {  text:'After',   iconCls:'icon-large-picture', handler:function()
+                                        {
+                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  file1=row.file3;
+                                                       var  url='<?=base_url()?>upload/' + file1;
+                                                      // window.open(url);
+                                                         if( file1.length > 0 )
+                                                         {
+                                                            window.open(url);     
+                                                         }
+                                        }  
+                                     },
+                     
+                   ]
+                       
+                   });
+                  
+           "
+           >
+            
+ 
+    
+            
+            
+            เรียกดูข้อมูล</a>
+        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+                
+                 
+                 ></div>
+        </div>
+           
+    </div>
+        
+    
+            <form id="fr6"  method="post" enctype="multipart/form-data">
+            <table>
+                
+                
+                <tr>
+                      <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
+                     <input class="easyui-textbox"  id="id_bonegraft"   name="id_bonegraft"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                      
+                      
+                    <td>
+                          ชื่อ - นามสกุล : 
+                    </td>
+                    <td>
+                       
+                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:150px;height: 30px;" readonly="true"  />
+                        <input class="easyui-textbox"   id="result_analysis_fr6_3"   name="result_analysis_fr6_3"  multiline=true   style="width:200px;height: 40px;" readonly="true"   />       
+                        
+                        
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td> แพทย์ผู้ทำการรักษา :</td>
+                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
+                </tr>
+                
+                
+              
+                
+                
+                <tr>
+                    <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
+                    <td>
+                    
+                        <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
+                        
+                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> 
+                           
+                        <label>อายุ</label>
+                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <label>ปี</label>
+                        
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>บริเวณที่ทำ :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="join_fr6_3" name="join_fr6_3" ></input>
+                    </td>
+                </tr>
+
+                
+                  <tr>
+                    <td>เทคนิคที่ใช้ :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="technic" name="technic" ></input>
+                    </td>
+                </tr>
+                
+                
+                 <tr>
+                    <td>Complication :</td>
+                    <td>
+                    
+                        <input class="easyui-textbox"  id="complication_fr6" name="complication_fr6" ></input>
+                    </td>
+                </tr>
+                
+                
+                    <tr>
+                    <td>
+        <label>
+           รูปถ่าย,x-ray ก่อนการรักษา (ฺBefore) : 
+            </label>
+                    </td>
+                    <td>
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
+                    </td>
+            </tr>               
+
+                
+                <tr>
+                    <td>
+        <label>
+           รูปถ่าย,x-ray ระหว่างการรักษา (ฺDuring) : 
+            </label>
+                    </td>
+                    <td>
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
+                    </td>
+            </tr>               
+                  
+            
+            
+            <tr>
+                <td>
+               <label>
+           รูปถ่าย,x-ray หลังการรักษา (ฺAfter) : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
+                </td>
+            </tr>
+ 
+                 <tr>
+                <td>
+               <label>
+           Op note : 
+           </label>    
+                </td>
+                <td>
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote"   />
+                </td>
+            </tr>
+            
+            
+            
+                     <tr>
+                    <td>
+                         <label>
+                         Dental Cast :
+                        </label>
+
+                    </td>
+                    <td>
+                         
+                        <input  type="radio"  id="dentalcast1_fr6"  name="dentalcast_fr6" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6"  name="dentalcast_fr6" value="2"> No
+                        
+                    </td>
+                    
+                </tr>
+        
+              
+                
+                <!--
+                   <tr>
+                    <td>Angle's classification :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+                
+                  <tr>
+                    <td>Skeleton classification :</td>
+                    <td><input name="name1" id="name1" class="easyui-combobox"></input></td>
+                </tr>
+                -->
+                
+                
+
+                
+                
+
+                
+<!--
+ <tr>
+     <td>
+         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+     </td>
+ </tr> 
+ 
+  <tr>
+     <td>
+         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+     </td>
+     <td>
+          <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
+     </td>
+ </tr> 
+ -->
+                
+                <tr>
+                    <td colspan="2">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                           onclick="
+                              $('#fr6').form('submit',{
+                                  url:'<?=base_url()?>index.php/welcome/inst_fr6',
+                                  success: function(data)
+                                  {
+                                         //alert(data);
+                                         if( data == 1 )
+                                         {
+                                               $('#dia_fr6').dialog('open');
+                                               $('#dg_fr6').datagrid('reload');
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
+                                         }
+                                         else{
+                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
+                                         }
+                                  }
+                              })
+                           "
+                           
+                           >Save/Update</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
+                    </td>
+                  
+                </tr>
+      
+            </table>
+        </form>
+    
+     <!--------------------- end ----------------------------------------->    
+        </div>
+    </div>
 </div>
 
 
@@ -5383,7 +6466,7 @@
         
  <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (before) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -5392,12 +6475,14 @@
  
   <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (after) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
      </td>
  </tr> 
+ 
+ 
 
                 
                 <tr>
@@ -5485,7 +6570,7 @@
           
  <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (before) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -5494,7 +6579,7 @@
  
   <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (after) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -5589,7 +6674,7 @@
           
  <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (before) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (before) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -5598,7 +6683,7 @@
  
   <tr>
      <td>
-         รูปถ่ายก่อน-หลัง ทำการรักษา (after) :
+         รูปถ่าย,x-ray ก่อน-หลัง ทำการรักษา (after) :
      </td>
      <td>
           <input class="easyui-filebox" name="file2" data-options="prompt:'Choose another file...'" style="width:100%">
@@ -5840,8 +6925,34 @@
                                                    $.each(data,function(v,k){
                                                          //alert(k.doctor);
                                                          $('#doctor_fr4').textbox('setValue',k.doctor);
-                                                         $('#date_fr4').datetimebox('setValue',k.begin_date);
-                                                          $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                         
+                                                         
+                                                         //$('#date_fr4').datetimebox('setValue',k.begin_date);
+                                                          var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr4').textbox('setValue',conv_1);
+                                                                    }
+                                                         
+                                                         
+                                                         // $('#date2_fr4').datetimebox('setValue',k.end_date);
+                                                             var end_date=k.end_date; 
+                                                             if(    end_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=end_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date2_fr4').textbox('setValue',conv_1);
+                                                                    }
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
+                                                          
                                                           var  goslon=k.goslon;
                                                           //alert(goslon);
                                                            $('#goslon').combobox('setValue',goslon);
@@ -6101,7 +7212,7 @@
     
     <div style="padding: 10px 5px;">
         <label>
-            รูปถ่าย (Before) :
+            รูปถ่าย,x-ray (Before) :
             <input class="easyui-filebox"   id="fileupload1_fr4"  name="fileupload1_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
@@ -6109,14 +7220,14 @@
 
        <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายระหว่างการรักษา (During) :
+            รูปถ่าย,x-ray ระหว่างการรักษา (During) :
             <input class="easyui-filebox"   id="fileupload2_fr4"    name="fileupload2_fr4"    data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
     
         <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายหลังการรักษา (After) :
+            รูปถ่าย,x-ray หลังการรักษา (After) :
             <input class="easyui-filebox"     id="fileupload3_fr4"     name="fileupload3_fr4"     data-options=" prompt:' เลือกไฟล์ ' "  style="width:200px;height: 30px;"   />
         </label>
     </div>
@@ -6187,20 +7298,20 @@
     
        <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายก่อนการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ก่อนการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
        <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During) : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
     
        <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา : <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
@@ -6295,7 +7406,19 @@
                                                     
                                                        $('#dental_11_1').textbox('setValue',k.dental);
                                                        $('#tooth_fr11_1').textbox('setValue',k.tooth);
-                                                       $('#date_fr11_1').datetimebox('setValue',k.begin_date);
+                                                     
+                                                                 //  $('#date_fr11_1').datetimebox('setValue',k.begin_date);
+                                                                   var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr11_1').textbox('setValue',conv_1);
+                                                                    } 
+                                                       
+                                                       
+                                                       
                                                        
                                                        $('#tool_tr11_1').textbox('setValue',k.tool);
                                                        
@@ -6441,19 +7564,19 @@
     
      <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox"  id="fileupload1_fr11_1"  name="fileupload1_fr11_1"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่าย,x-ray ก่อนการรักษา (Before ) : <input class="easyui-filebox"  id="fileupload1_fr11_1"  name="fileupload1_fr11_1"  data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา ( During ) : <input class="easyui-filebox"   id="fileupload2_fr11_1"  name="fileupload2_fr11_1"  data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา ( During ) : <input class="easyui-filebox"   id="fileupload2_fr11_1"  name="fileupload2_fr11_1"  data-options=" prompt:'  เลือกรูป,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา ( After ) : <input class="easyui-filebox"    id="fileupload3_fr11_1"  name="fileupload3_fr11_1"    data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา ( After ) : <input class="easyui-filebox"    id="fileupload3_fr11_1"  name="fileupload3_fr11_1"    data-options=" prompt:'  เลือกรูป,x-ray ถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>    
 
@@ -6712,19 +7835,19 @@
     
      <div style="padding: 10px 5px;">
         <label>
-            รูปถ่ายก่อนการรักษา (Before ) : <input class="easyui-filebox"  name="fileupload1_fr11_2"  data-options=" prompt:'  เลือกรูปถ่ายก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
+            รูปถ่าย,x-ray ก่อนการรักษา (Before ) : <input class="easyui-filebox"  name="fileupload1_fr11_2"  data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
          <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายระหว่างการรักษา (During ) : <input class="easyui-filebox"   name="fileupload2_fr11_2"  data-options=" prompt:'  เลือกรูประหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray ระหว่างการรักษา (During ) : <input class="easyui-filebox"   name="fileupload2_fr11_2"  data-options=" prompt:'  เลือกรูป,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>
     
              <div style="padding: 10px 5px;">
         <label>
-           รูปถ่ายหลังการรักษา (After ) : <input class="easyui-filebox"   name="fileupload3_fr11_2"   data-options=" prompt:'  เลือกรูปถ่ายหลังการรักษา '   "  style="width:250px;height: 40px;"   />
+           รูปถ่าย,x-ray หลังการรักษา (After ) : <input class="easyui-filebox"   name="fileupload3_fr11_2"   data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   />
         </label>
     </div>  
 

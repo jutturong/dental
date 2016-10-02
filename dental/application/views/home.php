@@ -621,6 +621,23 @@
                                       } ,'json'); 
                                       
                                       
+                                      //-------------- diagnosis ให้ปรากฏ ที่ form 5--------------------
+                                      //result_analysis_fr6
+                                      var url_diag='<?=base_url()?>index.php/welcome/fr_diagnosis';
+                                     
+                                      $.post(url_diag,{  id: id },function(data)
+                                      {
+                                           //alert(data);
+                                              $.each(data,function(i,k)
+                                                {
+                                                      // alert(k.result_analysis);
+                                                      $('#result_analysis_fr6').textbox('setValue',k.result_analysis);
+                                                       $('#result_analysis_fr6_2').textbox('setValue',k.result_analysis);
+                                                        $('#result_analysis_fr6_3').textbox('setValue',k.result_analysis);
+                                                });
+                                      },'json');
+                                      
+                                     //  $('#result_analysis_fr6').textbox('setValue','test');
                                       
                                       
                                       
