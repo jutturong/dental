@@ -180,6 +180,8 @@
                                           //121
                                           //4432
                                            $('#y_fr6').textbox('setValue',ex1[0]);  //4432
+                                           $('#y_fr6_2').textbox('setValue',ex1[0]);  //4432
+                                           $('#y_fr6_3').textbox('setValue',ex1[0]);  //4432
                                             
                                             //-------------fr7-----------------------------------------
                                          //   $('#age1_fr7').textbox('setValue',calage); 
@@ -266,6 +268,13 @@
                                      $('#id_history_patient_fr6').textbox('setValue',id);
                                       $('#name_lastname_fr6').textbox('setValue',firstname+'  '+lastname);
                                       
+                                      
+                                      $('#id_history_patient_fr6_2').textbox('setValue',id);
+                                      $('#name_lastname_fr6_2').textbox('setValue',firstname+'  '+lastname);
+                                      
+                                      
+                                      $('#id_history_patient_fr6_3').textbox('setValue',id);
+                                      $('#name_lastname_fr6_3').textbox('setValue',firstname+'  '+lastname);
                                       
                                              //-------- 7. Growth modification t -------------   
                                       $('#id_history_patient_fr7').textbox('setValue',id);
@@ -632,8 +641,14 @@
                                                 {
                                                       // alert(k.result_analysis);
                                                       $('#result_analysis_fr6').textbox('setValue',k.result_analysis);
+                                                      
+                                                      
                                                        $('#result_analysis_fr6_2').textbox('setValue',k.result_analysis);
+                                                       
+                                                       
                                                         $('#result_analysis_fr6_3').textbox('setValue',k.result_analysis);
+                                                        
+                                                        
                                                 });
                                       },'json');
                                       
@@ -736,16 +751,7 @@
                         } 
                     },
                     
-                    /*
-                    {
-                       text:'Export Excel',
-                       iconCls:'icon-print',
-                       handler:function()
-                       {
-                           window.open("<?=base_url()?>index.php/welcome/export_excel1/");
-                       }
-                    }
-                    */
+                   
                     
                                  ]
         </script>

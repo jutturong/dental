@@ -5135,7 +5135,7 @@
      <!--------------------- begin -------------------------------------->       
     
              <div class="easyui-panel" style="padding: 3px;">
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 130px;height: 40px;"  iconCls="icon-man"  
            onclick="
               // alert('t');
                     
@@ -5348,12 +5348,7 @@
                   
            "
            >
-            
- 
-    
-            
-            
-            เรียกดูข้อมูล</a>
+            เรียกดูข้อมูล1</a>
         <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
             <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
                 
@@ -5589,14 +5584,17 @@
      <!--------------------- begin -------------------------------------->       
     
              <div class="easyui-panel" style="padding: 3px;">
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 130px;height: 40px;"  iconCls="icon-man"  
            onclick="
               // alert('t');
                     
-                    $('#dia_fr6').dialog('open');
+                    $('#dia_fr6_2').dialog('open');
                     var id =   $('#id_history_patient_fr6').textbox('getValue');
+                    
+                    
+                    
                   //  alert(id);
-                   $('#dg_fr6').datagrid({
+                   $('#dg_fr6_2').datagrid({
                         url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
                    singleSelect:true,
                    rownumbers:true,
@@ -5611,10 +5609,10 @@
                    toolbar:[ 
                    { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
                         {
-                               var   row= $('#dg_fr6').datagrid('getSelected');     
+                               var   row= $('#dg_fr6_2').datagrid('getSelected');     
                                var  id=row.id_bonegraft;
                               // alert(id);
-                               $('#id_bonegraft').textbox('setValue',id);
+                               $('#id_bonegraft_2').textbox('setValue',id);
                                if( row )
                                {
                                      var  url='<?=base_url()?>index.php/welcome/edit_json6'; 
@@ -5625,19 +5623,19 @@
                                               {
                                                     
                                                     //--------------------------------------------------------
-                                                         $('#doctor_fr6').textbox('setValue',k.doctor);
-                                                         $('#date_fr6').datetimebox('setValue',k.date1);
-                                                         $('#technic').textbox('setValue',k.technic);
+                                                         $('#doctor_fr6_2').textbox('setValue',k.doctor);
+                                                         $('#date_fr6_2').datetimebox('setValue',k.date1);
+                                                         $('#technic_2').textbox('setValue',k.technic);
                                                          
                                                          var  dentalcast= k.dentalcast;
                                                          
                                                          if(  dentalcast == 1 )
                                                          {   
-                                                                $('#dentalcast1_fr6').attr('checked',true);
+                                                                $('#dentalcast1_fr6_2').attr('checked',true);
                                                          }
                                                           else    if(  dentalcast == 2 )
                                                          {   
-                                                                $('#dentalcast2_fr6').attr('checked',true);
+                                                                $('#dentalcast2_fr6_2').attr('checked',true);
                                                          }
                                                          
                                                          
@@ -5708,10 +5706,10 @@
                                
                         }  
                     },
-                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6_2').datagrid('reload');  }  } ,
                    {  text:'Delete',iconCls:'icon-remove',handler:function()
                          {   
-                              var  rows=$('#dg_fr6').datagrid('getSelected');
+                              var  rows=$('#dg_fr6_2').datagrid('getSelected');
                               if( rows )
                               {
                                      
@@ -5728,7 +5726,7 @@
                                                               if( data == 1 )
                                                               {
                                                                      $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
-                                                                     $('#dg_fr6').datagrid('reload');
+                                                                     $('#dg_fr6_2').datagrid('reload');
                                                               }
                                                               else if( data == 0 )
                                                               {
@@ -5748,7 +5746,7 @@
                      
                       {  text:'Before',  iconCls:'icon-large-picture', handler:function()
                                                 {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_2').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                       // window.open(url);
@@ -5760,7 +5758,7 @@
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
                                               {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_2').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                        //window.open(url);
@@ -5772,7 +5770,7 @@
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
                                         {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_2').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                       // window.open(url);
@@ -5789,14 +5787,9 @@
                   
            "
            >
-            
- 
-    
-            
-            
-            เรียกดูข้อมูล</a>
-        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
-            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+            เรียกดูข้อมูล2</a>
+        <div id="dia_fr6_2"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6_2"  
                 
                  
                  ></div>
@@ -5805,14 +5798,14 @@
     </div>
         
     
-            <form id="fr6"  method="post" enctype="multipart/form-data">
+            <form id="fr6_2"  method="post" enctype="multipart/form-data">
             <table>
                 
                 
                 <tr>
-                      <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
-                      <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
-                     <input class="easyui-textbox"  id="id_bonegraft"   name="id_bonegraft"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                      <input class="easyui-textbox"  id="id_history_patient_fr6_2"   name="id_history_patient_fr6_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <input class="easyui-textbox"  id="y_fr6_2"   name="y_fr6_2"  style="width:50px;height: 30px;"  readonly="true"  />
+                     <input class="easyui-textbox"  id="id_bonegraft_2"   name="id_bonegraft_2"  style="width:50px;height: 30px;"  readonly="true"  /> 
                       
                       
                     <td>
@@ -5820,7 +5813,7 @@
                     </td>
                     <td>
                        
-                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:150px;height: 30px;" readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr6_2"  name="name_lastname_fr6_2"  style="width:150px;height: 30px;" readonly="true"  />
                         
                           <input class="easyui-textbox"   id="result_analysis_fr6_2"   name="result_analysis_fr6_2"  multiline=true   style="width:200px;height: 40px;" readonly="true"   />
                     </td>
@@ -5829,7 +5822,7 @@
                 
                 <tr>
                     <td> แพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
+                    <td><input name="doctor_fr6_2" id="doctor_fr6_2" class="easyui-textbox" ></input></td>
                 </tr>
                 
                 
@@ -5840,12 +5833,12 @@
                     <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
+                        <input class="easyui-datetimebox"  id="date_fr6_2"  name="date_fr6_2" ></input>
                         
-                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> 
+                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6_2"    >คำนวณอายุ</a> 
                            
                         <label>อายุ</label>
-                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6_2"   />
                         <label>ปี</label>
                         
                     </td>
@@ -5867,7 +5860,7 @@
                     <td>เทคนิคที่ใช้ :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="technic" name="technic" ></input>
+                        <input class="easyui-textbox"  id="technic_fr6_2" name="technicfr6_2" ></input>
                     </td>
                 </tr>
                 
@@ -5892,7 +5885,7 @@
             </label>
                     </td>
                     <td>
-                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6_2" name="fileupload1_fr6_2"  />
                     </td>
             </tr>               
 
@@ -5904,7 +5897,7 @@
             </label>
                     </td>
                     <td>
-           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6_2" name="fileupload2_fr6_2"   />
                     </td>
             </tr>               
                   
@@ -5917,7 +5910,7 @@
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6_2" name="fileupload3_fr6_2"   />
                 </td>
             </tr>
  
@@ -5928,7 +5921,7 @@
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote_2" name="opnote_2"   />
                 </td>
             </tr>
             
@@ -5943,7 +5936,7 @@
                     </td>
                     <td>
                          
-                        <input  type="radio"  id="dentalcast1_fr6"  name="dentalcast_fr6" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6"  name="dentalcast_fr6" value="2"> No
+                        <input  type="radio"  id="dentalcast1_fr6_2"  name="dentalcast_fr6_2" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6_2"  name="dentalcast_fr6_2" value="2"> No
                         
                     </td>
                     
@@ -5993,15 +5986,15 @@
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
                            onclick="
-                              $('#fr6').form('submit',{
-                                  url:'<?=base_url()?>index.php/welcome/inst_fr6',
+                              $('#fr6_2').form('submit',{
+                                  url:'<?=base_url()?>index.php/welcome/inst_fr6_2',
                                   success: function(data)
                                   {
                                          //alert(data);
                                          if( data == 1 )
                                          {
-                                               $('#dia_fr6').dialog('open');
-                                               $('#dg_fr6').datagrid('reload');
+                                               $('#dia_fr6_2').dialog('open');
+                                               $('#dg_fr6_2').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                          }
                                          else{
@@ -6026,14 +6019,14 @@
         <!--------------------- begin -------------------------------------->       
     
              <div class="easyui-panel" style="padding: 3px;">
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"  iconCls="icon-man"  
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 130px;height: 40px;"  iconCls="icon-man"  
            onclick="
               // alert('t');
                     
-                    $('#dia_fr6').dialog('open');
+                    $('#dia_fr6_3').dialog('open');
                     var id =   $('#id_history_patient_fr6').textbox('getValue');
                   //  alert(id);
-                   $('#dg_fr6').datagrid({
+                   $('#dg_fr6_3').datagrid({
                         url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
                    singleSelect:true,
                    rownumbers:true,
@@ -6048,10 +6041,10 @@
                    toolbar:[ 
                    { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
                         {
-                               var   row= $('#dg_fr6').datagrid('getSelected');     
+                               var   row= $('#dg_fr6_3').datagrid('getSelected');     
                                var  id=row.id_bonegraft;
                               // alert(id);
-                               $('#id_bonegraft').textbox('setValue',id);
+                               $('#id_bonegraft_3').textbox('setValue',id);
                                if( row )
                                {
                                      var  url='<?=base_url()?>index.php/welcome/edit_json6'; 
@@ -6062,19 +6055,19 @@
                                               {
                                                     
                                                     //--------------------------------------------------------
-                                                         $('#doctor_fr6').textbox('setValue',k.doctor);
-                                                         $('#date_fr6').datetimebox('setValue',k.date1);
-                                                         $('#technic').textbox('setValue',k.technic);
+                                                         $('#doctor_fr6_3').textbox('setValue',k.doctor);
+                                                         $('#date_fr6_3').datetimebox('setValue',k.date1);
+                                                         $('#technic_3').textbox('setValue',k.technic);
                                                          
                                                          var  dentalcast= k.dentalcast;
                                                          
                                                          if(  dentalcast == 1 )
                                                          {   
-                                                                $('#dentalcast1_fr6').attr('checked',true);
+                                                                $('#dentalcast1_fr6_3').attr('checked',true);
                                                          }
                                                           else    if(  dentalcast == 2 )
                                                          {   
-                                                                $('#dentalcast2_fr6').attr('checked',true);
+                                                                $('#dentalcast2_fr6_3').attr('checked',true);
                                                          }
                                                          
                                                          
@@ -6145,10 +6138,10 @@
                                
                         }  
                     },
-                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6').datagrid('reload');  }  } ,
+                   { text:'Reload',iconCls:'icon-reload',handler:function(){  $('#dg_fr6_3').datagrid('reload');  }  } ,
                    {  text:'Delete',iconCls:'icon-remove',handler:function()
                          {   
-                              var  rows=$('#dg_fr6').datagrid('getSelected');
+                              var  rows=$('#dg_fr6_3').datagrid('getSelected');
                               if( rows )
                               {
                                      
@@ -6165,7 +6158,7 @@
                                                               if( data == 1 )
                                                               {
                                                                      $.messager.alert('สถานะการลบข้อมูล','ลบข้อมูลสำเร็จ');
-                                                                     $('#dg_fr6').datagrid('reload');
+                                                                     $('#dg_fr6_3').datagrid('reload');
                                                               }
                                                               else if( data == 0 )
                                                               {
@@ -6185,7 +6178,7 @@
                      
                       {  text:'Before',  iconCls:'icon-large-picture', handler:function()
                                                 {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_3').datagrid('getSelected');
                                                        var  file1=row.file1;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                       // window.open(url);
@@ -6197,7 +6190,7 @@
                                           },
                                      {  text:'During',   iconCls:'icon-large-picture', handler:function()
                                               {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_3').datagrid('getSelected');
                                                        var  file1=row.file2;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                        //window.open(url);
@@ -6209,7 +6202,7 @@
                                       },
                                      {  text:'After',   iconCls:'icon-large-picture', handler:function()
                                         {
-                                                       var  row=$('#dg_fr6').datagrid('getSelected');
+                                                       var  row=$('#dg_fr6_3').datagrid('getSelected');
                                                        var  file1=row.file3;
                                                        var  url='<?=base_url()?>upload/' + file1;
                                                       // window.open(url);
@@ -6231,9 +6224,9 @@
     
             
             
-            เรียกดูข้อมูล</a>
-        <div id="dia_fr6"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
-            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6"  
+            เรียกดูข้อมูล3</a>
+        <div id="dia_fr6_3"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+            <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6_3"  
                 
                  
                  ></div>
@@ -6242,14 +6235,14 @@
     </div>
         
     
-            <form id="fr6"  method="post" enctype="multipart/form-data">
+            <form id="fr6_3"  method="post" enctype="multipart/form-data">
             <table>
                 
                 
                 <tr>
-                      <input class="easyui-textbox"  id="id_history_patient_fr6"   name="id_history_patient_fr6"  style="width:30px;height: 30px;"  readonly="true"  />
-                      <input class="easyui-textbox"  id="y_fr6"   name="y_fr6"  style="width:50px;height: 30px;"  readonly="true"  />
-                     <input class="easyui-textbox"  id="id_bonegraft"   name="id_bonegraft"  style="width:50px;height: 30px;"  readonly="true"  /> 
+                      <input class="easyui-textbox"  id="id_history_patient_fr6_3"   name="id_history_patient_fr6_3"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <input class="easyui-textbox"  id="y_fr6_3"   name="y_fr6_3"  style="width:50px;height: 30px;"  readonly="true"  />
+                     <input class="easyui-textbox"  id="id_bonegraft_3"   name="id_bonegraft_3"  style="width:50px;height: 30px;"  readonly="true"  /> 
                       
                       
                     <td>
@@ -6257,7 +6250,7 @@
                     </td>
                     <td>
                        
-                        <input class="easyui-textbox"  id="name_lastname_fr6"  name="name_lastname_fr6"  style="width:150px;height: 30px;" readonly="true"  />
+                        <input class="easyui-textbox"  id="name_lastname_fr6_3"  name="name_lastname_fr6_3"  style="width:150px;height: 30px;" readonly="true"  />
                         <input class="easyui-textbox"   id="result_analysis_fr6_3"   name="result_analysis_fr6_3"  multiline=true   style="width:200px;height: 40px;" readonly="true"   />       
                         
                         
@@ -6267,7 +6260,7 @@
                 
                 <tr>
                     <td> แพทย์ผู้ทำการรักษา :</td>
-                    <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
+                    <td><input name="doctor_fr6_3" id="doctor_fr6_3" class="easyui-textbox" ></input></td>
                 </tr>
                 
                 
@@ -6278,12 +6271,12 @@
                     <td>วัน/เดือน/ปี ที่่ทำการรักษา :</td>
                     <td>
                     
-                        <input class="easyui-datetimebox"  id="date_fr6"  name="date_fr6" ></input>
+                        <input class="easyui-datetimebox"  id="date_fr6_3"  name="date_fr6_3" ></input>
                         
-                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6"    >คำนวณอายุ</a> 
+                           <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  data-options="  iconCls:'icon-man'    "  id="cal1_fr6_3"    >คำนวณอายุ</a> 
                            
                         <label>อายุ</label>
-                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6"   />
+                        <input class="easyui-textbox"  readonly="true"  style="width: 50px;height: 40px;"   id="age1_fr6_3"   />
                         <label>ปี</label>
                         
                     </td>
@@ -6302,7 +6295,7 @@
                     <td>เทคนิคที่ใช้ :</td>
                     <td>
                     
-                        <input class="easyui-textbox"  id="technic" name="technic" ></input>
+                        <input class="easyui-textbox"  id="technic_3" name="technic_3" ></input>
                     </td>
                 </tr>
                 
@@ -6329,7 +6322,7 @@
             </label>
                     </td>
                     <td>
-                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6" name="fileupload1_fr6"  />
+                        <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ก่อนการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload1_fr6_3" name="fileupload1_fr6_3"  />
                     </td>
             </tr>               
 
@@ -6341,7 +6334,7 @@
             </label>
                     </td>
                     <td>
-           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6" name="fileupload2_fr6"   />
+           <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray ระหว่างการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload2_fr6_3" name="fileupload2_fr6_3"   />
                     </td>
             </tr>               
                   
@@ -6354,7 +6347,7 @@
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6" name="fileupload3_fr6"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูปถ่าย,x-ray หลังการรักษา '   "  style="width:250px;height: 40px;"   id="fileupload3_fr6_3" name="fileupload3_fr6_3"   />
                 </td>
             </tr>
  
@@ -6365,7 +6358,7 @@
            </label>    
                 </td>
                 <td>
-                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote"   />
+                         <input class="easyui-filebox" data-options=" prompt:'  เลือกรูป Op note '   "  style="width:250px;height: 40px;"   id="opnote" name="opnote_3"   />
                 </td>
             </tr>
             
@@ -6380,7 +6373,7 @@
                     </td>
                     <td>
                          
-                        <input  type="radio"  id="dentalcast1_fr6"  name="dentalcast_fr6" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6"  name="dentalcast_fr6" value="2"> No
+                        <input  type="radio"  id="dentalcast1_fr6_3"  name="dentalcast_fr6_3" value="1"> Yes  <input  type="radio"   id="dentalcast2_fr6_3"  name="dentalcast_fr6_3" value="2"> No
                         
                     </td>
                     
@@ -6430,15 +6423,15 @@
                     <td colspan="2">
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
                            onclick="
-                              $('#fr6').form('submit',{
-                                  url:'<?=base_url()?>index.php/welcome/inst_fr6',
+                              $('#fr6_3').form('submit',{
+                                  url:'<?=base_url()?>index.php/welcome/inst_fr6_3',
                                   success: function(data)
                                   {
                                          //alert(data);
                                          if( data == 1 )
                                          {
-                                               $('#dia_fr6').dialog('open');
-                                               $('#dg_fr6').datagrid('reload');
+                                               $('#dia_fr6_3').dialog('open');
+                                               $('#dg_fr6_3').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                          }
                                          else{
