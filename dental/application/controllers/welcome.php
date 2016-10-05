@@ -1110,7 +1110,7 @@ $this->db->delete($tables);
                $id=$this->uri->segment(3);
                $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
              // $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id));
-              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb."id_tab"=>1));
+              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb.".id_tab"=>1));
               foreach($q->result() as $row)
               {
                   $rows[]=$row;
@@ -1126,7 +1126,7 @@ $this->db->delete($tables);
                 
                $id=$this->uri->segment(3);
                $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
-              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb."id_tab"=>2));
+              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb.".id_tab"=>2));
               foreach($q->result() as $row)
               {
                   $rows[]=$row;
@@ -1142,7 +1142,7 @@ $this->db->delete($tables);
                 
                $id=$this->uri->segment(3);
                $this->db->join($tbj1,$tb.".id_history_patient=".$tbj1.".id_history_patient","left");
-              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb."id_tab"=>3));
+              $q= $this->db->get_where($tb,array($tb.".id_history_patient"=>$id,$tb.".id_tab"=>3));
               foreach($q->result() as $row)
               {
                   $rows[]=$row;
