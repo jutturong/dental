@@ -5595,7 +5595,8 @@
                     
                   //  alert(id);
                    $('#dg_fr6_2').datagrid({
-                        url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                        //url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                         url:'<?=base_url()?>index.php/welcome/json_fr6_2/' + id  ,
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
@@ -5788,7 +5789,7 @@
            "
            >
             เรียกดูข้อมูล2</a>
-        <div id="dia_fr6_2"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+        <div id="dia_fr6_2"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6_2').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
             <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6_2"  
                 
                  
@@ -5990,7 +5991,8 @@
                                   url:'<?=base_url()?>index.php/welcome/inst_fr6_2',
                                   success: function(data)
                                   {
-                                         //alert(data);
+                                        // alert(data);
+                                         
                                          if( data == 1 )
                                          {
                                                $('#dia_fr6_2').dialog('open');
@@ -6000,6 +6002,7 @@
                                          else{
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                          }
+                                         
                                   }
                               })
                            "
@@ -6027,7 +6030,9 @@
                     var id =   $('#id_history_patient_fr6').textbox('getValue');
                   //  alert(id);
                    $('#dg_fr6_3').datagrid({
-                        url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                       // url:'<?=base_url()?>index.php/welcome/json_fr6/' + id  ,
+                          url:'<?=base_url()?>index.php/welcome/json_fr6_3/' + id  ,
+                        
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
@@ -6225,7 +6230,7 @@
             
             
             เรียกดูข้อมูล3</a>
-        <div id="dia_fr6_3"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
+        <div id="dia_fr6_3"   class="easyui-dialog"  data-options=" closed:true, buttons:[ {  text:'ปิด (Close)' ,handler:function(){ $('#dia_fr6_3').dialog('close');  }, iconCls:'icon-remove' } ] "  title="5. Bone graft surgery "  style="width:600px;height: 400px;"  >
             <div class="easyui-datagrid"  style="width:580px;height: 390px;"   id="dg_fr6_3"  
                 
                  

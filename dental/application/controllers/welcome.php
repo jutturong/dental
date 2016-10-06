@@ -880,6 +880,15 @@ $this->db->delete($tables);
                    $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
                   $doctor=trim($this->input->get_post("doctor_fr6"));
                 $date_fr6=trim($this->input->get_post("date_fr6"));
+                
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                $complication=trim($this->input->get_post("complication_fr6"));  //Complication :  set  int
+                //other_complication_fr6_y
+                $other_complication=trim($this->input->get_post("other_complication_fr6_y"));  // ระบุรายละเอียด  Complication
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                
+                
+                
                if(  !empty($date_fr6)  &&  $date_fr6 != ''  )  //09/14/2016 08:45:29
             {
                       $ex1=explode(" ",$date_fr6);
@@ -937,6 +946,8 @@ $this->db->delete($tables);
                                     "file3"=> $file3 , //รูปถ่ายหลังการรักษา (ฺAfter) :                //8
                                    "dentalcast"=> $dentalcast_fr6,   //Dental Cast :             //9
                                    'id_tab'=>1,
+                                     'complication'=>$complication,
+                                   'other_complication'=>$other_complication,
                                );
                                $inst=$this->db->insert($tb,$data);
                                if( $inst )
@@ -952,9 +963,20 @@ $this->db->delete($tables);
           #   http://127.0.0.1/dental/index.php/welcome/inst_fr6_2
         function inst_fr6_2()
         {
-                   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
-                  $doctor=trim($this->input->get_post("doctor_fr6"));
-                $date_fr6=trim($this->input->get_post("date_fr6"));
+                   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6_2"));
+                  $doctor=trim($this->input->get_post("doctor_fr6_2"));
+                $date_fr6=trim($this->input->get_post("date_fr6_2"));
+                
+                
+                
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                $complication=trim($this->input->get_post("complication_fr6_2"));  //Complication :  set  int
+                
+                $other_complication=trim($this->input->get_post("other_complication_fr6_2_y"));  // ระบุรายละเอียด  Complication
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                
+                
+                
                if(  !empty($date_fr6)  &&  $date_fr6 != ''  )  //09/14/2016 08:45:29
             {
                       $ex1=explode(" ",$date_fr6);
@@ -967,39 +989,39 @@ $this->db->delete($tables);
             }
                             $technic=trim($this->input->get_post("technic"));    //เทคนิคที่ใช้ 
                                     //------------รูปถ่ายก่อนการรักษา (ฺBefore) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file1 =  $_FILES['fileupload1_fr6']['name'];  //9   =>filename
+                                    $file1 =  $_FILES['fileupload1_fr6_2']['name'];  //9   =>filename
                                 if(   !empty(     $file1      )      )
                                    {
-                                           $source = $_FILES['fileupload1_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload1_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload1_fr6']['name'];
+                                           $source = $_FILES['fileupload1_fr6_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr6_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr6_2']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    }     
                           //------------รูปถ่ายระหว่างการรักษา (ฺDuring) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file2 =  $_FILES['fileupload2_fr6']['name'];  //9   =>filename
+                                    $file2 =  $_FILES['fileupload2_fr6_2']['name'];  //9   =>filename
                                 if(   !empty(      $file2      )      )
                                    {
-                                           $source = $_FILES['fileupload2_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload2_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload2_fr6']['name'];
+                                           $source = $_FILES['fileupload2_fr6_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr6_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr6_2']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    }
                                    //------------รูปถ่ายหลังการรักษา (ฺAfter) :  : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file3 =  $_FILES['fileupload3_fr6']['name'];  //9   =>filename
+                                    $file3 =  $_FILES['fileupload3_fr6_2']['name'];  //9   =>filename
                      	// $fsize3=$_FILES['fileupload3_fr6']['size'];
                      	// $ftmpname3=$_FILES['fileupload3_fr6']['tmp_name'];
                      	// $ftypename3=$_FILES['fileupload3_fr6']['type'];
                                 if(   !empty(        $file3        )      )
                                    {
-                                           $source = $_FILES['fileupload3_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload3_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload3_fr6']['name'];
+                                           $source = $_FILES['fileupload3_fr6_2']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr6_2']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr6_2']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    } 
-                               $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6")); //Dental Cast : 
+                               $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6_2")); //Dental Cast : 
                                $tb="tb_bonegraft";
                                $data=array(
                                    // "id_bonegraft",               //1
@@ -1012,6 +1034,8 @@ $this->db->delete($tables);
                                     "file3"=> $file3 , //รูปถ่ายหลังการรักษา (ฺAfter) :                //8
                                    "dentalcast"=> $dentalcast_fr6,   //Dental Cast :             //9
                                    'id_tab'=>2,
+                                   'complication'=>$complication,
+                                   'other_complication'=>$other_complication,
                                );
                                $inst=$this->db->insert($tb,$data);
                                if( $inst )
@@ -1027,9 +1051,18 @@ $this->db->delete($tables);
         #   http://127.0.0.1/dental/index.php/welcome/inst_fr6_3
         function inst_fr6_3()
         {
-                   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6"));
-                  $doctor=trim($this->input->get_post("doctor_fr6"));
-                $date_fr6=trim($this->input->get_post("date_fr6"));
+                   $id_history_patient_fr6=trim($this->input->get_post("id_history_patient_fr6_3"));
+                  $doctor=trim($this->input->get_post("doctor_fr6_3"));
+                $date_fr6=trim($this->input->get_post("date_fr6_3"));
+                
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                $complication=trim($this->input->get_post("complication_fr6_3"));  //Complication :  set  int
+                //other_complication_fr6_y
+                $other_complication=trim($this->input->get_post("other_complication_fr6_3_y"));  // ระบุรายละเอียด  Complication
+                //------------ ส่วนที่เพิ่มมา -----------------------------------
+                
+                
+                
                if(  !empty($date_fr6)  &&  $date_fr6 != ''  )  //09/14/2016 08:45:29
             {
                       $ex1=explode(" ",$date_fr6);
@@ -1040,41 +1073,41 @@ $this->db->delete($tables);
             else{
                    $conv_date_fr6='';
             }
-                            $technic=trim($this->input->get_post("technic"));    //เทคนิคที่ใช้ 
+                            $technic=trim($this->input->get_post("technic_3"));    //เทคนิคที่ใช้ 
                                     //------------รูปถ่ายก่อนการรักษา (ฺBefore) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file1 =  $_FILES['fileupload1_fr6']['name'];  //9   =>filename
+                                    $file1 =  $_FILES['fileupload1_fr6_3']['name'];  //9   =>filename
                                 if(   !empty(     $file1      )      )
                                    {
-                                           $source = $_FILES['fileupload1_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload1_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload1_fr6']['name'];
+                                           $source = $_FILES['fileupload1_fr6_3']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload1_fr6_3']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload1_fr6_3']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    }     
                           //------------รูปถ่ายระหว่างการรักษา (ฺDuring) : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file2 =  $_FILES['fileupload2_fr6']['name'];  //9   =>filename
+                                    $file2 =  $_FILES['fileupload2_fr6_3']['name'];  //9   =>filename
                                 if(   !empty(      $file2      )      )
                                    {
-                                           $source = $_FILES['fileupload2_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload2_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload2_fr6']['name'];
+                                           $source = $_FILES['fileupload2_fr6_3']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload2_fr6_3']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload2_fr6_3']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    }
                                    //------------รูปถ่ายหลังการรักษา (ฺAfter) :  : ------------------------------- ให้ upload ไปไว้ที่ ้upload
-                                    $file3 =  $_FILES['fileupload3_fr6']['name'];  //9   =>filename
+                                    $file3 =  $_FILES['fileupload3_fr6_3']['name'];  //9   =>filename
                      	// $fsize3=$_FILES['fileupload3_fr6']['size'];
                      	// $ftmpname3=$_FILES['fileupload3_fr6']['tmp_name'];
                      	// $ftypename3=$_FILES['fileupload3_fr6']['type'];
                                 if(   !empty(        $file3        )      )
                                    {
-                                           $source = $_FILES['fileupload3_fr6']['tmp_name'];
-                                           $file_rec = $_FILES['fileupload3_fr6']['tmp_name'];
-                                           $target = "upload/".$_FILES['fileupload3_fr6']['name'];
+                                           $source = $_FILES['fileupload3_fr6_3']['tmp_name'];
+                                           $file_rec = $_FILES['fileupload3_fr6_3']['tmp_name'];
+                                           $target = "upload/".$_FILES['fileupload3_fr6_3']['name'];
                                            move_uploaded_file( $source, $target );// or die ("Couldn't copy");
                                           // $size = getImageSize( $target );
                                    } 
-                               $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6")); //Dental Cast : 
+                               $dentalcast_fr6=trim($this->input->get_post("dentalcast_fr6_3")); //Dental Cast : 
                                $tb="tb_bonegraft";
                                $data=array(
                                    // "id_bonegraft",               //1
@@ -1087,6 +1120,9 @@ $this->db->delete($tables);
                                     "file3"=> $file3 , //รูปถ่ายหลังการรักษา (ฺAfter) :                //8
                                    "dentalcast"=> $dentalcast_fr6,   //Dental Cast :             //9
                                    'id_tab'=>3,
+                                   'complication'=>$complication,
+                                   'other_complication'=>$other_complication,
+                                   
                                );
                                $inst=$this->db->insert($tb,$data);
                                if( $inst )
