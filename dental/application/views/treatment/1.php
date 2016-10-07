@@ -859,6 +859,57 @@
                                      { field:'dentalcast' , title:'Dental Cast', align:'center',   },
                                  ]],
                                  toolbar:[
+                                 
+                                 {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
+                                        {
+                                                 var  row=$('#dg_fr10_2').datagrid('getSelected');
+                                                 
+                                                 var  id=row.id_othersurgery;
+                                                // $('#id_othersurger').textbox('setValue',id);
+                                                // alert(id);
+                                                 
+                                                 var  url='<?=base_url()?>index.php/welcome/edit_json_tr10/2';
+                                                 $.post(url,{ id:id },function(data)
+                                                     {
+                                                             // alert(data);
+                                                             $.each(data,function(i,k)
+                                                                {
+                                                                      var  doctor=k.doctor;
+                                                                       //alert( doctor );
+                                                                      $('#doctor_fr10_2').textbox('setValue',doctor);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_2').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_2').datetimebox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                      $('#tool_tr10_2').textbox('setValue',k.tool);
+                                                                      
+                                                                      var  dentalcast=k.dentalcast;
+                                                                      
+                                                                      if( dentalcast == 1 )
+                                                                      {
+                                                                           $('#dentalcast1_fr10_2').attr('checked',true);
+                                                                       } 
+                                                                      else    if( dentalcast == 2 )
+                                                                      {
+                                                                           $('#dentalcast2_fr10_2').attr('checked',true);
+                                                                       }  
+                                                                });
+                                                     },'json');                                             
+                                              }
+                                        
+                                        }
+                                        ,     
                                    { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_2').datagrid('reload'); } },
                                     {  text:'Delete', iconCls:'icon-cancel', handler:function()
                                         {
@@ -934,7 +985,9 @@
                             <input class="easyui-textbox"  id="y_fr10_2"   name="y_fr10_2"  style="width:50px;height: 30px;"  readonly="true"  /> 
                             
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :  
+                    
+                         <!--  <input class="easyui-textbox"  id="id_history_patient_fr10_2"   name="id_history_patient_fr10_2"  style="width:30px;height: 30px;"  readonly="true"  /> -->
                         <input class="easyui-textbox"  id="name_lastname_fr10_2"  name="name_lastname_fr10_2"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -1012,7 +1065,8 @@
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_2',
                         success:function(data)
                             {
-                                //alert(data);
+                                   //alert(data);
+                                   
                                    if( data == 1 )
                                   {  
                                            $('#dia_fr10_2').dialog('open');
@@ -1025,6 +1079,7 @@
                                            $('#dg_fr10_2').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
+                                   
                             }
                     });
                     "   >บันทึก</a>
@@ -1067,6 +1122,57 @@
                                      { field:'dentalcast' , title:'Dental Cast', align:'center',   },
                                  ]],
                                  toolbar:[
+                                  //-------------------- begin ----------------------
+                                 {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
+                                        {
+                                                 var  row=$('#dg_fr10_3').datagrid('getSelected');
+                                                 
+                                                 var  id=row.id_othersurgery;
+                                                // $('#id_othersurger').textbox('setValue',id);
+                                                // alert(id);
+                                                 
+                                                 var  url='<?=base_url()?>index.php/welcome/edit_json_tr10/3';
+                                                 $.post(url,{ id:id },function(data)
+                                                     {
+                                                             // alert(data);
+                                                             $.each(data,function(i,k)
+                                                                {
+                                                                      var  doctor=k.doctor;
+                                                                       //alert( doctor );
+                                                                      $('#doctor_fr10_3').textbox('setValue',doctor);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_3').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_3').datetimebox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                      $('#tool_tr10_3').textbox('setValue',k.tool);
+                                                                      
+                                                                      var  dentalcast=k.dentalcast;
+                                                                      
+                                                                      if( dentalcast == 1 )
+                                                                      {
+                                                                           $('#dentalcast1_fr10_3').attr('checked',true);
+                                                                       } 
+                                                                      else    if( dentalcast == 2 )
+                                                                      {
+                                                                           $('#dentalcast2_fr10_3').attr('checked',true);
+                                                                       }  
+                                                                });
+                                                     },'json');                                             
+                                              }
+                                        
+                                        },
+                                  //-------------------- end-------------------------
                                    { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_3').datagrid('reload'); } },
                                     {  text:'Delete', iconCls:'icon-cancel', handler:function()
                                         {
@@ -1139,7 +1245,8 @@
                  
                  
                 <label>
-                    ชื่อ - นามสกุล :   <input class="easyui-textbox"  id="id_history_patient_fr10_3"   name="id_history_patient_fr10_3"  style="width:30px;height: 30px;"  readonly="true"  />
+                    ชื่อ - นามสกุล :  
+                        <!-- <input class="easyui-textbox"  id="id_history_patient_fr10_3"   name="id_history_patient_fr10_3"  style="width:30px;height: 30px;"  readonly="true"  /> -->
                         <input class="easyui-textbox"  id="name_lastname_fr10_3"  name="name_lastname_fr10_3"  style="width:200px;height: 30px;" readonly="true"  />
                     
                 </label>
@@ -1260,6 +1367,58 @@
                                      { field:'dentalcast' , title:'Dental Cast', align:'center',   },
                                  ]],
                                  toolbar:[
+                                 //-------------------- begin ----------------------
+                                 {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
+                                        {
+                                                 var  row=$('#dg_fr10_4').datagrid('getSelected');
+                                                 
+                                                 var  id=row.id_othersurgery;
+                                                // $('#id_othersurger').textbox('setValue',id);
+                                                // alert(id);
+                                                 
+                                                 var  url='<?=base_url()?>index.php/welcome/edit_json_tr10/4';
+                                                 $.post(url,{ id:id },function(data)
+                                                     {
+                                                             // alert(data);
+                                                             $.each(data,function(i,k)
+                                                                {
+                                                                      var  doctor=k.doctor;
+                                                                       //alert( doctor );
+                                                                      $('#doctor_fr10_4').textbox('setValue',doctor);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_4').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_4').datetimebox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                      $('#tool_tr10_4').textbox('setValue',k.tool);
+                                                                      
+                                                                      var  dentalcast=k.dentalcast;
+                                                                      
+                                                                      if( dentalcast == 1 )
+                                                                      {
+                                                                           $('#dentalcast1_fr10_4').attr('checked',true);
+                                                                       } 
+                                                                      else    if( dentalcast == 2 )
+                                                                      {
+                                                                           $('#dentalcast2_fr10_4').attr('checked',true);
+                                                                       }  
+                                                                });
+                                                     },'json');                                             
+                                              }
+                                        
+                                        },
+                                  //-------------------- end-------------------------
+                                 
                                    { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_4').datagrid('reload'); } },
                                     {  text:'Delete', iconCls:'icon-cancel', handler:function()
                                         {
@@ -1450,6 +1609,58 @@
                                      { field:'dentalcast' , title:'Dental Cast', align:'center',   },
                                  ]],
                                  toolbar:[
+                                 //-------------------- begin ----------------------
+                                 {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
+                                        {
+                                                 var  row=$('#dg_fr10_5').datagrid('getSelected');
+                                                 
+                                                 var  id=row.id_othersurgery;
+                                                // $('#id_othersurger').textbox('setValue',id);
+                                                // alert(id);
+                                                 
+                                                 var  url='<?=base_url()?>index.php/welcome/edit_json_tr10/5';
+                                                 $.post(url,{ id:id },function(data)
+                                                     {
+                                                             // alert(data);
+                                                             $.each(data,function(i,k)
+                                                                {
+                                                                      var  doctor=k.doctor;
+                                                                       //alert( doctor );
+                                                                      $('#doctor_fr10_5').textbox('setValue',doctor);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_5').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_5').datetimebox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                      $('#tool_tr10_5').textbox('setValue',k.tool);
+                                                                      
+                                                                      var  dentalcast=k.dentalcast;
+                                                                      
+                                                                      if( dentalcast == 1 )
+                                                                      {
+                                                                           $('#dentalcast1_fr10_5').attr('checked',true);
+                                                                       } 
+                                                                      else    if( dentalcast == 2 )
+                                                                      {
+                                                                           $('#dentalcast2_fr10_5').attr('checked',true);
+                                                                       }  
+                                                                });
+                                                     },'json');                                             
+                                              }
+                                        
+                                        },
+                                  //-------------------- end-------------------------
+                                 
                                    { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_5').datagrid('reload'); } },
                                     {  text:'Delete', iconCls:'icon-cancel', handler:function()
                                         {
@@ -1639,6 +1850,59 @@
                                      { field:'dentalcast' , title:'Dental Cast', align:'center',   },
                                  ]],
                                  toolbar:[
+                                 
+                                  //-------------------- begin ----------------------
+                                 {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
+                                        {
+                                                 var  row=$('#dg_fr10_6').datagrid('getSelected');
+                                                 
+                                                 var  id=row.id_othersurgery;
+                                                // $('#id_othersurger').textbox('setValue',id);
+                                                // alert(id);
+                                                 
+                                                 var  url='<?=base_url()?>index.php/welcome/edit_json_tr10/6';
+                                                 $.post(url,{ id:id },function(data)
+                                                     {
+                                                             // alert(data);
+                                                             $.each(data,function(i,k)
+                                                                {
+                                                                      var  doctor=k.doctor;
+                                                                       //alert( doctor );
+                                                                      $('#doctor_fr10_6').textbox('setValue',doctor);
+                                                                      
+                                                                      
+                                                                      //$('#date_fr10_6').datetimebox('setValue',k.begin_date);
+                                                                    var begin_date=k.begin_date;
+                                                                    if(    begin_date.length > 0  )    //2016-02-10  //ธนาภรณ์  กลายกลาง
+                                                                    {
+                                                                            var ex1=begin_date.split('-');
+                                                                            var conv_1= ex1[2] + '/'  +  ex1[1] + '/' +  ex1[0];
+                                                                            //alert(conv_1);
+                                                                            $('#date_fr10_6').datetimebox('setValue',conv_1);
+                                                                    }
+                                                                      
+                                                                      
+                                                                      
+                                                                      
+                                                                      $('#tool_tr10_6').textbox('setValue',k.tool);
+                                                                      
+                                                                      var  dentalcast=k.dentalcast;
+                                                                      
+                                                                      if( dentalcast == 1 )
+                                                                      {
+                                                                           $('#dentalcast1_fr10_6').attr('checked',true);
+                                                                       } 
+                                                                      else    if( dentalcast == 2 )
+                                                                      {
+                                                                           $('#dentalcast2_fr10_6').attr('checked',true);
+                                                                       }  
+                                                                });
+                                                     },'json');                                             
+                                              }
+                                        
+                                        },
+                                  //-------------------- end-------------------------
+                                 
                                    { text:'Reload', iconCls:'icon-reload', handler:function(){ $('#dg_fr10_6').datagrid('reload'); } },
                                     {  text:'Delete', iconCls:'icon-cancel', handler:function()
                                         {

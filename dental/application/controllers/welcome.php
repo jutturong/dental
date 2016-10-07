@@ -2415,7 +2415,7 @@ $this->db->delete($tables);
         #http://127.0.0.1/dental/index.php/welcome/insert_fr10_2
          function  insert_fr10_2() //---- รวมการบันทึก ใน table ทั้งหมดของ treatment 10
         {
-                $id_history_patient_fr10_2=trim($this->input->get_post("id_history_patient_fr10_2"));
+                 $id_history_patient_fr10_2=trim($this->input->get_post("id_history_patient_fr10_2"));
               //echo "<br>";
               
              $doctor_fr10_2=trim($this->input->get_post("doctor_fr10_2")); //ทันตแพทย์ผู้ทำการรักษา
@@ -2937,7 +2937,7 @@ $this->db->delete($tables);
        #http://127.0.0.1/dental/index.php/welcome/json_tr10/1
        function json_tr10()
         {
-              $id_call=trim($this->uri->segment(3));
+                $id_call=trim($this->uri->segment(3));
                 $id=trim($this->uri->segment(4));
                 
               $tb="tb_othersurgery";
