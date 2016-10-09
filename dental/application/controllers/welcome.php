@@ -3916,6 +3916,10 @@ $this->db->delete($tables);
                     
                      $id=$this->input->get_post("id_history_patient");
                     // $id=23;
+                     if( $id == "" )
+                     {
+                         $id=trim($this->uri->segement(3));
+                     }
                      if( $id > 0 )
                      {
                            $q = $this->db->get_where($tb,array("id_history_patient"=>$id));

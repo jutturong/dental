@@ -24,6 +24,108 @@
                                var  row=$('#dg1').datagrid('getSelected');
                                if(row)
                                {
+                                    //------ clar form ------------------
+                                      $('#HN').textbox('setValue','');       
+                                      $('#DN').textbox('setValue','');   
+                                      $('#othnumber').textbox('setValue','');   
+                                       $('#CN').textbox('setValue','');   
+                                       //   $seriesnumber=trim($this->input->get_post("seriesnumber"));  //บัตรประชนชน  //6
+                                       $('#seriesnumber').textbox('setValue','');   
+                                      
+                                        //$firstname=trim($this->input->get_post("firstname"));  //ชื่อ  //7
+                                          $('#firstname').textbox('setValue','');   
+                                        //$lastname=trim($this->input->get_post("lastname"));  //นามสกุล  //8
+                                         $('#lastname').textbox('setValue','');   
+                                         
+                                        //$birthdate=trim($this->input->get_post("birthdate"));  //วัน/เดือน/ปี เกิด :  09/14/2016 08:45:29      //10
+                                          $('#birthdate').textbox('setValue','');   
+                                          
+           //$address=trim($this->input->get_post("address"));  //ที่อยู่ :     //11
+           $('#address').textbox('setValue','');  
+
+           //  $nationality=trim($this->input->get_post("nationality")); //สัญชาติ :    //12
+            $('#nationality').textbox('setValue','');    
+ 
+            // $race=trim($this->input->get_post("race")); //เชื้อชาติ :    //13
+            $('#race').textbox('setValue','');    
+
+             // $religion=trim($this->input->get_post("religion")); //ศาสนา :    //14
+            $('#religion').textbox('setValue','');    
+
+            // $namefather=trim($this->input->get_post('namefather')); //ชื่อบิดา    //15
+           $('#namefather').textbox('setValue','');   
+
+           //  $fatherlastname=trim($this->input->get_post("fatherlastname")); //บิดา - นามสกุล :   //16
+          $('#fatherlastname').textbox('setValue','');   
+            
+            //  $career=trim($this->input->get_post("career")); //อาชีพ :   //17
+           $('#career').textbox('setValue','');   
+            
+           //   $birthdatefahter=trim($this->input->get_post("birthdatefahter"));  //วัน/เดือน/ปี เกิด : บิดา
+               $('#birthdatefahter').textbox('setValue','');      
+               
+             //    $age1=trim($this->input->get_post("age1")); //อายุบิดา   //19
+              $('#age1').textbox('setValue','');      
+            
+            //  $disease=trim($this->input->get_post("disease"));  //โรคประจำตัวบิดา :    //20
+            //echo "<br>";
+              $('#disease').textbox('setValue','');     
+              
+              
+           //   $mothername=trim($this->input->get_post("mothername"));  //ชื่อมารดา    //21
+            //echo "<br>";
+              $('#mothername').textbox('setValue','');     
+            
+           //  $motherlastname=trim($this->input->get_post("motherlastname"));  // - นามสกุล   //22
+            //echo "<br>";
+             $('#motherlastname').textbox('setValue','');     
+             
+          //   $mothercareer =trim($this->input->get_post("mothercareer")); //อาชีพ : มารดา  //23
+            //echo "<br>";
+               $('#mothercareer').textbox('setValue','');     
+               
+           //   $birthdatemother=trim($this->input->get_post('birthdatemother')); // //วัน/เดือน/ปี เกิด : มารดา
+            //echo "<br>";
+               $('#birthdatemother').textbox('setValue','');     
+               
+               
+                 //   $age2=trim($this->input->get_post("age2")); //อายุมารดา    //25
+               $('#age2').textbox('setValue','');     
+            
+            
+            //  $diseasemother=trim($this->input->get_post("diseasemother"));  //โรคประจำตัวมารดา :    //26
+            $('#diseasemother').textbox('setValue','');    
+            
+            
+              // $spousename=trim($this->input->get_post("spousename"));  //ชื่อ สามี/ภรรยา - นามสกุล :    //27
+            $('#spousename').textbox('setValue','');    
+             
+             // $spouselastname=trim($this->input->get_post("spouselastname"));   //ชื่อ  นามสกุล :    //28
+               $('#spouselastname').textbox('setValue','');    
+             
+            //  $benefits=trim($this->input->get_post('benefits'));  //สวัสดิการการรักษา   //29
+              $('#benefits').textbox('setValue','');    
+             
+           //   $otherbenefits=trim($this->input->get_post("otherbenefits"));  //สวัสดิการการรักษา  อื่นๆ    //30
+              $('#otherbenefits').textbox('setValue','');    
+                
+             // $numberbenefits=trim($this->input->get_post("numberbenefits"));    //หมายเลข :   //31
+               $('#numberbenefits').textbox('setValue','');    
+                 
+             //  $evertreat=trim($this->input->get_post('evertreat'));     // เคยได้รับการรักษามาก่อน :   1=ไม่ทราบ   2=ไม่เคย  3=เคย ระบุ      //32
+              $('#evertreat').textbox('setValue','');    
+             
+             //  $otherevertreat=trim($this->input->get_post("otherevertreat"));   //เคย ระบุ    //33
+               $('#otherevertreat').textbox('setValue','');    
+             
+               //$treatmentfacility=trim($this->input->get_post('treatmentfacility'));   // สถานที่ที่ได้รับการรักษามาก่อน :     //34
+               $('#treatmentfacility').textbox('setValue','');    
+             
+             //  $doctor=trim($this->input->get_post("doctor"));  // แพทย์เจ้าของคนไข้ :      //35
+                $('#doctor').textbox('setValue','');    
+              
+               
+                                     //------ clar form ------------------
                                      id=row.id_history_patient;
                                    
                                      // alert(id);
@@ -66,7 +168,7 @@
                                                              //------------ แสดงการบันทึกข้อมูล-------------------
                                                              if( id > 0 )
                                                              {
-                                                                   //call_history_patient
+                                                                  
                                                                    
                                                                    /*
                                                                    var  url='<?=base_url()?>index.php/welcome/call_history_patient/' + id;
@@ -88,6 +190,7 @@
                                                                                       
                                                                       },'json'); 
                                                                   */
+                                                                   //  alert(id);
                                                                     view_patient(id);   
                                                                  
                                                              }
@@ -817,7 +920,10 @@
             {
                 $(function()
                 {
-                      //alert('t');
+                      //----- clear form --------
+                      
+                      
+                      
                       $("#dia1").dialog({
                          // title:"เพิ่มข้อมูลประวัติของผู้ป่วย",
                           title: title ,
@@ -1219,8 +1325,8 @@ otherdevelopmentallevel
                 <tr>
                     <td>เพศ :</td>
                     <td>   
-                            <input  type="radio"  value="1"  name="sex_view"  id="sex_m_view" /> ชาย 
-                           <input type="radio"   name="sex_view" value="2"   id="sex_w_view"> หญิง
+                            <input  type="radio"  value="1"  name="sex"  id="sex_m_view" /> ชาย 
+                           <input type="radio"   name="sex" value="2"   id="sex_w_view"> หญิง
                     </td>
                 </tr>
 
@@ -1236,7 +1342,7 @@ otherdevelopmentallevel
                 
                 <tr>
                     <td> เบอร์โทรศัพท์ :</td>
-                    <td> <input   class="easyui-numberbox"   name="tel"  style="width:150px;  height: 30px;"   ></td>
+                    <td> <input   class="easyui-textbox"   name="tel"  style="width:150px;  height: 30px;"   ></td>
                 </tr>
 
                 <tr>
@@ -1390,6 +1496,7 @@ otherdevelopmentallevel
                                    }
                                 }
                                 ">
+                            <option value="0">เลือกสวัสดิการรักษา</option>
                             <option value="1">ประกันสังคม</option>
                             <option value="2">บัตรทอง</option>
                             <option value="3">จ่ายตรงข้าราชการ</option>
@@ -1447,7 +1554,7 @@ otherdevelopmentallevel
                <tr>
                    <td>ระดับพัฒนาการผู้ป่วย :  </td>
                    <td>
-                       <input type="radio" name="developmentallevel" value="1"  id="developmentallevel1"   class="easyui-validatebox" > ปกติ <input type="radio" name="developmentallevel"   id="developmentallevel2"   value="2"  class="easyui-validatebox" required="true" checked="true"> ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  id="otherdevelopmentallevel"  name="otherdevelopmentallevel"  style="width: 150px;height: 30px;"  readonly="true" />
+                       <input type="radio" name="developmentallevel" value="1"  id="developmentallevel1"   class="easyui-validatebox" > ปกติ <input type="radio" name="developmentallevel"   id="developmentallevel2"   value="2"  class="easyui-validatebox" required="true" > ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม <input class="easyui-textbox"  id="otherdevelopmentallevel"  name="otherdevelopmentallevel"  style="width: 150px;height: 30px;"  readonly="true" />
                    </td>
                </tr>
 
@@ -1637,13 +1744,13 @@ otherdevelopmentallevel
                 <table cellpadding="5">
 
                 <tr>
-                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>
+                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="tab4_1" value="1"  class="easyui-validatebox" required="true" > ไม่</td>
 
                 </tr>
 
                 <tr>
                     <td>ญาติที่เกี่ยวพันทางสายเลือดมีภาวะปากแหว่งเพดานโหว่หรือไม่ : </td>
-                    <td> <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
+                    <td> <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="tab4_2" value="1"  class="easyui-validatebox" required="true" > มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
                 </tr>
 
                 <!--
@@ -1814,8 +1921,8 @@ otherdevelopmentallevel
                                                                                           
                                                                                            $('#birthdate_view').textbox('setValue',key.birthdate);
                                                                                            
-                                                                                        
-                                                                                        $('#tel_view').numberbox('setValue',key.tel);
+                                                                                           // alert( key.tel  );
+                                                                                        $('#tel_view').textbox('setValue',key.tel);
                                                                                         
                                                                                         $('#address_view').textbox('setValue',key.address);
                                                                                         
@@ -1865,6 +1972,49 @@ otherdevelopmentallevel
                                                                                         $('#treatmentfacility_view').textbox('setValue',key.treatmentfacility);
                                                                                         
                                                                                         $('#otherdevelopmentallevel_view').textbox('setValue',key.otherdevelopmentallevel);
+                                                                                    
+                                                                                  
+                                                                                      //เคยได้รับการรักษามาก่อน
+                                                                                        var  evertreat=key.evertreat;
+                                                                                        if(  evertreat == 1  )
+                                                                                        {
+                                                                                            $('#evertreat1_view').attr('checked',true);  
+                                                                                        }
+                                                                                        else if( evertreat == 2 )
+                                                                                        {
+                                                                                            //evertreat2
+                                                                                             $('#evertreat2_view').attr('checked',true);  
+                                                                                        }
+                                                                                         else if( evertreat == 3 )
+                                                                                         {
+                                                                                             $('#evertreat3_view').attr('checked',true);  
+                                                                                         }
+                                                                                         
+                                                                                       //  alert(key.otherevertreat);
+                                                                                         //otherevertreat
+                                                                                       //  $('#otherevertreat')
+                                                                                       var  otherevertreat=key.otherevertreat;
+                                                                                       $('#otherevertreat_view').textbox('setValue',otherevertreat);
+                                                                                       
+                                                                                       //ระดับพัฒนาการผู้ป่วย :
+                                                                                       var  developmentallevel=key.developmentallevel;
+                                                                                     //  alert(developmentallevel);
+                                                                                       if(  developmentallevel == 1  )
+                                                                                       {
+                                                                                            $('#developmentallevel_view').attr('checked',true);
+                                                                                       }
+                                                                                       else if(  developmentallevel == 2   )
+                                                                                       {
+                                                                                             //$('#developmentallevel_text').attr('checked',true);
+                                                                                             $('#developmentallevel_view').attr('checked',true);
+                                                                                       }
+                                                                                       
+                                                                                        var  otherdevelopmentallevel=key.otherdevelopmentallevel;
+                                                                                       // alert( otherdevelopmentallevel );
+                                                                                        $('#otherdevelopmentallevel_view').textbox('setValue', otherdevelopmentallevel );
+                                                                                        
+                                                                                        var  doctor=key.doctor;
+                                                                                        $('#doctor_view').textbox('setValue',doctor);
                                                                                         
                                                                                         
                                                                                 });
@@ -1972,7 +2122,7 @@ otherdevelopmentallevel
                 
                 <tr>
                     <td> เบอร์โทรศัพท์ :</td>
-                    <td> <input   class="easyui-numberbox"   name="tel_view"  id="tel_view" style="width:150px;  height: 30px;"   readonly="true" ></td>
+                    <td> <input   class="easyui-textbox"   name="tel_view"  id="tel_view" style="width:150px;  height: 30px;"    ></td>
                 </tr>
 
                 <tr>
@@ -2135,6 +2285,7 @@ otherdevelopmentallevel
                                    }
                                 }
                                 ">
+                            <option  >เลือกสวัสดิการการรักษา</option>
                             <option value="1">ประกันสังคม</option>
                             <option value="2">บัตรทอง</option>
                             <option value="3">จ่ายตรงข้าราชการ</option>
@@ -2160,9 +2311,9 @@ otherdevelopmentallevel
                เคยได้รับการรักษามาก่อน :
             </td>
             <td>
-                <input type="radio" name="evertreat"  id="evertreat1" value="1"    /> ไม่ทราบ
-                <input type="radio" name="evertreat"  id="evertreat2"  value="2"   /> ไม่เคย
-                <input type="radio" name="evertreat"  id="evertreat3"   value="3" /> เคย ระบุ : <input class="easyui-textbox"  name="otherevertreat"   id="otherevertreat"   style="width:150px;height: 30px;"   />
+                <input type="radio" name="evertreat_view"  id="evertreat1_view" value="1"    /> ไม่ทราบ
+                <input type="radio" name="evertreat_view"  id="evertreat2_view"  value="2"   /> ไม่เคย
+                <input type="radio" name="evertreat_view"  id="evertreat3_view"   value="3" /> เคย ระบุ : <input class="easyui-textbox"  name="otherevertreat_view"   id="otherevertreat_view"   style="width:150px;height: 30px;"   />
                 
 
             </td>
@@ -2186,7 +2337,7 @@ otherdevelopmentallevel
                <td>
                    
                    
-                   <input class="easyui-textbox" type="text" name="doctor" id="doctor"  id="doctor"   ></input>
+                   <input class="easyui-textbox" type="text" name="doctor_view" id="doctor_view"  id="doctor"   ></input>
                    
                    
                </td>
@@ -2196,10 +2347,12 @@ otherdevelopmentallevel
                <tr>
                    <td>ระดับพัฒนาการผู้ป่วย :  </td>
                    <td>
-                       <input type="radio" name="developmentallevel" value="1"  id="developmentallevel1"   class="easyui-validatebox" > 
-                       ปกติ <input type="radio" name="developmentallevel_text"   id="developmentallevel2"   value="2"  class="easyui-validatebox" required="true" checked="true">
+                       <input type="radio" name="developmentallevel_view" value="1"  id="developmentallevel1_view"   class="easyui-validatebox" > 
+                       ปกติ 
+                     <!--  <input type="radio" name="developmentallevel_text"   id="developmentallevel2_view"   value="2"  class="easyui-validatebox" required="true" > -->
+                       <input type="radio" name="developmentallevel_view"   id="developmentallevel2_view"   value="2"  class="easyui-validatebox" required="true" >
                        ไม่ปกติ   <?=nbs(5)?>คำอธิบายเพิ่มเติม 
-                       <input class="easyui-textbox"  id="otherdevelopmentallevel_view"  name="otherdevelopmentallevel_view"  style="width: 150px;height: 30px;"  readonly="true" />
+                       <input class="easyui-textbox"  id="otherdevelopmentallevel_view"  name="otherdevelopmentallevel_view"  style="width: 150px;height: 30px;"   />
                    </td>
                </tr>
 
@@ -2390,13 +2543,13 @@ otherdevelopmentallevel
                 <table cellpadding="5">
 
                 <tr>
-                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> ไม่</td>
+                    <td>บิดามารดาเป็นปากแหว่งเพดานโหว่หรือไม่ : <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ใช่ <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="false"> ไม่</td>
 
                 </tr>
 
                 <tr>
                     <td>ญาติที่เกี่ยวพันทางสายเลือดมีภาวะปากแหว่งเพดานโหว่หรือไม่ : </td>
-                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" checked="true"> มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
+                    <td> <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true"> ไม่มี <input type="Radio" name="Gender" value="1"  class="easyui-validatebox" required="true" > มี  <?=nbs(2)?>  เกี่ยวข้องเป็น <input class="easyui-textbox"  style="width: 200px;height: 30px;"  /> </td>  </td>
                 </tr>
 
                 <!--
