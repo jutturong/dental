@@ -549,9 +549,9 @@
                                       
                                        //  var   tb4="tb_interceptive"; 
                                       //-----------------4---------------------------
+                                      //  $tbj1="tb_interceptive"; 
                                        $.post(url,{ tb:'tb_interceptive' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
-                                          
                                            $.each(data,function(i,k)
                                             {
                                                   //alert(i + ""  + k);
@@ -567,13 +567,14 @@
                                                   }
                                                   
                                               });       
-                                          
                                       } ,'json');
                                       
     
                                     //  var tb6="tb_othersurgery";  //$tb="tb_othersurgery";
+                                    //    $tb="tb_bonegraft";
                                     //-----------------5---------------------------
-                                       $.post(url,{ tb:'tb_interceptive' ,  id:id   , f:'id_history_patient'  },function(data)
+                                     //  $.post(url,{ tb:'tb_interceptive' ,  id:id   , f:'id_history_patient'  },function(data)
+                                       $.post(url,{ tb:'tb_bonegraft' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
                                           
                                            $.each(data,function(i,k)
@@ -643,8 +644,10 @@
                                       } ,'json');   
                                       
                                     //   var   tb8="tb_corrective";
+                                    //    $tb="tb_orthognathic";
                                     //-----------------7--------------------------
-                                       $.post(url,{ tb:'tb_corrective' ,  id:id   , f:'id_history_patient'  },function(data)
+                                     //  $.post(url,{ tb:'tb_corrective' ,  id:id   , f:'id_history_patient'  },function(data)
+                                           $.post(url,{ tb:'tb_orthognathic' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
                                           
                                            $.each(data,function(i,k)
@@ -667,6 +670,7 @@
                                       
                                       
                                  //-------------9   $tb="tb_othersurgery";
+                                 // $tb="tb_othersurgery";
                                      $.post(url,{ tb:'tb_othersurgery' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
                                           
@@ -689,8 +693,10 @@
                                       } ,'json');    
                                       
                                  
-                                  //------------10.1 $tb="tb_dentalprocedure";   
-                                   $.post(url,{ tb:'tb_dentalprocedure' ,  id:id   , f:'id_history_patient'  },function(data)
+                                  //------------10.1 $tb="tb_dentalprocedure";  
+                                  // $tb="tb_dentalprocedure";   
+                                 //  $.post(url,{ tb:'tb_dentalprocedure' ,  id:id   , f:'id_history_patient'  },function(data)
+                                    $.post(url,{ tb:'tb_dentalprocedure' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
                                           
                                            $.each(data,function(i,k)
@@ -711,6 +717,8 @@
                                           
                                       } ,'json');   
                                   //-------------10.2  $tb="tb_prosthodontic";  
+                                  //$tb="tb_prosthodontic";   
+                                  /*
                                                $.post(url,{ tb:'tb_prosthodontic' ,  id:id   , f:'id_history_patient'  },function(data)
                                       {
                                           
@@ -731,7 +739,7 @@
                                               });       
                                           
                                       } ,'json'); 
-                                      
+                                   */   
                                       
                                       //-------------- diagnosis ให้ปรากฏ ที่ form 5--------------------
                                       //result_analysis_fr6

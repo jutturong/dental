@@ -4286,8 +4286,8 @@
                 singleSelect:true,
                 rownumbers:true,
                 columns:[[   
-                     { field:'firstname', title:'ชื่อ', align:'center',  },
-                     {  field:'lastname',title:'นามสกลุ', align:'center',  },
+                  //   { field:'firstname', title:'ชื่อ', align:'center',  },
+                  //   {  field:'lastname',title:'นามสกลุ', align:'center',  },
                       {  field:'doctor',title:' ทันตแพทย์ผู้ทำการรักษา ', align:'center',  },
                      
                 ]],
@@ -5411,8 +5411,8 @@
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
-                       { field:'firstname', title:'ชื่อ', align:'center'  },
-                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                      // { field:'firstname', title:'ชื่อ', align:'center'  },
+                      // {  field:'lastname', title:'นามสกุล', align:'center' },
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
@@ -5438,6 +5438,9 @@
                                                          $('#doctor_fr6').textbox('setValue',k.doctor);
                                                          
                                                          
+                                                         
+                                                         var  doctor=k.doctor;
+                                                         alert( doctor );
                                                          
                                                         // $('#date_fr6').datetimebox('setValue',k.date1);
                                                          var begin_date=k.date1;
@@ -5864,8 +5867,8 @@
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
-                       { field:'firstname', title:'ชื่อ', align:'center'  },
-                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                     //  { field:'firstname', title:'ชื่อ', align:'center'  },
+                      // {  field:'lastname', title:'นามสกุล', align:'center' },
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
@@ -6300,8 +6303,8 @@
                    singleSelect:true,
                    rownumbers:true,
                    columns:[[
-                       { field:'firstname', title:'ชื่อ', align:'center'  },
-                       {  field:'lastname', title:'นามสกุล', align:'center' },
+                     //  { field:'firstname', title:'ชื่อ', align:'center'  },
+                    //   {  field:'lastname', title:'นามสกุล', align:'center' },
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
@@ -7206,8 +7209,8 @@
                      rownumbers:true,
                      singleSelect:true,
                      columns:[[   
-                         { field:'firstname',title:'ชื่อ' , align:'center' },
-                         { field:'lastname',title:'นามสกุล' , align:'center' },
+                       //  { field:'firstname',title:'ชื่อ' , align:'center' },
+                      //   { field:'lastname',title:'นามสกุล' , align:'center' },
                          { field:'doctor',   title:'ทันตแพทย์ผู้ทำการรักษา',  align:'center' } ,
                          { field:'begin_date',   title:'วัน/เดือน/เริ่มทำการรักษา',  align:'center' } ,
                          { field:'end_date',   title:'สิ้นสุดการรักษา',  align:'center' } ,
@@ -7436,7 +7439,7 @@
             
             ชื่อ - นามสกุล : 
             
-                        <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  />
+                      <!--  <input class="easyui-textbox"  id="id_history_patient_fr4"   name="id_history_patient_fr4"  style="width:30px;height: 30px;"  readonly="true"  /> -->
                         <input class="easyui-textbox"  id="name_lastname_fr4"  name="name_lastname_fr4"  style="width:200px;height: 30px;" readonly="true"  />
                         
                         
@@ -7563,7 +7566,9 @@
                     url:'<?=base_url()?>index.php/welcome/insert_fr4',
                     success:function(data)
                      {
-                            //alert(data);
+                            alert(data);
+                            
+                            /*
                             if( data == 1 )
                             {
                                
@@ -7576,6 +7581,8 @@
                             {
                                 $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                             }
+                            */
+                            
                      }
                 });
            

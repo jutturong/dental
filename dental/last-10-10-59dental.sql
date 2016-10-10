@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 06, 2016 at 02:06 PM
+-- Generation Time: Oct 10, 2016 at 04:45 PM
 -- Server version: 5.5.50-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.19
 
@@ -427,7 +427,7 @@ CREATE TABLE IF NOT EXISTS `tb_othersurgery` (
   `filename3` varchar(100) COLLATE utf16_bin NOT NULL,
   `dentalcast` int(10) NOT NULL,
   PRIMARY KEY (`id_othersurgery`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `tb_othersurgery`
@@ -464,7 +464,15 @@ INSERT INTO `tb_othersurgery` (`id_othersurgery`, `id_history_patient`, `id_tab`
 (39, 21, 6, '4788510000', '0000-00-00', '', '', '', '', 0),
 (40, 28, 2, '', '2008-12-23', '', '', '', '', 0),
 (41, 28, 4, '', '2007-05-24', '', '', '', '', 0),
-(42, 34, 6, '', '0000-00-00', '', '', '', '', 0);
+(42, 34, 6, '', '0000-00-00', '', '', '', '', 0),
+(43, 23, 2, 'นพ.นพคุณ ดวงจินทร์ดา', '2014-02-11', '', '', '', '', 1),
+(46, 23, 2, '', '2014-11-02', '', '', '', '', 1),
+(47, 23, 1, 'นพ.นพคุณ ดวงจินทร์ดา', '2012-03-08', '', '', '', '', 1),
+(48, 23, 2, 'นพ.นพคุณ ดวงจินทร์ดา', '2010-03-10', '', '', '', '', 1),
+(49, 23, 3, 'นพ.นพคุณ ดวงจินทร์ดา', '2015-02-11', '', '', '', '', 1),
+(50, 23, 4, 'นพ.นพคุณ ดวงจินทร์ดา', '2015-02-11', '', '', '', '', 1),
+(51, 23, 5, 'นพ.นพคุณ ดวงจินทร์ดา', '2014-02-05', '', '', '', '', 1),
+(52, 23, 6, 'นพ.นพคุณ ดวงจินทร์ดา', '2015-02-04', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
