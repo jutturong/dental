@@ -3,7 +3,7 @@
 class Welcome extends CI_Controller {
 
   //  var  $title=" ศูนย์ตะวันฉาย มหาวิทยาลัยขอนแก่น | TAWANCHAI KhoenKean University Version 1.0 "; //The Entrar-shadow Website form | w3layouts
-    var  $title=" คู่มือการใช้งานระบบฐานข้อมูลทางทันตกรรมผู้ป่วยปากแหว่ง เพดานโหว่ และความพิการแต่กำเนิดของใบหน้าและกะโหลกศีรษะในศูนย์ตะวันฉาย มหาวิทยาลัยขอนแก่น | TAWANCHAI KhoenKean University Version 1.0 "; //The Entrar-shadow Website form | w3layouts
+    var  $title=" ระบบฐานข้อมูลทางทันตกรรมผู้ป่วยปากแหว่ง เพดานโหว่ และความพิการแต่กำเนิดของใบหน้าและกะโหลกศีรษะในศูนย์ตะวันฉาย มหาวิทยาลัยขอนแก่น | TAWANCHAI KhoenKean University Version 1.0 "; //The Entrar-shadow Website form | w3layouts
     var  $title_fr1=" ระบบการติดตามการรักษา version 1.0 ";
 	public function index()
 	{
