@@ -257,6 +257,12 @@
                                        var  n=d.getFullYear();
                                       // alert(n);
                                        
+                                      // alert(ex1[1]);  //ระบุเดือน เกิด
+                                       
+                                       //-------------- clear textbox-----------
+                                       $('#age1_fr1').textbox('setValue', '' ); //อายุเป็นเดือน
+                                       $('#age2_fr1').textbox('setValue','' );
+                                       
                                        //--------- คำนวณอายุ-------------------
                                        if(  n >=  ex1[0]   &&  ex1[0] > 0  )
                                        {
@@ -266,7 +272,10 @@
                                            //----------- fr1------------------------------------------
                                         //   $('#age1_fr1').textbox('setValue',calage);
                                        //    $('#age2_fr1').textbox('setValue',calage);
-                                            $('#y_fr1').textbox('setValue',ex1[0]);
+                                         
+                                                // $('#y_fr1').textbox('setValue',ex1[0]); //ของเดิมคือส่ง ปีเกิด
+                                                 $('#y_fr1').textbox('setValue',ex1[1]); //ของเดิมคือส่ง เดือน
+                                            
                                             //<input class="easyui-textbox"  id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
                                            
                                            
@@ -1094,30 +1103,10 @@ otherdevelopmentallevel
 
 	<div style="margin:10px 0;"></div>
 	<div class="easyui-tabs" style="width:1200px;height:700px">
-		<div title="<?=$title_fr1?>" style="padding:10px">
+		<!-- <div title="<?=$title_fr1?>" style="padding:10px"> -->
+                                   <div title="dental record" style="padding:10px">
 
-
-                   <!--
-                    ค้นหาจากโดย : <?php echo nbs(2); ?>
-
-                         <select class="easyui-combogrid" style="width:250px" data-options="
-            panelWidth: 500,
-            idField: 'itemid',
-            textField: 'productname',
-            url: '<?=base_url()?>json/datagrid_data1.json',
-            method: 'get',
-            columns: [[
-                {field:'itemid',title:'Item ID',width:80},
-                {field:'productname',title:'Product',width:120},
-                {field:'listprice',title:'List Price',width:80,align:'right'},
-                {field:'unitcost',title:'Unit Cost',width:80,align:'right'},
-                {field:'attr1',title:'Attribute',width:200},
-                {field:'status',title:'Status',width:60,align:'center'}
-            ]],
-            fitColumns: true
-        ">
-                         </select>
-                   -->
+                 
 
 
                    <a href="#"  onclick="  $('#dia_search').dialog('open');  $('#txt_id').textbox('setValue','');   "  class="easyui-linkbutton" data-options="iconCls:'icon-large-picture',size:'large' " style="width:100px"> ค้นหา </a>
@@ -1570,8 +1559,8 @@ otherdevelopmentallevel
                    <td colspan="2">
                       <?=nbs(50)?>
           <a href="javascript:void(0)" class="easyui-linkbutton"
-           iconCls="icon-man"
-           style="width:100px;height:40px;"
+           iconCls="icon-save"
+           style="width:120px;height:40px;"
             onClick="
                $('#fr_add_patient').form('submit',{
                    url:'<?=base_url()?>index.php/welcome/insert_patient/',
@@ -1593,8 +1582,8 @@ otherdevelopmentallevel
                    }
                });
 
-              "  >  บันทึกข้อมูล </a>
-                       <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-remove"  onclick="  $('#dia1').dialog('close');   "  > ปิด (Close) </a>      
+              "  >  Save/Update </a>
+                       <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-cancel"  onclick="  $('#dia1').dialog('close');   "  > Close </a>      
 
                    </td>
                </tr>
@@ -1665,6 +1654,13 @@ otherdevelopmentallevel
 
             </td>
         </tr>
+        
+        <tr>
+            <td colspan="2"  align="center">  
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:120px;height: 40px;  "  iconCls="icon-save"   > Save/Update </a>      
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-cancel"  onclick="  $('#dia1').dialog('close');   "  > Close </a>      
+            </td>
+        </tr>
 
     </table>
 
@@ -1732,6 +1728,14 @@ otherdevelopmentallevel
                         <input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input>
                     </td>
                 </tr>
+                
+                
+         <tr>
+            <td colspan="2"  align="center">  
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:120px;height: 40px;  "  iconCls="icon-save"   > Save/Update </a>      
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-cancel"  onclick="  $('#dia1').dialog('close');   "  > Close </a>      
+            </td>
+        </tr>
 
                 <!--
                  <tr>
@@ -1777,11 +1781,20 @@ otherdevelopmentallevel
                     <td><input class="easyui-textbox" style="width:70px;height: 30px;"></td>
                 </tr>
 
+                <!--
                 <tr>
                      <td></td>
                     <td><input type="submit" value="Submit"></input></td>
 
                 </tr>
+                -->
+                
+                <tr>
+            <td colspan="2"  align="center">  
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:120px;height: 40px;  "  iconCls="icon-save"   > Save/Update </a>      
+                <a href="javascript:void(0)"  class="easyui-linkbutton"  style=" width:100px;height: 40px;  "  iconCls="icon-cancel"  onclick="  $('#dia1').dialog('close');   "  > Close </a>      
+            </td>
+        </tr>
 
             </table>
         </div>

@@ -453,7 +453,7 @@
     <div class="easyui-tabs" >
 
 
-          <div title=" Diagnosis " style="padding:10px" data-options="iconCls:'icon-save'">
+          <div title=" Diagnosis of Cleft" style="padding:10px" data-options="iconCls:'icon-save'">
 
               
               <div class="easyui-panel"  style="padding: 5px;width: 600px;"   >
@@ -538,7 +538,8 @@
          ]],
          toolbar:[
             { text:'Reload',iconCls:'icon-reload', handler:function(){ $('#grid_diagnosis').datagrid('reload');  }  },
-            { text:'Delete', iconCls:'icon-remove', handler:function()
+            
+          /* { text:'Delete', iconCls:'icon-remove', handler:function()
                   {     
                       //http://127.0.0.1/dental/index.php/welcome/del_tb2/7
                       var    row=$('#grid_diagnosis').datagrid('getSelected');
@@ -565,6 +566,7 @@
                   
                   }  
              }
+             */
          ]
                                    "  >
                               </div>
@@ -727,7 +729,7 @@
                         
                         <!--<input type="submit" value="บันทึกข้อมูล"></input>-->
                         
-                        <a href="javascript:void(0)"   class="easyui-linkbutton"  iconCls="icon-save"   style="width: 100px;height: 40px;"  
+                        <a href="javascript:void(0)"   class="easyui-linkbutton"  iconCls="icon-save"   style="width: 120px;height: 40px;"  
                            onClick="
                                    $('#fr_tr1').form('submit',{
                                           url:'<?=base_url()?>index.php/welcome/insert_tb2/',
@@ -749,9 +751,9 @@
                                                }
                                           }
                                    });
-                                        "    >บันทึกข้อมูล</a>
+                                        "    >Save/Update</a>
                         
-                        <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-remove"   onclick="  $('#diag1').window('close');  "   style="width: 100px;height: 40px;"     >ปิด (Close)</a>
+                        <a href="javascript:void(0)"  class="easyui-linkbutton"   iconCls="icon-cancel"   onclick="  $('#diag1').window('close');  "   style="width: 100px;height: 40px;"     >Close</a>
                     
                     </td>
                 </tr>

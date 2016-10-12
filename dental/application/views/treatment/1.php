@@ -14,12 +14,39 @@
                       // alert(last3);
                       var   Y= $('#y_fr1').textbox('getValue');
                       
-                      if( last3 > 0 )
+                      /*
+                      var  d=new Date();
+                      var  y=d.getFullYear("Y");
+                      var  m=d.getMonth();
+                     */
+                    
+                        //alert(y);
+                       // alert(m);
+                        
+                      //  $('#y_fr1').textbox('setValue',ex1[1]); //ของเดิมคือส่ง เดือน  เกิด
+                      
+                    //  if( last3 > 0 )  //ของเดิม คือ check ปี
+                    
+                      var   y1= $('#y_fr1').textbox('getValue') ;  //คำนวณอายุเดือน
+                     var  cal_y1  =   last2[0] -  y1;
+                       
+                       
+                    //  if(   last2[0]   > 0 ) 
+                      $('#age1_fr1').textbox('setValue', '' ); //อายุเป็นเดือน
+                        if(   cal_y1    > 0 ) 
                       {
-                             var  ans1=last3 - Y;
-                            //alert(ans1);
-                            //  $('#age2_fr1').textbox('setValue',c);
-                              $('#age1_fr1').textbox('setValue',ans1);
+                          //   var  ans1=last3 - Y;  //ของเดิม
+                      
+                          
+                             // alert(y1);
+                             
+                      
+                        // alert( cal_y1 );
+                            
+                              // $('#age1_fr1').textbox('setValue',ans1); //ของเดิม อายุเป็นปี
+                              $('#age1_fr1').textbox('setValue', cal_y1 ); //อายุเป็นเดือน
+                             
+                       
                       }
    
                         
@@ -42,13 +69,39 @@
                       // alert(last3);
                       var   Y= $('#y_fr1').textbox('getValue');
                       
-                      if( last3 > 0 )
+                      /*
+                     var  d=new Date();
+                      var  y=d.getFullYear("Y");
+                      var  m=d.getMonth();
+        */
+                      
+                    //  if( last3 > 0 ) // ของเดิมที่เป็นปี
+                      // alert( last2[1]  );
+                      
+                           var   y1= $('#y_fr1').textbox('getValue') ;  //คำนวณอายุเดือน
+                           var  cal_y1  =   last2[0] -  y1;
+                                    
+                     //  if(   last2[0]   > 0 ) 
+                       $('#age2_fr1').textbox('setValue','');
+                        if(  cal_y1  > 0 ) 
                       {
-                             var  ans1=last3 - Y;
+                           //  var  ans1=last3 - Y;
                             //alert(ans1);
                             //  $('#age2_fr1').textbox('setValue',c);
                              // $('#age1_fr1').textbox('setValue',ans1);
-                             $('#age2_fr1').textbox('setValue',ans1);
+                          //   $('#age2_fr1').textbox('setValue',ans1);   //คำนวณอายุเป็นปี ของเดิม
+                             
+                           //    var   y1= m  - $('#y_fr1').textbox('getValue') ;  //คำนวณอายุเดือน
+                           //    var  cal_y1  =   last2[1] -  y1;
+                           //    $('#age2_fr1').textbox('setValue',cal_y1);
+                           
+                                // alert( last2[1]  );
+                                
+                             //    var   y1= m  - $('#y_fr1').textbox('getValue') ;  //คำนวณอายุเดือน
+                                 
+                               
+                                    $('#age2_fr1').textbox('setValue',cal_y1);
+                                    
                       }
                       
                         
@@ -78,6 +131,8 @@
                              // $('#age1_fr1').textbox('setValue',ans1);
                             // $('#age2_fr1').textbox('setValue',ans1);
                             $('#age1_fr4').textbox('setValue',ans1);
+                            
+                             
                       }
                         
                  });
@@ -584,7 +639,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                     {  text:'View/Update', iconCls:'icon-man'  ,handler:function()
@@ -707,9 +762,9 @@
      <form id="fr10_1"  method="post" enctype="multipart/form-data" novalidate="novalidate">
      <div style="padding: 10px 5px;">
            
-         <input class="easyui-textbox"  id="id_history_patient_fr10_1"   name="id_history_patient_fr10_1"  style="width:30px;height: 30px;"  readonly="true"  />
-         <input class="easyui-textbox"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />
-          <input class="easyui-textbox"  id="id_othersurger"   name="id_othersurger"  style="width:50px;height: 30px;"  readonly="true"  />
+         <input class="easyui-textbox" type="hidden"  id="id_history_patient_fr10_1"   name="id_history_patient_fr10_1"  style="width:30px;height: 30px;"  readonly="true"  />
+         <input class="easyui-textbox"   type="hidden"  id="y_fr10_1"   name="y_fr10_1"  style="width:50px;height: 30px;"  readonly="true"  />
+          <input class="easyui-textbox"  type="hidden"  id="id_othersurger"   name="id_othersurger"  style="width:50px;height: 30px;"  readonly="true"  />
          
          
          
@@ -790,7 +845,7 @@
 
   <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_1"  id="dentalcast1_fr10_1"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_1"  id="dentalcast2_fr10_1"  value="2"> No
        
@@ -799,7 +854,7 @@
          <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_1').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_1',
                         success:function(data)
@@ -819,7 +874,7 @@
                                    }
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >Save/Update</a>
              </label>
          </div>
 
@@ -856,7 +911,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                  
@@ -1051,7 +1106,7 @@
                          
                           <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_2"  id="dentalcast1_fr10_2"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_2"  id="dentalcast2_fr10_2"  value="2"> No
        
@@ -1060,7 +1115,7 @@
                <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_2').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_2',
                         success:function(data)
@@ -1082,7 +1137,7 @@
                                    
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >Save/Update</a>
              </label>
          </div>
                              
@@ -1119,7 +1174,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                   //-------------------- begin ----------------------
@@ -1294,7 +1349,7 @@
        
          <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_3"  id="dentalcast1_fr10_3"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_3"  id="dentalcast2_fr10_3"  value="2"> No
        
@@ -1304,7 +1359,7 @@
                           <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_3').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_3',
                         success:function(data)
@@ -1325,7 +1380,7 @@
                                    }
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >Save/Update</a>
              </label>
          </div>
            
@@ -1364,7 +1419,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                  //-------------------- begin ----------------------
@@ -1540,7 +1595,7 @@
       
         <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_4"  id="dentalcast1_fr10_4"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_4"  id="dentalcast2_fr10_4"  value="2"> No
        
@@ -1550,7 +1605,7 @@
            <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_4').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_4',
                         success:function(data)
@@ -1570,7 +1625,7 @@
                                    }
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >Save/Update</a>
              </label>
          </div>
           
@@ -1606,7 +1661,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                  //-------------------- begin ----------------------
@@ -1782,7 +1837,7 @@
      
         <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_5"  id="dentalcast1_fr10_5"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_5"  id="dentalcast2_fr10_5"  value="2"> No
        
@@ -1791,7 +1846,7 @@
           <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_5').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_5',
                         success:function(data)
@@ -1811,7 +1866,7 @@
                                    }
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >Save/Update</a>
              </label>
          </div>
          
@@ -1847,7 +1902,7 @@
                                     { field:'doctor' , title:'ทันตแพทย์ผู้ทำการรักษา', align:'center',   },
                                     { field:'begin_date' , title:'วัน/เดือน/ปี ที่ทำ', align:'center',   },
                                     { field:'tool' , title:'เครื่องมือที่ใช้', align:'center',   },
-                                     { field:'dentalcast' , title:'Dental Cast', align:'center',   },
+                                     { field:'dentalcast' , title:'Dental Casts', align:'center',   },
                                  ]],
                                  toolbar:[
                                  
@@ -2028,7 +2083,7 @@
        
        <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
         </label>
             <input  type="radio"  name="dentalcast_fr10_6"  id="dentalcast1_fr10_6"  value="1"  > Yes  <input  type="radio"   name="dentalcast_fr10_6"  id="dentalcast2_fr10_6"  value="2"> No
        
@@ -2037,7 +2092,7 @@
             <div style="padding: 10px 5px;">
              <label>
                  <?=nbs(100)?>
-                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+                 <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                     $('#fr10_6').form('submit',{
                         url:'<?=base_url()?>index.php/welcome/insert_fr10_6',
                         success:function(data)
@@ -2057,7 +2112,7 @@
                                    }
                             }
                     });
-                    "   >บันทึก</a>
+                    "   >๊Save/Update</a>
              </label>
          </div>
            
@@ -2112,7 +2167,7 @@
                             {  field:'mandible',  title: ' Mandible ' ,align:'center' },
                             {  field:'othermandible',  title: ' Mandible ระบุ ' ,align:'center' },
                             {  field:'tool',  title: ' ชนิดเครื่องมือ ' ,align:'center' },
-                             {  field:'dentalcast',  title: ' Dental Cast ' ,align:'center' },
+                             {  field:'dentalcast',  title: ' Dental Casts ' ,align:'center' },
                              
                        ]],
                        toolbar:[
@@ -2460,7 +2515,7 @@
     
     <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"    id="dentalcast1_fr9"      name="dentalcast_fr9"   value="1"  /> Yes  <input  type="radio"     name="dentalcast_fr9"     id="dentalcast2_fr9"    value="2"   /> No
+            Dental Casts : <input  type="radio"    id="dentalcast1_fr9"      name="dentalcast_fr9"   value="1"  /> Yes  <input  type="radio"     name="dentalcast_fr9"     id="dentalcast2_fr9"    value="2"   /> No
         </label>
     </div>
     
@@ -2468,7 +2523,7 @@
     
     
     <div style="padding: 10px 120px;">
-        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:90px;height: 40px"   class="easyui-linkbutton"  onclick="
+        <a href="javascript:void(0)"  iconCls="icon-save"  style="width:120px;height: 40px"   class="easyui-linkbutton"  onclick="
                  //alert('t');
                  $('#fr9').form('submit',{
                      url:'<?=base_url()?>index.php/welcome/insert_fr9',
@@ -2972,7 +3027,7 @@
     
       <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : <input  type="radio"> Yes  <input  type="radio"> No
+            Dental Casts : <input  type="radio"> Yes  <input  type="radio"> No
         </label>
     </div>
     
@@ -3158,7 +3213,7 @@
                                 {  field:'otherprocedure', title:' Procedurev อื่นๆ ระบุ ' ,  align:'center'    },
                               //  {  field:'otherprocedure', title:'Procedurev' ,  align:'center'    },
                               {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
-                                {  field:'cast', title:'Dental Cast' ,  align:'center'    },
+                                {  field:'cast', title:'Dental Casts' ,  align:'center'    },
                                 
                         ]],
                          toolbar:[
@@ -3414,9 +3469,9 @@
                 
                  <tr>
                     <td align="left">
-                         <input class="easyui-textbox"  id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
-                         <input class="easyui-textbox"  id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
-                         <input class="easyui-textbox" id="id_psot"  style="width:30px;height: 30px;"  readonly="true"  />
+                        <input  class="easyui-textbox"   id="id_history_patient"   name="id_history_patient"  style="width:30px;height: 30px;"  readonly="true"  />
+                         <input class="easyui-textbox"    id="y_fr1"   name="y_fr1"  style="width:50px;height: 30px;"  readonly="true"  />
+                         <input class="easyui-textbox"   id="id_psot"  style="width:30px;height: 30px;"  readonly="true"  />
                         ชื่อ - นามสกุล :
                     </td>
                     <td>
@@ -3456,7 +3511,7 @@
                              
                                
                                style="width: 50px;height: 30px;"   />
-                         <label>ปี</label>
+                         <label>เดือน</label>
                     </td>
                 </tr>
                 
@@ -3470,7 +3525,7 @@
                        
                    <label>อายุ </label>
                         <input class="easyui-textbox"  style="width: 50px;height: 30px;"   readonly="true"  id="age2_fr1"  name="age2_fr1"    />
-                        <label>ปี</label>
+                        <label>เดือน</label>
                         
                     </td>
                 </tr>
@@ -3522,7 +3577,7 @@
                 <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -3569,7 +3624,8 @@
                 -->
                 
                 <tr>
-                    <td colspan="2">
+                    <td colspan="2" align="center" >
+                        
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"
                            onclick="
                                  $('#fr1').form('submit',{
@@ -3599,8 +3655,8 @@
                            
                            
                            
-                           style="width:100px;height: 40px;">Save</a>
-                           <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width:100px;height: 40px;"  onclick="  $('#dia_treat3').dialog('close');  " >Close</a>
+                           style="width:120px;height: 40px;">Save/Update</a>
+                           <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"  style="width:100px;height: 40px;"  onclick="  $('#dia_treat3').dialog('close');  " >Close</a>
                          <!-- <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-man'"  onclick=" $('#dia_sub_dia_treat3').dialog('open');  "   style="width:100px;height: 40px;" >Preview</a> -->
                     </td>
                   
@@ -4687,7 +4743,7 @@
            <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -4701,8 +4757,8 @@
  
                 
                 <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" style="width: 100px;height: 40px;"
+                    <td colspan="2" align="center">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" style="width: 120px;height: 40px;"
                            onclick="
                               $('#fr7').form('submit',{
                                    url:'<?=base_url()?>index.php/welcome/insert_fr7',
@@ -4728,7 +4784,7 @@
                            
                            "
                            >Save/Update</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat12_7').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12_7').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -4771,7 +4827,7 @@
                { field:'incisor'  , align:'center' , title:'Incisor classification of malocclusion' },
                 { field:'skeletal'  , align:'center' ,  title:'Skeletal classification of malocclusion' },
                 { field:'tool' , align:'center'  , title:'ชนิดของเครื่องมือ'  },
-                {  field:'dentalcast'  , align:'center'  , title:'Dental Cast'   },
+                {  field:'dentalcast'  , align:'center'  , title:'Dental Casts'   },
                ]],
                toolbar:[
                    {  text:'View/Update',  iconCls:'icon-man' ,  handler:function()
@@ -5152,7 +5208,7 @@
           <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -5167,7 +5223,7 @@
                 
                 <tr>
                     <td colspan="2" align="center">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width:100px;height: 40px;" 
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width:120px;height: 40px;" 
                            onclick="
                                 $('#fr8').form('submit',{
                                     url:'<?=base_url()?>index.php/welcome/insert_fr8/',
@@ -5190,7 +5246,7 @@
                            "
                            
                            >Save/Update</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'"  style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat12').window('close'); "  class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"  style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -5416,7 +5472,7 @@
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
-                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                        {  title:'Dental Casts  ',  field:'dentalcast'  },
                    ]],
                    toolbar:[ 
                    { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
@@ -5654,7 +5710,7 @@
                 
                 
                 <tr>
-                    <td> แพทย์ผู้ทำการรักษา :</td>
+                    <td> ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="doctor_fr6" id="doctor_fr6" class="easyui-textbox" ></input></td>
                 </tr>
                 
@@ -5762,7 +5818,7 @@
                      <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -5815,8 +5871,8 @@
  -->
                 
                 <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                    <td colspan="2" align="center">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 120px;height: 40px;"  
                            onclick="
                               $('#fr6').form('submit',{
                                   url:'<?=base_url()?>index.php/welcome/inst_fr6',
@@ -5837,7 +5893,7 @@
                            "
                            
                            >Save/Update</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -5872,7 +5928,7 @@
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
-                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                        {  title:'Dental Casts  ',  field:'dentalcast'  },
                    ]],
                    toolbar:[ 
                    { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
@@ -6089,7 +6145,7 @@
                 
                 
                 <tr>
-                    <td> แพทย์ผู้ทำการรักษา :</td>
+                    <td> ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="doctor_fr6_2" id="doctor_fr6_2" class="easyui-textbox" ></input></td>
                 </tr>
                 
@@ -6198,7 +6254,7 @@
                      <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -6251,8 +6307,8 @@
  -->
                 
                 <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                    <td colspan="2" align="center">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 120px;height: 40px;"  
                            onclick="
                               $('#fr6_2').form('submit',{
                                   url:'<?=base_url()?>index.php/welcome/inst_fr6_2',
@@ -6275,7 +6331,7 @@
                            "
                            
                            >Save/Update</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -6308,7 +6364,7 @@
                        { field:'doctor',  title:'แพทย์ผู้ทำการรักษา', align:'center' },
                        { field:'date1', title:'วัน/เดือน/ปี ที่่ทำการรักษา', align:'center' },
                         { title:'เทคนิคที่ใช้ :',  field:'technic',  },
-                        {  title:'Dental Cast  ',  field:'dentalcast'  },
+                        {  title:'Dental Casts  ',  field:'dentalcast'  },
                    ]],
                    toolbar:[ 
                    { text:'เรียกดูข้อมูล/แก้ไข' ,iconCls:'icon-man' ,handler:function()
@@ -6531,7 +6587,7 @@
                 
                 
                 <tr>
-                    <td> แพทย์ผู้ทำการรักษา :</td>
+                    <td> ทันตแพทย์ผู้ทำการรักษา :</td>
                     <td><input name="doctor_fr6_3" id="doctor_fr6_3" class="easyui-textbox" ></input></td>
                 </tr>
                 
@@ -6639,7 +6695,7 @@
                      <tr>
                     <td>
                          <label>
-                         Dental Cast :
+                         Dental Casts :
                         </label>
 
                     </td>
@@ -6692,8 +6748,8 @@
  -->
                 
                 <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 100px;height: 40px;"  
+                    <td colspan="2" align="center">
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'"  style="width: 120px;height: 40px;"  
                            onclick="
                               $('#fr6_3').form('submit',{
                                   url:'<?=base_url()?>index.php/welcome/inst_fr6_3',
@@ -6714,7 +6770,7 @@
                            "
                            
                            >Save/Update</a>
-                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-remove'" style="width: 100px;height: 40px;">Close</a>
+                        <a href="javascript:void(0)" onclick=" $('#dia_treat15').window('close');  "  class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" style="width: 100px;height: 40px;">Close</a>
                     </td>
                   
                 </tr>
@@ -7217,7 +7273,7 @@
                          { field:'goslon',   title:'Classification of GOSLON',  align:'center' } ,
                          { field:'incisor',   title:'Incisor classification of malocclusion',  align:'center' } ,
                          { field:'skeleta',   title:'Skeletal classification of malocclusion',  align:'center' } ,
-                         { field:'dentalcast',title:'Dental Cast',align:'center' },
+                         { field:'dentalcast',title:'Dental Casts',align:'center' },
                      ]]
                      ,
                      toolbar:[
@@ -7486,6 +7542,7 @@
               Classification of GOSLON  : 
           
               <select class="easyui-combobox"  id="goslon"  name="goslon"  style="width:200px;height: 40px;"   >
+                       <option > เลือก Classification of GOSLON </option>   
                        <option value="1">Group 1</option>
                         <option value="2">Group 2</option>
                         <option value="3">Group 3</option>
@@ -7551,7 +7608,7 @@
     
     <div style="padding: 10px 5px;">
          <label>
-             Dental Cast : 
+             Dental Casts : 
           </label>    
              <input  type="radio"  name="dentalcast"   id="dental_cast_yes" value="1" /> Yes  
              <input  type="radio"  name="dentalcast"  id="dental_cast_no" value="2" /> No
@@ -7561,7 +7618,7 @@
     
     <div style="padding: 5px 120px;">
        
-        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:90px;height: 40px;"  onclick="
+        <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="width:120px;height: 40px;"  onclick="
                 $('#fr4').form('submit',{
                     url:'<?=base_url()?>index.php/welcome/insert_fr4',
                     success:function(data)
@@ -7586,7 +7643,7 @@
                      }
                 });
            
-           "   >Save</a>
+           "   >Save/Update</a>
         <a href="javascript:void(0)" class="easyui-linkbutton"  data-options=" iconCls:'icon-cancel' , onClick:function(){  $('#dia_treat4B').window('close');  } "     style="width:90px;height: 40px;"     >Close</a>
     </div>
     
@@ -7903,7 +7960,7 @@
 <div style="padding: 10px 5px;">
     <label>
         <?=nbs(100)?>
-        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;" 
+        <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 120px;height: 40px;" 
            onclick="
               $('#fr11_1').form('submit',{
                   url:'<?=base_url()?>index.php/welcome/insert_fr11_1',
@@ -7928,7 +7985,7 @@
               });
            
            "
-           iconCls="icon-save"  >บันทึก/แก้ไข</a>
+           iconCls="icon-save"  >Save/Update</a>
     </label>
 </div>
  </form>
@@ -7963,7 +8020,7 @@
                       { field:'begin_date',title:'วัน/เดือน/ปี ที่ทำ',align:'center',  },
                       { field:'appliance',title:'Type of Appliance',align:'center',  },
                       { field:'appliance',title:'Type of Appliance ระบุ',align:'center',  },
-                     { field:'otherappliance',title:'Dental Cast',align:'center',  },
+                     { field:'otherappliance',title:'Dental Casts',align:'center',  },
                       
                    ]],
                    toolbar:[
@@ -8173,7 +8230,7 @@
 
   <div style="padding: 10px 5px;">
         <label>
-            Dental Cast : 
+            Dental Casts : 
             </label>
             <input  type="radio"  name="dentalcast_11_2"  id="dentalcast1_11_2"   value="1" > Yes  <input  type="radio"  name="dentalcast_11_2"  id="dentalcast2_11_2"   value="2" > No
         
@@ -8182,7 +8239,7 @@
     <div style="padding: 10px 5px;">
         <label>
             <?=nbs(100)?>
-            <a href="javascript:void(0)"   class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-save"  onclick="
+            <a href="javascript:void(0)"   class="easyui-linkbutton"  style="width: 120px;height: 40px;"  iconCls="icon-save"  onclick="
                         //alert('t');
                         $('#fr11_2').form('submit',{
                             url:'<?=base_url()?>index.php/welcome/insert_fr11_2',
@@ -8202,7 +8259,7 @@
                                }
                         });
                
-               " >บันทึก/แก้ไข </a>
+               " >Save/Update </a>
             
         </label>
     </div>
