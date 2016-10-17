@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2016 at 10:12 PM
--- Server version: 5.5.49-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.19
+-- Generation Time: Oct 17, 2016 at 04:34 PM
+-- Server version: 5.5.52-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `tb_corrective` (
   `file3` text NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_corrective`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `tb_corrective`
@@ -110,7 +110,11 @@ INSERT INTO `tb_corrective` (`id_corrective`, `id_history_patient`, `doctor`, `b
 (12, 34, 'อ.พูนศักดิ์', '2011-07-15', '2016-09-26', 1, 4, 3, 'Fixed appliance', '', '', '', 1),
 (13, 35, 'อ.ชุติมาพร', '2014-06-03', '2016-07-25', 1, 4, 3, '', '', '', '', 1),
 (14, 40, 'อ.มนเฑียร', '2014-06-03', '2016-09-26', 1, 4, 3, 'removable plate/FB', '', '', '', 1),
-(15, 0, 'อ.ชุติมาพร', '2010-07-16', '2016-10-03', 1, 4, 3, '', '', '', '', 0);
+(15, 0, 'อ.ชุติมาพร', '2010-07-16', '2016-10-03', 1, 4, 3, '', '', '', '', 0),
+(16, 0, '11111111111', '2016-10-04', '0000-00-00', 1, 1, 1, '', '', '', '', 1),
+(17, 0, '11111111111', '2016-10-04', '0000-00-00', 1, 1, 1, '', '', '', '', 1),
+(18, 49, '', '0000-00-00', '0000-00-00', 4, 2, 2, '', '', '', '', 2),
+(19, 49, '55555555', '0000-00-00', '0000-00-00', 0, 1, 1, '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -129,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `tb_dentalprocedure` (
   `fileupload2` varchar(100) COLLATE utf16_bin NOT NULL,
   `fileupload3` varchar(100) COLLATE utf16_bin NOT NULL,
   PRIMARY KEY (`id_dentalprocedure`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `tb_dentalprocedure`
@@ -143,8 +147,7 @@ INSERT INTO `tb_dentalprocedure` (`id_dentalprocedure`, `id_history_patient`, `t
 (7, 21, '', '88888', '0000-00-00', '', '', '', ''),
 (8, 33, '22', '', '2004-11-11', '', '', '', ''),
 (9, 37, '21', '', '0000-00-00', '', '', '', ''),
-(10, 42, '', 'jgh', '0000-00-00', '', '', '', ''),
-(11, 49, '555555555', '55555555555', '0000-00-00', '55555555555', '', '', '');
+(10, 42, '', 'jgh', '0000-00-00', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -219,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `tb_distraction` (
   `file2` varchar(80) COLLATE utf16_bin NOT NULL,
   `file3` varchar(80) COLLATE utf16_bin NOT NULL,
   PRIMARY KEY (`id_distraction`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tb_distraction`
@@ -230,8 +233,7 @@ INSERT INTO `tb_distraction` (`id_distraction`, `id_history_patient`, `doctor`, 
 (6, 21, '5555555555', '0000-00-00', '0000-00-00', 1, 1, 0, 0, '', 0, '', '', '', '', ''),
 (7, 23, '', '2015-04-09', '0000-00-00', 1, 4, 0, 1, '1 Jaw', 1, '', 'Internal distraction', '', '', ''),
 (8, 25, '', '2014-12-09', '2015-03-24', 1, 4, 0, 1, '', 1, '', '', '', '', ''),
-(9, 26, 'อ.ภัทรมน', '2016-07-12', '2016-09-25', 1, 4, 3, 1, 'Maxillary distraction osteogenesis', 1, '', '', '', '', ''),
-(10, 49, '888888888888', '0000-00-00', '0000-00-00', 1, 1, 1, 1, '', 0, '', '99999999999999', '', '', '');
+(9, 26, 'อ.ภัทรมน', '2016-07-12', '2016-09-25', 1, 4, 3, 1, 'Maxillary distraction osteogenesis', 1, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -257,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `tb_growth` (
   `filename3` varchar(60) COLLATE utf32_bin NOT NULL,
   `dentalcast` int(10) NOT NULL,
   PRIMARY KEY (`id_growth`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_bin AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `tb_growth`
@@ -269,8 +271,7 @@ INSERT INTO `tb_growth` (`id_growth`, `id_history_patient`, `doctor`, `begin_dat
 (6, 21, 'นพ.รณชัย ทองภูมิ', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 'Facial mask     ระบุ', 1, 'Functional appliance', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 1),
 (7, 21, '45218', '0000-00-00', '0000-00-00', 1, 1, 0, 0, '', 0, '', '', '', '', 0),
 (8, 34, 'อ.พูนศักดิ์', '0000-00-00', '0000-00-00', 1, 4, 3, 1, '', 1, 'RME', '', '', '', 1),
-(9, 35, 'อ.ชุติมาพร', '0000-00-00', '0000-00-00', 1, 1, 3, 1, '', 1, '', '', '', '', 1),
-(10, 49, '6666666666666', '0000-00-00', '0000-00-00', 1, 1, 1, 1, '', 0, '88888888888888', '', '', '', 1);
+(9, 35, 'อ.ชุติมาพร', '0000-00-00', '0000-00-00', 1, 1, 3, 1, '', 1, '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -313,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `tb_history_patient` (
   `evertreat` varchar(20) NOT NULL,
   `otherevertreat` text NOT NULL,
   `treatmentfacility` varchar(60) NOT NULL,
-  `doctor` varchar(100) NOT NULL,
+  `doctor` int(5) DEFAULT NULL,
   `developmentallevel` int(10) NOT NULL,
   `otherdevelopmentallevel` text NOT NULL,
   `daterecord` date NOT NULL,
@@ -328,7 +329,7 @@ CREATE TABLE IF NOT EXISTS `tb_history_patient` (
 --
 
 INSERT INTO `tb_history_patient` (`id_history_patient`, `HN`, `DN`, `othnumber`, `CN`, `seriesnumber`, `firstname`, `lastname`, `filename`, `birthdate`, `address`, `nationality`, `race`, `religion`, `namefather`, `fatherlastname`, `career`, `birthdatefahter`, `age1`, `disease`, `mothername`, `motherlastname`, `mothercareer`, `birthdatemother`, `age2`, `diseasemother`, `spousename`, `spouselastname`, `benefits`, `otherbenefits`, `numberbenefits`, `evertreat`, `otherevertreat`, `treatmentfacility`, `doctor`, `developmentallevel`, `otherdevelopmentallevel`, `daterecord`, `id_user`, `sex`, `tel`) VALUES
-(49, 'EB2937', '421013', 'C41/42', '', '1102001968211', 'ณัฐพล', 'ศรีสาร', '', '0000-00-00', '', '', '', '', '', '', '', '0000-00-00', 0, '', '', '', '', '0000-00-00', 0, '', '', '', 0, '', '', '', '', '', '', 0, '', '2016-10-09', 0, 1, '0831517171');
+(49, 'EB2937', '421013', 'C41/42', '', '1102001968211', 'ณัฐพล', 'ศรีสาร', '', '2016-05-11', '', '', '', '', '', '', '', '0000-00-00', 0, '', '', '', '', '0000-00-00', 0, '', '', '', 0, '', '', '', '', '', 2, 0, '', '2016-10-09', 0, 1, '0831517171');
 
 -- --------------------------------------------------------
 
@@ -350,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `tb_interceptive` (
   `filename3` text COLLATE utf8_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_interceptive`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=73 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `tb_interceptive`
@@ -371,21 +372,7 @@ INSERT INTO `tb_interceptive` (`id_interceptive`, `id_history_patient`, `doctor`
 (55, 0, 'อ.ชุติมาพร', '2002-08-26', '2004-01-07', 1, 0, 0, '', '', '', 0),
 (56, 0, 'อ.ชุติมาพร', '2002-08-26', '2004-01-07', 1, 0, 0, '', '', '', 0),
 (57, 0, 'อ.ชุติมาพร', '2002-08-26', '2004-01-07', 1, 0, 0, '', '', '', 0),
-(58, 0, 'อ.ชุติมาพร', '2002-08-26', '2004-01-07', 1, 0, 0, '', '', '', 0),
-(59, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(60, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(61, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(62, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(63, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(64, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(65, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(66, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(67, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(68, 0, '5555555555555', '0000-00-00', '0000-00-00', 1, 1, 1, '', '', '', 1),
-(69, 49, '', '0000-00-00', '0000-00-00', 1, 2, 2, '', '', '', 2),
-(70, 49, '', '0000-00-00', '0000-00-00', 1, 2, 2, '', '', '', 2),
-(71, 49, '5555555555', '0000-00-00', '0000-00-00', 1, 2, 2, '', '', '', 2),
-(72, 49, '5555555555', '0000-00-00', '0000-00-00', 1, 2, 2, '', '', '', 2);
+(58, 0, 'อ.ชุติมาพร', '2002-08-26', '2004-01-07', 1, 0, 0, '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -411,7 +398,7 @@ CREATE TABLE IF NOT EXISTS `tb_orthognathic` (
   `file3` text COLLATE utf16_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_orthognathic`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `tb_orthognathic`
@@ -423,8 +410,7 @@ INSERT INTO `tb_orthognathic` (`id_orthognathic`, `id_history_patient`, `doctor`
 (10, 21, 'ดดดดดดดดดดดด', '2016-09-07', 5, 3, 2, 1, 'Maxilla ระบุ', 1, 'Mandible ระบุ', 'นิดเครื่องมือ', '648498.jpg', '648502.jpg', '648588.jpg', 1),
 (11, 28, 'รพ.ศูนย์ขอนแก่น', '2016-02-10', 1, 4, 3, 0, '', 1, 'mandibular set back+rotation', '', '', '', '', 1),
 (12, 33, '', '2007-06-18', 1, 1, 0, 1, '', 1, '', '', '', '', '', 1),
-(13, 42, 'อ.สุภาพร', '2015-08-28', 1, 4, 3, 1, 'Le fort I osteotomy', 1, 'BSSRO set back', '', '', '', '', 0),
-(14, 49, '888888888888', '0000-00-00', 1, 1, 1, 1, '', 0, '', '88888888888', '', '', '', 1);
+(13, 42, 'อ.สุภาพร', '2015-08-28', 1, 4, 3, 1, 'Le fort I osteotomy', 1, 'BSSRO set back', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -444,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `tb_othersurgery` (
   `filename3` varchar(100) COLLATE utf16_bin NOT NULL,
   `dentalcast` int(10) NOT NULL,
   PRIMARY KEY (`id_othersurgery`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=55 ;
 
 --
 -- Dumping data for table `tb_othersurgery`
@@ -491,12 +477,7 @@ INSERT INTO `tb_othersurgery` (`id_othersurgery`, `id_history_patient`, `id_tab`
 (51, 23, 5, 'นพ.นพคุณ ดวงจินทร์ดา', '2014-02-05', '', '', '', '', 1),
 (52, 23, 6, 'นพ.นพคุณ ดวงจินทร์ดา', '2015-02-04', '', '', '', '', 1),
 (53, 42, 1, '', '2005-10-05', '', '', '', '', 0),
-(54, 49, 1, '555555555', '0000-00-00', '88888888888888', '', '', '', 1),
-(55, 49, 2, '8888888888888', '0000-00-00', '99999999999999999', '', '', '', 1),
-(56, 49, 3, '888888888888888', '0000-00-00', '99999999999999', '', '', '', 1),
-(57, 49, 4, '666666666666666', '0000-00-00', '9999999999', '', '', '', 1),
-(58, 49, 5, '9999999999999', '0000-00-00', '5555555555555555', '', '', '', 1),
-(60, 49, 6, '9999999999', '0000-00-00', 'gggggggg', '', '', '', 1);
+(54, 49, 1, '', '0000-00-00', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -516,7 +497,7 @@ CREATE TABLE IF NOT EXISTS `tb_prosthodontic` (
   `file3` varchar(100) COLLATE utf16_bin NOT NULL,
   `dentalcast` int(5) NOT NULL,
   PRIMARY KEY (`id_prosthodontic`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_bin AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `tb_prosthodontic`
@@ -528,8 +509,7 @@ INSERT INTO `tb_prosthodontic` (`id_prosthodontic`, `id_history_patient`, `denta
 (12, 21, 'พญ.กาญจนา ด่านภักดี', '2013-02-06', 7, 'ระบุ', '01af9f16c80633d5c7f66ac3416df666.jpeg', '43c673bfbdb9648cdb1fc35d73789100.jpeg', '632241.jpg', 2),
 (13, 21, '412587', '0000-00-00', 1, '', '', '', '', 0),
 (14, 21, '748521', '0000-00-00', 1, '', '', '', '', 0),
-(15, 23, '', '0000-00-00', 7, 'Pontic22อยู่ในretainer', '', '', '', 1),
-(16, 49, '888888888888888', '0000-00-00', 3, '', '', '', '', 1);
+(15, 23, '', '0000-00-00', 7, 'Pontic22อยู่ในretainer', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -581,7 +561,7 @@ INSERT INTO `tb_psot` (`id_psot`, `id_history_patient`, `doctor`, `joindoctor`, 
 (21, 31, 'อ.พูนศักดิ์', '', '2015-06-18', '2014-04-22', 1, 1, 1, 1, 0, '', '', '', '', 1),
 (22, 34, 'อ.สมศักดิ์', '', '2011-07-07', '0000-00-00', 1, 0, 0, 1, 0, '', '', '', '', 1),
 (23, 36, 'รพ.ศรีนครินทร์', '', '2002-09-20', '0000-00-00', 0, 0, 0, 1, 0, '', '', '', '', 1),
-(24, 49, '666666666666', '8888888888888888', '0000-00-00', '0000-00-00', 1, 1, 1, 1, 1, '', '', '', '', 1);
+(24, 49, '555555555555', '333333333333', '0000-00-00', '0000-00-00', 1, 0, 0, 0, 0, '', '', '', '', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
