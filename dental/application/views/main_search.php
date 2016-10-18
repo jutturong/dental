@@ -683,29 +683,83 @@
                 <tr>
                            <td>
                                    Treatment :
-                            </td>
-                </tr>
 
 
 
-                <!--
-                <tr>
-                    <td colspan="2">
-                        <?=nbs(50)?>
-                        <a href="javascript:void(0)"  class="easyui-linkbutton"  style="width: 100px;height: 40px;"  iconCls="icon-search"
-                           onclick="
-                                $('#fr_main_search').form('submit',{
-                                     url:'<?=base_url()?>index.php/welcome/json_patient',
-                                     success:function(data)
-                                        {
-                                              // alert(data);
-                                        }
-                                });
-                           "
-                           >ค้นหา</a>
+                      <input   style="width:200px;height:40px;" class="easyui-combobox" data-options="
+              		valueField: 'value',
+              		textField: 'label',
+              		data: [
+                  {
+                    label: '1. Pre-surgical orthopedics therapy (PSOT) ',
+                    value: '1'
+                  },
+                  {
+              			label: '2. Lip nasal and nasal floor repair ',
+              			value: '2'
+              		},
+                  {
+              			label: '3. Palate repair ',
+              			value: '3'
+              		},
+                  {
+              			label: '4. Interceptive orthodontic treatment ',
+              			value: '4'
+              		},
+                  {
+              			label: '5. Alveolar bone graft ',
+              			value: '5'
+              		},
+                  {
+                    label: '6. Growth modification ',
+                    value: '6'
+                  }
+                  ,
+                  {
+                    label: '7. Corrective Orthodontic Treatment ',
+                    value: '7'
+                  },
+                  {
+                    label: '์8. Orthognathic surgery',
+                    value: '8'
+                  },
+                  {
+                    label: '9. Other surgery',
+                    value: '9'
+                  },
+                  {
+                    label: '10. Other dental procedure ',
+                    value: '10'
+                  },
+
+
+
+                  ]
+                   ,
+
+                      /*
+                   onSelect: function()
+                      {
+
+                            var  id_doctor=$('#cb_doctor').combobox('getValue');
+                            $('#link_export').textbox('setValue',id_doctor);
+
+                              var  url1='<?=base_url()?>index.php/welcome/load_doctor/' + id_doctor  ;
+
+                            $('#dg1').datagrid({ url:url1 });
+
+
+
+
+
+                      }
+                      */
+
+
+                  " />
                     </td>
                 </tr>
-               -->
+
 
 
             </table>

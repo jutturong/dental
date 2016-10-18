@@ -168,7 +168,7 @@
                        // 1.1  + 2.1 || 2.2 + 3.1+ 4.1
                       if(    $('#comp_left').is(":checked")   &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
                      {
-                                 var  ans1="Complete left unilateral cleft lip with alveolus and  complete  cleft";
+                                 var  ans1="Complete left unilateral cleft lip with alveolus and  complete  cleft palate";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -200,7 +200,7 @@
                        // 1.2  + 2.1 || 2.2 + 3.1+ 4.1
                     else  if(    $('#comp_right').is(":checked")     &&  (   $('#completed_left').is(":checked")  ||   $('#completed_right').is(":checked")     )    &&      $('#hardpalate_complete').is(":checked")    &&  $('#softpalate_cleft').is(":checked")    )
                      {
-                                 var  ans1="Complete right unilateral cleft lip with alveolus and complete  cleft";
+                                 var  ans1="Complete right unilateral cleft lip with alveolus and complete  cleft palate";
                                  $.messager.alert('วิเคราะห์ผล',ans1);
                                  $('#result_analysis').textbox('setValue',ans1);
                      }
@@ -354,6 +354,16 @@
                            $.messager.alert('วิเคราะห์ผล',ans1);
                            $('#result_analysis').textbox('setValue',ans1);
                       }
+                      /*
+                      1.7  id="lip_noncleft"    + 2.4  id="alveolus_noncleft"      + 3.4   id="hardpalate_non"   + 4.2   id="softpalate_bifid_uvula"    +  id="facialcleft1"  =  " Bifid uvula  "
+                      */
+                      else if(   $('#lip_noncleft').is(":checked")  &&   $('#alveolus_noncleft').is(":checked")   &&    $('#hardpalate_non').is(":checked")  &&   $('#softpalate_bifid_uvula').is(":checked")   &&   $('#facialcleft1').is(":checked")  )
+                      {
+                          var  ans1="Bifid uvula";
+                          $.messager.alert('วิเคราะห์ผล',ans1);
+                          $('#result_analysis').textbox('setValue',ans1);
+                      }
+
 
           });
 
@@ -607,7 +617,7 @@
                 <tr>
                     <td align="right" valign="top">Lip :</td>
                     <td>
-                        <input type="radio" name="lip"  id="lip_noncleft" value="0"  ><span>Non-cleft</span>
+                        <input type="radio" name="lip"  id="lip_noncleft" value="1.7"  ><span>Non-cleft</span>
                         <div style="margin:10px 0;"></div>
                      <!--   <input type="radio" name="lip" id="Complete"  value="">  -->  <span>Complete : </span>  <input type="radio" name="lip" value="1.1"  id="comp_left"><span>Left</span>  <input type="radio" name="lip"  id="comp_right"   value="1.2"><span>Right</span>   <input type="radio"  name="lip" value="1.3"   id="comp_both" /> Both
                         <div style="margin:10px 0;"></div>
@@ -625,7 +635,7 @@
                     <td align="right" valign="top">Alveolus :</td>
                     <td>
                         <div style="margin:20px 0;"></div>
-                        <input type="radio" name="alveolus"  id="alveolus_noncleft"  ><span>Non-cleft</span>
+                        <input type="radio" name="alveolus"  id="alveolus_noncleft"  value="2.4"  ><span>Non-cleft</span>
 
 
                          <div style="margin:10px 0;"></div>

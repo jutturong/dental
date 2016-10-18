@@ -7300,6 +7300,8 @@
                          { field:'incisor',   title:'Incisor classification of malocclusion',  align:'center' } ,
                          { field:'skeleta',   title:'Skeletal classification of malocclusion',  align:'center' } ,
                          { field:'dentalcast',title:'Dental Casts',align:'center' },
+                         { field:'procedure_detail',title:'Procedure',align:'center' },
+                         //procedure_detail
                      ]]
                      ,
                      toolbar:[
@@ -7590,7 +7592,14 @@
                     <input type="radio" name="skeletal"   id="skeletal1"  value="1"  />  I
                     <input type="radio"  name="skeletal"  id="skeletal2"  value="2"/>  II
                     <input type="radio"  name="skeletal"  id="skeletal3" value="3"  />  III
+
+
     </div>
+
+<div style="padding: 10px 5px;">
+  Procedure :  <input class="easyui-textbox"  id="procedure_detail"  name="procedure_detail"   style="width:250px;height:30px;"   />
+</div>
+
 
     <!--
    <div style="padding: 10px 5px;">

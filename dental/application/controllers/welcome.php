@@ -820,6 +820,10 @@ $this->db->delete($tables);
 
 
               $dentalcast=trim($this->input->get_post("dentalcast"));  //Dental Cast
+
+              $procedure_detail=trim($this->input->get_post("procedure_detail"));
+
+
             //echo "<br>";
 
     $data=array(
@@ -835,6 +839,7 @@ $this->db->delete($tables);
                       "filename2"=>$file2_fr1,  //รูปถ่ายระหว่างการรักษา (During)   #10
                     "filename3"=> $file3_fr1,  //รูปถ่ายหลังการรักษา (After)  #11
                     "dentalcast"=>$dentalcast,   //Dental Cast :  #12
+                    "procedure_detail"=>$procedure_detail,
               );
               $tb="tb_interceptive";  #4. Interceptive orthodontic treatment
               $ck=$this->db->insert($tb,$data);
@@ -3430,6 +3435,8 @@ $this->db->delete($tables);
                         //  $id=2;
 
                          $tb="tb_history_patient";
+                         $tbj1="tb_doctor";
+                         $this->db->join(   $tbj1  ,  $tb.".doctor=".$tbj1.".id_doctor" ,"left");
                          $q=$this->db->get_where($tb,array("doctor"=>$id));
 
 
@@ -4307,6 +4314,37 @@ $this->db->delete($tables);
 
 
 
+
+        }
+
+        #   `tb_history_patient`
+        function update_patient()
+        {
+                 $tb="tb_history_patient";
+
+                 $id_history_patient_view=trim($this->input->get_post("id_history_patient_view"));
+
+                //echo "<br>";
+                  $address_view=trim($this->input->get_post("address_view"));
+               //echo "<br>";
+
+              $tel_view=trim($this->input->get_post("tel_view"));
+               //echo "<br>";
+
+                 $data=array(
+                      "address"=>$address_view,
+                      "tel"=>$tel_view,
+                 );
+
+                 $this->db->where("id_history_patient",$id_history_patient_view);
+               $ck =   $this->db->update($tb,$data);
+               if( $ck )
+               {
+                 echo 1;
+               }
+               else{
+                 echo 0;
+               }
 
         }
 

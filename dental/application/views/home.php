@@ -1258,6 +1258,7 @@ otherdevelopmentallevel
                                     //    { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },
                                         { field:'doctor_detail',   title:'แพทย์เจ้าของคนไข้',   align:'left' },
                                         { field:'tel',   title:'เบอร์โทรศัพท์',   align:'left' },
+                                        { field:'address',   title:'ที่อยู่',   align:'left' },
 
 
 
@@ -1997,6 +1998,9 @@ otherdevelopmentallevel
                                                                                                 $('#img_view').attr('src','<?=base_url()?>upload/' +  file1  );
                                                                                           }
 
+                                                                                           //id_history_patient_view
+
+                                                                                           $('#id_history_patient_view').textbox('setValue',key.id_history_patient);
 
                                                                                            $('#birthdate_view').textbox('setValue',key.birthdate);
 
@@ -2115,6 +2119,13 @@ otherdevelopmentallevel
             <table cellpadding="5">
 
                  <tr>
+                    <td>
+                          <input class="easyui-textbox" type="text" name="id_history_patient_view"  id="id_history_patient_view"  data-options="required:false" style="width: 40px  "  readonly="true" ></input>
+                    </td>
+                 </tr>
+
+
+                 <tr>
                     <td>HN   :</td>
                     <td>
                         <input class="easyui-textbox" type="text" name="HN_view"  id="HN_view" data-options="required:false" style="max-width: 90px  "  readonly="true" ></input>
@@ -2206,7 +2217,7 @@ otherdevelopmentallevel
 
                 <tr>
                     <td>ที่อยู่ :</td>
-                    <td><input class="easyui-textbox" type="text" name="address_view" id="address_view"  style="width: 300px;height: 30px;"  readonly="true" ></input></td>
+                    <td><input class="easyui-textbox" type="text" name="address_view" id="address_view"  style="width: 300px;height: 30px;"   ></input></td>
                 </tr>
 
                 <tr>
@@ -2469,8 +2480,35 @@ otherdevelopmentallevel
                        -->
 
 
-                       <a href="javascript:void(0)"  class="easyui-linkbutton"   style="width: 100px;height: 40px;"   iconCls='icon-edit'    >แก้ไข</a>
+                       <a href="javascript:void(0)"  class="easyui-linkbutton"
+                              data-options="
+                            onClick:function(){
 
+                                $('#fr_view_patient').form('submit',{
+                                        url:'<?=base_url()?>index.php/welcome/update_patient',
+                                        success:function(data)
+                                        {
+                                             //alert(data);
+                                              if( data == 1 )
+                                              {
+                                                     $.messager.alert('สถานะในการรปรับปรุงข้อมูล','ปรับปรุงข้อมูลสำเร็จ');
+                                                     $('#dg1').datagrid('reload');
+                                                     $('#dia1_view').window('close');
+                                              }
+                                              else{
+                                                   $.messager.alert('สถานะในการรปรับปรุงข้อมูล','ปรับปรุงข้อมูลล้มเหลว');
+                                                   $('#dg1').datagrid('reload');
+                                              }
+
+
+                                        }
+                                });
+
+
+                            }
+                              "
+                       style="width: 100px;height: 40px;"   iconCls='icon-edit'    >แก้ไข</a>
+                       <a href="javascript:void(0)" class="easyui-linkbutton"  style="width:120px;height:40px;"  iconCls="icon-cancel"  onClick=" $('#dia1_view').window('close'); "  >ปิด (Close)</a>
 
                    </td>
                </tr>
