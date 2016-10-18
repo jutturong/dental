@@ -1,4 +1,24 @@
 
+<script type="text/javascript" >
+    $(function(){
+      //dg_psot
+      $('#dg_psot').datagrid({
+           field:'procedure',
+           options:{
+             data:[{ text:'P' }]
+           }
+
+      });
+
+
+
+
+
+    });
+</script>
+
+
+
 <!--   วัน/เดือน/ปี ที่เริ่มทำการรักษา   ----------------->
 <script type="text/javascript">
             //-- คำนวณอายุของบิดา --
@@ -3206,7 +3226,7 @@
                                 {  field:'begin_date', title:'เริ่มทำการรักษา' ,  align:'center'    },
                                 {  field:'end_date', title:'สิ้นสุดการรักษา' ,  align:'center'    },
 
-                                {  field:'procedure', title:'1.Strapping' ,  align:'center'    },
+                                {  field:'procedure' , title:'1.Strapping' ,  align:'center'    },
                                 {  field:'nasal', title:'2.Nasal Molding ' ,  align:'center'    },
                                 {  field:'alveolar', title:'3.Alveolar Molding' ,  align:'center'    },
                                 {  field:'simple', title:'4.Simple Obturator' ,  align:'center'    },

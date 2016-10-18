@@ -333,8 +333,11 @@ $this->db->insert('mytable', $data);
             $id=$this->uri->segment(3);
             $tb="tb_history_patient";
             $this->db->order_by("id_history_patient","DESC");
+            $tbj1="tb_doctor";
+        //    $this->db->join(  $tbj1 ,  $tb.".doctor="$tbj1.".id_doctor" ,"left");
            //  $query=$this->db->get($tb,10);
           //  $query=$this->db->get_where($tb,array("id_history_patient"=>$id));
+              $this->db->join(   $tbj1  ,  $tb.".doctor=".$tbj1.".id_doctor" ,"left");
              $query=$this->db->get($tb);
             foreach($query->result() as $row)
             {

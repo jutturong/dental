@@ -1255,7 +1255,8 @@ otherdevelopmentallevel
                                         { field:'CN',   title:'เลข สปสช. ',   align:'center' },
                                    //     { field:'CN',   title:'CN No',   align:'center' },
                                         { field:'seriesnumber',   title:'เลขบัตรประชาชน ',   align:'center' },
-                                        { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },
+                                    //    { field:'doctor',   title:'แพทย์เจ้าของคนไข้',   align:'left' },
+                                        { field:'doctor_detail',   title:'แพทย์เจ้าของคนไข้',   align:'left' },
                                         { field:'tel',   title:'เบอร์โทรศัพท์',   align:'left' },
 
 
