@@ -3518,7 +3518,7 @@ $this->db->delete($tables);
 
                   //  $doctor=trim($this->input->get_post("doctor"));
 
-                        $doctor=trim($this->uri->segment(3));
+                     $doctor=trim($this->uri->segment(3));
 
                      $tb="tb_history_patient";
                      $tb1="tb_diagnosis";

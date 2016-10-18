@@ -879,17 +879,26 @@
                          {
                                 // var  link1=$('#txt_main').textbox('getValue');
                               //   alert(link1);
-                               var  doctor=$('#link_export').textbox('getValue');
-                               //alert(link_export);
+                               var  id_doctor=$('#link_export').textbox('getValue');
+
                                //http://127.0.0.1/dental/index.php/welcome/checklogin#
 
                                 // window.open(url,{ doctor:link_export });
                               //  open(   url , { doctor: doctor });
                                 //fr_export
                                 // http://127.0.0.1/dental/index.php/welcome/json_patient_ex
-                               var   url='<?=base_url()?>index.php/welcome/json_patient_ex/'  + doctor ;
+                               //var   url='<?=base_url()?>index.php/welcome/json_patient_ex/'  + doctor ;
 
-                               window.open(url);
+                              // window.open(url);
+
+
+
+                              if(  id_doctor > 0 )
+                              {
+                                  //alert(id_doctor);
+                                   url='<?=base_url()?>index.php/welcome/json_patient_ex/'  + id_doctor ;
+                                   window.open(url);
+                              }
 
 
                          }
@@ -2661,9 +2670,9 @@ otherdevelopmentallevel
     </div>
 <!----  แสดงประวัติผู้ป่วย --->
 
-   <form  id="fr_export"  method="post"  enctype="multipart/form-data"  novalidate="novalidate"  >
-  ค้นหาทันตแพทย์ผู้ทำการรักษา : <input  class="easyui-textbox"  readonly=true    id="link_export"  name="link_export"   style="width:200px;height:30jpx;"   />
-   </form>
+<!--   <form  id="fr_export"  method="post"  enctype="multipart/form-data"  novalidate="novalidate"  > -->
+      <input  class="easyui-textbox"    readonly=true    id="link_export"  name="link_export"   style="width:20px;height:30jpx;"   />
+<!--   </form> -->
 
 
     </body>

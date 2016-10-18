@@ -862,13 +862,13 @@
                                   // alert(data);
                                   if( data == 1 )
                                   {
-                                           $('#dia_fr10_1').dialog('open');
+                                          // $('#dia_fr10_1').dialog('open');
                                            $('#dg_fr10_1').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_1').dialog('open');
+                                        //   $('#dia_fr10_1').dialog('open');
                                            $('#dg_fr10_1').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -1124,13 +1124,13 @@
 
                                    if( data == 1 )
                                   {
-                                           $('#dia_fr10_2').dialog('open');
+                                        //   $('#dia_fr10_2').dialog('open');
                                            $('#dg_fr10_2').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_2').dialog('open');
+                                          // $('#dia_fr10_2').dialog('open');
                                            $('#dg_fr10_2').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -1368,13 +1368,13 @@
                                    // alert(data);
                                   if( data == 1 )
                                   {
-                                           $('#dia_fr10_3').dialog('open');
+                                        //   $('#dia_fr10_3').dialog('open');
                                            $('#dg_fr10_3').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_3').dialog('open');
+                                        //   $('#dia_fr10_3').dialog('open');
                                            $('#dg_fr10_3').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -1613,13 +1613,13 @@
                                  // alert(data);
                                  if( data == 1 )
                                   {
-                                           $('#dia_fr10_4').dialog('open');
+                                        //   $('#dia_fr10_4').dialog('open');
                                            $('#dg_fr10_4').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_4').dialog('open');
+                                        //   $('#dia_fr10_4').dialog('open');
                                            $('#dg_fr10_4').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -1854,13 +1854,13 @@
                                   //alert(data);
                                     if( data == 1 )
                                   {
-                                           $('#dia_fr10_5').dialog('open');
+                                        //   $('#dia_fr10_5').dialog('open');
                                            $('#dg_fr10_5').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_5').dialog('open');
+                                        //   $('#dia_fr10_5').dialog('open');
                                            $('#dg_fr10_5').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -2100,13 +2100,13 @@
                                    //alert(data);
                                     if( data == 1 )
                                   {
-                                           $('#dia_fr10_6').dialog('open');
+                                        //   $('#dia_fr10_6').dialog('open');
                                            $('#dg_fr10_6').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                                    }
                                    else{
 
-                                           $('#dia_fr10_6').dialog('open');
+                                        //   $('#dia_fr10_6').dialog('open');
                                            $('#dg_fr10_6').datagrid('reload');
                                            $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
                                    }
@@ -2533,7 +2533,7 @@
                             //alert(data);
                             if( data == 1 )
                             {
-                                   $('#preview_fr9').dialog('open');
+                                //   $('#preview_fr9').dialog('open');
                                    $('#dg_fr9').datagrid('reload');
                                    $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
                             }else
@@ -3126,9 +3126,9 @@
     </div>
     -->
 
-    <div style="padding:10px  100px;">
+    <div style="padding:10px  10px;">
 
-        <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-reload'  "  onclick="  window.open('http://www.sanook.com');  "  style="height: 40px;width:80px;"  >เชื่อมโยง</a>
+        <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-reload'  "  onclick="  window.open('http://10.87.196.210/overlay/input_intervention.php?id_cronology=1917&&fk=e10adc3949ba59abbe56e057f20f883e');  "  style="height: 40px;width:80px;"  >เชื่อมโยง</a>
 
         <!--
         <a href="javascript:void(0)"  class="easyui-linkbutton"  data-options=" iconCls:'icon-save'  "  style="height: 40px;width:80px;"  >Save</a>
@@ -3639,7 +3639,7 @@
                                              {
                                                   $('#dg_psot').datagrid('reload');
                                                   $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
-                                                  $('#dia_psot').dialog('open');
+                                                //  $('#dia_psot').dialog('open');
 
                                              }
                                               else if( data==0)
@@ -3945,11 +3945,11 @@
 
 <div id="dia_treat7" class="easyui-window" title=" 3. Palate repair  " data-options="modal:true,closed:true" style="width:600px;height:500px;padding:5px;">
 
-    <div style="margin:0px 0 0px 0;"></div>
-
+    <!--<div style="margin:10px 0 0px 0;"></div>-->
+    <div style="padding:10px  100px;"></div>
 
             <form id="ff"  method="post" enctype="multipart/form-data">
-            <table>
+
 
                 <!--
                 <tr>
@@ -4014,19 +4014,18 @@
                 -->
 
 
+                   <div style="padding:10px  10px;">
 
-                <tr>
-                    <td colspan="2">
-                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'"   onclick=" window.open('http://www.sanook.com'); " >เชื่อมโยง</a>
+
+                        <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload'"   onclick=" window.open('http://10.87.196.210/overlay/input_intervention.php?id_cronology=1917&&fk=e10adc3949ba59abbe56e057f20f883e'); " >เชื่อมโยง</a>
                         <!--
                         <a href="javaScript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'">Save</a>
                         <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove' , onClick:function(){ $('#dia_treat7').window('close');    }   ">Close</a>
                            -->
-                    </td>
+                 </div>
 
-                </tr>
 
-            </table>
+
         </form>
 
 
@@ -4772,7 +4771,7 @@
                                           //  alert(data);
                                           if( data == 1 )
                                           {
-                                              $('#dia_fr7').dialog('open');
+                                            //  $('#dia_fr7').dialog('open');
                                               //$('$dg_fr7').datagrid('reload');
                                                $('#dg_fr7').datagrid('reload');
                                               $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลแล้ว');
@@ -4780,7 +4779,7 @@
                                           }
                                           else
                                           {
-                                                $('#dia_fr7').dialog('open');
+                                              //  $('#dia_fr7').dialog('open');
                                               //$('$dg_fr7').datagrid('reload');
                                                $('#dg_fr7').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลผิดพลาด');
@@ -5240,7 +5239,7 @@
                                            if( data == 1)
                                            {
                                                   $.messager.alert('สถานะการเพิ่มข้อมูล','เพิ่มข้อมูลสำเร็จ');
-                                                  $('#dia_fr8').dialog('open');
+                                                //  $('#dia_fr8').dialog('open');
                                                   $('#dg_fr8').datagrid('reload');
                                            }
                                            else
@@ -5888,7 +5887,7 @@
                                          //alert(data);
                                          if( data == 1 )
                                          {
-                                               $('#dia_fr6').dialog('open');
+                                            //   $('#dia_fr6').dialog('open');
                                                $('#dg_fr6').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                          }
@@ -6325,7 +6324,7 @@
 
                                          if( data == 1 )
                                          {
-                                               $('#dia_fr6_2').dialog('open');
+                                              // $('#dia_fr6_2').dialog('open');
                                                $('#dg_fr6_2').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                          }
@@ -6765,7 +6764,7 @@
                                          //alert(data);
                                          if( data == 1 )
                                          {
-                                               $('#dia_fr6_3').dialog('open');
+                                            //   $('#dia_fr6_3').dialog('open');
                                                $('#dg_fr6_3').datagrid('reload');
                                                $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                          }
@@ -7636,7 +7635,7 @@
                             if( data == 1 )
                             {
 
-                                $('#dia_fr4').dialog('open');
+                              //  $('#dia_fr4').dialog('open');
                                 $('#dg_fr4').datagrid('reload');
                                 $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
 
@@ -7978,7 +7977,7 @@
                           //alert(data);
                           if( data == 1 )
                           {
-                                $('#dia_fr11_1').dialog('open');
+                              //  $('#dia_fr11_1').dialog('open');
                                 $('#dg_fr11_1').datagrid('reload');
                                 $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                           }
@@ -8256,7 +8255,7 @@
                                     // alert(data);
                                      if( data == 1 )
                                      {
-                                      $('#dia_fr11_2').dialog('open');
+                                    //  $('#dia_fr11_2').dialog('open');
                                       $('#dg_fr11_2').datagrid('reload');
                                             $.messager.alert('สถานะการบันทึกข้อมูล','บันทึกข้อมูลสำเร็จ');
                                       }

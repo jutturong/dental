@@ -596,7 +596,37 @@
     {
 			label: 'อ.พูนศักดิ์',
 			value: '3'
-		}
+		},
+    {
+			label: 'อ.ทัศนีย์',
+			value: '4'
+		},
+    {
+      label: 'อ.อมรรัตน์',
+      value: '5'
+    }
+    ,
+    {
+      label: 'อ.เอกสิทธิ์',
+      value: '6'
+    },
+    {
+      label: 'อ.ณัฐวีร์',
+      value: '7'
+    },
+    {
+      label: 'อ.สมศักดิ์',
+      value: '8'
+    },
+    {
+      label: 'อ.สุปราณี',
+      value: '9'
+    },
+    {
+      label: 'อ.ธิติวัฒน์',
+      value: '10'
+    }
+
 
     ]
      ,
@@ -605,6 +635,7 @@
         {
 
               var  id_doctor=$('#cb_doctor').combobox('getValue');
+              $('#link_export').textbox('setValue',id_doctor);
 
                 var  url1='<?=base_url()?>index.php/welcome/load_doctor/' + id_doctor  ;
 
